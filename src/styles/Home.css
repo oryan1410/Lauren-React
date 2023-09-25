@@ -1,0 +1,22 @@
+.home {
+    background-color: #282c34;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;  
+    align-content: center;
+    align-content: center;
+    margin: 0;
+    padding: 0;
+    transition: opacity 2s ease-in-out;
+    opacity: 0;
+    width: 100%;
+  
+  }
+  
+  .home.visible {
+    opacity: 1;
+  }
+  
+  .home.notVisable {
+    opacity: 0;
+  }

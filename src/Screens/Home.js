@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
-import '../App.css';
-import { Grid, Item } from '@mui/material';
+import { Container} from 'react-bootstrap';
+import '../styles/Home.css'
+import { Grid } from '@mui/material';
 import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 
@@ -24,31 +24,19 @@ export default function Home(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-            <Navbar bg="light" expand="xxl" fixed='top' collapseOnSelect>
-                <Container>
-                    <Navbar.Brand href="#home">My App</Navbar.Brand>
-                    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="ml-auto">
-                            <Nav.Link href="#login">Login</Nav.Link>
-                            <Nav.Link href="#burger">Burger</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Container>
-            </Navbar>
             <Container style={{width:'100%'}}>
                 <SearchAppBar />
-                <Grid container spacing={3} >
-                    <Grid item xs={6} sm={3} >
+                <Grid container spacing={2} >
+                    <Grid item xs={6} sm={4} lg={3}>
                         <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" />
                     </Grid>
-                    <Grid item xs={6} sm={3} >
+                    <Grid item xs={6} sm={4} lg={3}>
                         <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" />
                     </Grid>
-                    <Grid item xs={6} sm={3}>
+                    <Grid item xs={6} sm={4} lg={3}>
                         <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" />
                     </Grid>
-                    <Grid item xs={6} sm={3} className="grid-item">
+                    <Grid item xs={6}sm={4} lg={3} className="grid-item">
                         <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" />
                     </Grid>
                 </Grid>

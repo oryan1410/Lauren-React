@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Card from '../HelpComponents/Card';
 import '../App.css';
 
-
 const Dishes = () => {
     const [selectedDryness, setSelectedDryness] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);

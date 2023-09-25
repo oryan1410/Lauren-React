@@ -1,7 +1,7 @@
 import './App.css';
 import { CardMedia } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { Route, Routes, Link } from 'react-router-dom';
+import { Route, Routes, Link, useLocation } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 // import Navbar from './HelpComponents/Navbar';
 
@@ -22,6 +22,8 @@ function App() {
     setExpanded(false);
   };
 
+  const location = useLocation();
+
 
 
   useEffect(() => {
@@ -32,59 +34,58 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <Routes>
-          <Route path="/" element={!isVisible ? <FadeIn setIsVisible={() => { setIsVisible(true) }} /> : <Home isVisible={isVisible} />} />
-          <Route path="/home" element={<Home isVisible={true} />} />
-          {/* <Route path="/about" element={<About />} />*/}
-          <Route path="/wines" element={<Wines />} />
-          <Route path="/dishes" element={<Dishes />} />
-          {/* <Route path="/contact" element={<Contact />} />
-          <Route path="/events" element={<Events />} />*/}
-        </Routes>
-        {/* <Navbar /> */}
-        <Navbar bg="light" expand="xxl" expanded={expanded} onToggle={()=> setExpanded(!expanded)} fixed='top' collapseOnSelect>
-        <Container>
-          <Navbar.Brand href="\home">
-            <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99.pdf%20-%20Page%202%20of%204.png?alt=media&token=10d8afd8-14c2-45b6-9a88-507070520c8b'} height={80} width={80} alt="Go Home" />
-          </Navbar.Brand>
-          <Navbar.Text>
-            <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99.pdf%20-%20Page%204%20of%204.png?alt=media&token=0a42b53d-5aea-459c-96f1-6403b7ab1189'} height={80} width={80}alt="logo" />
-          </Navbar.Text>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" style={{width:80, borderWidth:0, paddingRight:0, marginRight:0, position:'relative', left:15}} />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-            <Nav.Item>
-                <Link to="/home" className="nav-link" onClick={closeNavbar}>Home</Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link to="/wines" className="nav-link" onClick={closeNavbar}>Wines</Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link to="/dishes" className="nav-link" onClick={closeNavbar}>Dishes</Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link to="/events" className="nav-link" onClick={closeNavbar}>Events</Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link to="/contact" className="nav-link">Contact</Link>
-              </Nav.Item>
-              <Nav.Item>
-                <Link to="/login" className="nav-link">Login</Link>
-              </Nav.Item>
+      <div className="App-header">
+        <Navbar bg="light" expand="xxl" fixed='' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect style={{ zIndex: 2 }}>
+          <Container>
+            <Navbar.Brand href="\home">
+              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99.pdf%20-%20Page%202%20of%204.png?alt=media&token=10d8afd8-14c2-45b6-9a88-507070520c8b'} height={80} width={80} alt="Go Home" />
+            </Navbar.Brand>
+            <Navbar.Text>
+              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99.pdf%20-%20Page%204%20of%204.png?alt=media&token=0a42b53d-5aea-459c-96f1-6403b7ab1189'} height={80} width={80} alt="logo" />
+            </Navbar.Text>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ width: 80, borderWidth: 0, paddingRight: 0, marginRight: 0, position: 'relative', left: 15 }} />
+            <Navbar.Collapse id="basic-navbar-nav">
+              <Nav className="ml-auto" >
+                <Nav.Item>
+                  <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Home</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Wines</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Dishes</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Events</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Contact</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Login</Link>
+                </Nav.Item>
 
-              {/* <Nav.Link href="\login" className='nav-link'>Login</Nav.Link>
+                {/* <Nav.Link href="\login" className='nav-link'>Login</Nav.Link>
               <Nav.Link href="\dishes">Dishes</Nav.Link>
               <Nav.Link href="\wines">Wines</Nav.Link>
               <Nav.Link href="\events">Events</Nav.Link>
               <Nav.Link href="\contact">Contact</Nav.Link> */}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-
-      </header>
-     
+              </Nav>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+        <div style={{ height: '96px' }}></div>
+          <Routes>
+            <Route path="/" element={!isVisible ? <FadeIn setIsVisible={() => { setIsVisible(true) }} /> : <Home isVisible={isVisible} />} />
+            <Route path="/home" element={<Home isVisible={true} />} />
+            {/* <Route path="/about" element={<About />} />*/}
+            <Route path="/wines" element={<Wines />} />
+            <Route path="/dishes" element={<Dishes />} />
+            {/* <Route path="/contact" element={<Contact />} />
+          <Route path="/events" element={<Events />} />*/}
+          </Routes>
+          {/* <Navbar /> */}
+      </div>
     </div>
   );
 }

@@ -14,10 +14,6 @@ import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-
-
-
-
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
@@ -37,11 +33,11 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Card sx={{ maxWidth: '90%', margin:'auto', padding: '5px 0px' }}>
+    <Card sx={{ maxWidth: '90%', margin: '0 auto',marginBottom:'5px ', padding: '5px 0px', fontFamily: 'Urbanist' }}>
       <CardHeader
         avatar={
-          <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-            <img src='https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Wines%2F14562266-1_1612271135-600x600.png?alt=media&token=15bc8d43-e6eb-4ae5-974c-55625a20706f' style={{width:50, height:50}} />
+          <Avatar aria-label="recipe">
+            <img src='https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Wines%2F14562266-1_1612271135-600x600.png?alt=media&token=15bc8d43-e6eb-4ae5-974c-55625a20706f' style={{ width: 50, height: 50 }} />
           </Avatar>
         }
         action={
@@ -50,6 +46,7 @@ export default function RecipeReviewCard() {
         }
         title="Shrimp and Chorizo Paella"
         subheader="September 14, 2016"
+        titleTypographyProps={{ fontFamily: 'Urbanist', fontWeight: 'bold' }}
       />
       <CardMedia
         component="img"
@@ -57,10 +54,10 @@ export default function RecipeReviewCard() {
         alt="Paella dish"
         height="150"
         width="150"
-        sx={{objectFit:'contain'}}
-        />
+        sx={{ objectFit: 'contain' }}
+      />
       <CardContent>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" fontFamily={"Urbanist"}>
           This impressive paella is a perfect party dish and a fun meal to cook
           together with your guests. Add 1 cup of frozen peas along with the mussels,
           if you like.
@@ -81,7 +78,7 @@ export default function RecipeReviewCard() {
           <ExpandMoreIcon />
         </ExpandMore>
       </CardActions>
-     
+
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>

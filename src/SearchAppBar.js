@@ -7,7 +7,7 @@ import './App.css'
 import { useState, useEffect } from 'react';
 import wines from './WinesArr.json'
 
-const SearchBar = ({setSearchQuery}) => (
+const SearchBar = ({ setSearchQuery }) => (
   <>
     <TextField
       id="search-bar"
@@ -16,14 +16,34 @@ const SearchBar = ({setSearchQuery}) => (
         setSearchQuery(e.target.value);
       }}
       label="What are you looking for?"
-      variant="outlined"
       placeholder="Search..."
       type="search"
-      sx={{ width: '100%', bgcolor: '#bcd516' }}
+      InputLabelProps={{
+        sx: {
+          color: 'white',
+          '&.Mui-focused': { color: 'white' },
+        }
+      }}
+      InputProps={{
+        sx: {
+          color: 'white',
+          borderRadius: '16px!important',
+          borderWidth: 0,
+          '&:hover fieldset': {
+            border: '4px solid white!important',
+            borderRadius: '16px!important',
+          },
+          '&:focus-within fieldset, &:focus-visible fieldset': {
+            border: '4px solid red!important',
+            borderRadius: '16px!important',
+          },
+        },
+      }}
+      sx={{ width: '100%', bgcolor: '#bcd516', borderRadius: '16px', borderWidth: 0, '&:hover': { backgroundColor: 'green', }, }}
     />
     <IconButton type="submit" aria-label="search">
     </IconButton>
-    </>
+  </>
 );
 
 export default function SearchAppBar() {
@@ -32,7 +52,7 @@ export default function SearchAppBar() {
   const [arr, setArr] = useState(wines);
 
 
-  useEffect (() => {
+  useEffect(() => {
     if (searchQuery === "") {
       setArr(wines);
       console.log("searchQuery is empty");
@@ -42,10 +62,7 @@ export default function SearchAppBar() {
     }
   }, [searchQuery]);
 
-
-
-
   return (
-   <SearchBar />
+    <SearchBar />
   );
 }

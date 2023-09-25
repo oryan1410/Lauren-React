@@ -9,12 +9,6 @@ export default function Home(props) {
 
     const [isVisible, setIsVisible] = useState(false);
 
-    //fade in in first time you enter page
-    //fade out when you click on a link
-    //fade in when you click on a link
-    //fade out when you click on a link
-    //fade in when you click on a link
-
     useEffect(() => {
         if (props.isVisible) {
             setIsVisible(true);

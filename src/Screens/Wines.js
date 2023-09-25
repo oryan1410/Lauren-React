@@ -57,7 +57,8 @@ const Wines = () => {
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
             <h1>Wines</h1>
             <Card />
-
+            <Card />
+            <Card />
             {/* <Grid columns={3}>
                 <Grid.Column>
                     <Dropdown

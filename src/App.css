@@ -1,0 +1,105 @@
+.App {
+  text-align: center;
+
+}
+
+p {
+  font-size: 1.5em;
+  color: #61dafb;
+  font-family: 'Urbanist', sans-serif;
+}
+
+.grid-item {
+  border-radius: 16px; /* Adjust the border radius as needed */
+  margin: 0 auto;
+}
+
+.searchBar {
+  margin-bottom: 50px;
+  width: 100%;
+}
+
+.App-logo {
+  /*app logo should be center screen*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 85%;
+  pointer-events: none;
+}
+/* app logo should be center screen 
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+} */
+
+.fade-in-element {
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+  /**/
+}
+
+.fade-in-element.visible {
+  opacity: 1;
+}
+
+.fade-in-element.notVisable {
+  opacity: 0;
+}
+
+.home {
+  background-color: #282c34;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;  
+  align-content: center;
+  align-content: center;
+  margin: 0;
+  padding: 0;
+  transition: opacity 3s ease-in-out;
+  opacity: 0;
+  width: 100%;
+
+}
+
+.home.visible {
+  opacity: 1;
+}
+
+.home.notVisable {
+  opacity: 0;
+}
+
+img {
+  border-radius: 16;
+}
+
+
+
+@media (prefers-reduced-motion: no-preference) {
+
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+

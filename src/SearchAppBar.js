@@ -1,9 +1,11 @@
 import * as React from 'react';
+import { styled, alpha } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import './App.css'
-// import { useState, useEffect } from 'react';
-// import wines from './WinesArr.json'
+import { useState, useEffect } from 'react';
+import wines from './WinesArr.json'
 
 const SearchBar = ({setSearchQuery}) => (
   <>
@@ -26,19 +28,19 @@ const SearchBar = ({setSearchQuery}) => (
 
 export default function SearchAppBar() {
 
-  // const [searchQuery, setSearchQuery] = useState("");
-  // const [arr, setArr] = useState(wines);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [arr, setArr] = useState(wines);
 
 
-  // useEffect (() => {
-  //   if (searchQuery === "") {
-  //     setArr(wines);
-  //     console.log("searchQuery is empty");
-  //     console.log(wines);
-  //   } else {
-  //     setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
-  //   }
-  // }, [searchQuery]);
+  useEffect (() => {
+    if (searchQuery === "") {
+      setArr(wines);
+      console.log("searchQuery is empty");
+      console.log(wines);
+    } else {
+      setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
+    }
+  }, [searchQuery]);
 
 
 

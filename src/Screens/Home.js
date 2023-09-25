@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
-import { Navbar, Nav, Container} from 'react-bootstrap';
+import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
 import '../App.css';
-import { Grid} from '@mui/material';
+import { Grid, Item } from '@mui/material';
 import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 
-export default function Home() {
+export default function Home(props) {
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -16,8 +16,10 @@ export default function Home() {
     //fade in when you click on a link
 
     useEffect(() => {
-                  setIsVisible(true);
-    }, []);
+        if (props.isVisible) {
+            setIsVisible(true);
+        }
+    }, [isVisible]);
 
 
     return (

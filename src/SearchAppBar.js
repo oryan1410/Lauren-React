@@ -26,19 +26,19 @@ const SearchBar = ({setSearchQuery}) => (
 
 export default function SearchAppBar() {
 
-  const [searchQuery, setSearchQuery] = useState("");
-  const [arr, setArr] = useState(wines);
+  // const [searchQuery, setSearchQuery] = useState("");
+  // const [arr, setArr] = useState(wines);
 
 
-  useEffect (() => {
-    if (searchQuery === "") {
-      setArr(wines);
-      console.log("searchQuery is empty");
-      console.log(wines);
-    } else {
-      setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
-    }
-  }, [searchQuery]);
+  // useEffect (() => {
+  //   if (searchQuery === "") {
+  //     setArr(wines);
+  //     console.log("searchQuery is empty");
+  //     console.log(wines);
+  //   } else {
+  //     setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
+  //   }
+  // }, [searchQuery]);
 
 
 

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Navbar, Nav, Container, Row, Col } from 'react-bootstrap';
+import { Navbar, Nav, Container} from 'react-bootstrap';
 import '../App.css';
-import { Grid, Item } from '@mui/material';
+import { Grid} from '@mui/material';
 import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 

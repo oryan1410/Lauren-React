@@ -5,7 +5,7 @@ import { Grid} from '@mui/material';
 import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 
-export default function Home(props) {
+export default function Home() {
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -16,10 +16,8 @@ export default function Home(props) {
     //fade in when you click on a link
 
     useEffect(() => {
-        if (props.isVisible) {
-            setIsVisible(true);
-        }
-    }, [isVisible]);
+                  setIsVisible(true);
+    }, []);
 
 
     return (

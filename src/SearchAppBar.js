@@ -2,8 +2,8 @@ import * as React from 'react';
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import './App.css'
-import { useState, useEffect } from 'react';
-import wines from './WinesArr.json'
+// import { useState, useEffect } from 'react';
+// import wines from './WinesArr.json'
 
 const SearchBar = ({setSearchQuery}) => (
   <>

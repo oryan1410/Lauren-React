@@ -1,10 +1,7 @@
-import logo from './logo.svg';
 import './App.css';
-import Container from '@mui/material/Container';
 import { CardMedia } from '@mui/material';
 import React, {useEffect, useState} from 'react';
 import { Route,Routes } from 'react-router-dom';
-import { ThemeProvider } from '@mui/material/styles';
 
 import Home from './Screens/Home';
 

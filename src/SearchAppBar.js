@@ -1,6 +1,4 @@
 import * as React from 'react';
-import { styled, alpha } from '@mui/material/styles';
-import InputBase from '@mui/material/InputBase';
 import IconButton from "@mui/material/IconButton";
 import TextField from "@mui/material/TextField";
 import './App.css'

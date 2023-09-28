@@ -1,31 +1,28 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../HelpComponents/Card';
 import '../App.css';
-import wines from '../WinesArr.json'
-import { Grid } from '@mui/material';
-import SearchAppBar from '../SearchAppBar';
-import { Container } from 'react-bootstrap';
+import { useLocation } from 'react-router-dom';
 
 
+const DishPage = (props) => {
+
+    const location = useLocation();
+    const propsData = location.state;
 
 
-
-const Wines = () => {
     const [selectedDryness, setSelectedDryness] = useState(null);
     const [selectedColor, setSelectedColor] = useState(null);
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [isVisible, setIsVisable] = useState(false);
-    const [displayWines, setDisplayWines] = useState([]);
 
     useEffect(() => {
         setIsVisable(true);
-        console.log("wines", wines);
-        let arr = wines.map((wine) => {
-            return <Card key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+        console.log ("propsData",propsData.wine);
+        return () => {
+            setIsVisable(false);
         }
-        )
-        setDisplayWines(arr);
-    }, []);
+    }
+    ,[]);
 
     const drynessOptions = [
         { key: 'dry', text: 'Dry', value: 'dry' },
@@ -46,6 +43,13 @@ const Wines = () => {
         { key: 'usa', text: 'USA', value: 'usa' },
     ];
 
+    const wines = [
+        { name: 'Wine 1', dryness: 'dry', color: 'red', country: 'france' },
+        { name: 'Wine 2', dryness: 'sweet', color: 'white', country: 'italy' },
+        { name: 'Wine 3', dryness: 'dry', color: 'rose', country: 'spain' },
+        { name: 'Wine 4', dryness: 'sweet', color: 'bubble', country: 'usa' },
+    ];
+
     const filteredWines = wines.filter((wine) => {
         if (selectedDryness && wine.dryness !== selectedDryness) {
             return false;
@@ -60,17 +64,11 @@ const Wines = () => {
     });
 
     return (
-        <Container style={{width:'100%'}}>
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-            <h1>Wines</h1>
-            {/* <Card />
-            <Card />
-            <Card /> */}
-<SearchAppBar />
-            {displayWines}
+            <h1>Dishes</h1>
+            <Card key={propsData.wine.Id} wine={propsData.wine} title={propsData.wine.Name_Eng} image={propsData.wine.ImageUrl} Description={propsData.wine.Description} />            
         </div>
-        </Container>
     );
 };
 
-export default Wines;
+export default DishPage;

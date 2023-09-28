@@ -8,6 +8,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import Home from './Screens/Home';
 import Wines from './Screens/Wines';
 import Dishes from './Screens/Dishes';
+import DishPage from './Screens/DishPage';
 function App() {
 
   // goToHome = () => {
@@ -81,6 +82,7 @@ function App() {
             {/* <Route path="/about" element={<About />} />*/}
             <Route path="/wines" element={<Wines />} />
             <Route path="/dishes" element={<Dishes />} />
+            <Route path="/dishPage" element={<DishPage />} />
             {/* <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<Events />} />*/}
           </Routes>

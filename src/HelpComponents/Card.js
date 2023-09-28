@@ -13,6 +13,9 @@ import { red } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import {Link} from 'react-router-dom'
+
+
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -25,7 +28,10 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function RecipeReviewCard() {
+export default function RecipeReviewCard(props) {
+
+  //const variable to pass to dishPage- will contain the spercific destails of the dish/wine to display
+const wine= props.wine;
   const [expanded, setExpanded] = React.useState(false);
 
   const handleExpandClick = () => {
@@ -33,24 +39,24 @@ export default function RecipeReviewCard() {
   };
 
   return (
-    <Card sx={{ maxWidth: '90%', margin: '0 auto',marginBottom:'5px ', padding: '5px 0px', fontFamily: 'Urbanist' }}>
+    <Card sx={{ maxWidth: '90%', margin: '0 auto',marginBottom:'10px ', padding: '5px 0px', fontFamily: 'Urbanist' }}>
       <CardHeader
-        avatar={
-          <Avatar aria-label="recipe">
-            <img src='https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Wines%2F14562266-1_1612271135-600x600.png?alt=media&token=15bc8d43-e6eb-4ae5-974c-55625a20706f' style={{ width: 50, height: 50 }} />
-          </Avatar>
-        }
+        // avatar={
+        //   <Avatar aria-label="recipe">
+        //     <img src={props.image} style={{ width: 50, height: 50 }} />
+        //   </Avatar>
+        // }
         action={
           <IconButton aria-label="settings">
           </IconButton>
         }
-        title="Shrimp and Chorizo Paella"
-        subheader="September 14, 2016"
+        title={props.title}
+        subheader={props.wine.WineryNeame_Eng}
         titleTypographyProps={{ fontFamily: 'Urbanist', fontWeight: 'bold' }}
       />
       <CardMedia
         component="img"
-        image="https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Wines%2F14562266-1_1612271135-600x600.png?alt=media&token=15bc8d43-e6eb-4ae5-974c-55625a20706f"
+        image={props.image}
         alt="Paella dish"
         height="150"
         width="150"
@@ -58,25 +64,28 @@ export default function RecipeReviewCard() {
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary" fontFamily={"Urbanist"}>
-          This impressive paella is a perfect party dish and a fun meal to cook
-          together with your guests. Add 1 cup of frozen peas along with the mussels,
-          if you like.
+        {props.Description}
         </Typography>
       </CardContent>
       <CardActions>
         <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
+       {/* link to dish/wine page*/}
+       <Link to='/dishPage' state={{wine}} style={{marginLeft:'auto',marginRight:'auto'}} >
+        <Button size="small" style={{marginLeft:'auto',marginRight:'auto'}}>Go to Dish</Button>
+        </Link>
         <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton>
-        <ExpandMore
+        {/* <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
           <ExpandMoreIcon />
-        </ExpandMore>
+        </ExpandMore> */}
+
+       
       </CardActions>
 
       <Collapse in={expanded} timeout="auto" unmountOnExit>

@@ -137,7 +137,7 @@ img {
 }
 
 .App-header {
-  background-color: #135e93;
+  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -160,3 +160,25 @@ img {
   }
 }
 
+
+/* <-------------------  CSS for the SearchBar page -------------------> */
+
+.textInput {
+  background-color: #3c27c5;
+}
+
+/*Label styling*/
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.inputLabel {
+  color: #ffffff;
+  font-family: 'Urbanist';
+}
+
+
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused.inputLabel {
+  color: #ffffff;
+  font-family: 'Urbanist';
+}
+
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline.inputStyle{
+  border-width:0
+}

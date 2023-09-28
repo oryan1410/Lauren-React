@@ -1,5 +1,4 @@
-{
-    "wines": [
+ [
     {
         "Id": 0,
         "Name_Heb": "שבלי לה פינג'",
@@ -515,7 +514,7 @@
         "Region_Heb": "מנדוזה",
         "SubRegion_Heb": null,
         "Grape_Heb": "מלבק",
-        "ImageUrl": null,
+        "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Wines%2FMALBEC-1.png?alt=media&token=166a9c1b-7b20-4722-a463-eb047b5d1a02",
         "WineryName_Heb": "טראסז דה לוס אנדס",
         "WineryNeame_Eng": "Terrazas de los andes",
         "Description": "\"צבעו סגול יפהפה ובאף ריחות פרחוניים של סיגליות, פירות יער שחורים ורמזים לשוקולד וטבק ובפה הוא רענן עם טנינים רכים."
@@ -677,4 +676,3 @@
         "Description": null
     }
 ]
-}

@@ -14,7 +14,7 @@ import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import {Link} from 'react-router-dom'
-
+import { Grid } from '@mui/material';
 
 
 const ExpandMore = styled((props) => {
@@ -39,17 +39,14 @@ const wine= props.wine;
   };
 
   return (
-    <Card sx={{ maxWidth: '90%', margin: '0 auto',marginBottom:'10px ', padding: '5px 0px', fontFamily: 'Urbanist' }}>
+    <Grid item xs={12} sm={6} lg={5}>
+    <Card sx={{ margin: '0 auto',marginBottom:'10px ', padding: '5px 0px', fontFamily: 'Urbanist', height:350 }}>
       <CardHeader
         // avatar={
         //   <Avatar aria-label="recipe">
         //     <img src={props.image} style={{ width: 50, height: 50 }} />
         //   </Avatar>
         // }
-        action={
-          <IconButton aria-label="settings">
-          </IconButton>
-        }
         title={props.title}
         subheader={props.wine.WineryNeame_Eng}
         titleTypographyProps={{ fontFamily: 'Urbanist', fontWeight: 'bold' }}
@@ -57,25 +54,27 @@ const wine= props.wine;
       <CardMedia
         component="img"
         image={props.image}
-        alt="Paella dish"
+        alt={`${props.title} image missing`}
         height="150"
         width="150"
         sx={{ objectFit: 'contain' }}
       />
-      <CardContent>
+      {/* <CardContent>
         <Typography variant="body2" color="text.secondary" fontFamily={"Urbanist"}>
         {props.Description}
         </Typography>
-      </CardContent>
+      </CardContent> */}
+      
       <CardActions>
-        <Button size="small">Share</Button>
+        {/* <Button size="small">Share</Button> */}
        {/* link to dish/wine page*/}
-       <Link to='/dishPage' state={{wine}} style={{marginLeft:'auto',marginRight:'auto'}} >
-        <Button size="small" style={{marginLeft:'auto',marginRight:'auto'}}>Go to Dish</Button>
+       {/* <Link to={`/dishPage/${wine}/${data.age}`}>Go to My Page</Link> */}
+       <Link to={`/dishPage/${wine.Id}`} style={{marginLeft:'auto',marginRight:'auto'}} >
+        <Button size="small" className='goToButton' >Go to Dish</Button>
         </Link>
-        <IconButton aria-label="add to favorites">
+        {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
-        </IconButton>
+        </IconButton> */}
         {/* <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
@@ -83,11 +82,8 @@ const wine= props.wine;
           aria-label="show more"
         >
           <ExpandMoreIcon />
-        </ExpandMore> */}
-
-       
+        </ExpandMore> */}       
       </CardActions>
-
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography paragraph>Method:</Typography>
@@ -118,5 +114,6 @@ const wine= props.wine;
         </CardContent>
       </Collapse>
     </Card>
+    </Grid>
   );
 }

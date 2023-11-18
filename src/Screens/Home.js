@@ -18,7 +18,7 @@ export default function Home(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-            <Container style={{width:'100%'}}>
+        <Container>
                 <SearchAppBar />
                 <Grid container spacing={2} >
                     <Grid item xs={6} sm={4} lg={3}>

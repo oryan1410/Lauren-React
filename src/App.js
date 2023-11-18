@@ -35,9 +35,8 @@ function App() {
 
   return (
     <div className="App">
-      <div className="App-header">
+      <div className="App-Body">
         <Navbar bg="light" expand="xxl" fixed='' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect style={{ zIndex: 2 }}>
-          <Container>
             <Navbar.Brand href="\home">
               <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99.pdf%20-%20Page%202%20of%204.png?alt=media&token=10d8afd8-14c2-45b6-9a88-507070520c8b'} height={80} width={80} alt="Go Home" />
             </Navbar.Brand>
@@ -73,16 +72,15 @@ function App() {
               <Nav.Link href="\contact">Contact</Nav.Link> */}
               </Nav>
             </Navbar.Collapse>
-          </Container>
         </Navbar>
-        <div style={{ height: '96px' }}></div>
+        <div style={{ height: '104px' }}></div>
           <Routes>
             <Route path="/" element={!isVisible ? <FadeIn setIsVisible={() => { setIsVisible(true) }} /> : <Home isVisible={isVisible} />} />
             <Route path="/home" element={<Home isVisible={true} />} />
             {/* <Route path="/about" element={<About />} />*/}
             <Route path="/wines" element={<Wines />} />
             <Route path="/dishes" element={<Dishes />} />
-            <Route path="/dishPage" element={<DishPage />} />
+            <Route path="/dishPage/:id" element={<DishPage />} />
             {/* <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<Events />} />*/}
           </Routes>

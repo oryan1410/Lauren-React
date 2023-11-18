@@ -26,14 +26,22 @@ export default function SearchAppBar() {
       console.log("searchQuery is not empty");
       //filter wines arr if name includes searchQuery
       let arr1 = wines.filter((wine) => wine.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
-      console.log(arr1);
-      setArr(arr1);
+      let arr2= wines.filter((wine) => wine.Name_Heb.includes(searchQuery));
+      console.log(arr2);
+      let arr3= arr1.concat(arr2);
+      let arr4=arr3.filter((wine, index, self) =>
+        index === self.findIndex((t) => (
+          t.Id === wine.Id
+        ))
+      )
+      console.log(arr4);
+      setArr(arr4);
       // setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
     }
   }, [searchQuery]);
 
   return (
-    <>
+    <div className='searchInput'>
       <TextField
         id="search-bar"
         className="textInput"
@@ -58,11 +66,8 @@ export default function SearchAppBar() {
               borderRadius: '16px!important',
             },
           },
-        }}
-                
-        sx={{ width: '100%', borderRadius: '16px', marginBlock: '1rem', '&:focus-within fieldset, &:focus-visible fieldset': { border: '2px solid white!important', borderRadius: '16px!important'} }}
+        }}                
       />
-
-    </>
+    </div>
   );
 }

@@ -15,6 +15,65 @@ p {
 }
 
 
+/*card styling*/
+
+.css-1knaqv7-MuiButtonBase-root-MuiButton-root.goToButton {
+  margin: auto;
+  position: relative;
+  top:25px
+}
+
+/*card2*/
+
+.cardTwo {
+  border: 1px solid #020202;
+  display: flex;
+  border-radius: 15px;
+  flex-direction: row !important;
+  justify-content: space-between;
+  margin-top: 10px;
+  height: 220px;
+}
+
+.card2-imageDiv{
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.card2image{
+height: 100px;
+width: 100px;
+border-radius: 15px;
+}
+
+.card2paragraph{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+}
+
+.card2-text{
+  flex: 1;
+  padding: 1rem;
+}
+
+.card2Content{
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  height: 100%;
+justify-content: center;
+}
+
+.css-1knaqv7-MuiButtonBase-root-MuiButton-root.linkWithoutSpace{
+  color: #781a1a;
+}
+
+
+
 
 /* navbar styling */
 
@@ -27,12 +86,13 @@ p {
   position: fixed;
   top: 0;
   width: 100%;
+  justify-content: space-between;
   z-index: 1;
   background-color: #ffffff;
   border-bottom: 1px solid #e6e6e6;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  padding: 0;
+  padding: 0.5rem 2rem;
 }
 
 .navbar-brand {
@@ -103,13 +163,101 @@ margin: 0;
 
 .home {
   background-color: #282c34;
-  flex-direction: column;
   align-items: center;
   justify-content: center;  
   align-content: center;
   align-content: center;
   transition: opacity 3s ease-in-out;
-  opacity: 0;
+  .navbar-brand {
+    margin: 0;
+  }
+
+  .bg-light {
+    background-color: #ffffff !important;
+  }
+
+  .navbar-nav .nav-link {
+    transition: opacity 2 ease-in-out;
+  }
+
+  .navbar-light .navbar-nav .nav-link{
+    color: #0d0d0d;
+  }
+
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #c05858; /* Change to your desired link color */
+  }
+
+  .navbar-light .navbar-nav .nav-link.active-link{
+    color: #c05858 ; /* Change to your desired link color */
+  }
+
+  .nav-link {
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1.5em;
+    color: #61dafb;
+    transition: opacity 2 ease-in-out;
+  }
+
+  .searchBar {
+    margin-bottom: 50px;
+    width: 100%;
+  }
+
+  .App-logo {
+    /*app logo should be center screen*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85%;
+    pointer-events: none;
+  }
+
+  .fade-in-element {
+    opacity: 0;
+    transition: opacity 3s ease-in-out;
+  }
+
+  .fade-in-element.visible {
+    opacity: 1;
+  }
+
+  .fade-in-element.notVisable {
+    opacity: 0;
+  }
+
+  .home {
+    background-color: #282c34;
+    align-items: center;
+    justify-content: center;  
+    align-content: center;
+    align-content: center;
+    transition: opacity 3s ease-in-out;
+    flex-direction: unset; /* Turn off flex direction */
+  }
+
+  .flex-grow {
+    flex-grow: 1;
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .home.visible {
+    opacity: 1;
+  }
+
+  .home.notVisable {
+    opacity: 0;
+  }
+
+  img {
+    border-radius: 16;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    /* Media query styles */
+  }
   flex-grow: 1;
   width: 100%;
   padding-top: 10px;
@@ -136,13 +284,12 @@ img {
 
 }
 
-.App-header {
+.App-Body {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -165,6 +312,22 @@ img {
 
 .textInput {
   background-color: #3c27c5;
+  width: 100%;
+}
+
+.searchInput {
+  margin-block: 1rem;
+  font-family: 'Urbanist';
+}
+
+.inputProps {
+  color: white;
+  font-family: 'Urbanist', sans-serif;
+  border-radius: 16px;
+}
+
+.css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+  border-radius: 16px;
 }
 
 /*Label styling*/
@@ -173,7 +336,13 @@ img {
   font-family: 'Urbanist';
 }
 
+/*label style when there is text and not focused*/
+.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
+  color: #ffffff;
+  font-family: 'Urbanist';
+}
 
+/*label style when there is text and focused*/
 .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused.inputLabel {
   color: #ffffff;
   font-family: 'Urbanist';
@@ -181,4 +350,14 @@ img {
 
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline.inputStyle{
   border-width:0
+}
+
+.css-mhc70k-MuiGrid-root.dishgridView {
+    margin-top: auto;
+    justify-content: center;
+}
+
+.muicard-root{
+  display: flex;
+  flex-direction: column;
 }

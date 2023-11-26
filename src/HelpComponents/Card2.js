@@ -79,6 +79,21 @@ export default function RecipeReviewCard2(props) {
         }
     }
 
+    const getTypesHeb = (type) => {
+        if (type === 'R') {
+            return 'אדום';
+        }
+        if (type === 'W') {
+            return 'לבן';
+        }
+        if (type === 'B') {
+            return 'מבעבע';
+        }
+        if (type === 'Rose') {
+            return 'רוזה';
+        }
+    }
+
     const getDryness = (dryness) => {
         if (dryness === 'Y') {
             return 'Dry';
@@ -88,31 +103,54 @@ export default function RecipeReviewCard2(props) {
         }
     }
 
+    const getDrynessHeb = (dryness) => {
+        if (dryness === 'Y') {
+            return 'יבש';
+        }
+        if (dryness === 'N') {
+            return 'חצי-מתוק';
+        }
+    }
+
 
     return (
         <div className="cardTwo">
             <div className={`card2Content`}>
                 <div>
-                    <h1 className='card2-title'>{props.title}</h1>
+                    <h1 className='card2-title'>{props.title}<br />{props.wine.Name_Heb}</h1>
                 </div>
                 <div>
-                    <h2 className='card2-Subtitle'> {props.wine.WineryNeame_Eng}</h2>
+                    <span className='card2-Subtitle'> {props.wine.WineryNeame_Eng} || {props.wine.WineryName_Heb} </span>
+
                 </div>
                 <div className='priceDiv'>
-                 <span className='BottlePrice'>
-                 <LiquorIcon className='cardLogos' style={{margin:'0px 5px'}} />
-                  {props.wine.BottlePrice3}
-                </span>
-                {props.wine.Cup_Y_N_==='Y' && <span className='BottlePrice'>
-                    <WineBarIcon className='cardLogos' />
-                    {props.wine.CupPrice}</span>}
+                    <span className='BottlePrice'>
+                        <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                        {props.wine.BottlePrice3}
+                    </span>
+                    {props.wine.Cup_Y_N_ === 'Y' && <span className='BottlePrice'>
+                        <WineBarIcon className='cardLogos' />
+                        {props.wine.CupPrice}</span>}
                 </div>
             </div>
-            <div className='card2-right' > 
-            <span>Country: {props.wine.CountryName}</span>
-                <span>Type: {getTypes(props.wine.Type_R_W_B_)}</span>
-                <span>Dry/Sweet: {getDryness(props.wine.Dry_y_n_)}</span>              
-            <div className='card2-button'>                
+            <div className='card2-right' >
+                {/*a different way to view the details- with the seperation lines in an specific place */}
+                <div className='card2-details'>
+                    <span className='card2-span'>{props.wine.CountryName}</span>
+                    <span> || </span>
+                    <span className='card2-span'>{props.wine.Country_Heb}</span></div>
+                <div className='card2-details'>
+                    <span className='card2-span'>{getTypes(props.wine.Type_R_W_B_)}</span>
+                    <span>||</span>
+                    <span className='card2-span'>{getTypesHeb(props.wine.Type_R_W_B_)}</span></div>
+                <div className='card2-details'>
+                    <span className='card2-span'>{getDryness(props.wine.Dry_y_n_)}</span>
+                    <span>||</span>
+                    <span className='card2-span'>{getDrynessHeb(props.wine.Dry_y_n_)}</span></div>
+                {/* <span className='card2-details'>{props.wine.CountryName} || {props.wine.Country_Heb}</span>
+                <span className='card2-details'>{getTypes(props.wine.Type_R_W_B_)} || {getTypesHeb(props.wine.Type_R_W_B_)}</span>
+                <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} || {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
+                <div className='card2-button'>
                     <Link to={`/dishPage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
                         <Button size="small" className='linkWithoutSpace' >Go to Wine</Button>
                     </Link>
@@ -120,8 +158,8 @@ export default function RecipeReviewCard2(props) {
             </div>
             <div className={`card2-imageDiv ${isImageClicked ? 'slide' : ''}`} onClick={handleImageClick}>
                 <div>
-                <InfoTwoToneIcon style={{zIndex:1, position:'absolute', top:5, right:5, color:'#000'}}/>
-                <img src={props.image} alt={`${props.title} image missing`} className="card2image" />
+                    <InfoTwoToneIcon style={{ zIndex: 1, position: 'absolute', top: 5, right: 5, color: '#000' }} />
+                    <img src={props.image} alt={`${props.title} image missing`} className="card2image" />
                 </div>
             </div>
         </div>

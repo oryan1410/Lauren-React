@@ -29,7 +29,7 @@ const Wines = () => {
     const [whiteExpanded, setWhiteExpanded] = useState(false);
     const [roseExpanded, setRoseExpanded] = useState(false);
     const [bubbleExpanded, setBubbleExpanded] = useState(false);
-    const {redWines, whiteWines, roseWines, bubbleWines,countries,getFilters } = useUserContext();
+    const { redWines, whiteWines, roseWines, bubbleWines, countries, getFilters } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -57,8 +57,8 @@ const Wines = () => {
         console.log('Value changed to:', value);
         if (label === 'Dryness') {
             setSelectedDryness(value);
-            if (value === 'Dry'){
-            setSelectedDryness('Y');
+            if (value === 'Dry') {
+                setSelectedDryness('Y');
             }
             else {
                 setSelectedDryness('N');
@@ -77,17 +77,17 @@ const Wines = () => {
         setExpanded(false);
         setWhiteExpanded(false);
         setRoseExpanded(false);
-        setBubbleExpanded(false); 
+        setBubbleExpanded(false);
         setFilterReset(true);
-        
+
         // set all expanded to false
-       
+
         // getFilters();
     }, [selectedDryness, selectedCountry]);
 
     //useEffect to filter wines according to selected filters
     useEffect(() => {
-        if(filterReset){
+        if (filterReset) {
             setFilterReset(false);
             setTimeout(() => {
                 filterWines();
@@ -98,7 +98,7 @@ const Wines = () => {
 
     // filter wines according to selected filters
     const filterWines = async () => {
-        let arr=wines;
+        let arr = wines;
         if (selectedCountry !== '') {
             arr = arr.filter((wine) => wine.CountryName === selectedCountry);
             console.log('arr', arr);
@@ -140,12 +140,12 @@ const Wines = () => {
         if (!wines.length) {
             // Data has not loaded yet, exit the useEffect
             return;
-        }    
+        }
         setIsVisable(true);
         let arr = wines.map((wine) => {
             return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
         });
-    
+
         let redArr = redWines.map((wine) => {
             return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
         });
@@ -169,13 +169,13 @@ const Wines = () => {
         setBubbleWinesArr(bubbleArr);
         setAllWines(arr);
         setDisplayWines2(arr);
-        
-            sortFilters();
-        
+
+        sortFilters();
+
         setIsLoading(false); // Data has loaded, set loading state to false
     }, [wines, redWines, whiteWines, roseWines, bubbleWines]);
 
-//create filters for dryness and country
+    //create filters for dryness and country
     const sortFilters = async () => {
         console.log('getFilters');
         setSelectedDryness('');
@@ -196,7 +196,7 @@ const Wines = () => {
         }
         else {
             console.log('countries', countries);
-        sortFilters();
+            sortFilters();
         }
     }, [countries]);
 
@@ -205,14 +205,14 @@ const Wines = () => {
         const { expand, header, ...other } = props;
         return <div {...other}>{header}</div>;
     })(({ theme, expand }) => ({
-        
+
         marginLeft: '0 auto',
         transition: theme.transitions.create('transform', {
             duration: theme.transitions.duration.shortest,
         }),
     }));
 
-      const handleExpandClick = (type) => {
+    const handleExpandClick = (type) => {
         if (type === 'Red') {
             setExpanded(!expanded);
         }
@@ -225,7 +225,7 @@ const Wines = () => {
         else if (type === 'Bubble') {
             setBubbleExpanded(!bubbleExpanded);
         }
-      };
+    };
 
 
     useEffect(() => {
@@ -307,67 +307,68 @@ const Wines = () => {
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 <SearchAppBar searchFunc={setSearch} />
-                <Grid container className='dishgridView'>
-                    {dropArrays}
-                </Grid>
-                <div className='resetButtonDiv'>
-                    <Button className='resetButton' onClick={() => getFilters()} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: 'green' } }}>Reset</Button>
-                </div>
                 {/* <DropDown /> */}
-                {searchQuery===''? <div><ExpandMore
-                    expand={expanded}
-                    header='Red Wines'
-                    onClick={()=> handleExpandClick('Red')}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    className='wineCategory'                    
-                >
-                    <ExpandMoreIcon />
-                </ExpandMore>
-                <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        {redWinesArr}
-                </Collapse>
-                <ExpandMore
-                    expand={whiteExpanded}
-                    header='White Wines'
-                    onClick={()=> handleExpandClick('White')}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    className='wineCategory'
-                >
-                    <ExpandMoreIcon />
-                </ExpandMore>
-                <Collapse in={whiteExpanded} timeout="auto" unmountOnExit>
-                        {whiteWinesArr}
-                </Collapse>
-                <ExpandMore
-                    expand={roseExpanded}
-                    header='Rose Wines'
-                    onClick={()=> handleExpandClick('Rose')}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    className='wineCategory'
-                >
-                    <ExpandMoreIcon />
-                </ExpandMore>
-                <Collapse in={roseExpanded} timeout="auto" unmountOnExit>
-                        {roseWinesArr}
-                </Collapse>
-                <ExpandMore
-                    expand={bubbleExpanded}
-                    header='Bubble Wines'
-                    onClick={()=> handleExpandClick('Bubble')}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    className='wineCategory'
-                >
-                    <ExpandMoreIcon />
-                </ExpandMore>
-                <Collapse in={bubbleExpanded} timeout="auto" unmountOnExit>
-                        {bubbleWinesArr}
-                </Collapse> </div>: displayWines2
-                }
+                {searchQuery ==='' && <Grid container className='dishgridView'>
+                    {dropArrays}
+                </Grid>}
+                {searchQuery ==='' && <div className='resetButtonDiv'>
+                    <Button className='resetButton' onClick={() => sortFilters()} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
+                </div>}
                 
+                {searchQuery === '' ? <div><ExpandMore
+                    expand={expanded}
+                    header='Red Wines || יינות אדומים'
+                    onClick={() => handleExpandClick('Red')}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                    className='wineCategory'
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+                    <Collapse in={expanded} timeout="auto" unmountOnExit>
+                        {redWinesArr}
+                    </Collapse>
+                    <ExpandMore
+                        expand={whiteExpanded}
+                        header='White Wines || יינות לבנים'
+                        onClick={() => handleExpandClick('White')}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse in={whiteExpanded} timeout="auto" unmountOnExit>
+                        {whiteWinesArr}
+                    </Collapse>
+                    <ExpandMore
+                        expand={roseExpanded}
+                        header='Rose Wines || יינות רוזה'
+                        onClick={() => handleExpandClick('Rose')}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse in={roseExpanded} timeout="auto" unmountOnExit>
+                        {roseWinesArr}
+                    </Collapse>
+                    <ExpandMore
+                        expand={bubbleExpanded}
+                        header='Bubble Wines || יינות מבעבעים'
+                        onClick={() => handleExpandClick('Bubble')}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse in={bubbleExpanded} timeout="auto" unmountOnExit>
+                        {bubbleWinesArr}
+                    </Collapse> </div> : displayWines2
+                }
+
                 {/* {displayWines2} */}
                 {noneFound && <h1>None Found</h1>}
             </div>

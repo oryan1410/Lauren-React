@@ -1,7 +1,28 @@
 .App {
   text-align: center;
-
+  font-family: 'Urbanist', 'Varela Round';
 }
+
+/*scrollbar styling*/
+
+::-webkit-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+/* ::-webkit-scrollbar-track {
+  background: #282c34; /* Background of the scrollbar track 
+position: relative;
+} */
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Background of the scrollbar thumb */
+  border-radius: 16px; /* Roundness of the scrollbar */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3c27c5; /* Background of the scrollbar thumb when hovered */
+}
+
 
 p {
   font-size: 1.5em;
@@ -36,7 +57,6 @@ p {
   position: relative;
   width: 100%;
   color: aqua;
-  font-family: 'Urbanist', sans-serif;
 }
 
 .card2-imageDiv{
@@ -66,15 +86,7 @@ border: #020202;
 border: transparent;
 }
 
-.card2paragraph{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0;
-  font-size: 2rem;
-  padding: 5px;
-  direction: rtl;
-}
+
 
 .card2-text{
   flex: 1;
@@ -104,9 +116,8 @@ border: transparent;
 }
 
 .card2-title{
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 0;
-  padding: 5px;
 }
 .card2-button {
   display: flex;
@@ -135,6 +146,31 @@ border: transparent;
   font-size:xx-large;
 }
 
+.card2-Subtitle{
+  font-size: 1.4rem;
+  line-height: 1;
+
+}
+
+.card2-details{
+  font-size: 1.4rem;
+  width: 100%;
+
+  /*delete this later for alternate view with flexes*/
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card2-span{
+  flex:4;
+  padding-inline: 5px;
+  width: 40%;
+}
+
+
+
 
 @media screen and (max-width: 1200px) {
 
@@ -148,13 +184,9 @@ border: transparent;
     font-size: 1.8rem;
   }
 
-  .card2-Subtitle{
-    font-size: 1.5rem;
-  }
 
-  .card2paragraph{
-    font-size: 0.8rem;
-  }
+
+
   
 }
 
@@ -175,20 +207,24 @@ border-radius: 15px;
   }
 
   .card2-title{
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .card2-Subtitle{
-    font-size: 1rem;
-  }
-
-  .card2paragraph{
     font-size: 0.8rem;
   }
+
+  .card2-details{
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-block: 0.2rem;
+   }
+
+
   
 }
 
-@media screen and (max-width: 380px) {
+@media screen and (max-width: 395px) {
   .cardTwo {
     height: 180px;
   }
@@ -198,7 +234,7 @@ border-radius: 15px;
   }
 
   .card2-title{
-    font-size: 1rem;
+    font-size: 1.1rem;
    
   }
 
@@ -206,14 +242,17 @@ border-radius: 15px;
     font-size: 0.8rem;
   }
 
-  .card2paragraph{
-    font-size: 0.6rem;
-  }
 
   .card2image{
     width: 100%;
     border-radius: 15px;
   }
+
+  .card2-details{
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-block: 0.2rem;
+   }
 
   
 }
@@ -244,9 +283,6 @@ border-radius: 15px;
     font-size: 0.8rem;
   }
 
-  .card2paragraph{
-    font-size: 0.4rem;
-  }
 
   .card2image{
     width: 100%;
@@ -265,7 +301,6 @@ border-radius: 15px;
 
 
 .navbar {
-  position: fixed;
   top: 0;
   width: 100%;
   justify-content: space-between;
@@ -274,7 +309,7 @@ border-radius: 15px;
   border-bottom: 1px solid #e6e6e6;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  padding: 0rem 1rem;
+  padding: 0px 15px;
 }
 
 @media (max-width: 320px) {
@@ -497,7 +532,7 @@ img {
 }
 
 
-/* <-------------------  CSS for the SearchBar page -------------------> */
+/* <-------------------  CSS for the SearchBar -------------------> */
 
 .textInput {
   background-color: #3c27c5;
@@ -581,7 +616,7 @@ img {
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.menuItem{
   font-family: 'Urbanist';
   font-size: 1em;
-  color: #61dafb;
+  color: #b8b6bd;
 }
 
 .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected.menuItem {

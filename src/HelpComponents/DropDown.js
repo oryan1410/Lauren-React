@@ -77,7 +77,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
   }
 
   return (
-    <Grid item xs={5.5}>
+    <Grid item xs={5.9}>
       <FormControl fullWidth>
         <InputLabel id="demo-simple-select-label" className='inputLabel'>{label}</InputLabel>
         <Select

@@ -85,14 +85,14 @@ function App() {
 <UserProvider>
     <div className="App">
       <div className="App-Body">
-        <Navbar bg="light" expand="xxl" fixed='' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect style={{ zIndex: 2 }}>
+        <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect style={{ zIndex: 2 }}>
             <Navbar.Brand href="\home">
-              <img  src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={60} width={60} alt="Go Home" />
+              <img  src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={80} width={80} alt="Go Home" />
             </Navbar.Brand>
             <Navbar.Text>
-              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-06.png?alt=media&token=d154edfd-1f34-48fa-81c0-4c0f0a749f5f'} height={60} width={60} alt="logo" />
+              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-06.png?alt=media&token=d154edfd-1f34-48fa-81c0-4c0f0a749f5f'} height={80} width={80} alt="logo" />
             </Navbar.Text>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ width: 60,height:60 , borderWidth: 0, paddingRight: 0, marginRight: 0, position: 'relative'}} />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ width: 80,height:80 , borderWidth: 0, paddingRight: 0, marginRight: 0}} />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto" >
                 <Nav.Item>
@@ -122,7 +122,7 @@ function App() {
               </Nav>
             </Navbar.Collapse>
         </Navbar>
-        <div style={{ height: '80px' }}></div>
+        <div style={{ height: '90px' }}></div>
           <Routes>
             <Route path="/" element={!isVisible ? <FadeIn setIsVisible={() => { setIsVisible(true) }} /> : <Home isVisible={isVisible} />} />
             <Route path="/home" element={<Home isVisible={true} />} />

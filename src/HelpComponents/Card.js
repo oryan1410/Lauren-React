@@ -40,7 +40,7 @@ const wine= props.wine;
 
   return (
     <Grid item xs={12} sm={6} lg={5}>
-    <Card sx={{ margin: '0 auto',marginBottom:'10px ', padding: '5px 0px', fontFamily: 'Urbanist', height:350 }}>
+    <Card sx={{ margin: '0 auto',marginBottom:'10px ', padding: '5px 0px', fontFamily: 'Urbanist', minHeight:350 }}>
       <CardHeader
         // avatar={
         //   <Avatar aria-label="recipe">
@@ -75,14 +75,14 @@ const wine= props.wine;
         {/* <IconButton aria-label="add to favorites">
           <FavoriteIcon />
         </IconButton> */}
-        {/* <ExpandMore
+        <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
         >
           <ExpandMoreIcon />
-        </ExpandMore> */}       
+        </ExpandMore>       
       </CardActions>
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>

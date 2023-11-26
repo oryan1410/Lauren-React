@@ -12,10 +12,12 @@ import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 import Button from '@mui/material/Button';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import FavoriteIcon from '@mui/icons-material/Favorite';
+import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone';
 import { Link } from 'react-router-dom'
 import { Grid } from '@mui/material';
-
+import { useState } from 'react';
+import WineBarIcon from '@mui/icons-material/WineBar';
+import LiquorIcon from '@mui/icons-material/Liquor';
 
 // const ExpandMore = styled((props) => {
 //   const { expand, ...other } = props;
@@ -56,33 +58,71 @@ import { Grid } from '@mui/material';
 
 
 export default function RecipeReviewCard2(props) {
+    const [isImageClicked, setImageClicked] = useState(false);
 
-    console.log("length", props.Description ? props.Description.length : 0);
+    const handleImageClick = () => {
+        setImageClicked(!isImageClicked);
+    };
+
+    const getTypes = (type) => {
+        if (type === 'R') {
+            return 'Red';
+        }
+        if (type === 'W') {
+            return 'White';
+        }
+        if (type === 'B') {
+            return 'Bubble';
+        }
+        if (type === 'Rose') {
+            return 'Rose';
+        }
+    }
+
+    const getDryness = (dryness) => {
+        if (dryness === 'Y') {
+            return 'Dry';
+        }
+        if (dryness === 'N') {
+            return 'Sweet';
+        }
+    }
+
+
     return (
         <div className="cardTwo">
-            <div className="card2Content">
-                <div className='card2-title'>
-                    <h1>{props.title}</h1>
+            <div className={`card2Content`}>
+                <div>
+                    <h1 className='card2-title'>{props.title}</h1>
                 </div>
-                <div className='card2-title'>
-                    <h2> {props.wine.WineryNeame_Eng}</h2>
+                <div>
+                    <h2 className='card2-Subtitle'> {props.wine.WineryNeame_Eng}</h2>
                 </div>
-                <div className='card2-description' style={{ fontSize: 16 }}>
-                    {
-                        props.Description && props.Description.length > 100 ?
-                            <p className='card2paragraph'>{props.Description.substring(0, 80)}...</p>
-                            :
-                            <p className='card2paragraph'>{props.Description}</p>
-                    }
+                <div className='priceDiv'>
+                 <span className='BottlePrice'>
+                 <LiquorIcon className='cardLogos' style={{margin:'0px 5px'}} />
+                  {props.wine.BottlePrice3}
+                </span>
+                {props.wine.Cup_Y_N_==='Y' && <span className='BottlePrice'>
+                    <WineBarIcon className='cardLogos' />
+                    {props.wine.CupPrice}</span>}
                 </div>
-                <div className='card2-button'>
-                    <Link to={`/dishPage/${props.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
-                        <Button size="small" className='linkWithoutSpace' >Go to Dish</Button>
+            </div>
+            <div className='card2-right' > 
+            <span>Country: {props.wine.CountryName}</span>
+                <span>Type: {getTypes(props.wine.Type_R_W_B_)}</span>
+                <span>Dry/Sweet: {getDryness(props.wine.Dry_y_n_)}</span>              
+            <div className='card2-button'>                
+                    <Link to={`/dishPage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
+                        <Button size="small" className='linkWithoutSpace' >Go to Wine</Button>
                     </Link>
                 </div>
             </div>
-            <div className="card2-imageDiv">
+            <div className={`card2-imageDiv ${isImageClicked ? 'slide' : ''}`} onClick={handleImageClick}>
+                <div>
+                <InfoTwoToneIcon style={{zIndex:1, position:'absolute', top:5, right:5, color:'#000'}}/>
                 <img src={props.image} alt={`${props.title} image missing`} className="card2image" />
+                </div>
             </div>
         </div>
     );

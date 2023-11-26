@@ -32,20 +32,38 @@ p {
   flex-direction: row !important;
   justify-content: space-between;
   margin-top: 10px;
-  height: 220px;
+  height: 200px;
+  position: relative;
+  width: 100%;
+  color: aqua;
+  font-family: 'Urbanist', sans-serif;
 }
 
 .card2-imageDiv{
   display: flex;
-  flex: 1;
+  flex: 4;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  border: 1px solid #020202;
+  border-radius: 15px;
+  transition: transform 0.5s ease-in-out;
+  padding: 1rem 1rem;
+  background-color: #ffffff;
+  height: 100%;
+  width: 50%;
+  right: 0;
+}
+
+.card2-imageDiv.slide {
+  transform: translateX(-100%);
 }
 
 .card2image{
-height: 100px;
-width: 100px;
-border-radius: 15px;
+height: 195px;
+width: 100%;
+border: #020202;
+border: transparent;
 }
 
 .card2paragraph{
@@ -53,23 +71,190 @@ border-radius: 15px;
   justify-content: center;
   align-items: center;
   margin-bottom: 0;
+  font-size: 2rem;
+  padding: 5px;
+  direction: rtl;
 }
 
 .card2-text{
   flex: 1;
   padding: 1rem;
 }
-
-.card2Content{
+.card2Content {
   display: flex;
   flex: 4;
   flex-direction: column;
-  height: 100%;
-justify-content: center;
+  justify-content: center;
+  padding: 1rem 1rem;
+}
+
+.card2-right{
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
 }
 
 .css-1knaqv7-MuiButtonBase-root-MuiButton-root.linkWithoutSpace{
   color: #781a1a;
+  text-decoration: none;
+  text-transform: none;
+}
+
+.card2-title{
+  font-size: 2rem;
+  margin-bottom: 0;
+  padding: 5px;
+}
+.card2-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.priceDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.priceDiv > * {
+  margin-inline: 5px;
+  display:flex;
+}
+
+.BottlePrice{
+  align-items: center;
+}
+
+.css-i4bv87-MuiSvgIcon-root.cardLogos{
+  font-size:xx-large;
+}
+
+
+@media screen and (max-width: 1200px) {
+
+
+
+  .card2-text{
+    padding: 0;
+  }
+
+  .card2-title{
+    font-size: 1.8rem;
+  }
+
+  .card2-Subtitle{
+    font-size: 1.5rem;
+  }
+
+  .card2paragraph{
+    font-size: 0.8rem;
+  }
+  
+}
+
+@media screen and (max-width: 775px) {
+  .cardTwo {
+    height: 180px;
+  }
+
+  .card2image{
+height: 175px;
+border-radius: 15px;
+}
+
+
+
+  .card2-text{
+    padding: 0;
+  }
+
+  .card2-title{
+    font-size: 1.5rem;
+  }
+
+  .card2-Subtitle{
+    font-size: 1rem;
+  }
+
+  .card2paragraph{
+    font-size: 0.8rem;
+  }
+  
+}
+
+@media screen and (max-width: 380px) {
+  .cardTwo {
+    height: 180px;
+  }
+
+  .card2-text{
+    padding: 0;
+  }
+
+  .card2-title{
+    font-size: 1rem;
+   
+  }
+
+  .card2-Subtitle{
+    font-size: 0.8rem;
+  }
+
+  .card2paragraph{
+    font-size: 0.6rem;
+  }
+
+  .card2image{
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  
+}
+
+@media screen and (max-width: 335px) {
+  .cardTwo {
+    height: 180px;
+  }
+
+  .card2Content, .card2-right{
+    width: 50%;
+  }
+
+  .css-i4bv87-MuiSvgIcon-root.cardLogos{
+    font-size:x-large;
+  }
+
+  .card2-text{
+    padding: 0;
+  }
+
+  .card2-title{
+    font-size: 1rem;
+   
+  }
+
+  .card2-Subtitle{
+    font-size: 0.8rem;
+  }
+
+  .card2paragraph{
+    font-size: 0.4rem;
+  }
+
+  .card2image{
+    width: 100%;
+    border-radius: 15px;
+    padding: 2px;
+  }
+
+  
 }
 
 
@@ -77,9 +262,6 @@ justify-content: center;
 
 /* navbar styling */
 
-.navbar.container {
-  width: 100%;
-}
 
 
 .navbar {
@@ -92,7 +274,13 @@ justify-content: center;
   border-bottom: 1px solid #e6e6e6;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
-  padding: 0.5rem 2rem;
+  padding: 0rem 1rem;
+}
+
+@media (max-width: 320px) {
+  .navbar {
+      width: 100% !important;
+  }
 }
 
 .navbar-brand {
@@ -168,6 +356,7 @@ margin: 0;
   align-content: center;
   align-content: center;
   transition: opacity 3s ease-in-out;
+  
   .navbar-brand {
     margin: 0;
   }
@@ -331,33 +520,125 @@ img {
 }
 
 /*Label styling*/
+
+.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+  color: #ffffff;
+  font-family: 'Urbanist';
+}
+
+/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
+  color: #ffffff;
+  font-family: 'Urbanist';
+} */
+
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.inputLabel {
   color: #ffffff;
   font-family: 'Urbanist';
 }
 
 /*label style when there is text and not focused*/
-.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
+/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
   color: #ffffff;
   font-family: 'Urbanist';
-}
+} */
 
 /*label style when there is text and focused*/
-.css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused.inputLabel {
+/* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused.inputLabel {
   color: #ffffff;
   font-family: 'Urbanist';
-}
+} */
 
 .css-1d3z3hw-MuiOutlinedInput-notchedOutline.inputStyle{
   border-width:0
 }
 
-.css-mhc70k-MuiGrid-root.dishgridView {
-    margin-top: auto;
-    justify-content: center;
+.css-11lq3yg-MuiGrid-root.dishgridView{
+  margin: auto; 
+  justify-content: space-between;
 }
+
+
 
 .muicard-root{
   display: flex;
   flex-direction: column;
+}
+
+
+/* <-------------------  CSS for the DishCard page -------------------> */
+
+
+/*for drop down menu*/
+
+.menuItem{
+  font-family: 'Urbanist';
+  font-size: 1.5em;
+  color: #61dafb;
+  transition: opacity 2 ease-in-out;
+  background-color: 3522AD;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.menuItem{
+  font-family: 'Urbanist';
+  font-size: 1em;
+  color: #61dafb;
+}
+
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected.menuItem {
+  background-color: #3522AD;
+  z-index: 1;
+  font-family: 'Urbanist';
+  font-size: 1.2em;
+  color: #61dafb;
+}
+
+.css-6hp17o-MuiList-root-MuiMenu-list{
+  background-color: #3c27c5;
+} 
+
+#search-bar-label{
+  color: #ffffff;
+  font-family: 'Urbanist';
+}
+
+#demo-simple-select-label{
+  color: #ffffff;
+  font-family: 'Urbanist';
+}
+
+/*reset button*/
+
+.resetButtonDiv{
+  display: flex;
+  margin-top: 10px;
+  justify-content: flex-start;
+}
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton{
+  color: white;
+  font-family: 'Urbanist';
+  font-size: 1.5em;
+  border-radius: 16px;
+  margin: 1rem;
+  background-color: '#3c27c5';
+  border-radius: '16px!important';
+}
+
+
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton:hover{
+  background-color: #a52b2b;
+}
+
+
+
+/*DishPage*/
+
+.DishPageWineText{
+ direction: rtl;
+}
+
+.DishPageImage{
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
 }

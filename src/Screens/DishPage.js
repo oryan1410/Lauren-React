@@ -4,6 +4,7 @@ import '../App.css';
 import { useLocation } from 'react-router-dom';
 import wines from '../WinesArr.json'
 import { useParams } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
 
 
 const DishPage = ({ match }) => {
@@ -89,7 +90,7 @@ const DishPage = ({ match }) => {
         if (type === 'B') {
             return 'Bubble';
         }
-        if (type === 'RO') {
+        if (type === 'Rose') {
             return 'Rose';
         }
     }
@@ -104,13 +105,14 @@ const DishPage = ({ match }) => {
     }
 
     return (
+        <Container>
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-            {/* <Card key={propsData.Id} wine={propsData} title={propsData.Name_Eng} image={propsData.ImageUrl} Description={propsData.Description} />             */}
+            {/* <Card key={propsData.Id} wine={propsData} title={propsData.Name_Eng} image={propsData.ImageUrl} Description={propsData.Description} />             */} 
             <div className='DishPageWine'>
             <h1>{propsData.Name_Eng}</h1>
             <h2>{propsData.Name_Heb}</h2>
                 <div className='DishPageImage'>
-                    <img src={propsData.ImageUrl} alt={propsData.Name_Eng} style={{maxWidth:'90%'}} />
+                    <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
                 </div>
                 <div className='DishPageWineInfo'>
                     <h1>Wine Info</h1>
@@ -129,6 +131,7 @@ const DishPage = ({ match }) => {
 
 
         </div>
+        </Container>
     );
 };
 

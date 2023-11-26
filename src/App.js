@@ -9,11 +9,21 @@ import Home from './Screens/Home';
 import Wines from './Screens/Wines';
 import Dishes from './Screens/Dishes';
 import DishPage from './Screens/DishPage';
+import { UserProvider } from './UserContext';
+import { useUserContext } from './UserContext';
+
 function App() {
 
+  const userContext = useUserContext();
   // goToHome = () => {
   //   history.push('/home');
   // }
+
+  useEffect(() => {
+    if (userContext && userContext.getFilters) {
+      userContext.getFilters();
+    }
+  }, [userContext]);
 
   const [isVisible, setIsVisible] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -25,6 +35,44 @@ function App() {
 
   const location = useLocation();
 
+  function FadeIn(props) {
+    const [isVisible, setIsVisible] = useState(false);
+    const [animationFinished, setAnimationFinished] = useState(false);
+  
+    useEffect(() => {
+      handleButtonClick();
+    }, []);
+  
+  
+    const handleButtonClick = () => {
+      setIsVisible(true);
+    };
+  
+    useEffect(() => {
+      if (isVisible) {
+        const timeout = setTimeout(() => { setIsVisible(false); setAnimationFinished(true) }, 2000);
+        return () => { clearTimeout(timeout) };
+      }
+      if (!isVisible && animationFinished) {
+        const timeout = setTimeout(() => { props.setIsVisible(true); }, 2000);
+        return () => { clearTimeout(timeout);; setAnimationFinished(true) };
+      }
+    }, [isVisible]);
+  
+  
+  
+    return (
+      <div>
+        <CardMedia className={`fade-in-element ${isVisible ? 'visible' : 'notVisable'}`}>
+          <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2FSlice%201%20(3)%201.png?alt=media&token=d61940e9-da93-4590-87a7-756719d03ccd'} className="App-logo" alt="logo" />
+          <p>
+            Lauren- wine bar in the valley
+          </p>
+        </CardMedia>
+  
+      </div>
+    );
+  }
 
 
   useEffect(() => {
@@ -34,16 +82,17 @@ function App() {
   }, [isVisible]);
 
   return (
+<UserProvider>
     <div className="App">
       <div className="App-Body">
         <Navbar bg="light" expand="xxl" fixed='' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect style={{ zIndex: 2 }}>
             <Navbar.Brand href="\home">
-              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99.pdf%20-%20Page%202%20of%204.png?alt=media&token=10d8afd8-14c2-45b6-9a88-507070520c8b'} height={80} width={80} alt="Go Home" />
+              <img  src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={60} width={60} alt="Go Home" />
             </Navbar.Brand>
             <Navbar.Text>
-              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99.pdf%20-%20Page%204%20of%204.png?alt=media&token=0a42b53d-5aea-459c-96f1-6403b7ab1189'} height={80} width={80} alt="logo" />
+              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-06.png?alt=media&token=d154edfd-1f34-48fa-81c0-4c0f0a749f5f'} height={60} width={60} alt="logo" />
             </Navbar.Text>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ width: 80, borderWidth: 0, paddingRight: 0, marginRight: 0, position: 'relative', left: 15 }} />
+            <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ width: 60,height:60 , borderWidth: 0, paddingRight: 0, marginRight: 0, position: 'relative'}} />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto" >
                 <Nav.Item>
@@ -73,7 +122,7 @@ function App() {
               </Nav>
             </Navbar.Collapse>
         </Navbar>
-        <div style={{ height: '104px' }}></div>
+        <div style={{ height: '80px' }}></div>
           <Routes>
             <Route path="/" element={!isVisible ? <FadeIn setIsVisible={() => { setIsVisible(true) }} /> : <Home isVisible={isVisible} />} />
             <Route path="/home" element={<Home isVisible={true} />} />
@@ -87,46 +136,10 @@ function App() {
           {/* <Navbar /> */}
       </div>
     </div>
+    </UserProvider>
   );
 }
 
-function FadeIn(props) {
-  const [isVisible, setIsVisible] = useState(false);
-  const [animationFinished, setAnimationFinished] = useState(false);
 
-  useEffect(() => {
-    handleButtonClick();
-  }, []);
-
-
-  const handleButtonClick = () => {
-    setIsVisible(true);
-  };
-
-  useEffect(() => {
-    if (isVisible) {
-      const timeout = setTimeout(() => { setIsVisible(false); setAnimationFinished(true) }, 2000);
-      return () => { clearTimeout(timeout) };
-    }
-    if (!isVisible && animationFinished) {
-      const timeout = setTimeout(() => { props.setIsVisible(true); }, 2000);
-      return () => { clearTimeout(timeout);; setAnimationFinished(true) };
-    }
-  }, [isVisible]);
-
-
-
-  return (
-    <div>
-      <CardMedia className={`fade-in-element ${isVisible ? 'visible' : 'notVisable'}`}>
-        <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2FSlice%201%20(3)%201.png?alt=media&token=d61940e9-da93-4590-87a7-756719d03ccd'} className="App-logo" alt="logo" />
-        <p>
-          Lauren- wine bar in the valley
-        </p>
-      </CardMedia>
-
-    </div>
-  );
-}
 
 export default App;

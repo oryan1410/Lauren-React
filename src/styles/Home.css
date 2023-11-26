@@ -1,12 +1,12 @@
 .home {
     background-color: #282c34;
     flex-direction: column;
-    padding: 0 10;
     transition: opacity 2s ease-in-out;
     opacity: 0;
     width: 100%;
     font-family: 'Urbanist';
     color: aqua;
+    padding-bottom: '10px';
   }
   
   .home.visible {

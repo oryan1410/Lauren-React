@@ -8,7 +8,7 @@ import { useState, useEffect } from 'react';
 import wines from './WinesArr.json'
 
 
-export default function SearchAppBar() {
+export default function SearchAppBar(props) {
 
   const [searchQuery, setSearchQuery] = useState("");
   const [searchText, setSearchText] = useState("");
@@ -17,6 +17,7 @@ export default function SearchAppBar() {
   const setSearch = (e) => {
     setSearchText(e);
     setSearchQuery(e);
+    props.searchFunc(e);
   }
 
   useEffect(() => {

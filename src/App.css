@@ -115,6 +115,19 @@ p {
   pointer-events: none;
 }
 
+.App-footer{
+  background-color: #ffffff;
+  width: 100%;
+  justify-content: space-between;
+  z-index: 1;
+  border-top: 1px solid #e6e6e6;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+  padding: 0px 15px;
+  position: relative;
+  bottom: 0;
+}
+
 /* app logo should be center screen 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -262,12 +275,12 @@ img {
 
 .App-Body {
   background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  flex: 1;
 }
 
 .App-link {
@@ -294,11 +307,13 @@ img {
 .textInput {
   background-color: #3c27c5;
   width: 100%;
+  border-radius: 16px;
 }
 
 .searchInput {
   margin-block: 1rem;
   font-family: 'Urbanist';
+  border-radius: 16px!important;
 }
 
 .inputProps {
@@ -344,10 +359,13 @@ img {
   border-width: 0
 }
 
-.css-11lq3yg-MuiGrid-root.dishgridView {
+
+
+.MuiGrid-root.dishgridView {
   margin: auto;
   justify-content: space-between;
 }
+
 
 .muicard-root {
   display: flex;

@@ -21,6 +21,7 @@ import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import Footer from '../HelpComponents/Footer';
 
 
 
@@ -387,9 +388,12 @@ const Wines = () => {
                     </Collapse> </div> : displayWines2
                 }
 
+
                 {/* {displayWines2} */}
                 {noneFound && <h1>None Found</h1>}
+                
             </div>
+            
         </Container>
     );
 };

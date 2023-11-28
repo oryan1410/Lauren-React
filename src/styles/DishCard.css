@@ -60,7 +60,7 @@
     padding: 1rem 1rem;
   }
   
-  .css-1knaqv7-MuiButtonBase-root-MuiButton-root.linkWithoutSpace {
+  .MuiButtonBase-root.linkWithoutSpace {
     color: #ffffff;
     text-decoration: none;
     text-transform: none;
@@ -69,15 +69,7 @@
       background-color: #3c27c5;  
   }
   
-  @media (hover: none){
-  .css-1knaqv7-MuiButtonBase-root-MuiButton-root:hover{
-      background-color: #3c27c5!important;
-      color: #ffffff!important;
-      border: 1px solid #ffffff!important;
-  
-  }
-  }
-  
+
   .DishCard-title {
     font-size: 2.2rem;
     margin-bottom: 0;

@@ -12,6 +12,7 @@ import WinePage from './Screens/WinePage';
 import DishesPage from './Screens/DishesPage';
 import AboutUs from './Screens/AboutUs';
 import Events from './Screens/Events';
+import Footer from './HelpComponents/Footer';
 
 import { UserProvider } from './UserContext';
 import { useUserContext } from './UserContext';
@@ -87,7 +88,7 @@ function App() {
 
   return (
 <UserProvider>
-    <div className="App">
+    <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="App-Body">
         <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect style={{ zIndex: 2 }}>
             <Navbar.Brand href="\home">
@@ -130,6 +131,7 @@ function App() {
             </Navbar.Collapse>
         </Navbar>
         <div style={{ height: '90px' }}></div>
+        
           <Routes>
             <Route path="/" element={!isVisible ? <FadeIn setIsVisible={() => { setIsVisible(true) }} /> : <Home isVisible={isVisible} />} />
             <Route path="/home" element={<Home isVisible={true} />} />
@@ -146,7 +148,11 @@ function App() {
           <Route path="/events" element={<Events />} />*/}
           </Routes>
           {/* <Navbar /> */}
+               
+
       </div>
+      {/* <Footer /> */}
+
     </div>
     </UserProvider>
   );

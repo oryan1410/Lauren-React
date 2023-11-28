@@ -153,7 +153,16 @@ export default function RecipeReviewCard2(props) {
                 <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} || {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
                 <div className='card2-button'>
                     <Link to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
-                        <Button size="small" className='linkWithoutSpace' onClick={(e)=>{e.target.blur()}} >Go to Wine</Button>
+                        <Button sx={{
+                            color: 'white',
+                            backgroundColor: '#3c27c5',
+                            borderRadius: '16px!important',
+                            fontFamily: 'Urbanist', textTransform: 'none',
+                            '&:hover ': { backgroundColor: '#3c27c5', boxShadow: '0 0 0 2px #1976d2' },
+                            '&:focus': {
+                                outline: 'none'
+                            }
+                        }} size="small" className='linkWithoutSpace' onClick={(e) => { e.target.blur() }} >Go to Wine</Button>
                     </Link>
                 </div>
             </div>

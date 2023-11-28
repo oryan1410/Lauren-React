@@ -61,7 +61,7 @@
   padding: 1rem 1rem;
 }
 
-.css-1knaqv7-MuiButtonBase-root-MuiButton-root.linkWithoutSpace {
+.MuiButtonBase-root.linkWithoutSpace {
   color: #ffffff;
   text-decoration: none;
   text-transform: none;
@@ -71,8 +71,8 @@
 }
 
 @media (hover: none){
-.css-1knaqv7-MuiButtonBase-root-MuiButton-root:hover{
-    background-color: #3c27c5!important;
+  .MuiButtonBase-root.MuiButton-root.linkWithoutSpace:hover{
+    background-color: #291e6f!important;
     color: #ffffff!important;
     border: 1px solid #ffffff!important;
 
@@ -107,7 +107,7 @@
   align-items: center;
 }
 
-.css-i4bv87-MuiSvgIcon-root.cardLogos {
+.MuiSvgIcon-root.cardLogos {
   font-size: xx-large;
 }
 
@@ -222,7 +222,7 @@
     width: 50%;
   }
 
-  .css-i4bv87-MuiSvgIcon-root.cardLogos {
+  .MuiSvgIcon-root.cardLogos {
     font-size: x-large;
   }
 

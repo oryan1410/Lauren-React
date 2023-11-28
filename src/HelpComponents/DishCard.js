@@ -18,7 +18,7 @@ import { Grid } from '@mui/material';
 import { useState } from 'react';
 import RestaurantIcon from '@mui/icons-material/Restaurant';
 import LiquorIcon from '@mui/icons-material/Liquor';
-import '../styles/WineCard.css'
+import '../styles/DishCard.css'
 
 export default function DishCard(props) {
     const [isImageClicked, setImageClicked] = useState(false);

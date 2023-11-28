@@ -4,23 +4,15 @@ import RecipeReviewCard2 from '../HelpComponents/Card2';
 import DishCard from '../HelpComponents/DishCard';
 import '../App.css';
 import '../styles/Wines.css'
-import wines from '../WinesArr.json'
 import dishes from '../DishesArr.json'
-import { Grid } from '@mui/material';
-import TextField from "@mui/material/TextField";
 // import SearchAppBar from '../SearchAppBar';
 import { Container } from 'react-bootstrap';
 import DropDown from '../HelpComponents/DropDown';
-import { Button } from '@mui/material';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 
-import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Typography from '@mui/material/Typography';
-import CardContent from '@mui/material/CardContent';
 import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
@@ -73,87 +65,19 @@ const Dishes = () => {
 
     };
 
-    //useEffect to reset filters- after a filter has been chosen
-    // useEffect(() => {
-    //     setExpanded(false);
-    //     setWhiteExpanded(false);
-    //     setRoseExpanded(false);
-    //     setBubbleExpanded(false);
-    //     setFilterReset(true);
-
-    //     // set all expanded to false
-
-    //     // getFilters();
-    // }, [selectedDryness, selectedCountry]);
-
-    // //useEffect to filter wines according to selected filters
-    // useEffect(() => {
-    //     if (filterReset) {
-    //         setFilterReset(false);
-    //         setTimeout(() => {
-    //             filterWines();
-    //         }, 500);
-    //     }
-    // }, [filterReset]);
-
-
-    // // filter wines according to selected filters
-    // const filterWines = async () => {
-    //     let arr = wines;
-    //     if (selectedCountry !== '') {
-    //         arr = arr.filter((wine) => wine.CountryName === selectedCountry);
-    //         console.log('arr', arr);
-    //     }
-    //     if (selectedDryness !== '') {
-    //         arr = arr.filter((wine) => wine.Dry_y_n_ === selectedDryness);
-    //         console.log('arr', arr);
-    //     }
-
-    //     let red = [];
-    //     let white = [];
-    //     let rose = [];
-    //     let bubble = [];
-
-    //     arr.forEach((wine) => {
-    //         if (wine.Type_R_W_B_ === 'R') {
-    //             red.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
-    //         }
-    //         else if (wine.Type_R_W_B_ === 'W') {
-    //             white.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
-    //         }
-    //         else if (wine.Type_R_W_B_ === 'Rose') {
-    //             rose.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
-    //         }
-    //         else if (wine.Type_R_W_B_ === 'B') {
-    //             bubble.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
-    //         }
-
-    //     }
-    //     );
-
-    //     setRedWinesArr(red);
-    //     setWhiteWinesArr(white);
-    //     setRoseWinesArr(rose);
-    //     setBubbleWinesArr(bubble);
-    // }
-
     useEffect(() => {
-      
         setIsVisable(true);
-        let dishArr= dishes.map((dish) => {
+        let dishArr = dishes.map((dish) => {
             return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
         }
         );
         console.log('dishArr', dishArr);
-
         setRedWinesArr(dishArr);
         setWhiteWinesArr(dishArr);
         setRoseWinesArr(dishArr);
         setBubbleWinesArr(dishArr);
         setAllDishes(dishArr);
         setDisplayDishes(dishArr);
-
-
         setIsLoading(false); // Data has loaded, set loading state to false
     }, [dishes]);
 
@@ -184,23 +108,23 @@ const Dishes = () => {
 
     // epxand more for wine category based on color
     const ExpandMore = styled((props) => {
-  const { expand, header, ...other } = props;
-  const [part1, part2] = header.split('||'); // Split the header into three parts
-  return (
-    <div {...other}>
-      <div className='CategoryDivLeft'>{part1}</div>
-      <div>||</div>
-      <div className='CategoryDivRight'>{part2}</div>
-    </div>
-  );
-})(({ theme, expand }) => ({
-  display: 'flex', // Use Flexbox for alignment
-  justifyContent: 'space-between', // Distribute the space evenly between the div elements
-  marginLeft: '0 auto',
-  transition: theme.transitions.create('transform', {
-    duration: theme.transitions.duration.shortest,
-  }),
-}));
+        const { expand, header, ...other } = props;
+        const [part1, part2] = header.split('||'); // Split the header into three parts
+        return (
+            <div {...other}>
+                <div className='CategoryDivLeft'>{part1}</div>
+                <div>||</div>
+                <div className='CategoryDivRight'>{part2}</div>
+            </div>
+        );
+    })(({ theme, expand }) => ({
+        display: 'flex', // Use Flexbox for alignment
+        justifyContent: 'space-between', // Distribute the space evenly between the div elements
+        marginLeft: '0 auto',
+        transition: theme.transitions.create('transform', {
+            duration: theme.transitions.duration.shortest,
+        }),
+    }));
 
     const handleExpandClick = (type) => {
         if (type === 'Red') {
@@ -217,13 +141,12 @@ const Dishes = () => {
         }
     };
 
-
     useEffect(() => {
         console.log('dropArrays', dropArrays);
     }
         , [dropArrays])
 
-        //Search useeffect
+    //Search useeffect
     useEffect(() => {
         if (searchQuery === "") {
             setNoneFound(false);
@@ -247,7 +170,7 @@ const Dishes = () => {
             console.log(arr2);
             let arr4 = arr1.concat(arr2);
             if (arr4.length !== 0) {
-               let arr = arr4.map((dish) => {
+                let arr = arr4.map((dish) => {
                     return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
                 }
                 )

@@ -61,6 +61,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
 
   const handleChange = (event) => {
     setAge(event.target.value);
+    console.log("ss",event);
     setValue(event.target.value, label);
   };
   
@@ -78,17 +79,45 @@ export default function BasicSelect({ label, options, setValue,selected }) {
 
   return (
     <Grid item xs={5.9}>
-      <FormControl fullWidth>
+      <FormControl fullWidth sx={ {
+          "&.MuiOutlinedInput-input:hover": {
+            border: "2px solid green"
+          }
+        }}>
         <InputLabel id="demo-simple-select-label" className='inputLabel'>{label}</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}
           label="Age"
-          inputProps={{ 'aria-label': 'Without label' }}
+          MenuProps={{
+            PaperProps: {
+              sx: {
+                "& .MuiMenuItem-root.Mui-selected": {
+                  backgroundColor: "yellow"
+                },
+                "& .MuiMenuItem-root:hover": {
+                  backgroundColor: "pink"
+                },
+                "& .MuiMenuItem-root.Mui-selected:hover": {
+                  backgroundColor: "red"
+                }
+              }
+            }
+          }}
+          inputProps={{ 'aria-label': 'Without label'}}
           labelprops={{ 'aria-label': 'Without label' }}
-          onChange={handleChange}
-          sx={{color:'white',backgroundColor:'#3c27c5', borderRadius:'16px!important', fontFamily:'Urbanist', '&:hover fieldset': {}}}
+          onChange={(e)=>{handleChange(e)}}
+          onClose={(e)=>{;console.log("saass",selected); 
+          setTimeout(() => {
+            document.activeElement.blur();
+          }, 0);
+        }}
+          sx={{color:'white',backgroundColor:'#3c27c5', borderRadius:'16px!important', fontFamily:'Urbanist',  "&:hover": {
+            "&& fieldset": {
+              border: "2px solid #1976d2"
+            }
+          }}}
         >
           {options.map((option) => (
             <MenuItem key={option} value={option} className='menuItem'>{option}</MenuItem>

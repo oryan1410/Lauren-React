@@ -18,6 +18,7 @@ import { Grid } from '@mui/material';
 import { useState } from 'react';
 import WineBarIcon from '@mui/icons-material/WineBar';
 import LiquorIcon from '@mui/icons-material/Liquor';
+import '../styles/WineCard.css'
 
 // const ExpandMore = styled((props) => {
 //   const { expand, ...other } = props;
@@ -136,23 +137,23 @@ export default function RecipeReviewCard2(props) {
             <div className='card2-right' >
                 {/*a different way to view the details- with the seperation lines in an specific place */}
                 <div className='card2-details'>
-                    <span className='card2-span'>{props.wine.CountryName}</span>
-                    <span> || </span>
-                    <span className='card2-span'>{props.wine.Country_Heb}</span></div>
-                <div className='card2-details'>
-                    <span className='card2-span'>{getTypes(props.wine.Type_R_W_B_)}</span>
+                    <span className='card2-span card2-leftText'>{props.wine.Country_Heb}</span>
                     <span>||</span>
-                    <span className='card2-span'>{getTypesHeb(props.wine.Type_R_W_B_)}</span></div>
+                    <span className='card2-span card2-rightText'>{props.wine.CountryName}</span></div>
                 <div className='card2-details'>
-                    <span className='card2-span'>{getDryness(props.wine.Dry_y_n_)}</span>
+                    <span className='card2-span card2-leftText'>{getTypesHeb(props.wine.Type_R_W_B_)}</span>
                     <span>||</span>
-                    <span className='card2-span'>{getDrynessHeb(props.wine.Dry_y_n_)}</span></div>
+                    <span className='card2-span card2-rightText'>{getTypes(props.wine.Type_R_W_B_)}</span></div>
+                <div className='card2-details'>
+                    <span className='card2-span card2-leftText'>{getDrynessHeb(props.wine.Dry_y_n_)}</span>
+                    <span>||</span>
+                    <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_y_n_)}</span></div>
                 {/* <span className='card2-details'>{props.wine.CountryName} || {props.wine.Country_Heb}</span>
                 <span className='card2-details'>{getTypes(props.wine.Type_R_W_B_)} || {getTypesHeb(props.wine.Type_R_W_B_)}</span>
                 <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} || {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
                 <div className='card2-button'>
-                    <Link to={`/dishPage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
-                        <Button size="small" className='linkWithoutSpace' >Go to Wine</Button>
+                    <Link to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
+                        <Button size="small" className='linkWithoutSpace' onClick={(e)=>{e.target.blur()}} >Go to Wine</Button>
                     </Link>
                 </div>
             </div>

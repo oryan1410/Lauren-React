@@ -59,11 +59,11 @@ export default function SearchAppBar(props) {
             borderRadius: '16px!important',
             fontFamily: 'Urbanist',
             '&:hover fieldset': {
-              border: '2px solid white!important',
+              border: '2px solid #1976d2!important',
               borderRadius: '16px!important',
             },
             '&:focus-within fieldset, &:focus-visible fieldset': {
-              border: '2px solid white!important',
+              border: '2px solid #1976d2!important',
               borderRadius: '16px!important',
             },
           },

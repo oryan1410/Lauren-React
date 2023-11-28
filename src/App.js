@@ -8,7 +8,11 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 import Home from './Screens/Home';
 import Wines from './Screens/Wines';
 import Dishes from './Screens/Dishes';
-import DishPage from './Screens/DishPage';
+import WinePage from './Screens/WinePage';
+import DishesPage from './Screens/DishesPage';
+import AboutUs from './Screens/AboutUs';
+import Events from './Screens/Events';
+
 import { UserProvider } from './UserContext';
 import { useUserContext } from './UserContext';
 
@@ -108,6 +112,9 @@ function App() {
                   <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Events</Link>
                 </Nav.Item>
                 <Nav.Item>
+                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>About Us</Link>
+                </Nav.Item>
+                <Nav.Item>
                   <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Contact</Link>
                 </Nav.Item>
                 <Nav.Item>
@@ -129,7 +136,12 @@ function App() {
             {/* <Route path="/about" element={<About />} />*/}
             <Route path="/wines" element={<Wines />} />
             <Route path="/dishes" element={<Dishes />} />
-            <Route path="/dishPage/:id" element={<DishPage />} />
+            <Route path="/aboutUs" element={<AboutUs />} />
+            <Route path="/events" element={<Events />} />
+            
+            <Route path="/winePage/:id" element={<WinePage />} />
+            <Route path="/dishPage/:id" element={<DishesPage />} />
+
             {/* <Route path="/contact" element={<Contact />} />
           <Route path="/events" element={<Events />} />*/}
           </Routes>

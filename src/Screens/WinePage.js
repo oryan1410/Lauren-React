@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 
 
-const DishPage = ({ match }) => {
+const WinePage = ({ match }) => {
 
     const { id } = useParams();
 
@@ -135,4 +135,4 @@ const DishPage = ({ match }) => {
     );
 };
 
-export default DishPage;
+export default WinePage;

@@ -203,14 +203,22 @@ const Wines = () => {
     // epxand more for wine category based on color
     const ExpandMore = styled((props) => {
         const { expand, header, ...other } = props;
-        return <div {...other}>{header}</div>;
-    })(({ theme, expand }) => ({
-
+        const [part1, part2] = header.split('||'); // Split the header into three parts
+        return (
+          <div {...other}>
+            <div className='CategoryDivLeft'>{part1}</div>
+            <div>||</div>
+            <div className='CategoryDivRight'>{part2}</div>
+          </div>
+        );
+      })(({ theme, expand }) => ({
+        display: 'flex', // Use Flexbox for alignment
+        justifyContent: 'space-between', // Distribute the space evenly between the div elements
         marginLeft: '0 auto',
         transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
+          duration: theme.transitions.duration.shortest,
         }),
-    }));
+      }));
 
     const handleExpandClick = (type) => {
         if (type === 'Red') {
@@ -312,12 +320,22 @@ const Wines = () => {
                     {dropArrays}
                 </Grid>}
                 {searchQuery ==='' && <div className='resetButtonDiv'>
-                    <Button className='resetButton' onClick={() => sortFilters()} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
+                    <Button
+                    className='resetButton' 
+                    onClick={(e) => {sortFilters()}} 
+                    sx={{ color: 'white', 
+                    backgroundColor: '#3c27c5', 
+                    borderRadius: '16px!important', 
+                    fontFamily: 'Urbanist', textTransform: 'none', 
+                    '&:hover ': { backgroundColor: '#3c27c5', boxShadow: '0 0 0 2px #1976d2'},
+                    '&:focus': {
+                        outline: 'none'
+                      } }}>Reset</Button>
                 </div>}
                 
                 {searchQuery === '' ? <div><ExpandMore
                     expand={expanded}
-                    header='Red Wines || יינות אדומים'
+                    header='יינות אדומים || Red Wines'
                     onClick={() => handleExpandClick('Red')}
                     aria-expanded={expanded}
                     aria-label="show more"
@@ -330,7 +348,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={whiteExpanded}
-                        header='White Wines || יינות לבנים'
+                        header='יינות לבנים || White Wines'
                         onClick={() => handleExpandClick('White')}
                         aria-expanded={expanded}
                         aria-label="show more"
@@ -343,7 +361,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={roseExpanded}
-                        header='Rose Wines || יינות רוזה'
+                        header='יינות רוזה || Rose Wines'
                         onClick={() => handleExpandClick('Rose')}
                         aria-expanded={expanded}
                         aria-label="show more"
@@ -356,7 +374,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={bubbleExpanded}
-                        header='Bubble Wines || יינות מבעבעים'
+                        header='יינות מבעבעים || Bubble Wines'
                         onClick={() => handleExpandClick('Bubble')}
                         aria-expanded={expanded}
                         aria-label="show more"

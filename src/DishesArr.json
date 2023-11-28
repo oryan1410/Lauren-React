@@ -1,0 +1,25 @@
+[
+    {
+        "IdDish": 1,
+        "Name_Heb": "קרפצ'יו בקר",
+        "Name_Eng": "Carpaccio",
+        "BPrice": 12.0,
+        "CPrice": 50.0,
+        "Ingridients_Heb": [
+            "פילה בקר",
+            "אורוגולה",
+            "בלסמי",
+            "פרמז'ן"
+        ],
+        "Ingridients_Eng": [
+            "Beef",
+            "arugula",
+            "Balsami",
+            "Parmesan"
+        ],
+        "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Dishes%2FCarpaccio.jpg?alt=media&token=39cdf03e-5d8c-4f56-97f1-823280c9a563",
+        "Description_Heb": "קרפצ'יו פילה בקר וקציפת פרמז'ן- פרוסות דקות של פילה בקר עם ארוגולה, קרם בלסמי לבן, טוויל וקציפת פרמז'ן",
+        "Description_Eng": "Beef fillet carpaccio and parmesan whipped cream - thin slices of beef fillet with arugula, white balsamic cream, twill and parmesan whipped cream"
+
+    }
+]

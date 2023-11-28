@@ -6,7 +6,8 @@
 /*scrollbar styling*/
 
 ::-webkit-scrollbar {
-  width: 12px; /* Width of the scrollbar */
+  width: 12px;
+  /* Width of the scrollbar */
 }
 
 /* ::-webkit-scrollbar-track {
@@ -15,12 +16,15 @@ position: relative;
 } */
 
 ::-webkit-scrollbar-thumb {
-  background: #888; /* Background of the scrollbar thumb */
-  border-radius: 16px; /* Roundness of the scrollbar */
+  background: #888;
+  /* Background of the scrollbar thumb */
+  border-radius: 16px;
+  /* Roundness of the scrollbar */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3c27c5; /* Background of the scrollbar thumb when hovered */
+  background: #3c27c5;
+  /* Background of the scrollbar thumb when hovered */
 }
 
 
@@ -31,7 +35,8 @@ p {
 }
 
 .grid-item {
-  border-radius: 16px; /* Adjust the border radius as needed */
+  border-radius: 16px;
+  /* Adjust the border radius as needed */
   margin: 0 auto;
 }
 
@@ -41,265 +46,11 @@ p {
 .css-1knaqv7-MuiButtonBase-root-MuiButton-root.goToButton {
   margin: auto;
   position: relative;
-  top:25px
+  top: 25px
 }
-
-/*card2*/
-
-.cardTwo {
-  border: 1px solid #020202;
-  display: flex;
-  border-radius: 15px;
-  flex-direction: row !important;
-  justify-content: space-between;
-  margin-top: 10px;
-  height: 200px;
-  position: relative;
-  width: 100%;
-  color: aqua;
-}
-
-.card2-imageDiv{
-  display: flex;
-  flex: 4;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  border: 1px solid #020202;
-  border-radius: 15px;
-  transition: transform 0.5s ease-in-out;
-  padding: 1rem 1rem;
-  background-color: #ffffff;
-  height: 100%;
-  width: 50%;
-  right: 0;
-}
-
-.card2-imageDiv.slide {
-  transform: translateX(-100%);
-}
-
-.card2image{
-height: 195px;
-width: 100%;
-border: #020202;
-border: transparent;
-}
-
-
-
-.card2-text{
-  flex: 1;
-  padding: 1rem;
-}
-.card2Content {
-  display: flex;
-  flex: 4;
-  flex-direction: column;
-  justify-content: center;
-  padding: 1rem 1rem;
-}
-
-.card2-right{
-  display: flex;
-  flex: 4;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 1rem;
-}
-
-.css-1knaqv7-MuiButtonBase-root-MuiButton-root.linkWithoutSpace{
-  color: #781a1a;
-  text-decoration: none;
-  text-transform: none;
-}
-
-.card2-title{
-  font-size: 2.2rem;
-  margin-bottom: 0;
-}
-.card2-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-}
-
-.priceDiv{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
-
-.priceDiv > * {
-  margin-inline: 5px;
-  display:flex;
-}
-
-.BottlePrice{
-  align-items: center;
-}
-
-.css-i4bv87-MuiSvgIcon-root.cardLogos{
-  font-size:xx-large;
-}
-
-.card2-Subtitle{
-  font-size: 1.4rem;
-  line-height: 1;
-
-}
-
-.card2-details{
-  font-size: 1.4rem;
-  width: 100%;
-
-  /*delete this later for alternate view with flexes*/
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.card2-span{
-  flex:4;
-  padding-inline: 5px;
-  width: 40%;
-}
-
-
-
-
-@media screen and (max-width: 1200px) {
-
-
-
-  .card2-text{
-    padding: 0;
-  }
-
-  .card2-title{
-    font-size: 1.8rem;
-  }
-
-
-
-
-  
-}
-
-@media screen and (max-width: 775px) {
-  .cardTwo {
-    height: 180px;
-  }
-
-  .card2image{
-height: 175px;
-border-radius: 15px;
-}
-
-
-
-  .card2-text{
-    padding: 0;
-  }
-
-  .card2-title{
-    font-size: 1.3rem;
-  }
-
-  .card2-Subtitle{
-    font-size: 0.8rem;
-  }
-
-  .card2-details{
-    font-size: 1.1rem;
-    line-height: 1.2;
-    margin-block: 0.2rem;
-   }
-
-
-  
-}
-
-@media screen and (max-width: 395px) {
-  .cardTwo {
-    height: 180px;
-  }
-
-  .card2-text{
-    padding: 0;
-  }
-
-  .card2-title{
-    font-size: 1.1rem;
-   
-  }
-
-  .card2-Subtitle{
-    font-size: 0.8rem;
-  }
-
-
-  .card2image{
-    width: 100%;
-    border-radius: 15px;
-  }
-
-  .card2-details{
-    font-size: 1rem;
-    line-height: 1.2;
-    margin-block: 0.2rem;
-   }
-
-  
-}
-
-@media screen and (max-width: 335px) {
-  .cardTwo {
-    height: 180px;
-  }
-
-  .card2Content, .card2-right{
-    width: 50%;
-  }
-
-  .css-i4bv87-MuiSvgIcon-root.cardLogos{
-    font-size:x-large;
-  }
-
-  .card2-text{
-    padding: 0;
-  }
-
-  .card2-title{
-    font-size: 1rem;
-   
-  }
-
-  .card2-Subtitle{
-    font-size: 0.8rem;
-  }
-
-
-  .card2image{
-    width: 100%;
-    border-radius: 15px;
-    padding: 2px;
-  }
-
-  
-}
-
-
 
 
 /* navbar styling */
-
-
-
 .navbar {
   top: 0;
   width: 100%;
@@ -312,14 +63,18 @@ border-radius: 15px;
   padding: 0px 15px;
 }
 
+.css-1hvnmzf-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #ffffff;
+}
+
 @media (max-width: 320px) {
   .navbar {
-      width: 100% !important;
+    width: 100% !important;
   }
 }
 
 .navbar-brand {
-margin: 0;
+  margin: 0;
 }
 
 .bg-light {
@@ -330,16 +85,18 @@ margin: 0;
   transition: opacity 2 ease-in-out;
 }
 
-.navbar-light .navbar-nav .nav-link{
+.navbar-light .navbar-nav .nav-link {
   color: #0d0d0d;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #c05858; /* Change to your desired link color */
+  color: #c05858;
+  /* Change to your desired link color */
 }
 
-.navbar-light .navbar-nav .nav-link.active-link{
-  color: #c05858 ; /* Change to your desired link color */
+.navbar-light .navbar-nav .nav-link.active-link {
+  color: #c05858;
+  /* Change to your desired link color */
 }
 
 .nav-link {
@@ -347,14 +104,6 @@ margin: 0;
   font-size: 1.5em;
   color: #61dafb;
   transition: opacity 2 ease-in-out;
-}
-
-
-
-
-.searchBar {
-  margin-bottom: 50px;
-  width: 100%;
 }
 
 .App-logo {
@@ -365,11 +114,13 @@ margin: 0;
   width: 85%;
   pointer-events: none;
 }
+
 /* app logo should be center screen 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
 } */
 
+/*Fade in for pages when routing*/
 .fade-in-element {
   opacity: 0;
   transition: opacity 3s ease-in-out;
@@ -387,11 +138,11 @@ margin: 0;
 .home {
   background-color: #282c34;
   align-items: center;
-  justify-content: center;  
+  justify-content: center;
   align-content: center;
   align-content: center;
   transition: opacity 3s ease-in-out;
-  
+
   .navbar-brand {
     margin: 0;
   }
@@ -404,16 +155,18 @@ margin: 0;
     transition: opacity 2 ease-in-out;
   }
 
-  .navbar-light .navbar-nav .nav-link{
+  .navbar-light .navbar-nav .nav-link {
     color: #0d0d0d;
   }
 
   .navbar-light .navbar-nav .nav-link:hover {
-    color: #c05858; /* Change to your desired link color */
+    color: #c05858;
+    /* Change to your desired link color */
   }
 
-  .navbar-light .navbar-nav .nav-link.active-link{
-    color: #c05858 ; /* Change to your desired link color */
+  .navbar-light .navbar-nav .nav-link.active-link {
+    color: #c05858;
+    /* Change to your desired link color */
   }
 
   .nav-link {
@@ -427,6 +180,7 @@ margin: 0;
     margin-bottom: 50px;
     width: 100%;
   }
+
 
   .App-logo {
     /*app logo should be center screen*/
@@ -453,11 +207,12 @@ margin: 0;
   .home {
     background-color: #282c34;
     align-items: center;
-    justify-content: center;  
+    justify-content: center;
     align-content: center;
     align-content: center;
     transition: opacity 3s ease-in-out;
-    flex-direction: unset; /* Turn off flex direction */
+    flex-direction: unset;
+    /* Turn off flex direction */
   }
 
   .flex-grow {
@@ -482,13 +237,13 @@ margin: 0;
   @media (prefers-reduced-motion: no-preference) {
     /* Media query styles */
   }
+
   flex-grow: 1;
   width: 100%;
   padding-top: 10px;
   padding-bottom: 10px;
-;}
-
-
+  ;
+}
 
 .home.visible {
   opacity: 1;
@@ -503,10 +258,7 @@ img {
 }
 
 
-
-@media (prefers-reduced-motion: no-preference) {
-
-}
+@media (prefers-reduced-motion: no-preference) {}
 
 .App-Body {
   background-color: #282c34;
@@ -526,14 +278,19 @@ img {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
 }
 
+/* searchBar styling */
+.searchBar {
+  margin-bottom: 50px;
+  width: 100%;
+}
 
 /* <-------------------  CSS for the SearchBar -------------------> */
-
 .textInput {
   background-color: #3c27c5;
   width: 100%;
@@ -583,29 +340,24 @@ img {
   font-family: 'Urbanist';
 } */
 
-.css-1d3z3hw-MuiOutlinedInput-notchedOutline.inputStyle{
-  border-width:0
+.css-1d3z3hw-MuiOutlinedInput-notchedOutline.inputStyle {
+  border-width: 0
 }
 
-.css-11lq3yg-MuiGrid-root.dishgridView{
-  margin: auto; 
+.css-11lq3yg-MuiGrid-root.dishgridView {
+  margin: auto;
   justify-content: space-between;
 }
 
-
-
-.muicard-root{
+.muicard-root {
   display: flex;
   flex-direction: column;
 }
 
 
 /* <-------------------  CSS for the DishCard page -------------------> */
-
-
 /*for drop down menu*/
-
-.menuItem{
+.menuItem {
   font-family: 'Urbanist';
   font-size: 1.5em;
   color: #61dafb;
@@ -613,7 +365,7 @@ img {
   background-color: 3522AD;
 }
 
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.menuItem{
+.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.menuItem {
   font-family: 'Urbanist';
   font-size: 1em;
   color: #b8b6bd;
@@ -627,29 +379,28 @@ img {
   color: #61dafb;
 }
 
-.css-6hp17o-MuiList-root-MuiMenu-list{
+.css-6hp17o-MuiList-root-MuiMenu-list {
   background-color: #3c27c5;
-} 
+}
 
-#search-bar-label{
+#search-bar-label {
   color: #ffffff;
   font-family: 'Urbanist';
 }
 
-#demo-simple-select-label{
+#demo-simple-select-label {
   color: #ffffff;
   font-family: 'Urbanist';
 }
 
 /*reset button*/
-
-.resetButtonDiv{
+.resetButtonDiv {
   display: flex;
   margin-top: 10px;
   justify-content: flex-start;
 }
 
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton{
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton {
   color: white;
   font-family: 'Urbanist';
   font-size: 1.5em;
@@ -659,21 +410,36 @@ img {
   border-radius: '16px!important';
 }
 
-
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton:hover{
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton:hover {
   background-color: #a52b2b;
 }
 
 
-
 /*DishPage*/
-
-.DishPageWineText{
- direction: rtl;
+.DishPageWineText {
+  direction: rtl;
 }
 
-.DishPageImage{
+.DishPageImage {
   height: 100%;
   width: 100%;
   border-radius: 15px;
+}
+
+.CategoryDivLeft{
+  flex:4;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  width: 50%;
+  margin-inline: 1rem;
+}
+
+.CategoryDivRight{
+  flex:4;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  width: 50%;
+  margin-inline: 1rem;
 }

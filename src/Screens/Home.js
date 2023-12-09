@@ -40,6 +40,7 @@ export default function Home(props) {
                         <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{width:'100%'}} />
                     </Grid>
                 </Grid>
+                
             </Container>
         </div>
     );

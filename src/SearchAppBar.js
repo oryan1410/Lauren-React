@@ -44,31 +44,28 @@ export default function SearchAppBar(props) {
   return (
     <div className='searchInput'>
       <TextField
-        id="search-bar"
-        className="textInput"
-        onInput={(e) => {
-          setSearch(e.target.value);
-        }}
-        label="What are you looking for?"
-        placeholder="Search..."
-        type="search"
-        InputLabelProps={{ className: 'inputLabel' }}
-        InputProps={{
-          sx: {
-            color:'white',
-            borderRadius: '16px!important',
-            fontFamily: 'Urbanist',
-            '&:hover fieldset': {
-              border: '2px solid #1976d2!important',
-              borderRadius: '16px!important',
-            },
-            '&:focus-within fieldset, &:focus-visible fieldset': {
-              border: '2px solid #1976d2!important',
-              borderRadius: '16px!important',
-            },
-          },
-        }}                
-      />
+  id="search-bar"
+  className="textInput center-placeholder"
+  onInput={(e) => {
+    setSearch(e.target.value);
+  }}
+  placeholder="WHAT ARE YOU LOOKING FOR?"
+  type="search"
+  InputProps={{
+    sx: {
+      color:'white',
+      borderRadius: '16px!important',
+      fontFamily: 'Urbanist',
+      '&:hover fieldset': {
+        border: '0px!important',
+        borderRadius: '16px!important',
+      },
+      '& input::placeholder': { // Add this line
+        color: '#FFF', // Replace #yourColor with the color you want
+      },
+    },
+  }}                
+/>
     </div>
   );
 }

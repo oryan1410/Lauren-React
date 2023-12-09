@@ -1,6 +1,6 @@
 /*card2- wine card*/
 .cardTwo {
-  border: 1px solid #020202;
+  border: 2px solid #917F6B;
   display: flex;
   border-radius: 15px;
   flex-direction: row !important;
@@ -9,7 +9,8 @@
   height: 200px;
   position: relative;
   width: 100%;
-  color: aqua;
+  color: #ffffff;
+  background-color: #121A1C;
 }
 
 .card2-imageDiv {
@@ -59,6 +60,7 @@
   justify-content: center;
   align-items: center;
   padding: 1rem 1rem;
+  
 }
 
 .MuiButtonBase-root.linkWithoutSpace {
@@ -143,6 +145,8 @@
   font-weight: 400;
 }
 
+
+
 @media screen and (max-width: 1200px) {
   .card2-text {
     padding: 0;
@@ -206,7 +210,7 @@
   }
 
   .card2-details {
-    font-size: 1rem;
+    font-size: 0.8rem;
     line-height: 1.2;
     margin-block: 0.2rem;
   }

@@ -54,9 +54,7 @@ p {
 .navbar {
   top: 0;
   width: 100%;
-  justify-content: space-between;
-  z-index: 1;
-  background-color: #ffffff;
+  z-index: 2;
   border-bottom: 1px solid #e6e6e6;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease-in-out;
@@ -77,6 +75,42 @@ p {
   margin: 0;
 }
 
+.navbarToggle{
+  border-width: 0; padding-right: 0; margin-right: 0;
+  width: 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toggleIcon{
+  color: #080808;
+}
+
+.MuiSvgIcon-root.toggleIcon {
+  font-size: xxx-large;
+}
+
+@media screen and (max-width: 768px) {
+  .MuiSvgIcon-root.toggleIcon {
+    font-size: xx-large;
+  }
+  
+}
+
+.navbarToggle.collapsed {
+  border-width: 0; padding-right: 0; margin-right: 0;
+
+  .toggleIcon{
+color: #888;
+
+  }
+
+}
+
+button:focus {
+  outline: none;
+}
+
 .bg-light {
   background-color: #ffffff !important;
 }
@@ -90,12 +124,13 @@ p {
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #c05858;
+  color: #917F6B;
   /* Change to your desired link color */
 }
 
 .navbar-light .navbar-nav .nav-link.active-link {
-  color: #c05858;
+  color: #050505;
+  font-weight: bold;
   /* Change to your desired link color */
 }
 
@@ -115,7 +150,7 @@ p {
   pointer-events: none;
 }
 
-.App-footer{
+/* .App-footer{
   background-color: #ffffff;
   width: 100%;
   justify-content: space-between;
@@ -126,7 +161,7 @@ p {
   padding: 0px 15px;
   position: relative;
   bottom: 0;
-}
+} */
 
 /* app logo should be center screen 
 .App-logo {
@@ -149,7 +184,6 @@ p {
 }
 
 .home {
-  background-color: #282c34;
   align-items: center;
   justify-content: center;
   align-content: center;
@@ -172,15 +206,7 @@ p {
     color: #0d0d0d;
   }
 
-  .navbar-light .navbar-nav .nav-link:hover {
-    color: #c05858;
-    /* Change to your desired link color */
-  }
 
-  .navbar-light .navbar-nav .nav-link.active-link {
-    color: #c05858;
-    /* Change to your desired link color */
-  }
 
   .nav-link {
     font-family: 'Urbanist', sans-serif;
@@ -200,7 +226,7 @@ p {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 85%;
+    width: 20%;
     pointer-events: none;
   }
 
@@ -218,7 +244,6 @@ p {
   }
 
   .home {
-    background-color: #282c34;
     align-items: center;
     justify-content: center;
     align-content: center;
@@ -274,7 +299,7 @@ img {
 @media (prefers-reduced-motion: no-preference) {}
 
 .App-Body {
-  background-color: #282c34;
+  background-color: #121A1C;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -297,15 +322,15 @@ img {
   }
 }
 
+/* <-------------------  CSS for the SearchBar -------------------> */
 /* searchBar styling */
 .searchBar {
   margin-bottom: 50px;
   width: 100%;
 }
 
-/* <-------------------  CSS for the SearchBar -------------------> */
 .textInput {
-  background-color: #3c27c5;
+  background-color: #917F6B;
   width: 100%;
   border-radius: 16px;
 }
@@ -338,10 +363,12 @@ img {
   font-family: 'Urbanist';
 } */
 
-.css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root.inputLabel {
+
+.center-placeholder input {
+  text-align: center;
   color: #ffffff;
-  font-family: 'Urbanist';
 }
+
 
 /*label style when there is text and not focused*/
 /* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
@@ -373,32 +400,31 @@ img {
 }
 
 
-/* <-------------------  CSS for the DishCard page -------------------> */
-/*for drop down menu*/
+/* <-------------------  CSS for the drop down menu -------------------> */
 .menuItem {
   font-family: 'Urbanist';
   font-size: 1.5em;
   color: #61dafb;
   transition: opacity 2 ease-in-out;
-  background-color: 3522AD;
+  background-color: #3522AD;
 }
 
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.menuItem {
+.MuiMenuItem-root.menuItem {
   font-family: 'Urbanist';
   font-size: 1em;
-  color: #b8b6bd;
+  color: #ffffff;
 }
 
-.css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected.menuItem {
-  background-color: #3522AD;
+.MuiButtonBase-root.Mui-selected.menuItem {
   z-index: 1;
   font-family: 'Urbanist';
   font-size: 1.2em;
-  color: #61dafb;
+  background-color: #9b8f81;
 }
 
-.css-6hp17o-MuiList-root-MuiMenu-list {
-  background-color: #3c27c5;
+.MuiList-root.MuiMenu-list {
+  background-color: #917F6B;
+  border-radius: 16px;
 }
 
 #search-bar-label {
@@ -409,6 +435,12 @@ img {
 #demo-simple-select-label {
   color: #ffffff;
   font-family: 'Urbanist';
+}
+
+.MuiPaper-root.MuiPopover-paper {
+  background-color: transparent;
+  border-radius: 16px;
+  margin-top: 1px;
 }
 
 /*reset button*/
@@ -431,6 +463,11 @@ img {
 .css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton:hover {
   background-color: #a52b2b;
 }
+
+.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #fff !important;
+}
+  
 
 
 /*DishPage*/

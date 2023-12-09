@@ -16,8 +16,7 @@ import Footer from './HelpComponents/Footer';
 
 import { UserProvider } from './UserContext';
 import { useUserContext } from './UserContext';
-
-function App() {
+import MenuSharpIcon from '@mui/icons-material/MenuSharp';function App() {
 
   const userContext = useUserContext();
   // goToHome = () => {
@@ -68,6 +67,7 @@ function App() {
   
     return (
       <div>
+        <div style={{height:'20px'}}></div>
         <CardMedia className={`fade-in-element ${isVisible ? 'visible' : 'notVisable'}`}>
           <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2FSlice%201%20(3)%201.png?alt=media&token=d61940e9-da93-4590-87a7-756719d03ccd'} className="App-logo" alt="logo" />
           <p>
@@ -90,14 +90,16 @@ function App() {
 <UserProvider>
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="App-Body">
-        <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect style={{ zIndex: 2 }}>
+        <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onBlur={()=>{setExpanded(false)}} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
             <Navbar.Brand href="\home">
-              <img  src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={80} width={80} alt="Go Home" />
+              <img  src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={80} width={100} alt="Go Home" />
             </Navbar.Brand>
-            <Navbar.Text>
+            <Navbar.Text style={{width:'100px'}}>
               <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-06.png?alt=media&token=d154edfd-1f34-48fa-81c0-4c0f0a749f5f'} height={80} width={80} alt="logo" />
             </Navbar.Text>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" style={{ width: 80,height:80 , borderWidth: 0, paddingRight: 0, marginRight: 0}} />
+            <Navbar.Toggle className='navbarToggle' >
+              <span ><MenuSharpIcon className='toggleIcon'/></span>
+            </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="ml-auto" >
                 <Nav.Item>
@@ -151,7 +153,7 @@ function App() {
                
 
       </div>
-      {/* <Footer /> */}
+      <Footer />
 
     </div>
     </UserProvider>

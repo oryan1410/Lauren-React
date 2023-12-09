@@ -7,14 +7,24 @@
     padding: 0 0 0 0;
     width: 100%;
     height: 100%;
-    background-color: #bb1414;
-    border: #000;
+    background-color: #1F2322;
     padding: 10px;
     font-size: medium;
     font-family: 'Urbanist', 'Varela Round';
-    color: #fff;
+    color: #917F6B;
     border-radius: 15px;
-    box-shadow: 0 0 5px #000;
+    box-shadow: 0 0 5px #917F6B;
     margin-top: 1rem;
     justify-content: center;
+}
+
+.MuiButtonBase-root.resetButton{
+background-color: #917F6B;
+
+}
+
+
+.MuiButtonBase-root.resetButton:hover { 
+    background-color: #917F6B;
+    box-shadow: 0 0 10px #000;
 }

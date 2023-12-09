@@ -1,17 +1,5 @@
 /*DishCard- wine card*/
-.cardTwo {
-    border: 1px solid #020202;
-    display: flex;
-    border-radius: 15px;
-    flex-direction: row !important;
-    justify-content: space-between;
-    margin-top: 10px;
-    height: 200px;
-    position: relative;
-    width: 100%;
-    color: aqua;
-  }
-  
+
   .DishCard-imageDiv {
     display: flex;
     flex: 4;
@@ -142,9 +130,7 @@ direction: rtl;
   }
   
   @media screen and (max-width: 775px) {
-    .cardTwo {
-      height: 180px;
-    }
+
   
     .DishCardimage {
       height: 180px;
@@ -171,9 +157,6 @@ direction: rtl;
   }
   
   @media screen and (max-width: 395px) {
-    .cardTwo {
-      height: 180px;
-    }
   
     .DishCard-text {
       padding: 0;

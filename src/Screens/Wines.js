@@ -323,12 +323,11 @@ const Wines = () => {
                 {searchQuery ==='' && <div className='resetButtonDiv'>
                     <Button
                     className='resetButton' 
-                    onClick={(e) => {sortFilters()}} 
+                    onClick={(e) => {sortFilters();e.target.blur()}}
                     sx={{ color: 'white', 
-                    backgroundColor: '#3c27c5', 
                     borderRadius: '16px!important', 
                     fontFamily: 'Urbanist', textTransform: 'none', 
-                    '&:hover ': { backgroundColor: '#3c27c5', boxShadow: '0 0 0 2px #1976d2'},
+                  
                     '&:focus': {
                         outline: 'none'
                       } }}>Reset</Button>

@@ -93,15 +93,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
           MenuProps={{
             PaperProps: {
               sx: {
-                "& .MuiMenuItem-root.Mui-selected": {
-                  backgroundColor: "yellow"
-                },
-                "& .MuiMenuItem-root:hover": {
-                  backgroundColor: "pink"
-                },
-                "& .MuiMenuItem-root.Mui-selected:hover": {
-                  backgroundColor: "red"
-                }
+               
               }
             }
           }}
@@ -113,11 +105,17 @@ export default function BasicSelect({ label, options, setValue,selected }) {
             document.activeElement.blur();
           }, 0);
         }}
-          sx={{color:'white',backgroundColor:'#3c27c5', borderRadius:'16px!important', fontFamily:'Urbanist',  "&:hover": {
+          sx={{
+            color:'white',
+            backgroundColor:'#917F6B', 
+            borderRadius:'16px!important', 
+            fontFamily:'Urbanist',  
+            "&:hover": {
             "&& fieldset": {
-              border: "2px solid #1976d2"
+              border: "2px solid #fff"
             }
-          }}}
+            },
+        }}
         >
           {options.map((option) => (
             <MenuItem key={option} value={option} className='menuItem'>{option}</MenuItem>

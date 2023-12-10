@@ -86,6 +86,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
         }}>
         <InputLabel id="demo-simple-select-label" className='inputLabel'>{label}</InputLabel>
         <Select
+          
           labelId="demo-simple-select-label"
           id="demo-simple-select"
           value={age}

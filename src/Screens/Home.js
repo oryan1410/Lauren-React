@@ -1,19 +1,20 @@
 import React, { useEffect } from 'react';
-import { Container} from 'react-bootstrap';
+import { Container } from 'react-bootstrap';
 import '../styles/Home.css'
 import { Grid } from '@mui/material';
 import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
+import { InstagramEmbed } from 'react-social-media-embed';
 
 export default function Home(props) {
 
     const [isVisible, setIsVisible] = useState(false);
-    const {getFilters} = useUserContext();
+    const { getFilters } = useUserContext();
 
     useEffect(() => {
         getFilters();
-      }, []);
+    }, []);
 
     useEffect(() => {
         if (props.isVisible) {
@@ -24,23 +25,25 @@ export default function Home(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-        <Container style={{ width: '100%', justifyContent: 'center' }}>
+            <Container style={{ width: '100%', justifyContent: 'center' }}>
                 <SearchAppBar />
                 <Grid container spacing={2} >
                     <Grid item xs={6} sm={4} lg={3}>
-                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{width:'100%'}} />
+                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{ width: '100%' }} />
                     </Grid>
                     <Grid item xs={6} sm={4} lg={3}>
-                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{width:'100%'}} />
+                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{ width: '100%' }} />
                     </Grid>
                     <Grid item xs={6} sm={4} lg={3}>
-                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{width:'100%'}} />
+                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{ width: '100%' }} />
                     </Grid>
-                    <Grid item xs={6}sm={4} lg={3} className="grid-item">
-                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{width:'100%'}} />
+                    <Grid item xs={6} sm={4} lg={3} className="grid-item">
+                        <img src="https://via.placeholder.com/150" alt="Sale 1" className="grid-item" style={{ width: '100%' }} />
                     </Grid>
                 </Grid>
-                
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop:'10px' }}>
+                    <InstagramEmbed url="https://www.instagram.com/p/Cz4GyLlIAzt/" width={'100%'}/>
+                </div>
             </Container>
         </div>
     );

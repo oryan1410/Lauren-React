@@ -61,13 +61,11 @@ export default function BasicSelect({ label, options, setValue,selected }) {
 
   const handleChange = (event) => {
     setAge(event.target.value);
-    console.log("ss",event);
     setValue(event.target.value, label);
   };
   
 
   useEffect(() => {
-    console.log("ss",selected);
     setAge(selected);
   }
   , [selected])
@@ -101,7 +99,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
           inputProps={{ 'aria-label': 'Without label'}}
           labelprops={{ 'aria-label': 'Without label' }}
           onChange={(e)=>{handleChange(e)}}
-          onClose={(e)=>{;console.log("saass",selected); 
+          onClose={(e)=>{
           setTimeout(() => {
             document.activeElement.blur();
           }, 0);

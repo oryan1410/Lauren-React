@@ -66,31 +66,31 @@ export default function RecipeReviewCard2(props) {
     };
 
     const getTypes = (type) => {
-        if (type === 'R') {
+        if (type === 'Re') {
             return 'Red';
         }
-        if (type === 'W') {
+        if (type === 'Wh') {
             return 'White';
         }
-        if (type === 'B') {
+        if (type === 'Bu') {
             return 'Bubble';
         }
-        if (type === 'Rose') {
+        if (type === 'Ro') {
             return 'Rose';
         }
     }
 
     const getTypesHeb = (type) => {
-        if (type === 'R') {
+        if (type === 'Re') {
             return 'אדום';
         }
-        if (type === 'W') {
+        if (type === 'Wh') {
             return 'לבן';
         }
-        if (type === 'B') {
+        if (type === 'Bu') {
             return 'מבעבע';
         }
-        if (type === 'Rose') {
+        if (type === 'Ro') {
             return 'רוזה';
         }
     }
@@ -121,13 +121,13 @@ export default function RecipeReviewCard2(props) {
                     <h1 className='card2-title'>{props.title}<br />{props.wine.Name_Heb}</h1>
                 </div>
                 <div>
-                    <span className='card2-Subtitle'> {props.wine.WineryNeame_Eng} || {props.wine.WineryName_Heb} </span>
+                    <span className='card2-Subtitle'> {props.wine.WineryName_Eng} || {props.wine.WineryName_Heb} </span>
 
                 </div>
                 <div className='priceDiv'>
                     <span className='BottlePrice'>
                         <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                        {props.wine.BottlePrice3}
+                        {props.wine.BottlePrice}
                     </span>
                     {props.wine.Cup_Y_N_ === 'Y' && <span className='BottlePrice'>
                         <WineBarIcon className='cardLogos' />
@@ -139,17 +139,17 @@ export default function RecipeReviewCard2(props) {
                 <div className='card2-details'>
                     <span className='card2-span card2-leftText'>{props.wine.Country_Heb}</span>
                     <span>||</span>
-                    <span className='card2-span card2-rightText'>{props.wine.CountryName}</span></div>
+                    <span className='card2-span card2-rightText'>{props.wine.Country_Eng}</span></div>
                 <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{getTypesHeb(props.wine.Type_R_W_B_)}</span>
+                    <span className='card2-span card2-leftText'>{getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                     <span>||</span>
-                    <span className='card2-span card2-rightText'>{getTypes(props.wine.Type_R_W_B_)}</span></div>
+                    <span className='card2-span card2-rightText'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)}</span></div>
                 <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{getDrynessHeb(props.wine.Dry_y_n_)}</span>
+                    <span className='card2-span card2-leftText'>{getDrynessHeb(props.wine.Dry_Y_N_)}</span>
                     <span>||</span>
-                    <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_y_n_)}</span></div>
+                    <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_Y_N_)}</span></div>
                 {/* <span className='card2-details'>{props.wine.CountryName} || {props.wine.Country_Heb}</span>
-                <span className='card2-details'>{getTypes(props.wine.Type_R_W_B_)} || {getTypesHeb(props.wine.Type_R_W_B_)}</span>
+                <span className='card2-details'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)} || {getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                 <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} || {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
                 <div className='card2-button'>
                     <Link to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >

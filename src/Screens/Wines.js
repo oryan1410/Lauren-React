@@ -75,11 +75,13 @@ const Wines = () => {
 
     //useEffect to reset filters- after a filter has been chosen
     useEffect(() => {
+        if(selectedDryness !== '' || selectedCountry !== ''){
         setExpanded(false);
         setWhiteExpanded(false);
         setRoseExpanded(false);
         setBubbleExpanded(false);
         setFilterReset(true);
+        }
 
         // set all expanded to false
 
@@ -88,10 +90,10 @@ const Wines = () => {
 
     //useEffect to filter wines according to selected filters
     useEffect(() => {
-        if (filterReset) {
-            setFilterReset(false);
+        if (filterReset) {           
             setTimeout(() => {
                 filterWines();
+                setFilterReset(false);
             }, 500);
         }
     }, [filterReset]);
@@ -99,14 +101,13 @@ const Wines = () => {
 
     // filter wines according to selected filters
     const filterWines = async () => {
+        console.log('filterWines');
         let arr = wines;
         if (selectedCountry !== '') {
-            arr = arr.filter((wine) => wine.CountryName === selectedCountry);
-            console.log('arr', arr);
+            arr = arr.filter((wine) => wine.Country_Eng === selectedCountry);
         }
         if (selectedDryness !== '') {
-            arr = arr.filter((wine) => wine.Dry_y_n_ === selectedDryness);
-            console.log('arr', arr);
+            arr = arr.filter((wine) => wine.Dry_Y_N_ === selectedDryness);
         }
 
         let red = [];
@@ -115,22 +116,21 @@ const Wines = () => {
         let bubble = [];
 
         arr.forEach((wine) => {
-            if (wine.Type_R_W_B_ === 'R') {
+            if (wine.Type_Ro_Re_Wh_Bu_ === 'Re') {
                 red.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
             }
-            else if (wine.Type_R_W_B_ === 'W') {
+            else if (wine.Type_Ro_Re_Wh_Bu_ === 'Wh') {
                 white.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
             }
-            else if (wine.Type_R_W_B_ === 'Rose') {
+            else if (wine.Type_Ro_Re_Wh_Bu_ === 'Ro') {
                 rose.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
             }
-            else if (wine.Type_R_W_B_ === 'B') {
+            else if (wine.Type_Ro_Re_Wh_Bu_ === 'Bu') {
                 bubble.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
             }
 
         }
         );
-
         setRedWinesArr(red);
         setWhiteWinesArr(white);
         setRoseWinesArr(rose);
@@ -171,14 +171,14 @@ const Wines = () => {
         setAllWines(arr);
         setDisplayWines2(arr);
 
-        sortFilters();
+        
 
         setIsLoading(false); // Data has loaded, set loading state to false
     }, [wines, redWines, whiteWines, roseWines, bubbleWines]);
 
     //create filters for dryness and country
     const sortFilters = async () => {
-        console.log('getFilters');
+        console.log('sortFilters');
         setSelectedDryness('');
         setSelectedColor('');
         setSelectedCountry('');
@@ -189,14 +189,28 @@ const Wines = () => {
         ]);
     }
 
+    const resetFilter = () => {
+        setSelectedDryness('');
+        setSelectedColor('');
+        setSelectedCountry('');
+        setExpanded(false);
+        setWhiteExpanded(false);
+        setRoseExpanded(false);
+        setBubbleExpanded(false);
+        setResetKey(prevKey => prevKey + 1); // increment the key
+        setDropArrays([
+            <DropDown key={resetKey + '0'} label='Dryness' options={['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
+            <DropDown key={resetKey + '1'} label='Country' options={countries} setValue={handleValueChange} selected={''} />
+        ]);
+        setFilterReset(true);
+    }
+
     // get countries and sort filters
     useEffect(() => {
         if (countries.length === 0) {
-            console.log('countries', countries);
             getFilters();
         }
         else {
-            console.log('countries', countries);
             sortFilters();
         }
     }, [countries]);
@@ -236,11 +250,6 @@ const Wines = () => {
         }
     };
 
-
-    useEffect(() => {
-        console.log('dropArrays', dropArrays);
-    }
-        , [dropArrays])
 
     useEffect(() => {
         if (searchQuery === "") {
@@ -323,7 +332,7 @@ const Wines = () => {
                 {searchQuery ==='' && <div className='resetButtonDiv'>
                     <Button
                     className='resetButton' 
-                    onClick={(e) => {sortFilters();e.target.blur()}}
+                    onClick={(e) => {resetFilter();e.target.blur()}}
                     sx={{ color: 'white', 
                     borderRadius: '16px!important', 
                     fontFamily: 'Urbanist', textTransform: 'none', 

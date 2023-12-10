@@ -24,8 +24,14 @@ const DishesPage = ({ match }) => {
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [isVisible, setIsVisable] = useState(false);
     const [propsData, setPropsData] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
+        setIsLoading(false);
+    }, []);
+
+    useEffect(() => {
+        if(!isLoading){
         setIsVisable(true);
         console.log("id", id);
         let data = wines.find((wine) => wine.Id == id);
@@ -38,7 +44,8 @@ const DishesPage = ({ match }) => {
             setIsVisable(false);
         }
     }
-        , []);
+    }
+        , [isLoading]);
 
     const drynessOptions = [
         { key: 'dry', text: 'Dry', value: 'dry' },

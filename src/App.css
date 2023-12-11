@@ -346,8 +346,6 @@ img {
   border-radius: 16px;
 }
 
-
-
 .searchInput {
   margin-block: 1rem;
   font-family: 'Urbanist';
@@ -363,7 +361,6 @@ img {
 .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
   border-radius: 16px;
 }
-
 
 /*Label for dropdown styling*/
 
@@ -410,9 +407,6 @@ img {
   flex-direction: column;
 }
 
-
-/*DishPage*/
-
   /* <-------------------  CSS for the Scroll To Top -------------------> */
   .scrollToTop{
     position: fixed;
@@ -430,6 +424,11 @@ img {
     font-size: xxx-large;
     /*add border shadow*/
     display: flex;
+  }
 
-
+  @media screen and (max-width: 650px) {
+    .MuiSvgIcon-root.scrollToTop {
+      font-size: xx-large;
+    }
+    
   }

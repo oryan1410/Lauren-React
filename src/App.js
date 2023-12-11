@@ -91,21 +91,29 @@ function App() {
   }, [isVisible]);
 
 
-  const [collapsesOpen, setCollapsesOpen] = useState(0); // This state changes when a collapse is opened or closed
   const [isPageBottom, setIsPageBottom] = useState(false);
+  const [isPageTop, setIsPageTop] = useState(true);
 
   useEffect(() => {
       const handleScroll = () => {
         const isBottom = document.documentElement.scrollTop + window.innerHeight >= document.documentElement.scrollHeight;
         setIsPageBottom(isBottom);
       };
+
+      const handleScrollTop = () => {
+        const isTop = document.documentElement.scrollTop === 0;
+        setIsPageTop(isTop);
+      };
+
     
       window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScrollTop);
     
       return () => {
         window.removeEventListener('scroll', handleScroll);
+        window.removeEventListener('scroll', handleScrollTop);
       };
-    }, [collapsesOpen]);
+    }, []);
   
   useEffect(() => {
       console.log('isPageBottoma', isPageBottom);
@@ -178,7 +186,7 @@ function App() {
                
 
       </div>
-      {!isPageBottom &&<ArrowCircleUpIcon className='scrollToTop' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}/>}
+      {!isPageBottom && !isPageTop &&<ArrowCircleUpIcon className='scrollToTop' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}/>}
       <Footer />
 
 

@@ -47,16 +47,7 @@
     align-items: center;
     padding: 1rem 1rem;
   }
-  
-  .MuiButtonBase-root.linkWithoutSpace {
-    color: #ffffff;
-    text-decoration: none;
-    text-transform: none;
-      border-radius: 16px!important;
-      border: 1px solid #ffffff!important;
-      background-color: #3c27c5;  
-  }
-  
+ 
 
   .DishCard-title {
     font-size: 2.2rem;

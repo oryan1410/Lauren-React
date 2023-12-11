@@ -10,20 +10,21 @@
   /* Width of the scrollbar */
 }
 
-/* ::-webkit-scrollbar-track {
-  background: #282c34; /* Background of the scrollbar track 
+ ::-webkit-scrollbar-track {
+  background: #121A1C; /* Background of the scrollbar track */
 position: relative;
-} */
+
+} 
 
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #917F6B;
   /* Background of the scrollbar thumb */
   border-radius: 16px;
   /* Roundness of the scrollbar */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3c27c5;
+  background: #917F6B;
   /* Background of the scrollbar thumb when hovered */
 }
 
@@ -34,11 +35,7 @@ p {
   font-family: 'Urbanist', sans-serif;
 }
 
-.grid-item {
-  border-radius: 16px;
-  /* Adjust the border radius as needed */
-  margin: 0 auto;
-}
+
 
 
 /*card styling*/
@@ -168,7 +165,9 @@ button:focus {
   animation: App-logo-spin infinite 20s linear;
 } */
 
-/*Fade in for pages when routing*/
+
+
+/*--------------------- Fade in for pages when routing--------------------- */
 .fade-in-element {
   opacity: 0;
   transition: opacity 3s ease-in-out;
@@ -219,6 +218,23 @@ button:focus {
     margin-bottom: 50px;
     width: 100%;
   }
+
+  
+/* <---------- for the x button in searchbar ----------> */
+.clearButton {
+  color: #1F2322;
+  background-color: transparent;
+  position: relative;
+  bottom: 40px;
+  left: 5%;
+  /* background-color: #1F2322; */
+  border-radius: 16px;
+  height: 25px;
+  width: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
   .App-logo {
@@ -307,11 +323,7 @@ img {
   color: white;
   flex: 1;
 }
-
-.App-link {
-  color: #61dafb;
-}
-
+/* 
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -320,20 +332,21 @@ img {
   to {
     transform: rotate(360deg);
   }
-}
+} */
 
 /* <-------------------  CSS for the SearchBar -------------------> */
-/* searchBar styling */
 .searchBar {
   margin-bottom: 50px;
   width: 100%;
 }
 
 .textInput {
-  background-color: #917F6B;
+  background-color: #917F6B!important;
   width: 100%;
   border-radius: 16px;
 }
+
+
 
 .searchInput {
   margin-block: 1rem;
@@ -351,7 +364,8 @@ img {
   border-radius: 16px;
 }
 
-/*Label styling*/
+
+/*Label for dropdown styling*/
 
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   color: #ffffff;
@@ -386,13 +400,10 @@ img {
   border-width: 0
 }
 
-
-
 .MuiGrid-root.dishgridView {
   margin: auto;
   justify-content: space-between;
 }
-
 
 .muicard-root {
   display: flex;
@@ -400,101 +411,25 @@ img {
 }
 
 
-/* <-------------------  CSS for the drop down menu -------------------> */
-.menuItem {
-  font-family: 'Urbanist';
-  font-size: 1.5em;
-  color: #61dafb;
-  transition: opacity 2 ease-in-out;
-  background-color: #3522AD;
-}
-
-.MuiMenuItem-root.menuItem {
-  font-family: 'Urbanist';
-  font-size: 1em;
-  color: #ffffff;
-}
-
-.MuiButtonBase-root.Mui-selected.menuItem {
-  z-index: 1;
-  font-family: 'Urbanist';
-  font-size: 1.2em;
-  background-color: #9b8f81;
-}
-
-.MuiList-root.MuiMenu-list {
-  background-color: #917F6B;
-  border-radius: 16px;
-}
-
-#search-bar-label {
-  color: #ffffff;
-  font-family: 'Urbanist';
-}
-
-#demo-simple-select-label {
-  color: #ffffff;
-  font-family: 'Urbanist';
-}
-
-.MuiPaper-root.MuiPopover-paper {
-  background-color: transparent;
-  border-radius: 16px;
-  margin-top: 1px;
-}
-
-/*reset button*/
-.resetButtonDiv {
-  display: flex;
-  margin-top: 10px;
-  justify-content: flex-start;
-}
-
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton {
-  color: white;
-  font-family: 'Urbanist';
-  font-size: 1.5em;
-  border-radius: 16px;
-  margin: 1rem;
-  background-color: '#3c27c5';
-  border-radius: '16px!important';
-}
-
-.css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton:hover {
-  background-color: #a52b2b;
-}
-
-.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #fff !important;
-}
-  
-
-
 /*DishPage*/
-.DishPageWineText {
-  direction: rtl;
-}
 
-.DishPageImage {
-  height: 100%;
-  width: 100%;
-  border-radius: 15px;
-}
+  /* <-------------------  CSS for the Scroll To Top -------------------> */
+  .scrollToTop{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    height: 100px;
+    width: 100px;
+    background-color: #917F6B;
+    z-index: 1000;
+    border-radius: 50px;
+    box-shadow: 0 0 15px #d6bc9e;
+  }
 
-.CategoryDivLeft{
-  flex:4;
-  display: flex;
-  justify-content: end;
-  align-items: center;
-  width: 50%;
-  margin-inline: 1rem;
-}
+  .MuiSvgIcon-root.scrollToTop {
+    font-size: xxx-large;
+    /*add border shadow*/
+    display: flex;
 
-.CategoryDivRight{
-  flex:4;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  width: 50%;
-  margin-inline: 1rem;
-}
+
+  }

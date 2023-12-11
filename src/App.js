@@ -16,7 +16,11 @@ import Footer from './HelpComponents/Footer';
 
 import { UserProvider } from './UserContext';
 import { useUserContext } from './UserContext';
-import MenuSharpIcon from '@mui/icons-material/MenuSharp';function App() {
+import MenuSharpIcon from '@mui/icons-material/MenuSharp';
+import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
+
+
+function App() {
 
   const userContext = useUserContext();
   // goToHome = () => {
@@ -86,11 +90,32 @@ import MenuSharpIcon from '@mui/icons-material/MenuSharp';function App() {
     }
   }, [isVisible]);
 
+
+  const [collapsesOpen, setCollapsesOpen] = useState(0); // This state changes when a collapse is opened or closed
+  const [isPageBottom, setIsPageBottom] = useState(false);
+
+  useEffect(() => {
+      const handleScroll = () => {
+        const isBottom = document.documentElement.scrollTop + window.innerHeight >= document.documentElement.scrollHeight;
+        setIsPageBottom(isBottom);
+      };
+    
+      window.addEventListener('scroll', handleScroll);
+    
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [collapsesOpen]);
+  
+  useEffect(() => {
+      console.log('isPageBottoma', isPageBottom);
+  }, [isPageBottom]);
+
   return (
 <UserProvider>
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="App-Body">
-        <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onBlur={()=>{setExpanded(false)}} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
+        <Navbar bg="light" expand="xxl"  expanded={expanded} onBlur={()=>{setExpanded(false)}} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
             <Navbar.Brand href="\home">
               <img  src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={80} width={100} alt="Go Home" />
             </Navbar.Brand>
@@ -132,7 +157,7 @@ import MenuSharpIcon from '@mui/icons-material/MenuSharp';function App() {
               </Nav>
             </Navbar.Collapse>
         </Navbar>
-        <div style={{ height: '90px' }}></div>
+        {/* <div style={{ height: '90px' }}></div> */}
         
           <Routes>
             <Route path="/" element={!isVisible ? <FadeIn setIsVisible={() => { setIsVisible(true) }} /> : <Home isVisible={isVisible} />} />
@@ -153,7 +178,9 @@ import MenuSharpIcon from '@mui/icons-material/MenuSharp';function App() {
                
 
       </div>
+      {!isPageBottom &&<ArrowCircleUpIcon className='scrollToTop' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}/>}
       <Footer />
+
 
     </div>
     </UserProvider>

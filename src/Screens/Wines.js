@@ -20,16 +20,17 @@ import CardContent from '@mui/material/CardContent';
 import { styled } from '@mui/material/styles';
 import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
-import Footer from '../HelpComponents/Footer';
-
-
+import { useLocation } from 'react-router-dom';
+import { useRef } from 'react';
 
 const Wines = () => {
-    const [expanded, setExpanded] = useState(false);
-    const [whiteExpanded, setWhiteExpanded] = useState(false);
-    const [roseExpanded, setRoseExpanded] = useState(false);
-    const [bubbleExpanded, setBubbleExpanded] = useState(false);
+
+    const location = useLocation();
+
+    const [expanded, setExpanded] = useState(location.state?.expanded || false);
+    const [whiteExpanded, setWhiteExpanded] = useState(location.state?.whiteExpanded || false);
+    const [roseExpanded, setRoseExpanded] = useState(location.state?.roseExpanded || false);
+    const [bubbleExpanded, setBubbleExpanded] = useState(location.state?.bubbleExpanded || false);
     const { redWines, whiteWines, roseWines, bubbleWines, countries, getFilters } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
@@ -54,6 +55,16 @@ const Wines = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [isAnimating, setIsAnimating] = useState(false);
 
+    // for auto scrolling to expanded panel
+    const expandedDivRef1 = useRef(null);
+    const expandedDivRef2 = useRef(null);
+    const expandedDivRef3 = useRef(null);
+    const expandedDivRef4 = useRef(null);
+
+
+
+
+
     function handleValueChange(value, label) {
         console.log('Value changed to:', value);
         if (label === 'Dryness') {
@@ -72,10 +83,12 @@ const Wines = () => {
 
 
     };
+    
 
     //useEffect to reset filters- after a filter has been chosen
     useEffect(() => {
         if(selectedDryness !== '' || selectedCountry !== ''){
+        console.log('useEffect selectedDryness');
         setExpanded(false);
         setWhiteExpanded(false);
         setRoseExpanded(false);
@@ -171,10 +184,43 @@ const Wines = () => {
         setAllWines(arr);
         setDisplayWines2(arr);
 
-        
-
+        if (expanded && expandedDivRef1.current) {
+            expandedDivRef1.current.scrollIntoView({ behavior: 'smooth' });
+          }
+          else if (whiteExpanded && expandedDivRef2.current) {
+              expandedDivRef2.current.scrollIntoView({ behavior: 'smooth' });
+          }
+          else if (roseExpanded && expandedDivRef3.current) {
+              expandedDivRef3.current.scrollIntoView({ behavior: 'smooth' });
+          }
+          else if (bubbleExpanded && expandedDivRef4.current) {
+              console.log('bubbleExpanded true');
+              expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
+          }       
         setIsLoading(false); // Data has loaded, set loading state to false
     }, [wines, redWines, whiteWines, roseWines, bubbleWines]);
+
+    useEffect(() => {
+        if(redWinesArr.length !== 0 && whiteWinesArr.length !== 0 && roseWinesArr.length !== 0 && bubbleWinesArr.length !== 0){
+            scrollToDiv();
+        }
+    }, [redWinesArr, whiteWinesArr, roseWinesArr, bubbleWinesArr]);
+
+    const scrollToDiv = () => {
+        if (expanded && expandedDivRef1.current) {
+            expandedDivRef1.current.scrollIntoView({ behavior: 'smooth' });
+        }
+        else if (whiteExpanded && expandedDivRef2.current) {
+            expandedDivRef2.current.scrollIntoView({ behavior: 'smooth' });
+        }
+        else if (roseExpanded && expandedDivRef3.current) {
+            expandedDivRef3.current.scrollIntoView({ behavior: 'smooth' });
+        }
+        else if (bubbleExpanded && expandedDivRef4.current) {
+            console.log('bubbleExpanded true');
+            expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
 
     //create filters for dryness and country
     const sortFilters = async () => {
@@ -190,6 +236,7 @@ const Wines = () => {
     }
 
     const resetFilter = () => {
+        console.log('resetFilter');
         setSelectedDryness('');
         setSelectedColor('');
         setSelectedCountry('');
@@ -352,7 +399,7 @@ const Wines = () => {
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <Collapse ref={expandedDivRef1} in={expanded} timeout="auto" unmountOnExit>
                         {redWinesArr}
                     </Collapse>
                     <ExpandMore
@@ -365,7 +412,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse in={whiteExpanded} timeout="auto" unmountOnExit>
+                    <Collapse ref={expandedDivRef2} in={whiteExpanded} timeout="auto" unmountOnExit>
                         {whiteWinesArr}
                     </Collapse>
                     <ExpandMore
@@ -378,7 +425,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse in={roseExpanded} timeout="auto" unmountOnExit>
+                    <Collapse ref={expandedDivRef3} in={roseExpanded} timeout="auto" unmountOnExit>
                         {roseWinesArr}
                     </Collapse>
                     <ExpandMore
@@ -391,7 +438,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse in={bubbleExpanded} timeout="auto" unmountOnExit>
+                    <Collapse ref={expandedDivRef4} in={bubbleExpanded} timeout="auto" unmountOnExit>
                         {bubbleWinesArr}
                     </Collapse> </div> : displayWines2
                 }

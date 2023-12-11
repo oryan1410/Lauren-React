@@ -79,7 +79,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
     <Grid item xs={5.9}>
       <FormControl fullWidth sx={ {
           "&.MuiOutlinedInput-input:hover": {
-            border: "2px solid green"
+            border: "2px solid #fff"
           }
         }}>
         <InputLabel id="demo-simple-select-label" className='inputLabel'>{label}</InputLabel>
@@ -111,7 +111,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
             fontFamily:'Urbanist',  
             "&:hover": {
             "&& fieldset": {
-              border: "2px solid #fff"
+              border: "0px"
             }
             },
         }}

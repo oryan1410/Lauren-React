@@ -5,6 +5,9 @@ import { useLocation } from 'react-router-dom';
 import wines from '../WinesArr.json'
 import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import '../styles/WinePage.css'
+import { CircleFlag } from 'react-circle-flags';
+
 
 
 const WinePage = ({ match }) => {
@@ -24,16 +27,16 @@ const WinePage = ({ match }) => {
     const [selectedCountry, setSelectedCountry] = useState(null);
     const [isVisible, setIsVisable] = useState(false);
     const [propsData, setPropsData] = useState({});
+    const [language, setLanguage] = useState('heb');
 
     useEffect(() => {
+        window.scrollTo(0, 0);
         setIsVisable(true);
-        console.log("id", id);
         let data = wines.find((wine) => wine.Id == id);
         if (!data) {
             data = wines[0];
         }
         setPropsData(data);
-        console.log("propsData", data);
         return () => {
             setIsVisable(false);
         }
@@ -80,18 +83,32 @@ const WinePage = ({ match }) => {
     });
 
     function getTypes(type) {
-        if (type === 'R') {
-            console.log('Red');
+        if (type === 'Re') {
             return 'Red';
         }
-        if (type === 'W') {
+        if (type === 'Wh') {
             return 'White';
         }
-        if (type === 'B') {
+        if (type === 'Bu') {
             return 'Bubble';
         }
-        if (type === 'Rose') {
+        if (type === 'Ro') {
             return 'Rose';
+        }
+    }
+
+    function getTypesHeb(type) {
+        if (type === 'Re') {
+            return 'אדום';
+        }
+        if (type === 'Wh') {
+            return 'לבן';
+        }
+        if (type === 'Bu') {
+            return 'מבעבע';
+        }
+        if (type === 'Ro') {
+            return 'רוזה';
         }
     }
 
@@ -100,37 +117,64 @@ const WinePage = ({ match }) => {
             return 'Dry';
         }
         if (dryness === 'N') {
-            return 'Sweet';
+            return 'Semi-Sweet';
+        }
+    }
+
+    function getDrynessHeb(dryness) {
+        if (dryness === 'Y') {
+            return 'יבש';
+        }
+        if (dryness === 'N') {
+            return 'חצי-מתוק';
         }
     }
 
     return (
         <Container>
-        <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-            {/* <Card key={propsData.Id} wine={propsData} title={propsData.Name_Eng} image={propsData.ImageUrl} Description={propsData.Description} />             */} 
-            <div className='DishPageWine'>
-            <h1>{propsData.Name_Eng}</h1>
-            <h2>{propsData.Name_Heb}</h2>
-                <div className='DishPageImage'>
-                    <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
+            <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
+                {/* <Card key={propsData.Id} wine={propsData} title={propsData.Name_Eng} image={propsData.ImageUrl} Description={propsData.Description} />             */}
+                <div className='DishPageWine'>
+                    <h1>{propsData.Name_Eng}</h1>
+                    <h2>{propsData.Name_Heb}</h2>
+                    <div className='DishPageImageDiv'>
+                        <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
+                    </div>
+                    <div className='DishPageWineInfo'>
+                        <h1>Wine Info</h1>
+                        <h2>{propsData.WineryName_Heb} || {propsData.WineryName_Eng}</h2>
+                        <h2>{propsData.Country_Heb} || {propsData.Country_Eng}</h2>
+                        <h2>{propsData.Region_Heb} ||  {propsData.Region_Eng}</h2>
+                        <h2>{getDrynessHeb(propsData.Dry_Y_N_)} || {getDryness(propsData.Dry_Y_N_)}</h2>
+                        <h2>{getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_)} || {getTypes(propsData.Type_Ro_Re_Wh_Bu_)} </h2>
+                        {/* <h2>Grape: {propsData.Grape}</h2> */}
+                        <h2>{propsData.BottlePrice}</h2>
+                    </div>
+                    <div className='languageIcon'>
+                        <CircleFlag
+                            countryCode={'il'}
+                            alt={'Hebrew'}
+                            onClick={() => setLanguage('heb')}
+                            style={{
+                                borderRadius: '50%',
+                                boxShadow: language === 'heb' ? '0px 0px 30px #917F6B' : 'none',
+                            }}
+                        />
+                        <CircleFlag
+                            countryCode={'us'}
+                            alt={'English'}
+                            onClick={() => setLanguage('eng')}
+                            style={{
+                                boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
+                                borderRadius: '50%',
+                            }}
+                        />
+                    </div>
+                    <div className={`${language === 'heb' ? 'hebDesc' : 'engDesc'}`} >
+                        <p >{language === 'heb' ? propsData.Desc_Heb : propsData.Desc_Eng}</p>
+                    </div>
                 </div>
-                <div className='DishPageWineInfo'>
-                    <h1>Wine Info</h1>
-                    <h2>Winery: {propsData.WineryNeame_Eng}</h2>
-                    <h2>Winery Country: {propsData.CountryName}</h2>
-                    <h2>Region: {propsData.Region}</h2>
-                    <h2>Dryness: {getDryness(propsData.Dry_y_n_)}</h2>
-                    <h2>Type: {getTypes(propsData.Type_R_W_B_)}</h2>
-                    <h2>Grape: {propsData.Grape}</h2>
-                    <h2>Price: {propsData.BottlePrice3}</h2>
-                </div>
-                <div className='DishPageWineText' style={{backgroundColor:'red'}}>       
-                   <p >{propsData.Description}</p>
-               </div>
             </div>
-
-
-        </div>
         </Container>
     );
 };

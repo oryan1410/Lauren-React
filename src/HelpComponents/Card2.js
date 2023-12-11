@@ -155,10 +155,9 @@ export default function RecipeReviewCard2(props) {
                     <Link to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
                         <Button sx={{
                             color: 'white',
-                            backgroundColor: '#3c27c5',
                             borderRadius: '16px!important',
                             fontFamily: 'Urbanist', textTransform: 'none',
-                            '&:hover ': { backgroundColor: '#3c27c5', boxShadow: '0 0 0 2px #1976d2' },
+                            '&:hover ': { backgroundColor: '#917F6B', boxShadow: '0 0 0 2px #000' },
                             '&:focus': {
                                 outline: 'none'
                             }

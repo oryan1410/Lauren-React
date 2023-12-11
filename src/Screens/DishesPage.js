@@ -123,7 +123,7 @@ const DishesPage = ({ match }) => {
                 </div>
                 <div className='DishPageWineInfo'>
                     <h1>Wine Info</h1>
-                    <h2>Winery: {propsData.WineryNeame_Eng}</h2>
+                    <h2>Winery: {propsData.WineryName_Eng}</h2>
                     <h2>Winery Country: {propsData.CountryName}</h2>
                     <h2>Region: {propsData.Region}</h2>
                     <h2>Dryness: {getDryness(propsData.Dry_y_n_)}</h2>

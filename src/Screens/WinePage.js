@@ -140,7 +140,7 @@ const WinePage = ({ match }) => {
                     <div className='DishPageImageDiv'>
                         <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
                     </div>
-                    <div className='DishPageWineInfo'>
+                    <div className='winePageInfo'>
                         <h1>Wine Info</h1>
                         <div className='wineInfo'><p className='wineInfoText left'>{propsData.WineryName_Heb}</p> <p className='wineInfoSeperator'>||</p> <p className='wineInfoText right'>{propsData.WineryName_Eng}</p></div>
                         <div className='wineInfo'><p className='wineInfoText left'>{propsData.Country_Heb}</p> <p className='wineInfoSeperator'>||</p> <p className='wineInfoText right'>{propsData.Country_Eng}</p></div>
@@ -150,28 +150,30 @@ const WinePage = ({ match }) => {
                         {/* <p className='wineInfo'>Grape: {propsData.Grape}</p> */}
                         <div className='wineInfo'><p className='wineInfoText'>{propsData.BottlePrice}</p></div>
                     </div>
-                    <div className='languageIcon'>
-                        <CircleFlag
-                            countryCode={'il'}
-                            alt={'Hebrew'}
-                            onClick={() => setLanguage('heb')}
-                            style={{
-                                borderRadius: '50%',
-                                boxShadow: language === 'heb' ? '0px 0px 30px #917F6B' : 'none',
-                            }}
-                        />
-                        <CircleFlag
-                            countryCode={'us'}
-                            alt={'English'}
-                            onClick={() => setLanguage('eng')}
-                            style={{
-                                boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
-                                borderRadius: '50%',
-                            }}
-                        />
-                    </div>
-                    <div className={`${language === 'heb' ? 'hebDesc' : 'engDesc'}`} >
-                        <p >{language === 'heb' ? propsData.Desc_Heb : propsData.Desc_Eng}</p>
+                    <div className='descDiv'>
+                        <div className='languageIcon'>
+                            <CircleFlag
+                                countryCode={'il'}
+                                className='langIcon'
+                                alt={'Hebrew'}
+                                onClick={() => setLanguage('heb')}
+                                style={{
+                                    boxShadow: language === 'heb' ? '0px 0px 30px #917F6B' : 'none',
+                                }}
+                            />
+                            <CircleFlag
+                                countryCode={'us'}
+                                alt={'English'}
+                                className='langIcon'
+                                onClick={() => setLanguage('eng')}
+                                style={{
+                                    boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
+                                }}
+                            />
+                        </div>
+                        <div className={`descText ${language === 'heb' ? 'hebDesc' : 'engDesc'}`} >
+                            <p >{language === 'heb' ? propsData.Desc_Heb : propsData.Desc_Eng}</p>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -63,7 +63,8 @@ export default function SearchAppBar(props) {
           sx: {
             color: 'white',
             borderRadius: '16px!important',
-            fontFamily: 'Urbanist',
+            fontFamily: '"Urbanist", "IBM Plex Sans Hebrew"',
+            fontWeight:400,
             '&:hover fieldset': {
               border: '0px!important',
               borderRadius: '16px!important',

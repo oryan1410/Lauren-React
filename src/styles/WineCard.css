@@ -1,6 +1,6 @@
 /*card2- wine card*/
 .cardTwo {
-  border: 2px solid #917F6B;
+  border: 2px solid #967E68;
   display: flex;
   border-radius: 15px;
   flex-direction: row !important;
@@ -81,9 +81,22 @@
 }
 }
 
-.card2-title {
-  font-size: 2.2rem;
+.card2-titleDiv{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.card2-title {  
+  font-size: 1.4rem;
   margin-bottom: 0;
+  font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+  font-weight: 300;
+}
+
+.hebTitle{
+  direction: rtl;
 }
 
 .card2-button {
@@ -98,7 +111,7 @@
   text-transform: none;
     border-radius: 16px!important;
     border: 1px solid #000!important;
-    background-color: #917F6B;  
+    background-color: #967E68;  
 }
 
 .priceDiv {
@@ -108,8 +121,7 @@
   align-items: center;
 }
 
-.priceDiv>* {
-  margin-inline: 5px;
+.priceDiv>span {
   display: flex;
 }
 
@@ -117,14 +129,38 @@
   align-items: center;
 }
 
+.bottlePriceText{
+  font-size: 1.2rem;
+  margin: 0;
+ }
+
 .MuiSvgIcon-root.cardLogos {
-  font-size: xx-large;
+  font-size: x-large;
 }
 
 .card2-Subtitle {
-  font-size: 1.4rem;
-  line-height: 1;
+  font-size: 1rem;
+  font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+  font-weight: 300;
+}
 
+.card2-subTitleDiv{
+  display: flex;
+  flex-direction: column;
+}
+
+.line{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 1px;
+  background-color: #967E68;
+  margin-block: 0.4rem;
+}
+
+.card2-Subtitle.hebSubTitle{
+  direction: rtl;
+  font-weight: 400;
 }
 
 .card2-details {
@@ -135,6 +171,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+
 }
 
 .card2-span {
@@ -149,7 +186,7 @@
 }
 
 .card2-span.card2-rightText {
-  justify-content: start;
+  text-align: left;
   font-weight: 400;
 }
 
@@ -160,9 +197,7 @@
     padding: 0;
   }
 
-  .card2-title {
-    font-size: 1.8rem;
-  }
+
 }
 
 @media screen and (max-width: 775px) {
@@ -180,11 +215,11 @@
   }
 
   .card2-title {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .card2-Subtitle {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
   }
 
   .card2-details {

@@ -61,6 +61,9 @@ import '../styles/WineCard.css'
 export default function RecipeReviewCard2(props) {
     const [isImageClicked, setImageClicked] = useState(false);
 
+    let screenWidth = window.innerWidth;
+
+
     const handleImageClick = () => {
         setImageClicked(!isImageClicked);
     };
@@ -117,21 +120,29 @@ export default function RecipeReviewCard2(props) {
     return (
         <div className="cardTwo">
             <div className={`card2Content`}>
-                <div>
-                    <h1 className='card2-title'>{props.title}<br />{props.wine.Name_Heb}</h1>
+                <div className='card2-titleDiv'>
+                    <span className='card2-title'>{props.title.length > 18 ? props.title.substring(0, 15) + '...' : props.title}</span><span className='card2-title hebTitle'>{props.wine.Name_Heb.length > 20 ? props.wine.Name_Heb.substring(0, 15) + '...' : props.wine.Name_Heb}</span>
                 </div>
-                <div>
-                    <span className='card2-Subtitle'> {props.wine.WineryName_Eng} || {props.wine.WineryName_Heb} </span>
-
+                {/*line seperatoe to seperate the divs */}
+                <div className='line'></div>
+                <div className='card2-subTitleDiv'>
+                    {screenWidth > 600 ?<span className='card2-Subtitle'>{props.wine.WineryName_Eng} || {props.wine.WineryName_Heb} </span>:
+                    <><span className='card2-Subtitle'>{props.wine.WineryName_Eng}</span>
+                    <span className='card2-Subtitle hebSubTitle'>  {props.wine.WineryName_Heb}</span>
+                    </>    }
                 </div>
                 <div className='priceDiv'>
-                    <span className='BottlePrice'>
-                        <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                        {props.wine.BottlePrice}
-                    </span>
-                    {props.wine.Cup_Y_N_ === 'Y' && <span className='BottlePrice'>
-                        <WineBarIcon className='cardLogos' />
-                        {props.wine.CupPrice}</span>}
+                    <div>
+                        <span className='BottlePrice'>
+                            <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                        </span>
+                        <span className='bottlePriceText'>
+                            {props.wine.BottlePrice}
+                        </span>
+                    </div>
+                    {props.wine.Cup_Y_N_ === 'Y' && <div><span className='BottlePrice'>
+                        <WineBarIcon className='cardLogos' /></span>
+                        <span className='bottlePriceText'>{props.wine.CupPrice}</span></div>}
                 </div>
             </div>
             <div className='card2-right' >
@@ -139,15 +150,18 @@ export default function RecipeReviewCard2(props) {
                 <div className='card2-details'>
                     <span className='card2-span card2-leftText'>{props.wine.Country_Heb}</span>
                     <span>||</span>
-                    <span className='card2-span card2-rightText'>{props.wine.Country_Eng}</span></div>
+                    <span className='card2-span card2-rightText'>{props.wine.Country_Eng}</span>
+                </div>
                 <div className='card2-details'>
                     <span className='card2-span card2-leftText'>{getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                     <span>||</span>
-                    <span className='card2-span card2-rightText'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)}</span></div>
+                    <span className='card2-span card2-rightText'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
+                </div>
                 <div className='card2-details'>
                     <span className='card2-span card2-leftText'>{getDrynessHeb(props.wine.Dry_Y_N_)}</span>
                     <span>||</span>
-                    <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_Y_N_)}</span></div>
+                    <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_Y_N_)}</span>
+                </div>
                 {/* <span className='card2-details'>{props.wine.CountryName} || {props.wine.Country_Heb}</span>
                 <span className='card2-details'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)} || {getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                 <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} || {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}

@@ -1,4 +1,4 @@
-.DishPageWineInfo {
+.winePageInfo {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -26,22 +26,10 @@
     border-radius: 15px;
 }
 
-.CategoryDivLeft {
-    flex: 4;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 50%;
-    margin-inline: 1rem;
-}
-
-.CategoryDivRight {
-    flex: 4;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    width: 50%;
-    margin-inline: 1rem;
+.langIcon{
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
 }
 
 .languageIcon {
@@ -51,6 +39,31 @@
 
 .languageIcon >* {
     margin: 0 0.5rem 0 0.5rem;
+}
+
+.descText{
+    font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+    font-size: 1.5rem;
+    color: #ffffff;
+}
+
+.descText >*{
+    margin: 0.5rem 0 0.5rem 0;
+}
+
+.descDiv{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 95%;
+    /* background-color: #1E2423; */
+    border-radius: 15px;
+    /* box-shadow: 0 0 3px #967E68; */
+    margin: auto;
+    margin-top: 0.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
 }
 
 .hebDesc{
@@ -77,18 +90,18 @@
     justify-content: center;
     flex: 1;
     width: 95%;
-    /* background-color: #917F6B; */
+    background-color: #1E2423;
     border-radius: 15px;
-    box-shadow: 0 0 5px #917F6B;
+    box-shadow: 0 0 5px #967E68;
     margin: auto;
     margin-top: 0.5rem;
 }
 
 .wineInfoText{
     flex: 4;
-    font-size: large;
+    font-size: 18px;
     color: #ffffff;
-    font-family: 'Urbanist', 'Varela Round';
+    font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
     margin-top: auto;
     margin-bottom: auto;
 }
@@ -96,15 +109,19 @@
 .wineInfoSeperator{
     flex: 1;
     color: #ffffff;
-    font-size: 1.2rem;
+    font-size: 18px;
     margin-top: auto;
     margin-bottom: auto;
 }
 
 .wineInfoText.left{
     text-align: right;
+    font-weight: 400;
+    font-size: 17px ;
+
 }
 
 .wineInfoText.right{
     text-align: left;
+    font-weight: 300;
 }

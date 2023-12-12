@@ -29,28 +29,28 @@ export default function Home(props) {
             <Container style={{ width: '100%', justifyContent: 'center' }}>
                 <SearchAppBar />
                 <Grid container spacing={2} >
-                    <Grid item xs={5.9} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{expanded: true}}>
                             יינות אדומים<br />Red Wines
                         </Link>
                     </Grid>
-                    <Grid item xs={5.9} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{whiteExpanded: true}}>
                             יינות לבנים<br/>White Wines
                         </Link>
                                             </Grid>
-                    <Grid item xs={5.9} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{roseExpanded: true}}>
                             יינות רוזה<br/>Rose Wines
                         </Link>
                     </Grid>
-                    <Grid item xs={5.9} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{bubbleExpanded: true}}>

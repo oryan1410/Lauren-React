@@ -6,7 +6,7 @@
     font-family: 'Urbanist';
     color: aqua;
     padding-bottom: '10px';
-    font-family: 'Urbanist', 'Varela Round';
+    font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
   }
   
   .home.visible {
@@ -19,14 +19,11 @@
 
 .homeGridItem.MuiGrid-root.MuiGrid-item{
     font-size: 1.2rem;
-    color: #000000;
     overflow: hidden;
-    background-color: #1F2322;
+    background-color: #1E2423;
     border-radius: 16px;
-    margin: 0 auto;
-    
-
-      /* Adjust the border radius as needed */
+    margin: 0 auto; 
+border: 1px solid #967E68;    /* Adjust the border radius as needed */
 }
 
 .MuiGrid-root.MuiGrid-container{
@@ -39,9 +36,9 @@
 
 .MuiGrid-root.MuiGrid-container > .MuiGrid-root.MuiGrid-item {
   padding:5px 0px;
-  margin-block: 5px;
+  margin-block: 3px;
 }
 
 .homeGridItem.MuiGrid-root.MuiGrid-item >a {
-  color:#917F6B;
+  color:#967E68;
 }

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Urbanist', 'Varela Round';
+  font-family: 'Urbanist', 'IBM Plex Sans Hebrew';
 }
 
 /*scrollbar styling*/
@@ -17,23 +17,19 @@ position: relative;
 } 
 
 ::-webkit-scrollbar-thumb {
-  background: #917F6B;
+  background: #967E68;
   /* Background of the scrollbar thumb */
   border-radius: 16px;
   /* Roundness of the scrollbar */
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #917F6B;
+  background: #967E68;
   /* Background of the scrollbar thumb when hovered */
 }
 
 
-p {
-  font-size: 1.5em;
-  color: #61dafb;
-  font-family: 'Urbanist', sans-serif;
-}
+
 
 
 
@@ -118,10 +114,12 @@ button:focus {
 
 .navbar-light .navbar-nav .nav-link {
   color: #0d0d0d;
+  font-weight: 200;
+  font-family: 'Urbanist', 'IBM Plex Sans Hebrew';
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
-  color: #917F6B;
+  color: #967E68;
   /* Change to your desired link color */
 }
 
@@ -132,7 +130,7 @@ button:focus {
 }
 
 .nav-link {
-  font-family: 'Urbanist', sans-serif;
+  font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
   font-size: 1.5em;
   color: #61dafb;
   transition: opacity 2 ease-in-out;
@@ -222,12 +220,12 @@ button:focus {
   
 /* <---------- for the x button in searchbar ----------> */
 .clearButton {
-  color: #1F2322;
+  color: #1E2423;
   background-color: transparent;
   position: relative;
   bottom: 40px;
   left: 5%;
-  /* background-color: #1F2322; */
+  /* background-color: #1E2423; */
   border-radius: 16px;
   height: 25px;
   width: 25px;
@@ -315,7 +313,10 @@ img {
 @media (prefers-reduced-motion: no-preference) {}
 
 .App-Body {
+  background-image: url('./Images/Background_Black.png');
   background-color: #121A1C;
+  
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -341,20 +342,18 @@ img {
 }
 
 .textInput {
-  background-color: #917F6B!important;
+  background-color: #967E68!important;
   width: 100%;
   border-radius: 16px;
 }
 
 .searchInput {
-  margin-block: 1rem;
-  font-family: 'Urbanist';
+  margin-block: 10px;
   border-radius: 16px!important;
 }
 
 .inputProps {
   color: white;
-  font-family: 'Urbanist', sans-serif;
   border-radius: 16px;
 }
 
@@ -366,7 +365,6 @@ img {
 
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   color: #ffffff;
-  font-family: 'Urbanist';
 }
 
 /* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
@@ -414,7 +412,7 @@ img {
     right: 20px;
     height: 100px;
     width: 100px;
-    background-color: #917F6B;
+    background-color: #967E68;
     z-index: 1000;
     border-radius: 50px;
     box-shadow: 0 0 15px #d6bc9e;

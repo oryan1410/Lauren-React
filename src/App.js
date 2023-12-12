@@ -7,6 +7,7 @@ import { Navbar, Nav, Container } from 'react-bootstrap';
 
 import Home from './Screens/Home';
 import Wines from './Screens/Wines';
+import AlcoholPage from './Screens/AlcoholMain';
 import Dishes from './Screens/Dishes';
 import WinePage from './Screens/WinePage';
 import DishesPage from './Screens/DishesPage';
@@ -142,6 +143,9 @@ function App() {
                   <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Wines</Link>
                 </Nav.Item>
                 <Nav.Item>
+                  <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Alcoholic Beverages</Link>
+                </Nav.Item>
+                <Nav.Item>
                   <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Dishes</Link>
                 </Nav.Item>
                 <Nav.Item>
@@ -172,6 +176,7 @@ function App() {
             <Route path="/home" element={<Home isVisible={true} />} />
             {/* <Route path="/about" element={<About />} />*/}
             <Route path="/wines" element={<Wines />} />
+            <Route path="/alcohol" element={<AlcoholPage />} />
             <Route path="/dishes" element={<Dishes />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/events" element={<Events />} />

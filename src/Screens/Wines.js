@@ -25,6 +25,7 @@ import { useRef } from 'react';
 
 const Wines = () => {
 
+
     const location = useLocation();
 
     const [expanded, setExpanded] = useState(location.state?.expanded || false);
@@ -382,8 +383,7 @@ const Wines = () => {
                     onClick={(e) => {resetFilter();e.target.blur()}}
                     sx={{ color: 'white', 
                     borderRadius: '16px!important', 
-                    fontFamily: 'Urbanist', textTransform: 'none', 
-                  
+                    fontFamily: 'Urbanist', textTransform: 'none',                  
                     '&:focus': {
                         outline: 'none'
                       } }}>Reset</Button>

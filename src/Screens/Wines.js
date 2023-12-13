@@ -25,14 +25,13 @@ import { useRef } from 'react';
 
 const Wines = () => {
 
-
     const location = useLocation();
 
     const [expanded, setExpanded] = useState(location.state?.expanded || false);
     const [whiteExpanded, setWhiteExpanded] = useState(location.state?.whiteExpanded || false);
     const [roseExpanded, setRoseExpanded] = useState(location.state?.roseExpanded || false);
     const [bubbleExpanded, setBubbleExpanded] = useState(location.state?.bubbleExpanded || false);
-    const { redWines, whiteWines, roseWines, bubbleWines, countries, getFilters } = useUserContext();
+    const { redWines, whiteWines, roseWines, bubbleWines, countries, getFilters,getFavorites } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -368,6 +367,11 @@ const Wines = () => {
         { key: 'usa', text: 'USA', value: 'usa' },
     ];
 
+    //getFavorites
+    useEffect(() => {
+        getFavorites();
+    }, []);
+
 
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
@@ -382,8 +386,7 @@ const Wines = () => {
                     className='resetButton' 
                     onClick={(e) => {resetFilter();e.target.blur()}}
                     sx={{ color: 'white', 
-                    borderRadius: '16px!important', 
-                    fontFamily: 'Urbanist', textTransform: 'none',                  
+                    borderRadius: '16px!important',             
                     '&:focus': {
                         outline: 'none'
                       } }}>Reset</Button>
@@ -391,7 +394,7 @@ const Wines = () => {
                 
                 {searchQuery === '' ? <div><ExpandMore
                     expand={expanded}
-                    header='יינות אדומים || Red Wines'
+                    header='יינות אדומים || red wines'
                     onClick={() => handleExpandClick('Red')}
                     aria-expanded={expanded}
                     aria-label="show more"
@@ -404,7 +407,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={whiteExpanded}
-                        header='יינות לבנים || White Wines'
+                        header='יינות לבנים || white wines'
                         onClick={() => handleExpandClick('White')}
                         aria-expanded={expanded}
                         aria-label="show more"
@@ -417,7 +420,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={roseExpanded}
-                        header='יינות רוזה || Rose Wines'
+                        header='יינות רוזה || rose wines'
                         onClick={() => handleExpandClick('Rose')}
                         aria-expanded={expanded}
                         aria-label="show more"
@@ -430,7 +433,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={bubbleExpanded}
-                        header='יינות מבעבעים || Bubble Wines'
+                        header='יינות מבעבעים || bubble wines'
                         onClick={() => handleExpandClick('Bubble')}
                         aria-expanded={expanded}
                         aria-label="show more"

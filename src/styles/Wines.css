@@ -10,7 +10,7 @@
     background-color: #1E2423;
     padding: 10px;
     font-size: medium;
-    font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
     color: #967E68;
     border-radius: 15px;
     box-shadow: 0 0 5px #967E68;
@@ -38,10 +38,14 @@
   margin-inline: 1rem;
   font-weight: 400;
 
+
 }
 
 .MuiButtonBase-root.resetButton{
 background-color: #967E68;
+font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+text-transform: lowercase;
+font-size: 16.5px;
 
 }
 
@@ -52,23 +56,17 @@ background-color: #967E68;
 }
 
 /* <-------------------  CSS for the drop down menu -------------------> */
-.menuItem {
-    font-family: 'Urbanist';
-    font-size: 1.5em;
-    color: #61dafb;
-    transition: opacity 2 ease-in-out;
-    background-color: #3522AD;
-  }
+
   
-  .MuiMenuItem-root.menuItem {
-    font-family: 'Urbanist';
+  .MuiMenuItem-root.menuItem {   
     font-size: 1em;
     color: #ffffff;
+    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    text-transform: lowercase;
   }
   
   .MuiButtonBase-root.Mui-selected.menuItem {
-    z-index: 1;
-    font-family: 'Urbanist';
+    z-index: 1;    
     font-size: 1.2em;
     background-color: #9b8f81;
   }
@@ -80,12 +78,13 @@ background-color: #967E68;
   
   #search-bar-label {
     color: #ffffff;
-    font-family: 'Urbanist';
+   
   }
   
   #demo-simple-select-label {
     color: #ffffff;
-    font-family: 'Urbanist';
+    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    text-transform: lowercase;
   }
   
   .MuiPaper-root.MuiPopover-paper {
@@ -101,11 +100,14 @@ background-color: #967E68;
 
 
 /* <-------------------  CSS for the reset button -------------------> */
+
+
+
 .resetButtonDiv {
     display: flex;
     margin-top: 10px;
     justify-content: flex-start;
-    font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
   }
   
   .css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton {

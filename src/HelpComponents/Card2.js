@@ -18,7 +18,11 @@ import { Grid } from '@mui/material';
 import { useState } from 'react';
 import WineBarIcon from '@mui/icons-material/WineBar';
 import LiquorIcon from '@mui/icons-material/Liquor';
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import '../styles/WineCard.css'
+import { useUserContext } from '../UserContext';
+import { useEffect } from 'react';
+
 
 // const ExpandMore = styled((props) => {
 //   const { expand, ...other } = props;
@@ -60,6 +64,8 @@ import '../styles/WineCard.css'
 
 export default function RecipeReviewCard2(props) {
     const [isImageClicked, setImageClicked] = useState(false);
+    const [isFavorite, setIsFavorite] = useState(false);
+    const {addFavorite,removeFavorite,favorites,getFavorites}= useUserContext();
 
     let screenWidth = window.innerWidth;
 
@@ -116,6 +122,26 @@ export default function RecipeReviewCard2(props) {
         }
     }
 
+    const setAsFavorite = (event) => {
+        event.stopPropagation();
+        if (isFavorite) {
+            removeFavorite(props.wine.Id);
+        }
+        else {
+            addFavorite(props.wine.Id);
+        }
+        setIsFavorite(!isFavorite);
+    }
+
+    useEffect (()=>{
+        if (favorites && favorites.includes(props.wine.Id)){
+            setIsFavorite(true);
+        }
+        else{
+            setIsFavorite(false);
+        }
+    },[favorites])
+
 
     return (
         <div className="cardTwo">
@@ -126,10 +152,10 @@ export default function RecipeReviewCard2(props) {
                 {/*line seperatoe to seperate the divs */}
                 <div className='line'></div>
                 <div className='card2-subTitleDiv'>
-                    {screenWidth > 600 ?<span className='card2-Subtitle'>{props.wine.WineryName_Eng} || {props.wine.WineryName_Heb} </span>:
-                    <><span className='card2-Subtitle'>{props.wine.WineryName_Eng}</span>
-                    <span className='card2-Subtitle hebSubTitle'>  {props.wine.WineryName_Heb}</span>
-                    </>    }
+                    {screenWidth > 600 ? <span className='card2-Subtitle'>{props.wine.WineryName_Eng} || {props.wine.WineryName_Heb} </span> :
+                        <><span className='card2-Subtitle'>{props.wine.WineryName_Eng}</span>
+                            <span className='card2-Subtitle hebSubTitle'>  {props.wine.WineryName_Heb}</span>
+                        </>}
                 </div>
                 <div className='priceDiv'>
                     <div>
@@ -162,6 +188,9 @@ export default function RecipeReviewCard2(props) {
                     <span>||</span>
                     <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_Y_N_)}</span>
                 </div>
+                <div className='card2-details'>
+                    <span className='card2-span card2-blentText'>{props.wine.Blend_Y_N_ === 'Y' ? "blend" : "not Blend"}</span>
+                </div>
                 {/* <span className='card2-details'>{props.wine.CountryName} || {props.wine.Country_Heb}</span>
                 <span className='card2-details'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)} || {getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                 <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} || {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
@@ -181,7 +210,8 @@ export default function RecipeReviewCard2(props) {
             </div>
             <div className={`card2-imageDiv ${isImageClicked ? 'slide' : ''}`} onClick={handleImageClick}>
                 <div>
-                    <InfoTwoToneIcon style={{ zIndex: 1, position: 'absolute', top: 5, right: 5, color: '#000' }} />
+                    <InfoTwoToneIcon className='infoIcon'  />
+                    <FavoriteIcon onClick={setAsFavorite} className={`favoriteIcon ${isFavorite && 'isFavorite'}`} />
                     <img src={props.image} alt={`${props.title} image missing`} className="card2image" />
                 </div>
             </div>

@@ -11,6 +11,8 @@
   width: 100%;
   color: #ffffff;
   background-color: #121A1C;
+  font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+  text-transform: lowercase;
 }
 
 .card2-imageDiv {
@@ -91,7 +93,8 @@
 .card2-title {  
   font-size: 1.4rem;
   margin-bottom: 0;
-  font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+  font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+  text-transform: lowercase;
   font-weight: 300;
 }
 
@@ -140,8 +143,7 @@
 
 .card2-Subtitle {
   font-size: 1rem;
-  font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
-  font-weight: 300;
+  font-weight: 200;
 }
 
 .card2-subTitleDiv{
@@ -189,6 +191,32 @@
   text-align: left;
   font-weight: 400;
 }
+
+.card2-blentText{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.infoIcon {
+ z-index: 1;
+ position: absolute;
+ top: 5px;
+  right: 5px;
+  color: #000
+}
+
+.favoriteIcon {
+  z-index: 1;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  color: #444343
+ }
+
+ .favoriteIcon.isFavorite {
+  color: #ff0000;
+ }
 
 
 

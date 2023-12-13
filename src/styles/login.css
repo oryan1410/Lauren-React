@@ -1,0 +1,46 @@
+.loginPage {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;background-color: #121A1C;
+  
+}
+
+
+.loginPage > form {
+ display: flex;
+    flex-direction: column;
+}
+
+.loginLabel {
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 1rem;  
+  flex: 2;
+  text-align: left;
+  
+}
+
+.loginInput{
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 1rem;
+    background-color: #967E68;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5rem;
+    flex: 5;
+}
+
+.feildDiv {
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.pageHeader {
+   font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-size: 2.5rem;
+}

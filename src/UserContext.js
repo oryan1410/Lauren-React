@@ -16,6 +16,7 @@ export function UserProvider({ children }) {
     const [roseWines, setRoseWines] = useState([]);
     const [bubbleWines, setBubbleWines] = useState([]);
     const [countries, setCountries] = useState([]);
+    const [favorites, setFavorites] = useState([]);
     //     // getFilters();
     //     // filter wines according to type
     //     let red = wines.filter((wine) => wine.Type_Ro_Re_Wh_Bu_ === 'R');
@@ -31,7 +32,7 @@ export function UserProvider({ children }) {
     //     countries = [...new Set(countries)];
     //     console.log(countries);
     //     setCountries(countries);
-        
+
     // }, []);
 
     function getFilters() {
@@ -51,6 +52,29 @@ export function UserProvider({ children }) {
         setCountries(countries);
     }
 
+    function getFavorites() {
+        let favor = JSON.parse(localStorage.getItem('Favorites'))
+        setFavorites(favor)
+    }
+
+    function addFavorite(favor) {
+        let favorArr= []
+        if(favorites){
+            favorArr =  [...favorites, favor]
+        }
+        else{
+            favorArr = [favor]
+        }
+        localStorage.setItem('Favorites', JSON.stringify(favorArr))
+        setFavorites(favorArr)
+    }
+
+    function removeFavorite(favor) {
+        let favorArr =favorites.filter(favorite => favorite !== favor)
+        localStorage.setItem('Favorites', JSON.stringify(favorArr))
+        setFavorites(favorArr)
+    }
+
 
     const value = {
         redWines,
@@ -58,7 +82,10 @@ export function UserProvider({ children }) {
         roseWines,
         bubbleWines,
         countries,
-        getFilters 
+        getFilters,
+        favorites,
+        addFavorite,
+        removeFavorite,getFavorites
     };
 
     return (

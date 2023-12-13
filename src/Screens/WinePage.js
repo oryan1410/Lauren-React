@@ -7,7 +7,8 @@ import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
 import '../styles/WinePage.css'
 import { CircleFlag } from 'react-circle-flags';
-
+import LiquorIcon from '@mui/icons-material/Liquor';
+import WineBarIcon from '@mui/icons-material/WineBar';
 
 
 const WinePage = ({ match }) => {
@@ -134,24 +135,25 @@ const WinePage = ({ match }) => {
         <Container>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 {/* <Card key={propsData.Id} wine={propsData} title={propsData.Name_Eng} image={propsData.ImageUrl} Description={propsData.Description} />             */}
-                <div className='DishPageWine'>
-                    <h1>{propsData.Name_Eng}</h1>
-                    <h2>{propsData.Name_Heb}</h2>
+                <div className='winePage'>
+                    <div className='winePageTitleDiv'>
+                        <span className='winePageTitleText engPageTitle'>{propsData.Name_Eng}</span>
+                        <span className='winePageTitleText hebPageTitle'>{propsData.Name_Heb}</span>
+                    </div>
                     <div className='DishPageImageDiv'>
                         <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
+                        <div className='wineInfoPrice bottlePrice'>
+                        <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                        <span>{propsData.BottlePrice}</span>
                     </div>
-                    <div className='winePageInfo'>
-                        <h1>Wine Info</h1>
-                        <div className='wineInfo'><p className='wineInfoText left'>{propsData.WineryName_Heb}</p> <p className='wineInfoSeperator'>||</p> <p className='wineInfoText right'>{propsData.WineryName_Eng}</p></div>
-                        <div className='wineInfo'><p className='wineInfoText left'>{propsData.Country_Heb}</p> <p className='wineInfoSeperator'>||</p> <p className='wineInfoText right'>{propsData.Country_Eng}</p></div>
-                        <div className='wineInfo'><p className='wineInfoText left'>{propsData.Region_Heb}</p> <p className='wineInfoSeperator'>||</p>  <p className='wineInfoText right'>{propsData.Region_Eng}</p></div>
-                        <div className='wineInfo'><p className='wineInfoText left'>{getDrynessHeb(propsData.Dry_Y_N_)}</p> <p className='wineInfoSeperator'>||</p> <p className='wineInfoText right'>{getDryness(propsData.Dry_Y_N_)}</p></div>
-                        <div className='wineInfo'><p className='wineInfoText left'>{getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_)}</p> <p className='wineInfoSeperator'>||</p> <p className='wineInfoText right'>{getTypes(propsData.Type_Ro_Re_Wh_Bu_)}</p> </div>
-                        {/* <p className='wineInfo'>Grape: {propsData.Grape}</p> */}
-                        <div className='wineInfo'><p className='wineInfoText'>{propsData.BottlePrice}</p></div>
+                    {propsData.Cup_Y_N_ == 'Y' ?
+                        <div className='wineInfoPrice cupPrice'>
+                            <WineBarIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                            <span>{propsData.CupPrice}</span>
+                        </div> : null
+                    }
                     </div>
-                    <div className='descDiv'>
-                        <div className='languageIcon'>
+                    <div className='languageIcon'>
                             <CircleFlag
                                 countryCode={'il'}
                                 className='langIcon'
@@ -171,6 +173,41 @@ const WinePage = ({ match }) => {
                                 }}
                             />
                         </div>
+                    <div className='winePageInfo'>                    
+                        <span className='winePageTitleText wineInfoTitle'>Wine Info</span>
+                        <div className='wineInfo'>                            
+                            <p className={`wineInfoText ${ language==='heb'? 'hebWineInfo': 'engWineInfo'} `}>{language==='heb'? propsData.Country_Heb: propsData.Country_Eng} - {language==='heb'?  propsData.WineryName_Heb : propsData.WineryName_Eng}</p>
+                        </div>
+                        <div className='wineInfo'>
+                            <p className={`wineInfoText ${ language==='heb'? 'hebWineInfo': 'engWineInfo'} `}>{language==='heb'? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)} - {language==='heb'? getDrynessHeb(propsData.Dry_Y_N_): getDryness(propsData.Dry_Y_N_)}</p>
+                        </div>
+                        {/* <div className='wineInfo'>
+                            <p className='wineInfoText left'>{propsData.Country_Heb}</p>
+                            <p className='wineInfoSeperator'>|</p>
+                            <p className='wineInfoText right'>{propsData.Country_Eng}</p>
+                        </div>
+                        <div className='wineInfo'>
+                            <p className='wineInfoText left'>{propsData.Region_Heb}</p>
+                            <p className='wineInfoSeperator'>|</p>
+                            <p className='wineInfoText right'>{propsData.Region_Eng}</p>
+                        </div>
+                        <div className='wineInfo'>
+                            <p className='wineInfoText left'>{getDrynessHeb(propsData.Dry_Y_N_)}</p>
+                            <p className='wineInfoSeperator'>|</p>
+                            <p className='wineInfoText right'>{getDryness(propsData.Dry_Y_N_)}</p>
+                        </div>
+                        <div className='wineInfo'>
+                            <p className='wineInfoText left'>{getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_)}</p>
+                            <p className='wineInfoSeperator'>|</p>
+                            <p className='wineInfoText right'>{getTypes(propsData.Type_Ro_Re_Wh_Bu_)}</p>
+                        </div> */}
+                        {/* <p className='wineInfo'>Grape: {propsData.Grape}</p> */}
+                        <div className='wineInfo'>
+                            <p className='wineInfoText pricetext'>{propsData.BottlePrice}</p>
+                        </div>
+                    </div>
+                    <div className='descDiv'>
+
                         <div className={`descText ${language === 'heb' ? 'hebDesc' : 'engDesc'}`} >
                             <p >{language === 'heb' ? propsData.Desc_Heb : propsData.Desc_Eng}</p>
                         </div>

@@ -58,12 +58,15 @@ export default function SearchAppBar(props) {
           setSearch(e.target.value);
         }}
         value={searchText}
-        placeholder="WHAT ARE YOU LOOKING FOR?"
+        placeholder="what are you looking for?"
+        
         InputProps={{
           sx: {
+            textTransform: 'none',
             color: 'white',
             borderRadius: '16px!important',
-            fontFamily: '"Urbanist", "IBM Plex Sans Hebrew"',
+            fontFamily: '"anisette-std", "IBM Plex Sans Hebrew"',
+            fontSize: '18px',
             fontWeight:400,
             '&:hover fieldset': {
               border: '0px!important',

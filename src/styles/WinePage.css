@@ -1,11 +1,9 @@
-.winePageInfo {
+.winePage {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
+    align-items: center;
+    /* height: 100%; */
     padding: 0 0 0 0;
     padding-bottom: 20px;
     font-size: 1.2rem;
@@ -14,10 +12,66 @@
     overflow: hidden;
 }
 
+.winePageInfo {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    padding: 0 0 0 0;
+    padding-bottom:10px;
+    font-size: 1.2rem;
+    color: #000000;
+    text-align: center;
+    overflow: hidden;
+}
+
+.winePageTitleDiv {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    padding: 0 0 0 0;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #000000;
+    text-align: center;
+    overflow: hidden;
+    line-height: 1;
+    background-color: #967E68;
+}
+
+.winePageTitleText {
+    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    text-transform: lowercase;
+    color: #ffffff;
+}
+
+.wineInfoTitle {
+    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    text-transform: lowercase;
+    color: #ffffff;
+    font-size: 30px;
+    margin: 0;
+}
+
+.hebPageTitle{
+    direction: rtl;
+    font-weight: 300;
+    color: #000000;
+    font-size: 28px;
+}
+
+.engPageTitle{
+    direction: ltr;
+    font-weight: 200;
+    font-size: 34px;
+}
 
 
 .DishPageImageDiv{
    justify-content: center;
+   position: relative;
 }
 
 .DishPageImage {
@@ -27,14 +81,15 @@
 }
 
 .langIcon{
-    height: 75px;
-    width: 75px;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 }
 
 .languageIcon {
     display: flex;
     justify-content: center;
+    margin-top: 0.5rem;
 }
 
 .languageIcon >* {
@@ -43,12 +98,12 @@
 
 .descText{
     font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
-    font-size: 1.5rem;
+    font-size: 20px;
     color: #ffffff;
 }
 
 .descText >*{
-    margin: 0.5rem 0 0.5rem 0;
+    margin: 0;
 }
 
 .descDiv{
@@ -60,18 +115,18 @@
     border-radius: 15px;
     /* box-shadow: 0 0 3px #967E68; */
     margin: auto;
-    margin-top: 0.5rem;
     justify-content: center;
     align-items: center;
-    padding: 0.5rem;
 }
 
 .hebDesc{
     direction: rtl;
+    font-weight: 300;
 }
 
 .engDesc{
     direction: ltr;
+    font-weight: 200;
 }
 /* 
 @media (max-width: 420px) {
@@ -84,26 +139,44 @@
 } */
 
 .wineInfo{
-    font-size: 1.2rem;
     display: flex;
-    flex-direction: row;
+    align-items: center;
     justify-content: center;
-    flex: 1;
-    width: 95%;
-    background-color: #1E2423;
-    border-radius: 15px;
-    box-shadow: 0 0 5px #967E68;
-    margin: auto;
-    margin-top: 0.5rem;
 }
 
 .wineInfoText{
-    flex: 4;
-    font-size: 18px;
+    flex: 6;
+    font-size: 20px;
+    justify-content: center;
+
     color: #ffffff;
-    font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
     margin-top: auto;
     margin-bottom: auto;
+    text-transform: lowercase;
+}
+
+.hebWineInfo{
+    direction: rtl;
+    display: flex;
+    font-weight: 400;
+}
+
+.wineInfoPrice{
+    display: flex;
+    flex-direction: row;
+    color: #000000;
+    font-size: 18px;
+    position: absolute;
+    width: 70px;
+}
+
+.bottlePrice{
+    bottom: 270px;
+}
+
+.cupPrice{
+    bottom: 240px;
 }
 
 .wineInfoSeperator{
@@ -114,14 +187,12 @@
     margin-bottom: auto;
 }
 
-.wineInfoText.left{
-    text-align: right;
-    font-weight: 400;
-    font-size: 17px ;
 
+
+.wineInfoText.pricetext{
+    text-align: center;
+font-size: large;
+font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
 }
 
-.wineInfoText.right{
-    text-align: left;
-    font-weight: 300;
-}
+

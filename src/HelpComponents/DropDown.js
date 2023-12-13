@@ -85,7 +85,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
         <InputLabel id="demo-simple-select-label" className='inputLabel'>{label}</InputLabel>
         <Select
           
-          labelId="demo-simple-select-label"
+          
           id="demo-simple-select"
           value={age}
           label="Age"
@@ -108,7 +108,8 @@ export default function BasicSelect({ label, options, setValue,selected }) {
             color:'white',
             backgroundColor:'#917F6B', 
             borderRadius:'16px!important', 
-            fontFamily:'Urbanist',  
+            textTransform:'lowercase',
+            fontFamily:"'anisette-std','IBM Plex Sans Hebrew'",  
             "&:hover": {
             "&& fieldset": {
               border: "0px"

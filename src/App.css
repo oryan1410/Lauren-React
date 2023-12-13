@@ -55,7 +55,7 @@ position: relative;
 }
 
 .css-1hvnmzf-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #ffffff;
+  border-color: #F1ECE6;
 }
 
 @media (max-width: 320px) {
@@ -105,7 +105,7 @@ button:focus {
 }
 
 .bg-light {
-  background-color: #ffffff !important;
+  background-color: #F1ECE6 !important;
 }
 
 .navbar-nav .nav-link {
@@ -115,6 +115,7 @@ button:focus {
 .navbar-light .navbar-nav .nav-link {
   color: #0d0d0d;
   font-weight: 200;
+  font-size: 20px;
   font-family: 'Urbanist', 'IBM Plex Sans Hebrew';
 }
 
@@ -131,7 +132,7 @@ button:focus {
 
 .nav-link {
   font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
-  font-size: 1.5em;
+  font-size: 1.2em;
   color: #61dafb;
   transition: opacity 2 ease-in-out;
 }
@@ -146,7 +147,7 @@ button:focus {
 }
 
 /* .App-footer{
-  background-color: #ffffff;
+  background-color: #F1ECE6;
   width: 100%;
   justify-content: space-between;
   z-index: 1;
@@ -192,7 +193,7 @@ button:focus {
   }
 
   .bg-light {
-    background-color: #ffffff !important;
+    background-color: #F1ECE6 !important;
   }
 
   .navbar-nav .nav-link {
@@ -313,9 +314,8 @@ img {
 @media (prefers-reduced-motion: no-preference) {}
 
 .App-Body {
-  background-image: url('./Images/Background_Black.png');
-  background-color: #121A1C;
-  
+  background-image: url('./Images/BackgroungImage_Final.png');
+  background-color: #121A1C;  
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -345,6 +345,8 @@ img {
   background-color: #967E68!important;
   width: 100%;
   border-radius: 16px;
+  text-decoration: none;
+  text-transform: none;
 }
 
 .searchInput {
@@ -364,30 +366,30 @@ img {
 /*Label for dropdown styling*/
 
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
-  color: #ffffff;
+  color: #F1ECE6;
 }
 
 /* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {
-  color: #ffffff;
+  color: #F1ECE6;
   font-family: 'Urbanist';
 } */
 
 
 .center-placeholder input {
   text-align: center;
-  color: #ffffff;
+  color: #F1ECE6;
 }
 
 
 /*label style when there is text and not focused*/
 /* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root{
-  color: #ffffff;
+  color: #F1ECE6;
   font-family: 'Urbanist';
 } */
 
 /*label style when there is text and focused*/
 /* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused.inputLabel {
-  color: #ffffff;
+  color: #F1ECE6;
   font-family: 'Urbanist';
 } */
 

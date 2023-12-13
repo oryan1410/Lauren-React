@@ -29,32 +29,32 @@ export default function Home(props) {
             <Container style={{ width: '100%', justifyContent: 'center' }}>
                 <SearchAppBar />
                 <Grid container spacing={2} >
-                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8}  lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{expanded: true}}>
-                            יינות אדומים<br />Red Wines
+                            <span>יינות אדומים</span><br /><span className='engButton'>Red Wines</span>
                         </Link>
                     </Grid>
-                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{whiteExpanded: true}}>
-                            יינות לבנים<br/>White Wines
+                            <span>יינות לבנים</span><br/><span className='engButton'>White Wines</span>
                         </Link>
                                             </Grid>
-                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{roseExpanded: true}}>
-                            יינות רוזה<br/>Rose Wines
+                             <span>יינות רוזה</span><br/> <span className='engButton'>Rose Wines</span>
                         </Link>
                     </Grid>
-                    <Grid item xs={5.8} sm={3.5} lg={2.8} className='homeGridItem'>
+                    <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
                         <Link to={{
                             pathname: "/wines",
                         }} state={{bubbleExpanded: true}}>
-                            יינות מבעבעים<br/>Bubble Wines
+                             <span>יינות מבעבעים</span><br/> <span className='engButton'>Bubble Wines</span>
                         </Link>
                     </Grid>
                 </Grid>

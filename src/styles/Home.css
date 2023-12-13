@@ -42,3 +42,8 @@ border: 1px solid #967E68;    /* Adjust the border radius as needed */
 .homeGridItem.MuiGrid-root.MuiGrid-item >a {
   color:#967E68;
 }
+
+
+.engButton {
+  font-weight: 300;
+}

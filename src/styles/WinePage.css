@@ -84,15 +84,29 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
+    border: 1px solid #000000;
+
 }
 
-.languageIcon {
+.languageIconDiv {
     display: flex;
     justify-content: center;
     margin-top: 0.5rem;
+    position: absolute;
 }
 
-.languageIcon >* {
+.languageIconDiv >* {
+    margin: 0 0.5rem 0 0.5rem;
+}
+
+.languageIconWinePageDiv {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+    margin-inline: 0.5rem;
+}
+
+.languageIconWinePageDiv >* {
     margin: 0 0.5rem 0 0.5rem;
 }
 

@@ -46,18 +46,18 @@
 
 
 import React, { useEffect } from 'react';
-import Box from '@mui/material/Box';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Button } from '@mui/material';
 import { Grid } from '@mui/material';
+import { useUserContext } from '../UserContext';
 
 
 export default function BasicSelect({ label, options, setValue,selected }) {
   const [age, setAge] = React.useState('');
-  const [labelText, setLabelText] = React.useState('');
+
+  const {language} = useUserContext();
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -70,22 +70,16 @@ export default function BasicSelect({ label, options, setValue,selected }) {
   }
   , [selected])
 
-  const reset = () => {
-    setAge('');
-    setValue('');
-  }
 
   return (
-    <Grid item xs={5.9}>
-      <FormControl fullWidth sx={ {
+    <Grid item xs={5.9} >
+      <FormControl className={`${language==='heb' && 'hebDropDown'}`} fullWidth sx={ {
           "&.MuiOutlinedInput-input:hover": {
             border: "2px solid #fff"
           }
         }}>
-        <InputLabel id="demo-simple-select-label" className='inputLabel'>{label}</InputLabel>
+        <InputLabel id="demo-simple-select-label" className={`inputLabel ${language==='heb' && 'hebInputLabel'}`}>{label}</InputLabel>
         <Select
-          
-          
           id="demo-simple-select"
           value={age}
           label="Age"
@@ -96,8 +90,6 @@ export default function BasicSelect({ label, options, setValue,selected }) {
               }
             }
           }}
-          inputProps={{ 'aria-label': 'Without label'}}
-          labelprops={{ 'aria-label': 'Without label' }}
           onChange={(e)=>{handleChange(e)}}
           onClose={(e)=>{
           setTimeout(() => {
@@ -109,6 +101,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
             backgroundColor:'#917F6B', 
             borderRadius:'16px!important', 
             textTransform:'lowercase',
+            fontWeight:language==='heb' ? '600' : 'normal',
             fontFamily:"'anisette-std','IBM Plex Sans Hebrew'",  
             "&:hover": {
             "&& fieldset": {
@@ -118,7 +111,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
         }}
         >
           {options.map((option) => (
-            <MenuItem key={option} value={option} className='menuItem'>{option}</MenuItem>
+            <MenuItem key={option} value={option} className={`menuItem ${language==='heb' && 'hebMenuItem'} `}>{option}</MenuItem>
           ))
           }
         </Select>

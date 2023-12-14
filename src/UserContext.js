@@ -1,4 +1,4 @@
-import React, { useState, useEffect, createContext, useContext, useRef } from 'react'
+import React, { useState, useEffect, createContext, useContext } from 'react'
 import wines from './WinesArr.json'
 
 
@@ -16,7 +16,10 @@ export function UserProvider({ children }) {
     const [roseWines, setRoseWines] = useState([]);
     const [bubbleWines, setBubbleWines] = useState([]);
     const [countries, setCountries] = useState([]);
+    const [countriesHeb, setCountriesHeb] = useState([]);
     const [favorites, setFavorites] = useState([]);
+    const [language, setLanguage] = useState('heb');
+    
     //     // getFilters();
     //     // filter wines according to type
     //     let red = wines.filter((wine) => wine.Type_Ro_Re_Wh_Bu_ === 'R');
@@ -48,8 +51,11 @@ export function UserProvider({ children }) {
         setBubbleWines(bubble);
         // get all country names, making sure there are no duplicates
         let countries = wines.map((wine) => wine.Country_Eng);
+        let countriesHeb = wines.map((wine) => wine.Country_Heb);
         countries = [...new Set(countries)];
         setCountries(countries);
+        countriesHeb = [...new Set(countriesHeb)];
+        setCountriesHeb(countriesHeb);
     }
 
     function getFavorites() {
@@ -57,6 +63,7 @@ export function UserProvider({ children }) {
         setFavorites(favor)
     }
 
+    
     function addFavorite(favor) {
         let favorArr= []
         if(favorites){
@@ -75,6 +82,19 @@ export function UserProvider({ children }) {
         setFavorites(favorArr)
     }
 
+    function setUserLanguage(language) {
+        setLanguage(language);
+        localStorage.setItem('language', JSON.stringify(language));
+    }
+
+    useEffect(() => {
+        getFilters();
+        getFavorites();
+        if (localStorage.getItem('language')) {
+            setLanguage(JSON.parse(localStorage.getItem('language')));
+        }
+    }, []);
+
 
     const value = {
         redWines,
@@ -85,7 +105,9 @@ export function UserProvider({ children }) {
         getFilters,
         favorites,
         addFavorite,
-        removeFavorite,getFavorites
+        removeFavorite,getFavorites,
+        language,setUserLanguage,
+        countriesHeb
     };
 
     return (

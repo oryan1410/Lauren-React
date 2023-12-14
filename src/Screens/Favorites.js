@@ -5,7 +5,6 @@ import RecipeReviewCard2 from '../HelpComponents/Card2';
 import { Container } from 'react-bootstrap';
 import '../styles/Favorites.css'
 import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
 
@@ -13,7 +12,7 @@ import Collapse from '@mui/material/Collapse';
 
 const Favorites = () => {
     // Assuming you have an array of favorite wine IDs
-    const { favorites, getFavorites } = useUserContext();
+    const { favorites } = useUserContext();
     const [redWines, setRedWines] = useState([]);
     const [whiteWines, setWhiteWines] = useState([]);
     const [roseWines, setRoseWines] = useState([]);
@@ -96,7 +95,6 @@ const Favorites = () => {
 
     useEffect(() => {
         setIsVisable(true);
-        getFavorites();
         return () => {
             setIsVisable(false);
         }

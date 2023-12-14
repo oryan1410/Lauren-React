@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../HelpComponents/Card';
 import RecipeReviewCard2 from '../HelpComponents/Card2';
 import '../App.css';
 import '../styles/Wines.css'
 import wines from '../WinesArr.json'
 import { Grid } from '@mui/material';
-import TextField from "@mui/material/TextField";
 // import SearchAppBar from '../SearchAppBar';
 import { Container } from 'react-bootstrap';
 import DropDown from '../HelpComponents/DropDown';
@@ -13,12 +11,8 @@ import { Button } from '@mui/material';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 
-import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-import Typography from '@mui/material/Typography';
-import CardContent from '@mui/material/CardContent';
 import { styled } from '@mui/material/styles';
-import IconButton from '@mui/material/IconButton';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useLocation } from 'react-router-dom';
 import { useRef } from 'react';
@@ -31,12 +25,11 @@ const Wines = () => {
     const [whiteExpanded, setWhiteExpanded] = useState(location.state?.whiteExpanded || false);
     const [roseExpanded, setRoseExpanded] = useState(location.state?.roseExpanded || false);
     const [bubbleExpanded, setBubbleExpanded] = useState(location.state?.bubbleExpanded || false);
-    const { redWines, whiteWines, roseWines, bubbleWines, countries, getFilters,getFavorites } = useUserContext();
+    const { redWines, whiteWines, roseWines, bubbleWines, countries,countriesHeb, getFilters,getFavorites, language } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
     const [isVisible, setIsVisable] = useState(false);
-    const [displayWines, setDisplayWines] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
     const [allWines, setAllWines] = useState([]);
     const [noneFound, setNoneFound] = useState(false);
@@ -53,7 +46,7 @@ const Wines = () => {
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
     const [isLoading, setIsLoading] = useState(true);
-    const [isAnimating, setIsAnimating] = useState(false);
+
 
     // for auto scrolling to expanded panel
     const expandedDivRef1 = useRef(null);
@@ -197,7 +190,6 @@ const Wines = () => {
               console.log('bubbleExpanded true');
               expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
           }       
-        setIsLoading(false); // Data has loaded, set loading state to false
     }, [wines, redWines, whiteWines, roseWines, bubbleWines]);
 
     useEffect(() => {
@@ -230,8 +222,8 @@ const Wines = () => {
         setSelectedCountry('');
         setResetKey(prevKey => prevKey + 1); // increment the key
         setDropArrays([
-            <DropDown key={resetKey + '0'} label='Dryness' options={['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
-            <DropDown key={resetKey + '1'} label='Country' options={countries} setValue={handleValueChange} selected={''} />
+            <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-מתוק']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
+            <DropDown key={resetKey + '1'} label='Country' options={language==='heb'? countriesHeb:countries} setValue={handleValueChange} selected={''} />
         ]);
     }
 
@@ -348,24 +340,6 @@ const Wines = () => {
         setSearchQuery(e);
     }
 
-    const drynessOptions = [
-        { key: 'dry', text: 'Dry', value: 'dry' },
-        { key: 'half- sweet', text: 'Half-Sweet', value: 'Half-sweet' },
-    ];
-
-    const colorOptions = [
-        { key: 'red', text: 'Red', value: 'red' },
-        { key: 'white', text: 'White', value: 'white' },
-        { key: 'rose', text: 'Rose', value: 'rose' },
-        { key: 'bubble', text: 'Bubble', value: 'bubble' },
-    ];
-
-    const countryOptions = [
-        { key: 'france', text: 'France', value: 'france' },
-        { key: 'italy', text: 'Italy', value: 'italy' },
-        { key: 'spain', text: 'Spain', value: 'spain' },
-        { key: 'usa', text: 'USA', value: 'usa' },
-    ];
 
     //getFavorites
     useEffect(() => {
@@ -381,7 +355,7 @@ const Wines = () => {
                 {searchQuery ==='' && <Grid container className='dishgridView'>
                     {dropArrays}
                 </Grid>}
-                {searchQuery ==='' && <div className='resetButtonDiv'>
+                {searchQuery ==='' && <div className={`resetButtonDiv ${language==='heb'&& 'hebReset'}`}>
                     <Button
                     className='resetButton' 
                     onClick={(e) => {resetFilter();e.target.blur()}}
@@ -389,7 +363,7 @@ const Wines = () => {
                     borderRadius: '16px!important',             
                     '&:focus': {
                         outline: 'none'
-                      } }}>Reset</Button>
+                      } }}>{language==='heb'?'איפוס':'Reset'}</Button>
                 </div>}
                 
                 {searchQuery === '' ? <div><ExpandMore

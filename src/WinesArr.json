@@ -130,13 +130,17 @@
         "Cup_Y_N_": "Y",
         "CupPrice": 49.0,
         "BottlePrice": 172.0,
-        "Grape_Eng": [],
+        "Grape_Eng": [
+            "Pinot noir"
+        ],
         "Blend_Y_N_": "N",
         "Country_Heb": "צרפת",
         "Region_Heb": "אלזס",
         "Region_Eng": "Elsàss",
         "SubRegion_Heb": null,
-        "Grape_Heb": [],
+        "Grape_Heb": [
+            "פינו נואר"
+        ],
         "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPinot-noir-vieilles-vignes-reserve-cave-de-ribeauville-600x600.png?alt=media&token=cd61fa2b-3efe-4b94-b857-214ad7bcb94d",
         "WineryName_Heb": "ריבוביל",
         "WineryName_Eng": "Cave De Rubeauville",
@@ -442,13 +446,21 @@
         "Cup_Y_N_": "Y",
         "CupPrice": 55.0,
         "BottlePrice": 193.0,
-        "Grape_Eng": [],
+        "Grape_Eng": [
+            "Cabernet Sauvignon",
+            "Merlot",
+            "Cabernet Franc"
+        ],
         "Blend_Y_N_": "Y",
         "Country_Heb": "צרפת",
         "Region_Heb": "בורדו",
         "Region_Eng": "Bordeaux",
         "SubRegion_Heb": null,
-        "Grape_Heb": [],
+        "Grape_Heb": [
+            "קברנה סוביניון",
+            "מרלו",
+            "קברנה פרנק"
+        ],
         "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FClarendelle-Medoc-600x600.png?alt=media&token=bf17fca3-cce8-448a-916a-c7e8f1987fd0",
         "WineryName_Heb": "קלארנדל",
         "WineryName_Eng": "Domaine Clarence Dillon",

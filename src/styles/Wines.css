@@ -63,6 +63,12 @@ font-size: 16.5px;
     color: #ffffff;
     font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
     text-transform: lowercase;
+justify-content: center;
+  }
+
+  .MuiMenuItem-root.menuItem.hebMenuItem {
+    font-weight: 600;
+
   }
   
   .MuiButtonBase-root.Mui-selected.menuItem {
@@ -97,6 +103,14 @@ font-size: 16.5px;
     /* border-color: #fff !important; */
   }
 
+  .MuiGrid-root.MuiGrid-item.hebDropDown {
+    direction: rtl;
+  }
+
+  .MuiFormControl-root.MuiFormControl-fullWidth.hebDropDown {
+    direction: rtl;
+  }
+
 
 
 /* <-------------------  CSS for the reset button -------------------> */
@@ -109,6 +123,10 @@ font-size: 16.5px;
     justify-content: flex-start;
     font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
   }
+
+.resetButtonDiv.hebReset{
+  direction: rtl;
+}
   
   .css-1e6y48t-MuiButtonBase-root-MuiButton-root.resetButton {
     color: white;

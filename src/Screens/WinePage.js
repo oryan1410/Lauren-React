@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../HelpComponents/Card';
 import '../App.css';
 import { useLocation } from 'react-router-dom';
 import wines from '../WinesArr.json'
@@ -9,6 +8,7 @@ import '../styles/WinePage.css'
 import { CircleFlag } from 'react-circle-flags';
 import LiquorIcon from '@mui/icons-material/Liquor';
 import WineBarIcon from '@mui/icons-material/WineBar';
+import { useUserContext } from '../UserContext';
 
 
 const WinePage = ({ match }) => {
@@ -20,20 +20,14 @@ const WinePage = ({ match }) => {
     // const location = useLocation();
     // const wineId= props.match.params;    
 
-
-
-
-    const [selectedDryness, setSelectedDryness] = useState(null);
-    const [selectedColor, setSelectedColor] = useState(null);
-    const [selectedCountry, setSelectedCountry] = useState(null);
     const [isVisible, setIsVisable] = useState(false);
     const [propsData, setPropsData] = useState({});
-    const [language, setLanguage] = useState('heb');
 
+    const { language, setUserLanguage } = useUserContext();
     useEffect(() => {
         window.scrollTo(0, 0);
         setIsVisable(true);
-        let data = wines.find((wine) => wine.Id == id);
+        let data = wines.find((wine) => wine.Id === id);
         if (!data) {
             data = wines[0];
         }
@@ -44,44 +38,12 @@ const WinePage = ({ match }) => {
     }
         , []);
 
-    const drynessOptions = [
-        { key: 'dry', text: 'Dry', value: 'dry' },
-        { key: 'sweet', text: 'Sweet', value: 'sweet' },
-    ];
-
-    const colorOptions = [
-        { key: 'red', text: 'Red', value: 'red' },
-        { key: 'white', text: 'White', value: 'white' },
-        { key: 'rose', text: 'Rose', value: 'rose' },
-        { key: 'bubble', text: 'Bubble', value: 'bubble' },
-    ];
-
-    const countryOptions = [
-        { key: 'france', text: 'France', value: 'france' },
-        { key: 'italy', text: 'Italy', value: 'italy' },
-        { key: 'spain', text: 'Spain', value: 'spain' },
-        { key: 'usa', text: 'USA', value: 'usa' },
-    ];
-
     // const wines = [
     //     { name: 'Wine 1', dryness: 'dry', color: 'red', country: 'france' },
     //     { name: 'Wine 2', dryness: 'sweet', color: 'white', country: 'italy' },
     //     { name: 'Wine 3', dryness: 'dry', color: 'rose', country: 'spain' },
     //     { name: 'Wine 4', dryness: 'sweet', color: 'bubble', country: 'usa' },
     // ];
-
-    const filteredWines = wines.filter((wine) => {
-        if (selectedDryness && wine.dryness !== selectedDryness) {
-            return false;
-        }
-        if (selectedColor && wine.color !== selectedColor) {
-            return false;
-        }
-        if (selectedCountry && wine.country !== selectedCountry) {
-            return false;
-        }
-        return true;
-    });
 
     function getTypes(type) {
         if (type === 'Re') {
@@ -146,33 +108,33 @@ const WinePage = ({ match }) => {
                         <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
                         <span>{propsData.BottlePrice}</span>
                     </div>
-                    {propsData.Cup_Y_N_ == 'Y' ?
+                    {propsData.Cup_Y_N_ === 'Y' ?
                         <div className='wineInfoPrice cupPrice'>
                             <WineBarIcon className='cardLogos' style={{ margin: '0px 5px' }} />
                             <span>{propsData.CupPrice}</span>
                         </div> : null
                     }
                     </div>
-                    <div className='languageIcon'>
-                            <CircleFlag
-                                countryCode={'il'}
-                                className='langIcon'
-                                alt={'Hebrew'}
-                                onClick={() => setLanguage('heb')}
-                                style={{
-                                    boxShadow: language === 'heb' ? '0px 0px 30px #917F6B' : 'none',
-                                }}
-                            />
-                            <CircleFlag
-                                countryCode={'us'}
-                                alt={'English'}
-                                className='langIcon'
-                                onClick={() => setLanguage('eng')}
-                                style={{
-                                    boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
-                                }}
-                            />
-                        </div>
+                    <div className='languageIconWinePageDiv'>
+                        <CircleFlag
+                            countryCode={'il'}
+                            className='langIcon'
+                            alt={'Hebrew'}
+                            onClick={() => setUserLanguage('heb')}
+                            style={{
+                                boxShadow: language === 'heb' ? '0px 0px 30px #917F6B' : 'none',
+                            }}
+                        />
+                        <CircleFlag
+                            countryCode={'us'}
+                            alt={'English'}
+                            className='langIcon'
+                            onClick={() => setUserLanguage('eng')}
+                            style={{
+                                boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
+                            }}
+                        />
+                    </div>
                     <div className='winePageInfo'>                    
                         <span className='winePageTitleText wineInfoTitle'>Wine Info</span>
                         <div className='wineInfo'>                            

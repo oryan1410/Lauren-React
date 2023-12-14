@@ -114,7 +114,6 @@ button:focus {
 
 .navbar-light .navbar-nav .nav-link {
   color: #0d0d0d;
-  font-weight: 200;
   font-size: 20px;
   font-family: 'Urbanist', 'IBM Plex Sans Hebrew';
 }
@@ -126,7 +125,7 @@ button:focus {
 
 .navbar-light .navbar-nav .nav-link.active-link {
   color: #050505;
-  font-weight: bold;
+  font-weight:700;
   /* Change to your desired link color */
 }
 
@@ -367,6 +366,10 @@ img {
 
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
   color: #F1ECE6;
+}
+
+.MuiFormLabel-root.MuiInputLabel-root.hebInputLabel {
+  direction: rtl;
 }
 
 /* .css-1jy569b-MuiFormLabel-root-MuiInputLabel-root.Mui-focused {

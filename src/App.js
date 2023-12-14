@@ -2,7 +2,9 @@ import './App.css';
 import { CardMedia } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { Route, Routes, Link, useLocation } from 'react-router-dom';
-import { Navbar, Nav, Container } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
+import { CircleFlag } from 'react-circle-flags';
+
 // import Navbar from './HelpComponents/Navbar';
 
 import Home from './Screens/Home';
@@ -17,7 +19,6 @@ import Footer from './HelpComponents/Footer';
 import LoginPage from './Screens/LoginPage';
 import Favorites from './Screens/Favorites';
 
-import { UserProvider } from './UserContext';
 import { useUserContext } from './UserContext';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
@@ -25,16 +26,17 @@ import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 
 function App() {
 
-  const userContext = useUserContext();
+
   // goToHome = () => {
   //   history.push('/home');
   // }
+ 
+
+  const { language, setUserLanguage } = useUserContext();
 
   useEffect(() => {
-    if (userContext && userContext.getFilters) {
-      userContext.getFilters();
-    }
-  }, [userContext]);
+    console.log('language', language);
+  }, [language]);
 
   const [isVisible, setIsVisible] = useState(false);
   const [expanded, setExpanded] = useState(false);
@@ -122,8 +124,10 @@ function App() {
       console.log('isPageBottoma', isPageBottom);
   }, [isPageBottom]);
 
+
+
+
   return (
-<UserProvider>
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="App-Body">
         <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
@@ -137,36 +141,57 @@ function App() {
               <span ><MenuSharpIcon className='toggleIcon'/></span>
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
+            <div className='languageIconDiv'>
+              {language === 'eng' ?
+                        <CircleFlag
+                            countryCode={'il'}
+                            className='langIcon'
+                            alt={'Hebrew'}
+                            onClick={() => setUserLanguage('heb')}
+                            style={{
+                                boxShadow: language === 'heb' ? '0px 0px 20px #000' : 'none',
+                                
+                            }}
+                        />:
+                        <CircleFlag
+                            countryCode={'us'}
+                            alt={'English'}
+                            className='langIcon'
+                            onClick={() => setUserLanguage('eng')}
+                            style={{
+                                boxShadow: language === 'eng' ? '0px 0px 20px #000' : 'none',
+                            }}
+                        />
+                        }
+                    </div>
               <Nav className="ml-auto" >
                 <Nav.Item>
-                  <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Home</Link>
+                  <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Home':'בית'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Wines</Link>
+                  <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Wines':'יינות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Alcoholic Beverages</Link>
+                  <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Alcoholic Beverages':'משקאות אלכוהולים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Dishes</Link>
+                  <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Dishes':'מנות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Favorites</Link>
+                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Favorites':'מועדפים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Login</Link>
+                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Login':'התחברות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Events</Link>
+                  <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Events':'אירועים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>About Us</Link>
+                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'About Us':'אודותינו'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>Contact</Link>
+                  <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Contact':'צור קשר'}</Link>
                 </Nav.Item>
-
-
                 {/* <Nav.Link href="\login" className='nav-link'>Login</Nav.Link>
               <Nav.Link href="\dishes">Dishes</Nav.Link>
               <Nav.Link href="\wines">Wines</Nav.Link>
@@ -205,7 +230,6 @@ function App() {
 
 
     </div>
-    </UserProvider>
   );
 }
 

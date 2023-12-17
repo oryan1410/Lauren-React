@@ -9,22 +9,20 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import '../styles/WineCard.css'
 import { useUserContext } from '../UserContext';
 import { useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function RecipeReviewCard2(props) {
     const [isImageClicked, setImageClicked] = useState(false);
     const [isFavorite, setIsFavorite] = useState(false);
-    const {addFavorite,removeFavorite,favorites,getFavorites}= useUserContext();
+    const { addFavorite, removeFavorite, favorites, getFavorites } = useUserContext();
+    const { t } = useTranslation();
 
     let screenWidth = window.innerWidth;
 
-    useEffect(() => {
-        console.log('props grape', props.wine.Grape_Eng[0]);
-    }, []);
-
-
-
     const handleImageClick = () => {
-        setImageClicked(!isImageClicked);
+        if (props.wine.inStock !== false) {
+            setImageClicked(!isImageClicked);
+        }
     };
 
     const getTypes = (type) => {
@@ -77,6 +75,7 @@ export default function RecipeReviewCard2(props) {
 
     const setAsFavorite = (event) => {
         event.stopPropagation();
+        if(props.wine.inStock !==false){
         if (isFavorite) {
             removeFavorite(props.wine.Id);
         }
@@ -85,19 +84,21 @@ export default function RecipeReviewCard2(props) {
         }
         setIsFavorite(!isFavorite);
     }
+    }
 
-    useEffect (()=>{
-        if (favorites && favorites.includes(props.wine.Id)){
+    useEffect(() => {
+        if (favorites && favorites.includes(props.wine.Id)) {
             setIsFavorite(true);
         }
-        else{
+        else {
             setIsFavorite(false);
         }
-    },[favorites])
+    }, [favorites])
 
 
     return (
-        <div className="cardTwo">
+        <div className={`cardTwo ${props.wine.inStock === false && 'outOfStock'}`}>
+            {props.wine.inStock === false && <div className="out-of-stock-text">{t('OutOfStock')}</div>}
             <div className={`card2Content`}>
                 <div className='card2-titleDiv'>
                     <span className='card2-title'>{props.title.length > 18 ? props.title.substring(0, 15) + '...' : props.title}</span><span className='card2-title hebTitle'>{props.wine.Name_Heb.length > 20 ? props.wine.Name_Heb.substring(0, 15) + '...' : props.wine.Name_Heb}</span>
@@ -142,9 +143,9 @@ export default function RecipeReviewCard2(props) {
                     <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_Y_N_)}</span>
                 </div>
                 <div className='card2-details'>
-                   {props.wine.Blend_Y_N_ === 'Y' ?  <span className='card2-span card2-blentText'>blend</span> : <><span className='card2-span card2-leftText'>{props.wine.Grape_Heb[0]}</span>
-                    <span>||</span>
-                    <span className='card2-span card2-rightText'>{props.wine.Grape_Eng[0]}</span></>}
+                    {props.wine.Blend_Y_N_ === 'Y' ? <span className='card2-span card2-blentText'>blend</span> : <><span className='card2-span card2-leftText'>{props.wine.Grape_Heb[0]}</span>
+                        <span>||</span>
+                        <span className='card2-span card2-rightText'>{props.wine.Grape_Eng[0]}</span></>}
                 </div>
                 {/* <span className='card2-details'>{props.wine.CountryName} || {props.wine.Country_Heb}</span>
                 <span className='card2-details'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)} || {getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
@@ -165,7 +166,7 @@ export default function RecipeReviewCard2(props) {
             </div>
             <div className={`card2-imageDiv ${isImageClicked ? 'slide' : ''}`} onClick={handleImageClick}>
                 <div>
-                    <InfoTwoToneIcon className='infoIcon'  />
+                    <InfoTwoToneIcon className='infoIcon' />
                     <FavoriteIcon onClick={setAsFavorite} className={`favoriteIcon ${isFavorite && 'isFavorite'}`} />
                     <img src={props.image} alt={`${props.title} image missing`} className="card2image" />
                 </div>

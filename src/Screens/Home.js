@@ -59,7 +59,7 @@ export default function Home(props) {
                     </Grid>
                 </Grid>
                 <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
-                    <InstagramEmbed url="https://www.instagram.com/lauren_winebar/" width={'100%'} />
+                    <InstagramEmbed url="https://www.instagram.com/lauren_winebar/" width={'100%'}/>
                 </div>
             </Container>
         </div>

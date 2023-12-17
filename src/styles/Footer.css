@@ -1,0 +1,63 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: #967e68;
+}
+
+.footerBottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width: 100%;
+}
+
+.footerTop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 5px;
+  background-color: #967e68;
+}
+
+.footerTop> * {
+  padding-inline: 5px;
+}
+
+.footerCopyrightText {
+  font-size: 0.3rem;
+  font-family: "Signika Negative", "Rubik";
+  color: #000000;
+  margin: 0;
+  padding: 0 0 0 0;
+  text-align: center;
+}
+
+.MuiSvgIcon-root.copyRightIcon {
+  font-size: 0.4rem;
+
+}
+
+.MuiSvgIcon-root.footerIcon {
+  font-size: 25px;
+  color: #000000;
+}
+
+.MuiSvgIcon-root.footerIcon:hover {
+  color: #0505ee;
+}
+
+.footerWhastAppIcon{
+    height: 20px;
+}
+
+.findUs{
+    font-size: 1rem;
+    color: #000000;
+    margin: 0;
+    padding: 0 0 0 0;
+    text-align: center;
+}

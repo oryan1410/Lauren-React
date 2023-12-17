@@ -2,6 +2,7 @@
 .cardTwo {
   border: 2px solid #967E68;
   display: flex;
+  flex:1;
   border-radius: 15px;
   flex-direction: row !important;
   justify-content: space-between;
@@ -11,8 +12,46 @@
   width: 100%;
   color: #ffffff;
   background-color: #121A1C;
-  font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+  font-family: 'anisette-std', 'Rubik';
   text-transform: lowercase;
+}
+
+.outOfStock {
+  border: 2px solid #967E68;
+  display: flex;
+  flex:1;
+  border-radius: 15px;
+  flex-direction: row !important;
+  justify-content: space-between;
+  margin-top: 1rem;
+  height: 200px;
+  position: relative;
+  width: 100%;
+  color: #ffffff;
+  background-color: #000000;
+  font-family: 'anisette-std', 'Rubik';
+  text-transform: lowercase;
+  opacity: 0.5;
+}
+
+.out-of-stock-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-7deg);
+  color: rgb(255, 255, 255);
+  background-color: #080909;
+  padding: 5px;
+  z-index: 3;
+  pointer-events: none;
+  font-size: 30px;
+  width: 95%;
+}
+
+@media screen and (max-width: 395px) {
+  .out-of-stock-text {
+    font-size: 20px;
+  }
 }
 
 .card2-imageDiv {
@@ -50,9 +89,11 @@
 .card2Content {
   display: flex;
   flex: 4;
+  max-width: 50%;
   flex-direction: column;
   justify-content: center;
   padding: 1rem 1rem;
+  text-overflow: ellipsis;
 }
 
 .card2-right {
@@ -93,13 +134,17 @@
 .card2-title {  
   font-size: 1.4rem;
   margin-bottom: 0;
-  font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+  font-family: 'anisette-std', 'Rubik';
   text-transform: lowercase;
   font-weight: 300;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .hebTitle{
   direction: rtl;
+  font-weight: 400;
 }
 
 .card2-button {
@@ -143,7 +188,7 @@
 
 .card2-Subtitle {
   font-size: 1rem;
-  font-weight: 200;
+  font-weight: 400;
 }
 
 .card2-subTitleDiv{
@@ -185,6 +230,7 @@
 
 .card2-span.card2-leftText {
   justify-content: end;
+  font-weight: 500;
 }
 
 .card2-span.card2-rightText {
@@ -216,6 +262,20 @@
 
  .favoriteIcon.isFavorite {
   color: #ff0000;
+ }
+
+ .oneRowWinery{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-inline: 5px;
+ }
+
+ .oneRowWinery > span {
+
+  margin-inline: 2px;
  }
 
 
@@ -272,7 +332,7 @@
   }
 
   .card2-Subtitle {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
   }
 
   .card2image {

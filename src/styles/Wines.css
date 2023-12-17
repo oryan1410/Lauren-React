@@ -10,7 +10,7 @@
     background-color: #1E2423;
     padding: 10px;
     font-size: medium;
-    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'Rubik';
     color: #967E68;
     border-radius: 15px;
     box-shadow: 0 0 5px #967E68;
@@ -26,7 +26,7 @@
   align-items: center;
   width: 50%;
   margin-inline: 1rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .CategoryDivRight {
@@ -43,7 +43,7 @@
 
 .MuiButtonBase-root.resetButton{
 background-color: #967E68;
-font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+font-family: 'anisette-std', 'Rubik';
 text-transform: lowercase;
 font-size: 16.5px;
 
@@ -61,7 +61,7 @@ font-size: 16.5px;
   .MuiMenuItem-root.menuItem {   
     font-size: 1em;
     color: #ffffff;
-    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'Rubik';
     text-transform: lowercase;
 justify-content: center;
   }
@@ -89,7 +89,7 @@ justify-content: center;
   
   #demo-simple-select-label {
     color: #ffffff;
-    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'Rubik';
     text-transform: lowercase;
   }
   
@@ -121,7 +121,7 @@ justify-content: center;
     display: flex;
     margin-top: 10px;
     justify-content: flex-start;
-    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'Rubik';
   }
 
 .resetButtonDiv.hebReset{

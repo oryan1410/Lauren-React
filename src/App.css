@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Urbanist', 'IBM Plex Sans Hebrew';
+  font-family: 'Urbanist', 'Rubik';
 }
 
 /*scrollbar styling*/
@@ -115,7 +115,7 @@ button:focus {
 .navbar-light .navbar-nav .nav-link {
   color: #0d0d0d;
   font-size: 20px;
-  font-family: 'Urbanist', 'IBM Plex Sans Hebrew';
+  font-family: 'Urbanist', 'Rubik';
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -130,7 +130,7 @@ button:focus {
 }
 
 .nav-link {
-  font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+  font-family: 'Signika Negative', 'Rubik';
   font-size: 1.2em;
   color: #61dafb;
   transition: opacity 2 ease-in-out;
@@ -223,7 +223,7 @@ button:focus {
   color: #1E2423;
   background-color: transparent;
   position: relative;
-  bottom: 40px;
+  bottom: 42px;
   left: 5%;
   /* background-color: #1E2423; */
   border-radius: 16px;

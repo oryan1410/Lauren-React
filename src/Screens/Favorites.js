@@ -7,12 +7,13 @@ import '../styles/Favorites.css'
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Collapse from '@mui/material/Collapse';
+import { useTranslation } from 'react-i18next';
 
 
 
 const Favorites = () => {
     // Assuming you have an array of favorite wine IDs
-    const { favorites } = useUserContext();
+    const { favorites, winesArr, isLoading } = useUserContext();
     const [redWines, setRedWines] = useState([]);
     const [whiteWines, setWhiteWines] = useState([]);
     const [roseWines, setRoseWines] = useState([]);
@@ -24,15 +25,14 @@ const Favorites = () => {
     const [roseExpanded, setRoseExpanded] = useState(false);
     const [bubbleExpanded, setBubbleExpanded] = useState(false);
 
+    const { t } = useTranslation();
 
-
-    useEffect(() => {
-
+    const renderFavorites = () => {
         let redArr = []
         let whiteArr = []
         let roseArr = []
         let bubbleArr = []
-        wines.forEach(wine => {
+        winesArr.forEach(wine => {
             if (favorites.includes(wine.Id)) {
                 if (wine.Type_Ro_Re_Wh_Bu_ === 'Re') {
                     redArr.push(wine)
@@ -57,7 +57,14 @@ const Favorites = () => {
         setRoseWines(roseArr);
         setBubbleWines(bubbleArr);
     }
-        , [favorites])
+
+
+
+    useEffect(() => {
+        if (!isLoading) {
+renderFavorites();
+        }
+    }, [favorites,winesArr, isLoading])
 
     const ExpandMore = styled((props) => {
         const { expand, header, ...other } = props;
@@ -103,8 +110,7 @@ const Favorites = () => {
     return (
         <Container>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-
-                <span className='favoriteTitle'>Favorite Wines</span>
+                <span className='favoriteTitle'>{t('Favorite')}</span>
                 {/* {favorites.map((wineId) => (
                 <WineCard key={wineId} wineId={wineId} />
             ))} */}

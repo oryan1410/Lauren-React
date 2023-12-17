@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { Route, Routes, Link, useLocation } from 'react-router-dom';
 import { Navbar, Nav} from 'react-bootstrap';
 import { CircleFlag } from 'react-circle-flags';
+import { useTranslation } from 'react-i18next';
 
 // import Navbar from './HelpComponents/Navbar';
 
@@ -33,6 +34,7 @@ function App() {
  
 
   const { language, setUserLanguage } = useUserContext();
+  const {t}= useTranslation("common");
 
   useEffect(() => {
     console.log('language', language);
@@ -124,6 +126,10 @@ function App() {
       console.log('isPageBottoma', isPageBottom);
   }, [isPageBottom]);
 
+  useEffect(() => {
+    console.log('language', language);
+  }, [language]);
+
 
 
 
@@ -142,7 +148,7 @@ function App() {
             </Navbar.Toggle>
             <Navbar.Collapse id="basic-navbar-nav">
             <div className='languageIconDiv'>
-              {language === 'eng' ?
+              {language === 'en' ?
                         <CircleFlag
                             countryCode={'il'}
                             className='langIcon'
@@ -157,40 +163,40 @@ function App() {
                             countryCode={'us'}
                             alt={'English'}
                             className='langIcon'
-                            onClick={() => setUserLanguage('eng')}
+                            onClick={() => setUserLanguage('en')}
                             style={{
-                                boxShadow: language === 'eng' ? '0px 0px 20px #000' : 'none',
+                                boxShadow: language === 'en' ? '0px 0px 20px #000' : 'none',
                             }}
                         />
                         }
                     </div>
               <Nav className="ml-auto" >
                 <Nav.Item>
-                  <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Home':'בית'}</Link>
+                  <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Home':'בית'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Wines':'יינות'}</Link>
+                  <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Wines':'יינות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Alcoholic Beverages':'משקאות אלכוהולים'}</Link>
+                  <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Alcoholic Beverages':'משקאות אלכוהולים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Dishes':'מנות'}</Link>
+                  <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Dishes':'מנות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Favorites':'מועדפים'}</Link>
+                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Favorites':'מועדפים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Login':'התחברות'}</Link>
+                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Login':'התחברות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Events':'אירועים'}</Link>
+                  <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Events':'אירועים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'About Us':'אודותינו'}</Link>
+                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'About Us':'אודותינו'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='eng'?'Contact':'צור קשר'}</Link>
+                  <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Contact':'צור קשר'}</Link>
                 </Nav.Item>
                 {/* <Nav.Link href="\login" className='nav-link'>Login</Nav.Link>
               <Nav.Link href="\dishes">Dishes</Nav.Link>

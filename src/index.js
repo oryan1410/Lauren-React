@@ -5,15 +5,20 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, } from 'react-router-dom';
 import { UserProvider } from './UserContext';
+import { I18nextProvider } from 'react-i18next';
+
+
+import './i18n';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
+<I18nextProvider>
     <UserProvider>
-
     <App />
     </UserProvider>
+    </I18nextProvider>
     </BrowserRouter>
 );
 

@@ -42,13 +42,13 @@
 }
 
 .winePageTitleText {
-    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'Rubik';
     text-transform: lowercase;
     color: #ffffff;
 }
 
 .wineInfoTitle {
-    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'Rubik';
     text-transform: lowercase;
     color: #ffffff;
     font-size: 30px;
@@ -111,7 +111,7 @@
 }
 
 .descText{
-    font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+    font-family: 'Signika Negative', 'Rubik';
     font-size: 20px;
     color: #ffffff;
 }
@@ -164,7 +164,7 @@
     justify-content: center;
 
     color: #ffffff;
-    font-family: 'anisette-std', 'IBM Plex Sans Hebrew';
+    font-family: 'anisette-std', 'Rubik';
     margin-top: auto;
     margin-bottom: auto;
     text-transform: lowercase;
@@ -206,7 +206,7 @@
 .wineInfoText.pricetext{
     text-align: center;
 font-size: large;
-font-family: 'Signika Negative', 'IBM Plex Sans Hebrew';
+font-family: 'Signika Negative', 'Rubik';
 }
 
 

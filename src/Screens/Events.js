@@ -5,11 +5,12 @@ import { Grid } from '@mui/material';
 import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
-
+import { useTranslation } from 'react-i18next';
 export default function Events(props) {
 
     const [isVisible, setIsVisible] = useState(false);
     const {getFilters} = useUserContext();
+    const {t} = useTranslation();
 
     useEffect(() => {
         setIsVisible(true);
@@ -20,7 +21,7 @@ export default function Events(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-        <p>Events</p></div>
+        <span className='favoriteTitle'>{t('Events')}</span></div>
     );
 };
 

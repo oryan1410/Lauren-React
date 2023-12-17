@@ -25,7 +25,7 @@ const Wines = () => {
     const [whiteExpanded, setWhiteExpanded] = useState(location.state?.whiteExpanded || false);
     const [roseExpanded, setRoseExpanded] = useState(location.state?.roseExpanded || false);
     const [bubbleExpanded, setBubbleExpanded] = useState(location.state?.bubbleExpanded || false);
-    const { redWines, whiteWines, roseWines, bubbleWines, countries,countriesHeb, getFilters,getFavorites, language } = useUserContext();
+    const { redWines, whiteWines, roseWines, bubbleWines, countries,countriesHeb, getFilters,getFavorites, language, winesArr, getWinesArr, isLoading } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -34,6 +34,7 @@ const Wines = () => {
     const [allWines, setAllWines] = useState([]);
     const [noneFound, setNoneFound] = useState(false);
     const [displayWines2, setDisplayWines2] = useState([]);
+    const [testDisplay, setTestDisplay] = useState([]);
 
     const [dropArrays, setDropArrays] = useState([]);
 
@@ -45,7 +46,6 @@ const Wines = () => {
 
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
 
 
     // for auto scrolling to expanded panel
@@ -53,6 +53,13 @@ const Wines = () => {
     const expandedDivRef2 = useRef(null);
     const expandedDivRef3 = useRef(null);
     const expandedDivRef4 = useRef(null);
+
+    useEffect(() => {
+        setDropArrays([
+            <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-מתוק']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={selectedDryness} />,
+            <DropDown key={resetKey + '1'} label='Country' options={language==='heb'? countriesHeb:countries} setValue={handleValueChange} selected={selectedCountry} />
+        ]);
+    }, [language]);
 
 
 
@@ -108,7 +115,7 @@ const Wines = () => {
     // filter wines according to selected filters
     const filterWines = async () => {
         console.log('filterWines');
-        let arr = wines;
+        let arr = winesArr;
         if (selectedCountry !== '') {
             arr = arr.filter((wine) => wine.Country_Eng === selectedCountry);
         }
@@ -143,16 +150,76 @@ const Wines = () => {
         setBubbleWinesArr(bubble);
     }
 
-    useEffect(() => {
-        if (!wines.length) {
-            // Data has not loaded yet, exit the useEffect
-            return;
-        }
+    // useEffect(() => {
+    //     // if (winesArr.length === 0) {
+    //     //     getWinesArr();
+    //     // }
+    //     // if (!wines.length) {
+    //     //     // Data has not loaded yet, exit the useEffect
+    //     //     return;
+    //     // }
+    //     // let arr2= winesArr.map((wine) => {
+    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+    //     // }
+    //     // );
+    //     // setTestDisplay(arr2);
+    //     // setIsVisable(true);
+    //     // let arr = wines.map((wine) => {
+    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+    //     // });
+    //     // setAllWines(arr);
+    //     // let redArr = redWines.map((wine) => {
+    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+    //     // });
+
+    //     // let whiteArr = whiteWines.map((wine) => {
+    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+    //     // });
+
+    //     // let roseArr = roseWines.map((wine) => {
+    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+    //     // }
+    //     // );
+
+    //     // let bubbleArr = bubbleWines.map((wine) => {
+    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+    //     // }
+    //     // );
+
+
+    //     // // setRedWinesArr(redArr);
+    //     // // setWhiteWinesArr(whiteArr);
+    //     // // setRoseWinesArr(roseArr);
+    //     // // setBubbleWinesArr(bubbleArr);
+    //     // setAllWines(arr);
+    //     // setDisplayWines2(arr);
+
+    //     // if (expanded && expandedDivRef1.current) {
+    //     //     expandedDivRef1.current.scrollIntoView({ behavior: 'smooth' });
+    //     //   }
+    //     //   else if (whiteExpanded && expandedDivRef2.current) {
+    //     //       expandedDivRef2.current.scrollIntoView({ behavior: 'smooth' });
+    //     //   }
+    //     //   else if (roseExpanded && expandedDivRef3.current) {
+    //     //       expandedDivRef3.current.scrollIntoView({ behavior: 'smooth' });
+    //     //   }
+    //     //   else if (bubbleExpanded && expandedDivRef4.current) {
+    //     //       console.log('bubbleExpanded true');
+    //     //       expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
+    //     //   }       
+    // }, [redWines, whiteWines, roseWines, bubbleWines, wines]);
+
+    const renderWines = (winesArr) => {
         setIsVisable(true);
-        let arr = wines.map((wine) => {
+
+        console.log('renderWines');
+        let arr = winesArr.map((wine) => {
             return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
         });
-
+        let arr2 = wines.map((wine) => {
+            return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+        });
+        setAllWines(arr2);
         let redArr = redWines.map((wine) => {
             return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
         });
@@ -174,9 +241,8 @@ const Wines = () => {
         setWhiteWinesArr(whiteArr);
         setRoseWinesArr(roseArr);
         setBubbleWinesArr(bubbleArr);
-        setAllWines(arr);
-        setDisplayWines2(arr);
 
+        
         if (expanded && expandedDivRef1.current) {
             expandedDivRef1.current.scrollIntoView({ behavior: 'smooth' });
           }
@@ -190,7 +256,16 @@ const Wines = () => {
               console.log('bubbleExpanded true');
               expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
           }       
-    }, [wines, redWines, whiteWines, roseWines, bubbleWines]);
+       
+    }
+
+    useEffect(() => {
+        if(!isLoading && winesArr!= [undefined]){
+            renderWines(winesArr);
+        }
+    }
+    , [winesArr, isLoading]);
+
 
     useEffect(() => {
         if(redWinesArr.length !== 0 && whiteWinesArr.length !== 0 && roseWinesArr.length !== 0 && bubbleWinesArr.length !== 0){
@@ -238,8 +313,8 @@ const Wines = () => {
         setBubbleExpanded(false);
         setResetKey(prevKey => prevKey + 1); // increment the key
         setDropArrays([
-            <DropDown key={resetKey + '0'} label='Dryness' options={['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
-            <DropDown key={resetKey + '1'} label='Country' options={countries} setValue={handleValueChange} selected={''} />
+            <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-מתוק']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
+            <DropDown key={resetKey + '1'} label='Country' options={language==='heb'? countriesHeb:countries} setValue={handleValueChange} selected={''} />
         ]);
         setFilterReset(true);
     }
@@ -423,7 +498,7 @@ const Wines = () => {
 
                 {/* {displayWines2} */}
                 {noneFound && <h1>None Found</h1>}
-                
+                {testDisplay}
             </div>
             
         </Container>

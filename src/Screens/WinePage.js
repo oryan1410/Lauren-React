@@ -9,11 +9,13 @@ import { CircleFlag } from 'react-circle-flags';
 import LiquorIcon from '@mui/icons-material/Liquor';
 import WineBarIcon from '@mui/icons-material/WineBar';
 import { useUserContext } from '../UserContext';
+import { useTranslation } from 'react-i18next';
 
 
 const WinePage = ({ match }) => {
 
     const { id } = useParams();
+    const { t } = useTranslation();
 
     // const id = match.params.id;
 
@@ -23,20 +25,40 @@ const WinePage = ({ match }) => {
     const [isVisible, setIsVisable] = useState(false);
     const [propsData, setPropsData] = useState({});
 
-    const { language, setUserLanguage } = useUserContext();
-    useEffect(() => {
-        window.scrollTo(0, 0);
-        setIsVisable(true);
-        let data = wines.find((wine) => wine.Id === id);
+    const { language, setUserLanguage, winesArr, isLoading } = useUserContext();
+
+    const setDataForPage = (winesArr) => {
+        let data = winesArr.find((wine) => wine.Id == id);
+        console.log(data);
         if (!data) {
-            data = wines[0];
+            data = winesArr[0];
         }
         setPropsData(data);
-        return () => {
-            setIsVisable(false);
-        }
+        setIsVisable(true);
     }
-        , []);
+    
+    
+    useEffect(() => {
+        // console.log(idd);
+        console.log(id)
+        window.scrollTo(0, 0);
+        if (!isLoading){
+            console.log('not loading');
+            console.log(winesArr);
+            setDataForPage(winesArr);
+        }
+        // console.log(winesArr);
+        // let data = winesArr.find((wine) => wine.Id === id);
+        // console.log(data);
+        // if (!data) {
+        //     data = winesArr[0];
+        // }
+        // setPropsData(data);
+        // // return () => {
+        //     setIsVisable(false);
+        // }
+    }
+        , [winesArr, isLoading]);
 
     // const wines = [
     //     { name: 'Wine 1', dryness: 'dry', color: 'red', country: 'france' },
@@ -115,7 +137,7 @@ const WinePage = ({ match }) => {
                         </div> : null
                     }
                     </div>
-                    <div className='languageIconWinePageDiv'>
+                    {/* <div className='languageIconWinePageDiv'>
                         <CircleFlag
                             countryCode={'il'}
                             className='langIcon'
@@ -134,36 +156,15 @@ const WinePage = ({ match }) => {
                                 boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
                             }}
                         />
-                    </div>
+                    </div> */}
                     <div className='winePageInfo'>                    
-                        <span className='winePageTitleText wineInfoTitle'>Wine Info</span>
+                        <span className='winePageTitleText wineInfoTitle'>{t("WineInfo")}</span>
                         <div className='wineInfo'>                            
                             <p className={`wineInfoText ${ language==='heb'? 'hebWineInfo': 'engWineInfo'} `}>{language==='heb'? propsData.Country_Heb: propsData.Country_Eng} - {language==='heb'?  propsData.WineryName_Heb : propsData.WineryName_Eng}</p>
                         </div>
                         <div className='wineInfo'>
                             <p className={`wineInfoText ${ language==='heb'? 'hebWineInfo': 'engWineInfo'} `}>{language==='heb'? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)} - {language==='heb'? getDrynessHeb(propsData.Dry_Y_N_): getDryness(propsData.Dry_Y_N_)}</p>
                         </div>
-                        {/* <div className='wineInfo'>
-                            <p className='wineInfoText left'>{propsData.Country_Heb}</p>
-                            <p className='wineInfoSeperator'>|</p>
-                            <p className='wineInfoText right'>{propsData.Country_Eng}</p>
-                        </div>
-                        <div className='wineInfo'>
-                            <p className='wineInfoText left'>{propsData.Region_Heb}</p>
-                            <p className='wineInfoSeperator'>|</p>
-                            <p className='wineInfoText right'>{propsData.Region_Eng}</p>
-                        </div>
-                        <div className='wineInfo'>
-                            <p className='wineInfoText left'>{getDrynessHeb(propsData.Dry_Y_N_)}</p>
-                            <p className='wineInfoSeperator'>|</p>
-                            <p className='wineInfoText right'>{getDryness(propsData.Dry_Y_N_)}</p>
-                        </div>
-                        <div className='wineInfo'>
-                            <p className='wineInfoText left'>{getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_)}</p>
-                            <p className='wineInfoSeperator'>|</p>
-                            <p className='wineInfoText right'>{getTypes(propsData.Type_Ro_Re_Wh_Bu_)}</p>
-                        </div> */}
-                        {/* <p className='wineInfo'>Grape: {propsData.Grape}</p> */}
                         <div className='wineInfo'>
                             <p className='wineInfoText pricetext'>{propsData.BottlePrice}</p>
                         </div>

@@ -10,11 +10,12 @@
   /* Width of the scrollbar */
 }
 
- ::-webkit-scrollbar-track {
-  background: #121A1C; /* Background of the scrollbar track */
-position: relative;
+::-webkit-scrollbar-track {
+  background: #121A1C;
+  /* Background of the scrollbar track */
+  position: relative;
 
-} 
+}
 
 ::-webkit-scrollbar-thumb {
   background: #967E68;
@@ -68,14 +69,16 @@ position: relative;
   margin: 0;
 }
 
-.navbarToggle{
-  border-width: 0; padding-right: 0; margin-right: 0;
+.navbarToggle {
+  border-width: 0;
+  padding-right: 0;
+  margin-right: 0;
   width: 100px;
   display: flex;
   justify-content: flex-end;
 }
 
-.toggleIcon{
+.toggleIcon {
   color: #080808;
 }
 
@@ -87,14 +90,16 @@ position: relative;
   .MuiSvgIcon-root.toggleIcon {
     font-size: xx-large;
   }
-  
+
 }
 
 .navbarToggle.collapsed {
-  border-width: 0; padding-right: 0; margin-right: 0;
+  border-width: 0;
+  padding-right: 0;
+  margin-right: 0;
 
-  .toggleIcon{
-color: #888;
+  .toggleIcon {
+    color: #888;
 
   }
 
@@ -125,7 +130,7 @@ button:focus {
 
 .navbar-light .navbar-nav .nav-link.active-link {
   color: #050505;
-  font-weight:700;
+  font-weight: 700;
   /* Change to your desired link color */
 }
 
@@ -217,22 +222,22 @@ button:focus {
     width: 100%;
   }
 
-  
-/* <---------- for the x button in searchbar ----------> */
-.clearButton {
-  color: #1E2423;
-  background-color: transparent;
-  position: relative;
-  bottom: 42px;
-  left: 5%;
-  /* background-color: #1E2423; */
-  border-radius: 16px;
-  height: 25px;
-  width: 25px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
+  /* <---------- for the x button in searchbar ----------> */
+  .clearButton {
+    color: #1E2423;
+    background-color: transparent;
+    position: relative;
+    bottom: 42px;
+    left: 5%;
+    /* background-color: #1E2423; */
+    border-radius: 16px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
 
   .App-logo {
@@ -314,7 +319,7 @@ img {
 
 .App-Body {
   background-image: url('./Images/BackgroungImage_Final.png');
-  background-color: #121A1C;  
+  background-color: #121A1C;
   background-position: center;
   display: flex;
   flex-direction: column;
@@ -323,6 +328,7 @@ img {
   color: white;
   flex: 1;
 }
+
 /* 
 @keyframes App-logo-spin {
   from {
@@ -341,7 +347,7 @@ img {
 }
 
 .textInput {
-  background-color: #967E68!important;
+  background-color: #967E68 !important;
   width: 100%;
   border-radius: 16px;
   text-decoration: none;
@@ -350,7 +356,7 @@ img {
 
 .searchInput {
   margin-block: 10px;
-  border-radius: 16px!important;
+  border-radius: 16px !important;
 }
 
 .inputProps {
@@ -410,28 +416,72 @@ img {
   flex-direction: column;
 }
 
-  /* <-------------------  CSS for the Scroll To Top -------------------> */
-  .scrollToTop{
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    height: 100px;
-    width: 100px;
-    background-color: #967E68;
-    z-index: 1000;
-    border-radius: 50px;
-    box-shadow: 0 0 15px #d6bc9e;
-  }
+/* <-------------------  CSS for the Scroll To Top -------------------> */
+.scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  height: 100px;
+  width: 100px;
+  background-color: #967E68;
+  z-index: 1000;
+  border-radius: 50px;
+  box-shadow: 0 0 15px #d6bc9e;
+}
 
+.MuiSvgIcon-root.scrollToTop {
+  font-size: xxx-large;
+  /*add border shadow*/
+  display: flex;
+}
+
+@media screen and (max-width: 650px) {
   .MuiSvgIcon-root.scrollToTop {
-    font-size: xxx-large;
-    /*add border shadow*/
-    display: flex;
+    font-size: xx-large;
   }
 
-  @media screen and (max-width: 650px) {
-    .MuiSvgIcon-root.scrollToTop {
-      font-size: xx-large;
-    }
-    
-  }
+}
+
+
+/* <-------------------  CSS for the ageDialog -------------------> */
+
+.dialogContainerHeb {
+  direction: rtl;
+}
+
+.dialog>* {
+  font-family: 'anisette-std', 'Rubik';
+}
+
+.MuiDialogTitle-root.dialogTitle {
+  font-family: 'anisette-std', 'Rubik';
+  text-transform: lowercase;
+}
+
+.MuiDialogTitle-root.dialogTitle.hebTitle {
+  direction: rtl;
+  text-align: right;
+}
+
+.MuiButtonBase-root.MuiButton-root.dialogButton {
+  font-family: 'anisette-std', 'Rubik';
+  font-size: 15px;
+  text-transform: lowercase;
+  text-decoration: underline;
+  color: #050505;
+}
+
+.dialogText.MuiDialogContentText-root {
+  font-family: 'anisette-std', 'Rubik';
+  text-transform: lowercase;
+  font-size: 17px;
+}
+
+.dialogText.MuiDialogContentText-root.hebText {
+  direction: rtl;
+  text-align: right;
+}
+
+.MuiPaper-root.MuiDialog-paper {
+  background-color: #6a410e;
+}

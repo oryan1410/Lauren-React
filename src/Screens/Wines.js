@@ -69,7 +69,7 @@ const Wines = () => {
         console.log('Value changed to:', value);
         if (label === 'Dryness') {
             setSelectedDryness(value);
-            if (value === 'Dry') {
+            if (value === 'Dry' || value === 'יבש') {
                 setSelectedDryness('Y');
             }
             else {
@@ -78,11 +78,20 @@ const Wines = () => {
             //console.log('arr', arr);
         }
         else if (label === 'Country') {
+            if (language==='heb'){
+                setSelectedCountry(countries[countriesHeb.indexOf(value)]);
+            }
+            else if (language==='eng'){
             setSelectedCountry(value);
+        }
         }
 
 
     };
+
+    useEffect(() => {
+        console.log('useEffect selectCountry',selectedCountry);
+    }, [selectedCountry]);
     
 
     //useEffect to reset filters- after a filter has been chosen

@@ -25,6 +25,7 @@ export function UserProvider({ children }) {
     const [language, setLanguage] = useState('heb');
     const [winesArr, setWinesArr] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [navBarVisable, setNavBarVisable] = useState(true);
     
     //     // getFilters();
     //     // filter wines according to type
@@ -249,7 +250,8 @@ export function UserProvider({ children }) {
         winesArr,
         // getWinesArr,
         isLoading,
-        addDocToFiresore
+        addDocToFiresore,
+        navBarVisable, setNavBarVisable
     };
 
     return (

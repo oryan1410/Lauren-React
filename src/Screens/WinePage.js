@@ -10,6 +10,8 @@ import LiquorIcon from '@mui/icons-material/Liquor';
 import WineBarIcon from '@mui/icons-material/WineBar';
 import { useUserContext } from '../UserContext';
 import { useTranslation } from 'react-i18next';
+import GoBackButton from '../HelpComponents/goBackButton';
+
 
 
 const WinePage = ({ match }) => {
@@ -36,13 +38,13 @@ const WinePage = ({ match }) => {
         setPropsData(data);
         setIsVisable(true);
     }
-    
-    
+
+
     useEffect(() => {
         // console.log(idd);
         console.log(id)
         window.scrollTo(0, 0);
-        if (!isLoading){
+        if (!isLoading) {
             console.log('not loading');
             console.log(winesArr);
             setDataForPage(winesArr);
@@ -120,6 +122,7 @@ const WinePage = ({ match }) => {
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 {/* <Card key={propsData.Id} wine={propsData} title={propsData.Name_Eng} image={propsData.ImageUrl} Description={propsData.Description} />             */}
                 <div className='winePage'>
+                    <GoBackButton navigateBack={() => { window.history.back() }} />
                     <div className='winePageTitleDiv'>
                         <span className='winePageTitleText engPageTitle'>{propsData.Name_Eng}</span>
                         <span className='winePageTitleText hebPageTitle'>{propsData.Name_Heb}</span>
@@ -127,15 +130,15 @@ const WinePage = ({ match }) => {
                     <div className='DishPageImageDiv'>
                         <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
                         <div className='wineInfoPrice bottlePrice'>
-                        <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                        <span>{propsData.BottlePrice}</span>
-                    </div>
-                    {propsData.Cup_Y_N_ === 'Y' ?
-                        <div className='wineInfoPrice cupPrice'>
-                            <WineBarIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                            <span>{propsData.CupPrice}</span>
-                        </div> : null
-                    }
+                            <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                            <span>₪{propsData.BottlePrice}</span>
+                        </div>
+                        {propsData.Cup_Y_N_ === 'Y' ?
+                            <div className='wineInfoPrice cupPrice'>
+                                <WineBarIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                                <span>₪{propsData.CupPrice}</span>
+                            </div> : null
+                        }
                     </div>
                     {/* <div className='languageIconWinePageDiv'>
                         <CircleFlag
@@ -157,16 +160,19 @@ const WinePage = ({ match }) => {
                             }}
                         />
                     </div> */}
-                    <div className='winePageInfo'>                    
+                    <div className='winePageInfo'>
                         <span className='winePageTitleText wineInfoTitle'>{t("WineInfo")}</span>
-                        <div className='wineInfo'>                            
-                            <p className={`wineInfoText ${ language==='heb'? 'hebWineInfo': 'engWineInfo'} `}>{language==='heb'? propsData.Country_Heb: propsData.Country_Eng} - {language==='heb'?  propsData.WineryName_Heb : propsData.WineryName_Eng}</p>
+                        <div className='wineInfo'>
+                            <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `}>{language === 'heb' ? propsData.Country_Heb : propsData.Country_Eng} - {language === 'heb' ? propsData.WineryName_Heb : propsData.WineryName_Eng}</p>
                         </div>
                         <div className='wineInfo'>
-                            <p className={`wineInfoText ${ language==='heb'? 'hebWineInfo': 'engWineInfo'} `}>{language==='heb'? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)} - {language==='heb'? getDrynessHeb(propsData.Dry_Y_N_): getDryness(propsData.Dry_Y_N_)}</p>
+                            <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `}>{language === 'heb' ? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)} - {language === 'heb' ? getDrynessHeb(propsData.Dry_Y_N_) : getDryness(propsData.Dry_Y_N_)}</p>
                         </div>
-                        <div className='wineInfo'>
-                            <p className='wineInfoText pricetext'>{propsData.BottlePrice}</p>
+                        <div className='wineInfo pricetext'>
+                        <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                            <span>
+                                {propsData.BottlePrice}
+                            </span>
                         </div>
                     </div>
                     <div className='descDiv'>

@@ -381,7 +381,7 @@ const Wines = () => {
                 setDisplayWines2(allWines);
             }
             else {
-                let arr = wines.map((wine) => {
+                let arr = winesArr.map((wine) => {
                     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
                 }
                 )
@@ -392,8 +392,8 @@ const Wines = () => {
             setNoneFound(false);
             console.log("searchQuery is not empty");
             //filter wines arr if name includes searchQuery
-            let arr1 = wines.filter((wine) => wine.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
-            let arr2 = wines.filter((wine) => wine.Name_Heb.includes(searchQuery));
+            let arr1 = winesArr.filter((wine) => wine.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
+            let arr2 = winesArr.filter((wine) => wine.Name_Heb.includes(searchQuery));
             console.log(arr2);
             let arr3 = arr1.concat(arr2);
             let arr4 = arr3.filter((wine, index, self) =>

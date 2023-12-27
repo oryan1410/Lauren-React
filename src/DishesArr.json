@@ -19,7 +19,27 @@
         ],
         "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Dishes%2FCarpaccio.jpg?alt=media&token=39cdf03e-5d8c-4f56-97f1-823280c9a563",
         "Description_Heb": "קרפצ'יו פילה בקר וקציפת פרמז'ן- פרוסות דקות של פילה בקר עם ארוגולה, קרם בלסמי לבן, טוויל וקציפת פרמז'ן",
-        "Description_Eng": "Beef fillet carpaccio and parmesan whipped cream - thin slices of beef fillet with arugula, white balsamic cream, twill and parmesan whipped cream"
-
+        "Description_Eng": "Beef fillet carpaccio and parmesan whipped cream - thin slices of beef fillet with arugula, white balsamic cream, twill and parmesan whipped cream",
+        "dishType": "Appetizer",
+        "Kosher": false,
+        "InStock": true,
+        "IngType": "Meat"
+        
+    },
+    {
+        "IdDish": 5,
+        "Name_Heb": "קרפצ'יו סלק וגבינות",
+        "Name_Eng": "Beetroot and cheese carpaccio",
+        "BPrice": 0.0,
+        "CPrice": 56.0,
+        "dishType": "Appetizer",
+        "IngType": "Vegetarian",
+        "Kosher": true,
+        "InStock": true,
+        "Ingridients_Heb": [],
+        "Ingridients_Eng": [],
+        "ImageUrl": null,
+        "Description_Heb": "קרפציו סלק וגבינות פרוסות סלק מבושל בזיגוג בלסמי ושמן זית אגוזי מלח בצלצלי שלוט גבינת פטה קולפניות פרמזן",
+        "Description_Eng": "Beetroot and cheese carpaccio Beetroot slices cooked in a balsamic glaze and olive oil, salted nuts, chives, shallots, feta cheese, parmesan peels"
     }
 ]

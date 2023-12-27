@@ -112,7 +112,7 @@ export default function RecipeReviewCard2(props) {
                         </>}
                 </div>
                 <div className='priceDiv'>
-                    <div>
+                    <div className='bottlePriceDiv'>
                         <span className='BottlePrice'>
                             <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
                         </span>
@@ -120,7 +120,7 @@ export default function RecipeReviewCard2(props) {
                             {props.wine.BottlePrice}
                         </span>
                     </div>
-                    {props.wine.Cup_Y_N_ === 'Y' && <div><span className='BottlePrice'>
+                    {props.wine.Cup_Y_N_ === 'Y' && <div className='cupPriceDiv'><span className='BottlePrice'>
                         <WineBarIcon className='cardLogos' /></span>
                         <span className='bottlePriceText'>{props.wine.CupPrice}</span></div>}
                 </div>
@@ -168,7 +168,7 @@ export default function RecipeReviewCard2(props) {
                 <div>
                     <InfoTwoToneIcon className='infoIcon' />
                     <FavoriteIcon onClick={setAsFavorite} className={`favoriteIcon ${isFavorite && 'isFavorite'}`} />
-                    <img src={props.image} alt={`${props.title} image missing`} className="card2image" />
+                    <img src={props.image} alt={`${props.title} bottle image`} className="card2image" />
                 </div>
             </div>
         </div>

@@ -9,7 +9,7 @@
     height: 100%;
     background-color: #1E2423;
     padding: 10px;
-    font-size: medium;
+    font-size: 1rem;
     font-family: 'anisette-std', 'Rubik';
     color: #967E68;
     border-radius: 15px;
@@ -45,8 +45,7 @@
 background-color: #967E68;
 font-family: 'anisette-std', 'Rubik';
 text-transform: lowercase;
-font-size: 16.5px;
-
+font-size: 1rem;
 }
 
 

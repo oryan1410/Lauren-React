@@ -30,6 +30,20 @@ function App() {
   // goToHome = () => {
   //   history.push('/home');
   // }
+
+  const [fontSize, setFontSize] = useState(16);
+
+  const increaseFontSize = () => {
+    const newFontSize = fontSize + 1;
+    setFontSize(newFontSize);
+    document.documentElement.style.setProperty('--main-font-size', `${newFontSize}px`);
+  };
+
+  const decreaseFontSize = () => {
+    const newFontSize = fontSize - 1;
+    setFontSize(newFontSize);
+    document.documentElement.style.setProperty('--main-font-size', `${newFontSize}px`);
+  }
  
 
   const { language, setUserLanguage, navBarVisable } = useUserContext();
@@ -98,7 +112,7 @@ function App() {
       <div className="App-Body">
         { navBarVisable && <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
             <Navbar.Brand href="\home">
-              <img  src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={60} width={100} alt="Go Home" />
+              <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={60} width={100} alt="Go Home" />
             </Navbar.Brand>
             <Navbar.Text style={{width:'100px'}}>
               <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-06.png?alt=media&token=d154edfd-1f34-48fa-81c0-4c0f0a749f5f'} height={70} width={70} alt="logo" />
@@ -158,6 +172,13 @@ function App() {
                 <Nav.Item>
                   <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Contact':'צור קשר'}</Link>
                 </Nav.Item>
+                <Nav.Item>
+                <button onClick={increaseFontSize}>Increase Font Size</button>
+                </Nav.Item>
+                <Nav.Item>
+                <button onClick={decreaseFontSize}>Decrease Font Size</button>
+                </Nav.Item>
+
                 {/* <Nav.Link href="\login" className='nav-link'>Login</Nav.Link>
               <Nav.Link href="\dishes">Dishes</Nav.Link>
               <Nav.Link href="\wines">Wines</Nav.Link>

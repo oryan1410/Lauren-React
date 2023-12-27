@@ -1,15 +1,21 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../HelpComponents/Card';
-import '../styles/DishCard.css';
+import '../styles/DishPage.css';
 import { useLocation } from 'react-router-dom';
 import wines from '../WinesArr.json'
 import { useParams } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import dishes from '../DishesArr.json'
+import { useTranslation } from 'react-i18next';
+import {useUserContext} from '../UserContext';
 
 
 const DishesPage = ({ match }) => {
 
     const { id } = useParams();
+    const { t } = useTranslation();
+    const {language} = useUserContext();
+
 
     // const id = match.params.id;
 
@@ -34,9 +40,9 @@ const DishesPage = ({ match }) => {
         if(!isLoading){
         setIsVisable(true);
         console.log("id", id);
-        let data = wines.find((wine) => wine.Id == id);
+        let data = dishes.find((dish) => dish.IdDish == id);
         if (!data) {
-            data = wines[0];
+            data = dishes[0];
         }
         setPropsData(data);
         console.log("propsData", data);
@@ -115,21 +121,23 @@ const DishesPage = ({ match }) => {
         <Container>
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
             {/* <Card key={propsData.Id} wine={propsData} title={propsData.Name_Eng} image={propsData.ImageUrl} Description={propsData.Description} />             */} 
-            <div className='DishPageWine'>
-            <h1>{propsData.Name_Eng}</h1>
-            <h2>{propsData.Name_Heb}</h2>
+            <div className='DishPage'>
+                <div className='dishPageTitleDiv'>
+            <span className='dishPageTitleText engPageTitle'>{propsData.Name_Eng}</span>
+            <span className='dishPageTitleText hebPageTitle'>{propsData.Name_Heb}</span>
+            </div>
                 <div className='DishPageImage'>
                     <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
                 </div>
-                <div className='DishPageWineInfo'>
-                    <h1>Wine Info</h1>
-                    <h2>Winery: {propsData.WineryName_Eng}</h2>
-                    <h2>Winery Country: {propsData.CountryName}</h2>
-                    <h2>Region: {propsData.Region}</h2>
-                    <h2>Dryness: {getDryness(propsData.Dry_y_n_)}</h2>
-                    <h2>Type: {getTypes(propsData.Type_R_W_B_)}</h2>
-                    <h2>Grape: {propsData.Grape}</h2>
-                    <h2>Price: {propsData.BottlePrice3}</h2>
+                <div className={`DishPageInfo ${language==='heb' &&'hebDishInfo'}`}>
+                    <div className={`priceAndType ${language==='heb' &&'hebpriceAndType'}`}>
+                    <span className={`dishType ${language==="heb" &&'hebDishTitle'}`}>{language!=='heb'? propsData.dishType:'מנה'}</span>
+                    <span className={`dishSeperator`}>||</span>
+                    <span className={`dishPrice`}>₪{propsData.CPrice}</span>
+                    </div>
+                    <div className={`dishDescription ${language==='heb' &&'hebDishDescription'}`}>
+                    <span>{language==='heb'? propsData.Description_Heb: propsData.Description_Eng}</span>
+                    </div>
                 </div>
                 <div className='DishPageWineText' style={{backgroundColor:'red'}}>       
                    <p >{propsData.Description}</p>

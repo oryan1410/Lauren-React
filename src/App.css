@@ -1,6 +1,7 @@
 .App {
   text-align: center;
   font-family: 'Urbanist', 'Rubik';
+  overflow:hidden;
 }
 
 /*scrollbar styling*/
@@ -83,12 +84,12 @@
 }
 
 .MuiSvgIcon-root.toggleIcon {
-  font-size: xxx-large;
+  font-size: 3rem;
 }
 
 @media screen and (max-width: 768px) {
   .MuiSvgIcon-root.toggleIcon {
-    font-size: xx-large;
+    font-size: 2rem;
   }
 
 }
@@ -119,7 +120,7 @@ button:focus {
 
 .navbar-light .navbar-nav .nav-link {
   color: #0d0d0d;
-  font-size: 20px;
+  font-size: 1.2rem;
   font-family: 'Urbanist', 'Rubik';
 }
 
@@ -430,14 +431,14 @@ img {
 }
 
 .MuiSvgIcon-root.scrollToTop {
-  font-size: xxx-large;
+  font-size: 3rem;
   /*add border shadow*/
   display: flex;
 }
 
 @media screen and (max-width: 650px) {
   .MuiSvgIcon-root.scrollToTop {
-    font-size: xx-large;
+    font-size: 2rem;
   }
 
 }
@@ -465,7 +466,7 @@ img {
 
 .MuiButtonBase-root.MuiButton-root.dialogButton {
   font-family: 'anisette-std', 'Rubik';
-  font-size: 15px;
+  font-size: 1em;
   text-transform: lowercase;
   text-decoration: underline;
   color: #050505;
@@ -474,7 +475,7 @@ img {
 .dialogText.MuiDialogContentText-root {
   font-family: 'anisette-std', 'Rubik';
   text-transform: lowercase;
-  font-size: 17px;
+  font-size: 1.1rem;
 }
 
 .dialogText.MuiDialogContentText-root.hebText {
@@ -485,3 +486,38 @@ img {
 .MuiPaper-root.MuiDialog-paper {
   background-color: #6a410e;
 }
+
+
+
+/* <-------------------  CSS for the Font Size Switch -------------------> */
+
+:root {
+  --main-font-size: 16px;
+}
+
+body {
+  font-size: var(--main-font-size);
+}
+
+html {
+  font-size: var(--main-font-size);
+}
+
+
+/* <-------------------  CSS for the GoBackButton -------------------> */
+
+.goBackButton{
+  position: absolute;
+  top: 100px;
+  left: 15px;
+  background-color: #121A1C;
+  border: 1px solid #967E68;
+  color: #967E68;
+  padding: 4px;
+  border-radius: 16px;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

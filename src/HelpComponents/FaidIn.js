@@ -89,7 +89,7 @@ function FadeIn() {
                 </DialogActions>
             </Dialog>
             <CardMedia className={`fade-in-element ${isVisible ? 'visible' : 'notVisable'}`}>
-                <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2FSlice%201%20(3)%201.png?alt=media&token=d61940e9-da93-4590-87a7-756719d03ccd'} className="App-logo" alt="logo" />
+                <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2FSlice%201%20(3)%201.png?alt=media&token=d61940e9-da93-4590-87a7-756719d03ccd'} className="App-logo" alt="Lauren logo" />
                 <p>
                     Lauren- wine bar in the valley
                 </p>

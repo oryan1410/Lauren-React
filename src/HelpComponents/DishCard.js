@@ -75,6 +75,8 @@ export default function DishCard(props) {
         }
     }
 
+    console.log('props.dish', props.dish)
+
 
     return (
         <div className="cardTwo">
@@ -111,7 +113,7 @@ export default function DishCard(props) {
                 <span className='DishCard-details'>{getTypes(props.dish.Type_R_W_B_)} || {getTypesHeb(props.dish.Type_R_W_B_)}</span>
                 <span className='DishCard-details'>{getDryness(props.dish.Dry_y_n_)} || {getDrynessHeb(props.dish.Dry_y_n_)}</span>               */}
                 <div className='DishCard-button'>
-                    <Link to={`/dishPage/${props.dish.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
+                    <Link to={`/dishPage/${props.dish.IdDish}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
                         <Button size="small" className='linkWithoutSpace' onClick={(e)=>{e.target.blur()}} >For more details</Button>
                     </Link>
                 </div>

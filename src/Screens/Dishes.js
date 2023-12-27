@@ -4,6 +4,7 @@ import RecipeReviewCard2 from '../HelpComponents/Card2';
 import DishCard from '../HelpComponents/DishCard';
 import '../App.css';
 import '../styles/Wines.css'
+import '../styles/Dishes.css'
 import dishes from '../DishesArr.json'
 // import SearchAppBar from '../SearchAppBar';
 import { Container } from 'react-bootstrap';
@@ -15,6 +16,8 @@ import Collapse from '@mui/material/Collapse';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
+import TempDishCard from '../HelpComponents/TempDishCard';
+
 
 
 
@@ -23,7 +26,7 @@ const Dishes = () => {
     const [whiteExpanded, setWhiteExpanded] = useState(false);
     const [roseExpanded, setRoseExpanded] = useState(false);
     const [bubbleExpanded, setBubbleExpanded] = useState(false);
-    const { redWines, whiteWines, roseWines, bubbleWines, countries, getFilters } = useUserContext();
+    const { redWines, whiteWines, roseWines, bubbleWines, countries, language } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -36,14 +39,14 @@ const Dishes = () => {
     const [dropArrays, setDropArrays] = useState([]);
 
     //wine arrays for expansion panels
-    const [redWinesArr, setRedWinesArr] = useState([]);
+    const [appetizersArr, setAppetizersArr] = useState([]);
+
     const [whiteWinesArr, setWhiteWinesArr] = useState([]);
     const [roseWinesArr, setRoseWinesArr] = useState([]);
     const [bubbleWinesArr, setBubbleWinesArr] = useState([]);
 
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
     const [isAnimating, setIsAnimating] = useState(false);
 
     function handleValueChange(value, label) {
@@ -67,19 +70,46 @@ const Dishes = () => {
 
     useEffect(() => {
         setIsVisable(true);
+        let appetizersArr = dishes.filter((dish) => dish.dishType === 'Appetizer');
         let dishArr = dishes.map((dish) => {
-            return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
+            // return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
+            // return <div className='dishCardDiv' key={dish.IdDish}>
+            //     <div className='dishTitlesDiv'>
+            //         <span className='dishCardTitle'>{dish.Name_Eng}</span>
+            //         <span className='dishCardTitle hebTitle'>{dish.Name_Heb}</span>
+            //     </div>
+            //     <div className='line'></div>
+            //     {language === 'heb' ? <span className='dishCardSubtitle hebSubtitle'>{dish.Description_Heb}</span> : <span className='dishCardSubtitle'>{dish.Description_Eng}</span>}
+            //     <div className='line'></div>
+            //     <div className='attributesDiv'>
+            //         <div className='priceDiv'>
+            //             <span className='dishCardSubtitle'>{dish.CPrice}₪</span>
+            //         </div>
+            //         <div className='kosherDiv'>
+            //             <span className='kosherText'>{!dish.Kosher && 'Not '}Kosher</span>
+            //         </div>
+            //         <div className='typeDiv'>
+            //             <span className='kosherText'>{dish.dishType}</span>
+            //         </div>
+            //     </div>
+
+
+            // </div>
+
+            if(dish.dishType === 'Appetizer'
+            )
+            return <TempDishCard key={dish.IdDish} dish={dish} />
         }
         );
+
+        appetizersArr = appetizersArr.map((dish) => {
+            return <TempDishCard key={dish.IdDish} dish={dish} />
+        }
+        )
         console.log('dishArr', dishArr);
-        setRedWinesArr(dishArr);
-        setWhiteWinesArr(dishArr);
-        setRoseWinesArr(dishArr);
-        setBubbleWinesArr(dishArr);
-        setAllDishes(dishArr);
+        setAppetizersArr(appetizersArr);
         setDisplayDishes(dishArr);
-        setIsLoading(false); // Data has loaded, set loading state to false
-    }, [dishes]);
+    }, [dishes, language]);
 
     //create filters for dryness and country
     const sortFilters = async () => {
@@ -94,17 +124,6 @@ const Dishes = () => {
         ]);
     }
 
-    // get countries and sort filters
-    useEffect(() => {
-        if (countries.length === 0) {
-            console.log('countries', countries);
-            getFilters();
-        }
-        else {
-            console.log('countries', countries);
-            sortFilters();
-        }
-    }, [countries]);
 
     // epxand more for wine category based on color
     const ExpandMore = styled((props) => {
@@ -216,7 +235,7 @@ const Dishes = () => {
                     <ExpandMoreIcon />
                 </ExpandMore>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        {redWinesArr}
+                        {appetizersArr}
                     </Collapse>
                     <ExpandMore
                         expand={whiteExpanded}

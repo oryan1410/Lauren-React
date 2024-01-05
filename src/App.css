@@ -228,8 +228,8 @@ button:focus {
   .clearButton {
     color: #1E2423;
     background-color: transparent;
-    position: relative;
-    bottom: 42px;
+    position: absolute;
+    bottom: 17px;
     left: 5%;
     /* background-color: #1E2423; */
     border-radius: 16px;
@@ -357,6 +357,7 @@ img {
 
 .searchInput {
   margin-block: 10px;
+  position: relative;
   border-radius: 16px !important;
 }
 

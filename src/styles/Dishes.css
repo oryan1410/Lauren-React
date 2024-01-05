@@ -35,8 +35,16 @@
     font-weight: 400;
     font-family: 'Urbanist','Rubik';
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
     text-transform: lowercase;
+}
+
+.dishCardType{
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'anisette-std','Rubik';
+    display: flex;
+    justify-content: flex-end;
 }
 
 .attributesDiv {

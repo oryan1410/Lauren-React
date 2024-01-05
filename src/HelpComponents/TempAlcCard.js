@@ -6,48 +6,48 @@ import { use } from 'i18next';
 import { useEffect } from 'react';
 import '../styles/DishCard.css'
 
-export default function TempDishCard(props) {
+export default function TempAlcCard(props) {
     const { t } = useTranslation();
 
-    const { dish } = props;
+    const { alcohol } = props;
     const { language } = useUserContext();
 
 
     const getDishType = () => {
         if (language === 'heb') {
-            if (dish.type === 'Meat') {
+            if (alcohol.IngType === 'Meat') {
                 return 'בשרי'
             }
-            else if (dish.IngType === 'Dairy') {
+            else if (alcohol.IngType === 'Dairy') {
                 return 'חלבי'
             }
-            else if (dish.IngType === 'Parve') {
+            else if (alcohol.IngType === 'Parve') {
                 return 'פרווה'
             }
-            else if (dish.IngType === 'Fish') {
+            else if (alcohol.IngType === 'Fish') {
                 return 'דגים'
             }
-            else if (dish.IngType === 'Vegan') {
+            else if (alcohol.IngType === 'Vegan') {
                 return 'טבעוני'
             }
-            else if (dish.IngType === 'Vegetarian') {
+            else if (alcohol.IngType === 'Vegetarian') {
                 return 'צמחוני'
             }
-            else if (dish.IngType === 'Gluten Free') {
+            else if (alcohol.IngType === 'Gluten Free') {
                 return 'ללא גלוטן'
             }
-            else if (dish.IngType === 'Vegiterian') {
+            else if (alcohol.IngType === 'Vegiterian') {
                 return 'צמחוני'
             }
         }
         else {
-            return dish.IngType;
+            return alcohol.IngType;
         }
     }
 
     const getDishKosher = () => {
         if (language === 'heb') {
-            if (dish.Kosher) {
+            if (alcohol.Kosher) {
                 return 'כשר'
             }
             else {
@@ -55,7 +55,7 @@ export default function TempDishCard(props) {
             }
         }
         else {
-            if (dish.Kosher) {
+            if (alcohol.Kosher) {
                 return 'Kosher'
             }
             else {
@@ -66,18 +66,18 @@ export default function TempDishCard(props) {
 
 
     return (
-        <div className={`dishCardDiv ${!dish.inStock && 'dishoutOfStock'}`} key={dish.IdDish}>
-            {!dish.inStock && <div className="dish-out-of-stock-text">{t('OutOfStock')}</div>}
+        <div className={`dishCardDiv ${!alcohol.inStock && 'dishoutOfStock'}`} key={alcohol.IdAlc}>
+            {!alcohol.inStock && <div className="dish-out-of-stock-text">{t('OutOfStock')}</div>}
             <div className='dishTitlesDiv'>
-                <span className='dishCardTitle'>{dish.Name_Eng}</span>
-                <span className='dishCardTitle hebTitle'>{dish.Name_Heb}</span>
+                <span className='dishCardTitle'>{alcohol.Name_Eng}</span>
+                <span className='dishCardTitle hebTitle'>{alcohol.Name_Heb}</span>
             </div>
             <div className='line'></div>
-            {language === 'heb' ? <span className='dishCardSubtitle hebSubtitle'>{dish.Desc_Heb}</span> : <span className='dishCardSubtitle'>{dish.Desc_Eng}</span>}
+            {language === 'heb' ? <span className='dishCardSubtitle hebSubtitle'>{alcohol.Desc_Heb}</span> : <span className='dishCardSubtitle'>{alcohol.Desc_Eng}</span>}
             <div className='line'></div>
             <div className='attributesDiv'>
                 <div className='dishpriceDiv'>
-                    <span className='dishCardSubtitle'>₪{dish.CPrice}</span>
+                    <span className='dishCardSubtitle'>₪{alcohol.CPrice}</span>
                 </div>
                 {/* <div className='kosherDiv'>
                     <span className='kosherText'>{getDishKosher()}</span>

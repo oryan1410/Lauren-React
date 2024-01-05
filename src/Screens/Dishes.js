@@ -11,6 +11,8 @@ import { Container } from 'react-bootstrap';
 import DropDown from '../HelpComponents/DropDown';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
 
 import Collapse from '@mui/material/Collapse';
 import { styled } from '@mui/material/styles';
@@ -23,11 +25,11 @@ import TempDishCard from '../HelpComponents/TempDishCard';
 
 const Dishes = () => {
     const [expanded, setExpanded] = useState(false);
-    const [whiteExpanded, setWhiteExpanded] = useState(false);
-    const [roseExpanded, setRoseExpanded] = useState(false);
-    const [bubbleExpanded, setBubbleExpanded] = useState(false);
-    const { redWines, whiteWines, roseWines, bubbleWines, countries, language } = useUserContext();
-    const [selectedDryness, setSelectedDryness] = useState('');
+    const [nextExpanded, setNextExpanded] = useState(false);
+    const [forExpanded, setForExpanded] = useState(false);
+    const [desExpanded, setDesExpanded] = useState(false);
+    const { dishesArr, easyArr, nextToWineArr, dessertsArr, countries, language, isLoading, forTheHungryArr } = useUserContext();
+    const [selectedType, setSelectedType] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
     const [isVisible, setIsVisable] = useState(false);
@@ -39,11 +41,10 @@ const Dishes = () => {
     const [dropArrays, setDropArrays] = useState([]);
 
     //wine arrays for expansion panels
-    const [appetizersArr, setAppetizersArr] = useState([]);
-
-    const [whiteWinesArr, setWhiteWinesArr] = useState([]);
-    const [roseWinesArr, setRoseWinesArr] = useState([]);
-    const [bubbleWinesArr, setBubbleWinesArr] = useState([]);
+    const [appArr, setAppArr] = useState([]);
+    const [mainArr, setMainArr] = useState([]);
+    const [forArr, setForArr] = useState([]);
+    const [desArr, setDesArr] = useState([]);
 
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
@@ -52,78 +53,121 @@ const Dishes = () => {
     function handleValueChange(value, label) {
         console.log('Value changed to:', value);
         if (label === 'Dryness') {
-            setSelectedDryness(value);
+            setSelectedType(value);
             if (value === 'Dry') {
-                setSelectedDryness('Y');
+                setSelectedType('Y');
             }
             else {
-                setSelectedDryness('N');
+                setSelectedType('N');
             }
             //console.log('arr', arr);
         }
         else if (label === 'Country') {
             setSelectedCountry(value);
         }
+        else if (label === 'Type') {
+            setSelectedType(value);
+            filterDishes(value);
+        }
 
 
     };
 
-    useEffect(() => {
-        setIsVisable(true);
-        let appetizersArr = dishes.filter((dish) => dish.dishType === 'Appetizer');
-        let dishArr = dishes.map((dish) => {
-            // return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
-            // return <div className='dishCardDiv' key={dish.IdDish}>
-            //     <div className='dishTitlesDiv'>
-            //         <span className='dishCardTitle'>{dish.Name_Eng}</span>
-            //         <span className='dishCardTitle hebTitle'>{dish.Name_Heb}</span>
-            //     </div>
-            //     <div className='line'></div>
-            //     {language === 'heb' ? <span className='dishCardSubtitle hebSubtitle'>{dish.Description_Heb}</span> : <span className='dishCardSubtitle'>{dish.Description_Eng}</span>}
-            //     <div className='line'></div>
-            //     <div className='attributesDiv'>
-            //         <div className='priceDiv'>
-            //             <span className='dishCardSubtitle'>{dish.CPrice}₪</span>
-            //         </div>
-            //         <div className='kosherDiv'>
-            //             <span className='kosherText'>{!dish.Kosher && 'Not '}Kosher</span>
-            //         </div>
-            //         <div className='typeDiv'>
-            //             <span className='kosherText'>{dish.dishType}</span>
-            //         </div>
-            //     </div>
-
-
-            // </div>
-
-            if(dish.dishType === 'Appetizer'
+    const filterDishes = async (selectedType) => {
+        console.log('filterDishes');
+        let arr = dishesArr;
+        let app = [];
+        let main = [];
+        let forHungry = [];
+        let des = [];
+        if (selectedType !== '') {
+            arr = arr.filter((dish) => dish.IngType === selectedType);
+            arr = arr.map((dish) => {
+                return <TempDishCard key={dish.IdDish} dish={dish} />
+            }
             )
-            return <TempDishCard key={dish.IdDish} dish={dish} />
+            app = easyArr.filter((dish) => dish.IngType === selectedType);
+            app = app.map((dish) => {
+                return <TempDishCard key={dish.IdDish} dish={dish} />
+            }
+            )
+            main = nextToWineArr.filter((dish) => dish.IngType === selectedType);
+            main = main.map((dish) => {
+                return <TempDishCard key={dish.IdDish} dish={dish} />
+            }
+            )
+            forHungry = forTheHungryArr.filter((dish) => dish.IngType === selectedType);
+            forHungry = forHungry.map((dish) => {
+                return <TempDishCard key={dish.IdDish} dish={dish} />
+            }
+            )
+            des = dessertsArr.filter((dish) => dish.IngType === selectedType);
+            des = des.map((dish) => {
+                return <TempDishCard key={dish.IdDish} dish={dish} />
+            }
+            )
+            setAppArr(app);
+            setMainArr(main);
+            setForArr(forHungry);
+            setDesArr(des);
         }
-        );
+    }
 
-        appetizersArr = appetizersArr.map((dish) => {
+    useEffect(() => {
+        if (!isLoading)
+            setIsVisable(true);
+        let app = easyArr.map((dish) => {
             return <TempDishCard key={dish.IdDish} dish={dish} />
         }
         )
-        console.log('dishArr', dishArr);
-        setAppetizersArr(appetizersArr);
-        setDisplayDishes(dishArr);
-    }, [dishes, language]);
 
-    //create filters for dryness and country
-    const sortFilters = async () => {
-        console.log('getFilters');
-        setSelectedDryness('');
+        let main = nextToWineArr.map((dish) => {
+            return <TempDishCard key={dish.IdDish} dish={dish} />
+        }
+        )
+
+        let des = dessertsArr.map((dish) => {
+            return <TempDishCard key={dish.IdDish} dish={dish} />
+        }
+        )
+        let forTheHungry = forTheHungryArr.map((dish) => {
+            return <TempDishCard key={dish.IdDish} dish={dish} />
+        }
+        )
+        setAppArr(app);
+        setMainArr(main);
+        setForArr(forTheHungry);
+        setDesArr(des);
+    }, [dishesArr, language, isLoading, resetKey]);
+
+    //reset filter function
+    const resetFilter = async () => {
+        console.log('resetFilters');
+        setDesExpanded(false);
+        setForExpanded(false);
+        setNextExpanded(false);
+        setExpanded(false);
+        setFilterReset(true);
+        setSelectedType('');
         setSelectedColor('');
         setSelectedCountry('');
-        setResetKey(prevKey => prevKey + 1); // increment the key
-        setDropArrays([
-            <DropDown key={resetKey + '0'} label='Dryness' options={['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
-            <DropDown key={resetKey + '1'} label='Country' options={countries} setValue={handleValueChange} selected={''} />
-        ]);
+        setSelectedType('');
+        // setResetKey(prevKey => prevKey + 1); // increment the key
     }
 
+    useEffect(() => {
+        if (filterReset) {
+            setTimeout(() => {
+                // setSelectedType('');
+                // setSelectedColor('');
+                // setSelectedCountry('');
+                // setSelectedType('');
+                setResetKey(prevKey => prevKey + 1); // increment the key
+                setFilterReset(false);
+            }
+                , 1000);
+        }
+    }, [filterReset])
 
     // epxand more for wine category based on color
     const ExpandMore = styled((props) => {
@@ -146,17 +190,17 @@ const Dishes = () => {
     }));
 
     const handleExpandClick = (type) => {
-        if (type === 'Red') {
+        if (type === 'Easy') {
             setExpanded(!expanded);
         }
-        else if (type === 'White') {
-            setWhiteExpanded(!whiteExpanded);
+        else if (type === 'Next') {
+            setNextExpanded(!nextExpanded);
         }
-        else if (type === 'Rose') {
-            setRoseExpanded(!roseExpanded);
+        else if (type === 'For') {
+            setForExpanded(!forExpanded);
         }
-        else if (type === 'Bubble') {
-            setBubbleExpanded(!bubbleExpanded);
+        else if (type === 'Desset') {
+            setDesExpanded(!desExpanded);
         }
     };
 
@@ -173,24 +217,30 @@ const Dishes = () => {
                 setDisplayDishes(allDishes);
             }
             else {
-                let arr = dishes.map((dish) => {
-                    return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
+                // let arr = dishes.map((dish) => {
+                //     return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
+                // }
+                // )
+                let arr = dishesArr.map((dish) => {
+                    return <TempDishCard key={dish.IdDish} dish={dish} />
                 }
                 )
                 setAllDishes(arr);
                 setDisplayDishes(arr);
             }
         } else {
+            resetFilter();
             setNoneFound(false);
             console.log("searchQuery is not empty");
             //filter wines arr if name includes searchQuery
-            let arr1 = dishes.filter((dish) => dish.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
-            let arr2 = dishes.filter((dish) => dish.Name_Heb.includes(searchQuery));
+            let arr1 = dishesArr.filter((dish) => dish.Name_Eng.includes(searchQuery.toLowerCase()));
+            let arr2 = dishesArr.filter((dish) => dish.Name_Heb.includes(searchQuery));
             console.log(arr2);
             let arr4 = arr1.concat(arr2);
+            arr4 = [...new Set(arr4)];
             if (arr4.length !== 0) {
                 let arr = arr4.map((dish) => {
-                    return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
+                    return <TempDishCard key={dish.IdDish} dish={dish} />
                 }
                 )
                 setDisplayDishes(arr);
@@ -217,51 +267,60 @@ const Dishes = () => {
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 <SearchAppBar searchFunc={setSearch} />
                 {/* <DropDown /> */}
-                {/* {searchQuery ==='' && <Grid container className='dishgridView'>
-                    {dropArrays}
-                </Grid>}
-                {searchQuery ==='' && <div className='resetButtonDiv'>
-                    <Button className='resetButton' onClick={(e) => {sortFilters();e.target.blur()}} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
-                </div>} */}
+                {searchQuery === '' && <div className='dishgridView'>
+                    <DropDown label='Type' options={['Meat', 'Fish', 'Vegan', 'Vegetarian']} setValue={handleValueChange} selected={selectedType} />
+                </div>}
+                {searchQuery === '' && <div className='resetButtonDiv'>
+                    <Button className='resetButton' onClick={(e) => { resetFilter(); e.target.blur() }} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
+                </div>}
 
                 {searchQuery === '' ? <div><ExpandMore
                     expand={expanded}
-                    header='מנות פתיחה || Appetizers'
-                    onClick={() => handleExpandClick('Red')}
+                    header='לנשנש בקליל  || Easy snacks'
+                    onClick={() => handleExpandClick('Easy')}
                     aria-expanded={expanded}
                     aria-label="show more"
                     className='wineCategory'
                 >
-                    <ExpandMoreIcon />
                 </ExpandMore>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        {appetizersArr}
+                        {appArr}
                     </Collapse>
                     <ExpandMore
-                        expand={whiteExpanded}
-                        header='מנות עיקריות || Main Course'
-                        onClick={() => handleExpandClick('White')}
+                        expand={nextExpanded}
+                        header='ליד היין || Next to the wine'
+                        onClick={() => handleExpandClick('Next')}
                         aria-expanded={expanded}
                         aria-label="show more"
                         className='wineCategory'
                     >
-                        <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse in={whiteExpanded} timeout="auto" unmountOnExit>
-                        {whiteWinesArr}
+                    <Collapse in={nextExpanded} timeout="auto" unmountOnExit>
+                        {mainArr}
                     </Collapse>
                     <ExpandMore
-                        expand={roseExpanded}
-                        header='קינוחים || Desserts'
-                        onClick={() => handleExpandClick('Rose')}
+                        expand={forExpanded}
+                        header='לרעבים בנינו || For the hungry'
+                        onClick={() => handleExpandClick('For')}
                         aria-expanded={expanded}
                         aria-label="show more"
                         className='wineCategory'
                     >
-                        <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse in={roseExpanded} timeout="auto" unmountOnExit>
-                        {roseWinesArr}
+                    <Collapse in={forExpanded} timeout="auto" unmountOnExit>
+                        {forArr}
+                    </Collapse>
+                    <ExpandMore
+                        expand={desExpanded}
+                        header='סיום מתוק || Sweet ending'
+                        onClick={() => handleExpandClick('Desset')}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                    </ExpandMore>
+                    <Collapse in={desExpanded} timeout="auto" unmountOnExit>
+                        {desArr}
                     </Collapse>
                 </div> : displayDishes
                 }

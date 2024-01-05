@@ -19,6 +19,23 @@ export function UserProvider({ children }) {
     const [whiteWines, setWhiteWines] = useState([]);
     const [roseWines, setRoseWines] = useState([]);
     const [bubbleWines, setBubbleWines] = useState([]);
+    const [bestOfWines, setBestOfWines] = useState([]);
+
+    const [alcoholArr, setAlcoholArr] = useState([]);
+    const [whiskeyArr, setWhiskeyArr] = useState([]);
+    const [americanArr, setAmericanArr] = useState([]);
+    const [smokedArr, setSmokedArr] = useState([]);
+    const [coniacArr, setConiacArr] = useState([]);
+    const [vodkaArr, setVodkaArr] = useState([]);
+    const [rumArr, setRumArr] = useState([]);
+    const [ginArr, setGinArr] = useState([]);
+    const [taquillaArr, setTaquillaArr] = useState([]);
+    const [apperativoArr, setApperativoArr] = useState([]);
+    const [anisArr, setAnisArr] = useState([]);
+    const [cocktailsArr, setCocktailsArr] = useState([]);
+    const [beerArr, setBeerArr] = useState([]);
+
+
     const [countries, setCountries] = useState([]);
     const [countriesHeb, setCountriesHeb] = useState([]);
     const [favorites, setFavorites] = useState([]);
@@ -27,26 +44,12 @@ export function UserProvider({ children }) {
     const [isLoading, setIsLoading] = useState(true);
     const [navBarVisable, setNavBarVisable] = useState(true);
     
-    //     // getFilters();
-    //     // filter wines according to type
-    //     let red = wines.filter((wine) => wine.Type_Ro_Re_Wh_Bu_ === 'R');
-    //     setRedWines(red);
-    //     let white = wines.filter((wine) => wine.Type_Ro_Re_Wh_Bu_ === 'W');
-    //     setWhiteWines(white);
-    //     let rose = wines.filter((wine) => wine.Type_Ro_Re_Wh_Bu_ === 'Rose');
-    //     setRoseWines(rose);
-    //     let bubble = wines.filter((wine) => wine.Type_Ro_Re_Wh_Bu_ === 'B');
-    //     setBubbleWines(bubble);        
-    //     // get all country names, making sure there are no duplicates
-    //     let countries = wines.map((wine) => wine.CountryName);
-    //     countries = [...new Set(countries)];
-    //     console.log(countries);
-    //     setCountries(countries);
-
-    // }, []);
-
-
-
+    
+    const [dishesArr, setDishesArr] = useState([]);
+    const [easyArr, setEasyArr] = useState([]);
+    const [nextToWineArr, setNextToWineArr] = useState([]);
+    const [forTheHungryArr, setForTheHungryArr] = useState([]);
+    const [dessertsArr, setDessertsArr] = useState([]);
 
     function getFilters() {
         console.log('getFilters');
@@ -98,39 +101,6 @@ export function UserProvider({ children }) {
         i18next.changeLanguage(language);
     }
 
-    // async function getWinesArr(winesArr) {
-    //     const tempNames = query(collection(db,'Wines'));
-    //     const Names= getDocs(tempNames);
-    //     const nameArr= []
-    //     Names.then((querySnapshot) => {
-    //         querySnapshot.forEach((doc) => {
-    //             let wine={};
-    //             wine.Id=doc.data().Id;
-    //             wine.Name_Heb=doc.data().Name_Heb;
-    //             wine.Name_Eng=doc.data().Name_Eng;
-    //             wine.Country_Eng=doc.data().Country_Eng;
-    //             wine.Country_Heb=doc.data().Country_Heb;
-    //             wine.Type_Ro_Re_Wh_Bu_=doc.data().Type_Ro_Re_Wh_Bu_;
-    //             wine.Dry_Y_N_=doc.data().Dry_Y_N_;
-    //             wine.Price=doc.data().Price;
-    //             wine.Cup_Y_N_=doc.data().Cup_Y_N_;
-    //             wine.CupPrice=doc.data().CupPrice;
-    //             wine.BottlePrice=doc.data().BottlePrice;
-    //             wine.Grape_Eng=doc.data().Grape_Eng;
-    //             wine.Blend_Y_N_=doc.data().Blend_Y_N_;
-    //             wine.Grape_Heb=doc.data().Grape_Heb;
-    //             wine.ImageUrl=doc.data().ImageUrl;
-    //             wine.WineryName_Heb=doc.data().WineryName_Heb;
-    //             wine.WineryName_Eng=doc.data().WineryName_Eng;
-    //             wine.Desc_Heb=doc.data().Desc_Heb;
-    //             wine.Desc_Eng=doc.data().Desc_Eng;
-    //             nameArr.push(wine);
-    //         });
-    //     });
-    //     await setIsLoading(false);
-    //     setWinesArr(nameArr);
-        
-    // }
 
     useEffect(() => {
         getFilters();
@@ -147,10 +117,13 @@ export function UserProvider({ children }) {
         setIsLoading(true);
 
         const getNames= onSnapshot(tempNames, (snapshot) => {
+            let countries = [];
+            let countriesHeb = [];           
             let redArr = [];
             let whiteArr = [];
             let roseArr = [];
             let bubbleArr = [];
+            let bestOfArr = [];
             setWinesArr(snapshot.docs.map((doc) => {
                 let wine={};
                 wine.Id=doc.data().Id;
@@ -173,26 +146,169 @@ export function UserProvider({ children }) {
                 wine.Desc_Heb=doc.data().Desc_Heb;
                 wine.Desc_Eng=doc.data().Desc_Eng;
                 wine.inStock=doc.data().inStock;
-                
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Re') {
+                wine.bestOf=doc.data().bestOf;
+                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Re' && doc.data().bestOf !== true) {
                     redArr.push(wine)
                 }
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Wh') {
+                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Wh' && doc.data().bestOf !== true) {
                     whiteArr.push(wine)
                 }
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Ro') {
+                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Ro' && doc.data().bestOf !== true) {
                     roseArr.push(wine)
                 }
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Bu') {
+                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Bu' && doc.data().bestOf !== true) {
                     bubbleArr.push( wine)
                 }
+                if(doc.data().bestOf === true ){
+                    bestOfArr.push(wine)
+                }
+                countries.push(wine.Country_Eng);
+                countriesHeb.push(wine.Country_Heb);
                 return wine;
             }))
             setRedWines(redArr);
             setWhiteWines(whiteArr);
             setRoseWines(roseArr);
             setBubbleWines(bubbleArr);
+            setBestOfWines(bestOfArr);
+            countries = [...new Set(countries)];
+            setCountries(countries);
+            countriesHeb = [...new Set(countriesHeb)];
+            setCountriesHeb(countriesHeb);
+        }
+        )
+
+
+        const dishQuery= query(collection(db,'Dishes'),where('onMenu','==','Y'));
+        const getDishes= onSnapshot(dishQuery, (snapshot) => {
+            let appArr=[];
+            let mainArr=[];
+            let dessertArr=[];
+            let forTheHungryArr=[];
+
+            setDishesArr(snapshot.docs.map((doc) => {
+                let dish={};
+                dish.IdDish=doc.data().IdDish;
+                dish.Name_Heb=doc.data().Name_Heb;
+                dish.Name_Eng=doc.data().Name_Eng;
+                dish.Type=doc.data().Type;
+                dish.ImageUrl=doc.data().ImageUrl;
+                dish.Desc_Heb=doc.data().Desc_Heb;
+                dish.Desc_Eng=doc.data().Desc_Eng;
+                dish.CPrice=doc.data().CPrice;
+                dish.IngType=doc.data().IngType;
+                dish.inStock=doc.data().inStock;
+                dish.onMenu=doc.data().onMenu;
+
+
+                if (dish.Type === 'Easy Snack') {
+                    appArr.push(dish)
+                }
+                if (dish.Type === 'Next to Wine') {
+                    mainArr.push(dish)
+                }
+                if (dish.Type === 'For The Hungry') {
+                    forTheHungryArr.push(dish)
+                }
+                if (dish.Type === 'Dessert') {
+                    dessertArr.push(dish)
+                }             
+
+                return dish;
+            })
+            )
             setIsLoading(false);
+            setEasyArr(appArr);
+            setNextToWineArr(mainArr);
+            setForTheHungryArr(forTheHungryArr);
+            setDessertsArr(dessertArr);
+        }
+        )
+
+        const alcoholQuery= query(collection(db,'Alcohol'),where('onMenu','==','Y'));
+        const getAlcohol= onSnapshot(alcoholQuery, (snapshot) => {
+            let alcoholArr=[];
+            let whiskeyArr=[];
+            let AmericanArr=[];
+            let smokedArr=[];
+            let vodkaArr=[];
+            let coniacArr=[];
+            let rumArr=[];
+            let ginArr= [];
+            let taquillaArr=[];
+            let apperativoArr=[];
+            let anisArr=[];
+            let cocktailsArr=[];
+            let beerArr=[];
+
+            setAlcoholArr(snapshot.docs.map((doc) => {
+                let alcohol={};
+                alcohol.IdAlc=doc.data().IdAlc;
+                alcohol.ImageUrl=doc.data().ImageUrl;
+                alcohol.Name_Heb=doc.data().Name_Heb;
+                alcohol.Name_Eng=doc.data().Name_Eng;
+                alcohol.Type=doc.data().Type;
+                alcohol.ImageUrl=doc.data().ImageUrl;
+                alcohol.Desc_Heb=doc.data().Desc_Heb;
+                alcohol.Desc_Eng=doc.data().Desc_Eng;
+                alcohol.CPrice=doc.data().CPrice;
+                alcohol.inStock=doc.data().inStock;
+                alcohol.onMenu=doc.data().onMenu;
+                alcoholArr.push(alcohol)
+                if (alcohol.Type === 'Whiskey') {
+                    whiskeyArr.push(alcohol)
+                }
+                if (alcohol.Type==='American'){
+                    AmericanArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Smoked') {
+                    smokedArr.push(alcohol)
+                }                    
+                if (alcohol.Type === 'Vodka') {
+                    vodkaArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Coniac') {
+                    coniacArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Rum') {
+                    rumArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Gin') {
+                    ginArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Tequila') {
+                    taquillaArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Apperativo') {
+                    apperativoArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Anis') {
+                    anisArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Cocktail') {
+                    cocktailsArr.push(alcohol)
+                }
+                if (alcohol.Type === 'Beer') {
+                    beerArr.push(alcohol)
+                }
+                return alcohol;
+            })
+            )
+            setIsLoading(false);
+            setAlcoholArr(alcoholArr);
+            setWhiskeyArr(whiskeyArr);
+            setAmericanArr(AmericanArr);
+            setSmokedArr(smokedArr);
+            setVodkaArr(vodkaArr);
+            setConiacArr(coniacArr);
+            setRumArr(rumArr);
+            setGinArr(ginArr);
+            setTaquillaArr(taquillaArr);
+            setApperativoArr(apperativoArr);
+            setAnisArr(anisArr);
+            setBeerArr(beerArr);
+            setCocktailsArr(cocktailsArr);
+
         }
         )
 
@@ -203,7 +319,9 @@ export function UserProvider({ children }) {
 
         return () => {
             console.log('cleanup')
-            getNames()};
+            getNames()
+            getDishes();
+        };
 
     }, []);
 
@@ -235,11 +353,37 @@ export function UserProvider({ children }) {
     }
 
 
+    useEffect(() => {
+        console.log("dishesArr",dishesArr)
+    }, [dishesArr])
+
+    useEffect(() => {
+        console.log("easyArr",easyArr)
+    }, [easyArr])
+
+    useEffect(() => {
+        console.log("nextToWineArr",nextToWineArr)
+    }, [nextToWineArr])
+
+    useEffect(() => {
+        console.log("forTheHungryArr",forTheHungryArr)
+    }, [forTheHungryArr])
+
+    useEffect(() => {
+        console.log("bestOf",bestOfWines)
+    }, [bestOfWines])
+
+    useEffect(() => {
+        console.log("alc",alcoholArr)
+    }, [alcoholArr])
+
+
     const value = {
         redWines,
         whiteWines,
         roseWines,
         bubbleWines,
+        bestOfWines,
         countries,
         getFilters,
         favorites,
@@ -251,7 +395,9 @@ export function UserProvider({ children }) {
         // getWinesArr,
         isLoading,
         addDocToFiresore,
-        navBarVisable, setNavBarVisable
+        navBarVisable, setNavBarVisable,
+        dishesArr, easyArr, nextToWineArr, dessertsArr, forTheHungryArr,
+        alcoholArr, whiskeyArr,americanArr,smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr, cocktailsArr,beerArr
     };
 
     return (

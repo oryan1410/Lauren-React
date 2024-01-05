@@ -1,211 +1,238 @@
 /*DishCard- wine card*/
 
-  .DishCard-imageDiv {
-    display: flex;
-    flex: 4;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    border-radius: 15px;
-    transition: transform 0.5s ease-in-out;
-    width: 50%;
-    height: 100%;
-    right: 0;
-    
-    /*need to be fixed with default color for pics*/
-    background-color: #3c27c5;
-  }
-  
-  .DishCard-imageDiv.slide {
-    transform: translateX(-100%);
-  }
-  
-  .DishCardimage {
-    height: 195px;
-    width: 100%;
-    border: #020202;
-    border: transparent;
-  }
-  
+.DishCard-imageDiv {
+  display: flex;
+  flex: 4;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  border-radius: 15px;
+  transition: transform 0.5s ease-in-out;
+  width: 50%;
+  height: 100%;
+  right: 0;
+
+  /*need to be fixed with default color for pics*/
+  background-color: #3c27c5;
+}
+
+.DishCard-imageDiv.slide {
+  transform: translateX(-100%);
+}
+
+.DishCardimage {
+  height: 195px;
+  width: 100%;
+  border: #020202;
+  border: transparent;
+}
+
+.DishCard-text {
+  flex: 1;
+  padding: 1rem;
+}
+
+.DishCardContent {
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 1rem;
+}
+
+.DishCard-right {
+  display: flex;
+  flex: 4;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+
+
+.DishCard-title {
+  font-size: 2.2rem;
+  margin-bottom: 0;
+}
+
+.DishCard-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.DishpriceDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.DishpriceDiv>* {
+  margin-block: 5px;
+  display: flex;
+}
+
+.DishPrice {
+  align-items: center;
+}
+
+
+
+.DishCard-Subtitle {
+  font-size: 1.4rem;
+  line-height: 1;
+
+}
+
+.DishCard-details {
+  font-size: 1.4rem;
+  width: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+
+  /*delete this later for alternate view with flexes*/
+  align-items: center;
+}
+
+.DishCard-span {
+  padding-inline: 5px;
+  margin-block: 5px;
+  display: flex;
+}
+
+.DishCard-span.DishCard-HebText {
+  direction: rtl;
+}
+
+.DishCard-span.DishCard-EngText {
+  font-weight: 400;
+}
+
+.dishoutOfStock {
+  opacity: 0.8;
+  position: relative;
+}
+
+.dish-out-of-stock-text {
+  position: absolute;
+top: 30%;
+  transform: rotate(-7deg);
+  color: rgb(255, 255, 255);
+  background-color: #080909;
+  padding: 5px;
+  z-index: 3;
+  pointer-events: none;
+  font-size: 1.875rem;
+  width: 95%;
+}
+
+@media screen and (max-width: 1200px) {
   .DishCard-text {
-    flex: 1;
-    padding: 1rem;
+    padding: 0;
   }
-  
-  .DishCardContent {
-    display: flex;
-    flex: 4;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1rem 1rem;
-  }
-  
-  .DishCard-right {
-    display: flex;
-    flex: 4;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 1rem;
-  }
- 
 
   .DishCard-title {
-    font-size: 2.2rem;
-    margin-bottom: 0;
+    font-size: 1.8rem;
   }
-  
-  .DishCard-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
-  
-  .DishpriceDiv {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .DishpriceDiv>* {
-    margin-block: 5px;
-    display: flex;
-  }
-  
-  .DishPrice {
-    align-items: center;
-  }
-  
-
-  
-  .DishCard-Subtitle {
-    font-size: 1.4rem;
-    line-height: 1;
-  
-  }
-  
-  .DishCard-details {
-    font-size: 1.4rem;
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-  
-    /*delete this later for alternate view with flexes*/
-    align-items: center;
-  }
-  
-  .DishCard-span {
-    padding-inline: 5px;
-    margin-block: 5px;
-    display: flex;
-  }
-  
-  .DishCard-span.DishCard-HebText {
-direction: rtl;
 }
-  
-  .DishCard-span.DishCard-EngText {
-    font-weight: 400;
-  }
-  
-  @media screen and (max-width: 1200px) {
-    .DishCard-text {
-      padding: 0;
-    }
-  
-    .DishCard-title {
-      font-size: 1.8rem;
-    }
-  }
-  
-  @media screen and (max-width: 775px) {
 
-  
-    .DishCardimage {
-      height: 175px;
-      border-radius: 15px;
-      width: 100%;
-    }
-  
-    .DishCard-text {
-      padding: 0;
-    }
-  
-    .DishCard-title {
-      font-size: 1.3rem;
-    }
-  
-    .DishCard-Subtitle {
-      font-size: 0.8rem;
-    }
-  
-    .DishCard-details {
-      font-size: 1.1rem;
-      line-height: 1.2;
-      margin-block: 0.2rem;
-    }
+@media screen and (max-width: 775px) {
+
+
+  .DishCardimage {
+    height: 175px;
+    border-radius: 15px;
+    width: 100%;
   }
-  
-  @media screen and (max-width: 395px) {
-  
-    .DishCard-text {
-      padding: 0;
-    }
-  
-    .DishCard-title {
-      font-size: 1.1rem;
-  
-    }
-  
-    .DishCard-Subtitle {
-      font-size: 0.8rem;
-    }
-  
-    .DishCardimage {
-      width: 100%;
-      border-radius: 15px;
-    }
-  
-    .DishCard-details {
-      font-size: 1rem;
-      line-height: 1.2;
-      margin-block: 0.2rem;
-    }
+
+  .DishCard-text {
+    padding: 0;
   }
-  
-  @media screen and (max-width: 335px) {
-    .cardTwo {
-      height: 180px;
-    }
-  
-    .DishCardContent,
-    .DishCard-right {
-      width: 50%;
-    }
-  
-    .css-i4bv87-MuiSvgIcon-root.DishcardLogos {
-      font-size: 1.5rem;
-    }
-  
-    .DishCard-text {
-      padding: 0;
-    }
-  
-    .DishCard-title {
-      font-size: 1rem;
-  
-    }
-  
-    .DishCard-Subtitle {
-      font-size: 0.8rem;
-    }
-  
-    .DishCardimage {
-      width: 100%;
-      border-radius: 15px;
-      padding: 2px;
-    }
+
+  .DishCard-title {
+    font-size: 1.3rem;
   }
+
+  .DishCard-Subtitle {
+    font-size: 0.8rem;
+  }
+
+  .DishCard-details {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    margin-block: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 395px) {
+
+  .DishCard-text {
+    padding: 0;
+  }
+
+  .DishCard-title {
+    font-size: 1.1rem;
+
+  }
+
+  .DishCard-Subtitle {
+    font-size: 0.8rem;
+  }
+
+  .DishCardimage {
+    width: 100%;
+    border-radius: 15px;
+  }
+
+  .DishCard-details {
+    font-size: 1rem;
+    line-height: 1.2;
+    margin-block: 0.2rem;
+  }
+}
+
+@media screen and (max-width: 335px) {
+  .cardTwo {
+    height: 180px;
+  }
+
+  .DishCardContent,
+  .DishCard-right {
+    width: 50%;
+  }
+
+  .css-i4bv87-MuiSvgIcon-root.DishcardLogos {
+    font-size: 1.5rem;
+  }
+
+  .DishCard-text {
+    padding: 0;
+  }
+
+  .DishCard-title {
+    font-size: 1rem;
+
+  }
+
+  .DishCard-Subtitle {
+    font-size: 0.8rem;
+  }
+
+  .DishCardimage {
+    width: 100%;
+    border-radius: 15px;
+    padding: 2px;
+  }
+}
+
+
+
+/* for temp dishCard */
+
+.dishCardSubtitle.hebSubtitle{
+  text-align: center;
+  width: 100%;
+}

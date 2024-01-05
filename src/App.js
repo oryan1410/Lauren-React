@@ -19,6 +19,8 @@ import LoginPage from './Screens/LoginPage';
 import Favorites from './Screens/Favorites';
 import FadeIn from './HelpComponents/FaidIn';
 import NotAllowed from './Screens/NotAllowed';
+import Beers from './Screens/Beers';
+import Cocktails from './Screens/Cocktail';
 
 import { useUserContext } from './UserContext';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
@@ -155,6 +157,12 @@ function App() {
                   <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Alcoholic Beverages':'משקאות אלכוהולים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
+                  <Link to="/beers" className={`nav-link ${location.pathname === '/beers' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Beers':'בירות'}</Link>
+                </Nav.Item>
+                <Nav.Item>
+                  <Link to="/cocktails" className={`nav-link ${location.pathname === '/cocktails' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Cocktails':'קוקטיילים'}</Link>
+                </Nav.Item>
+                <Nav.Item>
                   <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Dishes':'מנות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
@@ -196,6 +204,8 @@ function App() {
             {/* <Route path="/about" element={<About />} />*/}
             <Route path="/wines" element={<Wines />} />
             <Route path="/alcohol" element={<AlcoholPage />} />
+            <Route path="/beers" element={<Beers />} />
+            <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/dishes" element={<Dishes />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/events" element={<Events />} />

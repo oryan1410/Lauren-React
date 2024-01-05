@@ -4,15 +4,15 @@ import InfoTwoToneIcon from '@mui/icons-material/InfoTwoTone';
 import { Link } from 'react-router-dom'
 import { useState } from 'react';
 import WineBarIcon from '@mui/icons-material/WineBar';
-import LocalDrinkIcon from '@mui/icons-material/LocalDrink';
 import LiquorIcon from '@mui/icons-material/Liquor';
+import SportsBarIcon from '@mui/icons-material/SportsBar';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import '../styles/WineCard.css'
 import { useUserContext } from '../UserContext';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
-export default function AlcoholCard(props) {
+export default function BeerCard(props) {
     const [isImageClicked, setImageClicked] = useState(false);
     const { language } = useUserContext();
     const { t } = useTranslation();
@@ -44,55 +44,18 @@ export default function AlcoholCard(props) {
                 <div className='priceDiv'>
                     <div className='bottlePriceDiv'>
                         <span className='BottlePrice'>
-                            <LocalDrinkIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                            <SportsBarIcon className='cardLogos' style={{ margin: '0px 5px' }} />
                         </span>
                         <span className='bottlePriceText'>
                         ₪{props.alcohol.CPrice}
                         </span>
                     </div>
                     {props.alcohol.Cup_Y_N_ === 'Y' && <div className='cupPriceDiv'><span className='BottlePrice'>
-                        <LocalDrinkIcon className='cardLogos' /></span>
+                        <SportsBarIcon className='cardLogos' /></span>
                         <span className='bottlePriceText'>{props.alcohol.CPrice}₪</span></div>}
                 </div>
             </div>
             <div className='card2-right' >
-                {/*a different way to view the details- with the seperation lines in an specific place */}
-                {/* <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{props.alcohol.Country_Heb}</span>
-                    <span>||</span>
-                    <span className='card2-span card2-rightText'>{props.alcohol.Country_Eng}</span>
-                </div> */}
-                {/* <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{getTypesHeb(props.alcohol.Type_Ro_Re_Wh_Bu_)}</span>
-                    <span>||</span>
-                    <span className='card2-span card2-rightText'>{getTypes(props.alcohol.Type_Ro_Re_Wh_Bu_)}</span>
-                </div> */}
-                {/* <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{getDrynessHeb(props.alcohol.Dry_Y_N_)}</span>
-                    <span>||</span>
-                    <span className='card2-span card2-rightText'>{getDryness(props.alcohol.Dry_Y_N_)}</span>
-                </div> */}
-                {/* <div className='card2-details'>
-                    {props.alcohol.Blend_Y_N_ === 'Y' ? <span className='card2-span card2-blentText'>blend</span> : <><span className='card2-span card2-leftText'>{props.alcohol.Grape_Heb[0]}</span>
-                        <span>||</span>
-                        <span className='card2-span card2-rightText'>{props.alcohol.Grape_Eng[0]}</span></>}
-                </div> */}
-                {/* <span className='card2-details'>{props.alcohol.CountryName} || {props.alcohol.Country_Heb}</span>
-                <span className='card2-details'>{getTypes(props.alcohol.Type_Ro_Re_Wh_Bu_)} || {getTypesHeb(props.alcohol.Type_Ro_Re_Wh_Bu_)}</span>
-                <span className='card2-details'>{getDryness(props.alcohol.Dry_y_n_)} || {getDrynessHeb(props.alcohol.Dry_y_n_)}</span>               */}
-                {/* <div className='card2-button'>
-                    <Link to={`/winePage/${props.alcohol.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
-                        <Button sx={{
-                            color: 'white',
-                            borderRadius: '16px!important',
-                            fontFamily: 'Urbanist', textTransform: 'none',
-                            '&:hover ': { backgroundColor: '#917F6B', boxShadow: '0 0 0 2px #000' },
-                            '&:focus': {
-                                outline: 'none'
-                            }
-                        }} size="small" className='linkWithoutSpace' onClick={(e) => { e.target.blur() }} >Go to Wine</Button>
-                    </Link>
-                </div> */}
                 <div className='card2-details'>
                     <span className={`card2-span card2-leftText ${language==='heb' && 'AlchebText'} `}>{language==='heb'?props.alcohol.Desc_Heb: props.alcohol.Desc_Eng}</span>
                     </div>

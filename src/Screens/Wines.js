@@ -25,7 +25,8 @@ const Wines = () => {
     const [whiteExpanded, setWhiteExpanded] = useState(location.state?.whiteExpanded || false);
     const [roseExpanded, setRoseExpanded] = useState(location.state?.roseExpanded || false);
     const [bubbleExpanded, setBubbleExpanded] = useState(location.state?.bubbleExpanded || false);
-    const { redWines, whiteWines, roseWines, bubbleWines, countries,countriesHeb, getFilters,getFavorites, language, winesArr, getWinesArr, isLoading } = useUserContext();
+    const [bestOfExpanded, setBestOfExpanded] = useState(location.state?.bestOfExpanded || false);
+    const { redWines, whiteWines, roseWines, bubbleWines,bestOfWines, countries,countriesHeb, getFilters,getFavorites, language, winesArr, getWinesArr, isLoading } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -62,9 +63,6 @@ const Wines = () => {
     }, [language]);
 
 
-
-
-
     function handleValueChange(value, label) {
         console.log('Value changed to:', value);
         if (label === 'Dryness') {
@@ -79,9 +77,12 @@ const Wines = () => {
         }
         else if (label === 'Country') {
             if (language==='heb'){
+                console.log("asas",countriesHeb.indexOf(value))
+                console.log(countries[4])
+                console.log("value after transform",)
                 setSelectedCountry(countries[countriesHeb.indexOf(value)]);
             }
-            else if (language==='eng'){
+            else if (language==='en'){
             setSelectedCountry(value);
         }
         }
@@ -125,12 +126,16 @@ const Wines = () => {
     const filterWines = async () => {
         console.log('filterWines');
         let arr = winesArr;
+      
         if (selectedCountry !== '') {
             arr = arr.filter((wine) => wine.Country_Eng === selectedCountry);
         }
         if (selectedDryness !== '') {
             arr = arr.filter((wine) => wine.Dry_Y_N_ === selectedDryness);
         }
+    
+   
+    console.log('arr', arr);
 
         let red = [];
         let white = [];
@@ -501,7 +506,21 @@ const Wines = () => {
                     </ExpandMore>
                     <Collapse ref={expandedDivRef4} in={bubbleExpanded} timeout="auto" unmountOnExit>
                         {bubbleWinesArr}
-                    </Collapse> </div> : displayWines2
+                    </Collapse>
+                    <ExpandMore 
+                    expand={bestOfExpanded}
+                    header='יינות מיוחדים || special wines'
+                    onClick={() => handleExpandClick('BestOf')}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                    className='wineCategory'
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse ref={expandedDivRef4} in={bestOfExpanded} timeout="auto" unmountOnExit>
+                        {bestOfWines}
+                    </Collapse>
+                     </div> : displayWines2
                 }
 
 

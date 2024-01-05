@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Card from '../HelpComponents/Card';
+import TempAlcCard from '../HelpComponents/TempAlcCard';
+import AlcoholCard from '../HelpComponents/AlcoholCard';
+import BeerCard from '../HelpComponents/BeerCard';
 import RecipeReviewCard2 from '../HelpComponents/Card2';
 import DishCard from '../HelpComponents/DishCard';
 import '../App.css';
@@ -20,10 +23,18 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 const AlcoholMain = () => {
     const [expanded, setExpanded] = useState(false);
-    const [whiteExpanded, setWhiteExpanded] = useState(false);
-    const [roseExpanded, setRoseExpanded] = useState(false);
-    const [bubbleExpanded, setBubbleExpanded] = useState(false);
-    const { redWines, whiteWines, roseWines, bubbleWines, countries, getFilters } = useUserContext();
+    const [americanExpanded, setAmericanExpanded] = useState(false);
+    const [smokedExpanded, setSmokedExpanded] = useState(false);
+    const [coniacExpanded, setConiacExpanded] = useState(false);
+    const [rumExpanded, setRumExpanded] = useState(false);
+    const [ginExpanded, setGinExpanded] = useState(false);
+    const [taqilaExpanded, setTaquilaExpanded]= useState(false)
+    const [apperetivoExpanded, setApperetivoExpanded] = useState(false);
+    const [anisExpanded, setAnisExpanded] = useState(false);
+    const [vodkaExpanded, setVodkaExpanded] = useState(false);
+    const [beerExpanded, setBeerExpanded] = useState(false);
+    const [cocltailExpanded, setCocktailExpanded] = useState(false);
+    const { alcoholArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr, cocktailsArr,beerArr, countries, getFilters } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -131,13 +142,37 @@ const AlcoholMain = () => {
             setExpanded(!expanded);
         }
         else if (type === 'White') {
-            setWhiteExpanded(!whiteExpanded);
+            setAmericanExpanded(!americanExpanded);
         }
         else if (type === 'Rose') {
-            setRoseExpanded(!roseExpanded);
+            setSmokedExpanded(!smokedExpanded);
         }
         else if (type === 'Bubble') {
-            setBubbleExpanded(!bubbleExpanded);
+            setConiacExpanded(!coniacExpanded);
+        }
+        else if (type === 'Rum'){
+            setRumExpanded(!rumExpanded);
+        }
+        else if (type==='Gin'){
+            setGinExpanded(!ginExpanded)
+        }
+        else if (type==='Tequila'){
+            setTaquilaExpanded(!taqilaExpanded)
+        }
+        else if (type==='Apperativo'){
+            setApperetivoExpanded(!apperetivoExpanded)
+        }
+        else if (type==='Anis'){
+            setAnisExpanded(!anisExpanded)
+        }
+        else if (type==='Vodka'){
+            setVodkaExpanded(!vodkaExpanded)
+        }
+        else if (type==='Beer'){
+            setBeerExpanded(!beerExpanded)
+        }
+        else if (type==='Cocktail'){
+            setCocktailExpanded(!cocltailExpanded)
         }
     };
 
@@ -154,8 +189,8 @@ const AlcoholMain = () => {
                 setDisplayDishes(allDishes);
             }
             else {
-                let arr = dishes.map((dish) => {
-                    return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
+                let arr = alcoholArr.map((alcohol) => {
+                    return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setAllDishes(arr);
@@ -164,14 +199,16 @@ const AlcoholMain = () => {
         } else {
             setNoneFound(false);
             console.log("searchQuery is not empty");
+            console.log(searchQuery)
             //filter wines arr if name includes searchQuery
-            let arr1 = dishes.filter((dish) => dish.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
-            let arr2 = dishes.filter((dish) => dish.Name_Heb.includes(searchQuery));
+            let arr1 = alcoholArr.filter((alcohol) => alcohol.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
+            let arr2 = alcoholArr.filter((alcohol) => alcohol.Name_Heb.includes(searchQuery));
             console.log(arr2);
             let arr4 = arr1.concat(arr2);
+            arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
-                let arr = arr4.map((dish) => {
-                    return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
+                let arr = arr4.map((alcohol) => {
+                    return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
@@ -203,10 +240,212 @@ const AlcoholMain = () => {
                 </Grid>}
                 {searchQuery ==='' && <div className='resetButtonDiv'>
                     <Button className='resetButton' onClick={(e) => {sortFilters();e.target.blur()}} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
-                </div>} */}                
+                </div>} */}
+                {searchQuery ===''? <div>
+                <ExpandMore
+                    expand={expanded}
+                    header={'וויסקי||whiskey'}
+                    aria-expanded={expanded}
+                    aria-label="show more"
+                    onClick={() => handleExpandClick('Red')}
+                    className='wineCategory'
 
-
-            </div>
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+                <Collapse in={expanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {whiskeyArr.map((whiskey) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={whiskey.IdAlc} alcohol={whiskey} title={whiskey.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                    expand={americanExpanded}
+                    header={'אמריקאיים||American'}
+                    aria-expanded={americanExpanded}
+                    aria-label="show more"
+                    onClick={() => handleExpandClick('White')}
+                    className='wineCategory'
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+                <Collapse in={americanExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {americanArr.map((american) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={american.IdAlc} alcohol={american} title={american.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                    expand={smokedExpanded}
+                    header={'מעושנים||Smoked'}
+                    aria-expanded={smokedExpanded}
+                    aria-label="show more"
+                    onClick={() => handleExpandClick('Rose')}
+                    className='wineCategory'
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+                <Collapse in={smokedExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {smokedArr.map((smoked) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={smoked.IdAlc} alcohol={smoked} title={smoked.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                    expand={coniacExpanded}
+                    header={'קוניאק||Coniac'}
+                    aria-expanded={coniacExpanded}
+                    aria-label="show more"
+                    onClick={() => handleExpandClick('Bubble')}
+                    className='wineCategory'
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+                <Collapse in={coniacExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {coniacArr.map((coniac) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={coniac.IdAlc} alcohol={coniac} title={coniac.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                    expand={rumExpanded}
+                    header={'רום||Rum'}
+                    aria-expanded={rumExpanded}
+                    aria-label="show more"
+                    onClick={() => handleExpandClick('Rum')}
+                    className='wineCategory'
+                >
+                    <ExpandMoreIcon />
+                </ExpandMore>
+                <Collapse in={rumExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {rumArr.map((rum) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                expand={ginExpanded}
+                header={`ג'ין||Gin`}
+                aria-expanded={ginExpanded}
+                aria-label={'show more'}
+                onClick={() => handleExpandClick('Gin')}
+                className='wineCategory'
+            >
+                <ExpandMoreIcon />
+            </ExpandMore>
+            <Collapse in={ginExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {ginArr.map((rum) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                expand={taqilaExpanded}
+                header={`טקילה || Tequila`}
+                aria-expanded={taqilaExpanded}
+                aria-label={'show more'}
+                onClick={() => handleExpandClick('Tequila')}
+                className='wineCategory'
+            >
+                <ExpandMoreIcon />
+            </ExpandMore>
+            <Collapse in={taqilaExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {taquillaArr.map((rum) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                expand={apperetivoExpanded}
+                header={`אפריטיף || aperitif`}
+                aria-expanded={apperetivoExpanded}
+                aria-label={'show more'}
+                onClick={() => handleExpandClick('Apperativo')}
+                className='wineCategory'
+            >
+                <ExpandMoreIcon />
+            </ExpandMore>
+            <Collapse in={apperetivoExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {apperativoArr.map((rum) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore 
+                expand={anisExpanded}
+                header={`אניס || Anis`}
+                aria-expanded={anisExpanded}
+                aria-label={'show more'}
+                onClick={() => handleExpandClick('Anis')}
+                className='wineCategory'
+            >
+                <ExpandMoreIcon />
+            </ExpandMore>
+            <Collapse in={anisExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {anisArr.map((rum) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                <ExpandMore
+                expand={vodkaExpanded}
+                header={`וודקה || Vodka`}
+                aria-expanded={vodkaExpanded}
+                aria-label={'show more'}
+                onClick={() => handleExpandClick('Vodka')}
+                className='wineCategory'
+            >
+                <ExpandMoreIcon />
+            </ExpandMore>
+            <Collapse in={vodkaExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {vodkaArr.map((rum) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse>
+                {/* <ExpandMore
+                expand={beerExpanded}
+                header={`בירה || Beer`}
+                aria-expanded={beerExpanded}
+                aria-label={'show more'}
+                onClick={() => handleExpandClick('Beer')}
+                className='wineCategory'
+            >
+                <ExpandMoreIcon />
+            </ExpandMore>
+            <Collapse in={beerExpanded} timeout="auto" unmountOnExit>
+                    <div className='dishgridView'>
+                        {beerArr.map((rum) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <BeerCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )}                    </div>
+                </Collapse> */}
+                </div>:
+                displayDishes
+                }
+                            
+                            </div>
         </Container>
     );
 };

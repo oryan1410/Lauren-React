@@ -48,6 +48,10 @@
   width: 95%;
 }
 
+.AlchebText{
+  direction: rtl;
+}
+
 @media screen and (max-width: 395px) {
   .out-of-stock-text {
     font-size: 1.25rem;
@@ -174,6 +178,7 @@
 
 .BottlePrice {
   align-items: center;
+  display: flex;
 }
 
 .bottlePriceText{

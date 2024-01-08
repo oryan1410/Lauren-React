@@ -82,6 +82,7 @@ export default function BasicSelect({ label, options, setValue,selected }) {
         <Select
           id="demo-simple-select"
           value={age}
+          className='selectDropDown'
           label="Age"
           MenuProps={{
             PaperProps: {
@@ -98,7 +99,6 @@ export default function BasicSelect({ label, options, setValue,selected }) {
         }}
           sx={{
             color:'white',
-            backgroundColor:'#917F6B', 
             borderRadius:'16px!important', 
             textTransform:'lowercase',
             fontWeight:language==='heb' ? '600' : 'normal',

@@ -50,8 +50,8 @@ export default function AlcoholCard(props) {
                         ₪{props.alcohol.CPrice}
                         </span>
                     </div>
-                    {props.alcohol.Cup_Y_N_ === 'Y' && <div className='cupPriceDiv'><span className='BottlePrice'>
-                        <LocalDrinkIcon className='cardLogos' /></span>
+                    {props.alcohol.chaser === "Yes" && <div className='cupPriceDiv'><span className='BottlePrice'>
+                        <WineBarIcon className='cardLogos' /></span>
                         <span className='bottlePriceText'>{props.alcohol.CPrice}₪</span></div>}
                 </div>
             </div>

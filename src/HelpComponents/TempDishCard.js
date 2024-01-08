@@ -2,7 +2,6 @@
 import React from 'react'
 import { useUserContext } from '../UserContext';
 import { useTranslation } from 'react-i18next';
-import { use } from 'i18next';
 import { useEffect } from 'react';
 import '../styles/DishCard.css'
 
@@ -15,7 +14,7 @@ export default function TempDishCard(props) {
 
     const getDishType = () => {
         if (language === 'heb') {
-            if (dish.type === 'Meat') {
+            if (dish.IngType === 'Meat') {
                 return 'בשרי'
             }
             else if (dish.IngType === 'Dairy') {
@@ -42,25 +41,6 @@ export default function TempDishCard(props) {
         }
         else {
             return dish.IngType;
-        }
-    }
-
-    const getDishKosher = () => {
-        if (language === 'heb') {
-            if (dish.Kosher) {
-                return 'כשר'
-            }
-            else {
-                return 'לא כשר'
-            }
-        }
-        else {
-            if (dish.Kosher) {
-                return 'Kosher'
-            }
-            else {
-                return 'Not Kosher'
-            }
         }
     }
 

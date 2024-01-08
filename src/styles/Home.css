@@ -4,9 +4,8 @@
     opacity: 0;
     width: 100%;
     font-family: 'Urbanist';
-    color: aqua;
     padding-bottom: '10px';
-    font-family: 'anisette-std', 'Rubik';
+    font-family: var(--main-font-family);
   }
   
   .home.visible {
@@ -20,10 +19,10 @@
 .homeGridItem.MuiGrid-root.MuiGrid-item{
     font-size: 1.2rem;
     overflow: hidden;
-    background-color: #1E2423;
+    background-color: var(--main-background-color2);
     border-radius: 16px;
     margin: 0 auto; 
-border: 1px solid #967E68;    /* Adjust the border radius as needed */
+border: var(--main-card-border);    /* Adjust the border radius as needed */
 }
 
 .MuiGrid-root.MuiGrid-container{
@@ -41,7 +40,7 @@ border: 1px solid #967E68;    /* Adjust the border radius as needed */
 }
 
 .homeGridItem.MuiGrid-root.MuiGrid-item >a {
-  color:#967E68;
+  color:var(--secondary-font-color);
 }
 
 

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Urbanist', 'Rubik';
+  font-family: var(--secondary-font-family);
   overflow:hidden;
 }
 
@@ -121,7 +121,7 @@ button:focus {
 .navbar-light .navbar-nav .nav-link {
   color: #0d0d0d;
   font-size: 1.2rem;
-  font-family: 'Urbanist', 'Rubik';
+  font-family: var(--secondary-font-family);
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
@@ -223,6 +223,11 @@ button:focus {
     width: 100%;
   }
 
+  #search-bar :placeholder-shown {
+    text-align: center;
+    color: var(--main-font-color);    
+  }
+
 
   /* <---------- for the x button in searchbar ----------> */
   .clearButton {
@@ -320,13 +325,13 @@ img {
 
 .App-Body {
   background-image: url('./Images/BackgroungImage_Final.png');
-  background-color: #121A1C;
+  background-color: var(--main-background-color);
   background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: var(--main-font-color);
   flex: 1;
 }
 
@@ -348,7 +353,8 @@ img {
 }
 
 .textInput {
-  background-color: #967E68 !important;
+  background-color: var(--secondary-background-color) !important;
+  border: var(--main-no-border) !important;
   width: 100%;
   border-radius: 16px;
   text-decoration: none;
@@ -362,7 +368,7 @@ img {
 }
 
 .inputProps {
-  color: white;
+  color: var(--main-font-color);
   border-radius: 16px;
 }
 
@@ -373,7 +379,7 @@ img {
 /*Label for dropdown styling*/
 
 .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
-  color: #F1ECE6;
+  color: var(--main-label-color);
 }
 
 .MuiFormLabel-root.MuiInputLabel-root.hebInputLabel {
@@ -388,7 +394,8 @@ img {
 
 .center-placeholder input {
   text-align: center;
-  color: #F1ECE6;
+  color: var(--main-font-color);
+  opacity: 1;
 }
 
 
@@ -452,11 +459,11 @@ img {
 }
 
 .dialog>* {
-  font-family: 'anisette-std', 'Rubik';
+  font-family: var(--main-font-family);
 }
 
 .MuiDialogTitle-root.dialogTitle {
-  font-family: 'anisette-std', 'Rubik';
+  font-family: var(--main-font-family);
   text-transform: lowercase;
 }
 
@@ -466,7 +473,7 @@ img {
 }
 
 .MuiButtonBase-root.MuiButton-root.dialogButton {
-  font-family: 'anisette-std', 'Rubik';
+  font-family: var(--main-font-family);
   font-size: 1em;
   text-transform: lowercase;
   text-decoration: underline;
@@ -474,7 +481,7 @@ img {
 }
 
 .dialogText.MuiDialogContentText-root {
-  font-family: 'anisette-std', 'Rubik';
+  font-family: var(--main-font-family);
   text-transform: lowercase;
   font-size: 1.1rem;
 }
@@ -494,6 +501,31 @@ img {
 
 :root {
   --main-font-size: 16px;
+  --main-background-color: #121A1C;
+  --main-background-color2: #1E2423;
+  --secondary-background-color: #967E68;
+
+  --main-seperator-color: #967E68;
+
+  --main--shadow-color: #967E68;
+  --secondary-shadow-color: #000;
+
+  --main-no-border: 0px;
+  --main-card-border: 2px solid #967E68;
+
+
+
+  --main-font-color:#fff;
+  --secondary-font-color: #967E68;
+  --footer-font-color: #000;
+
+  --main-font-family: 'anisette-std', 'Rubik';
+  --secondary-font-family: 'Urbanist', 'Rubik';
+  --main-text-transform: lowercase;
+
+  --main-label-color: #F1ECE6;
+
+  --main-selected-color: #9b8f81;
 }
 
 body {
@@ -520,5 +552,25 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+/* <-------------------  CSS for the Accesability Tab -------------------> */
+
+.accesablilityTab{
+  background-color: #121A1C;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 1.2rem;
+
+}
+
+.acessablityXbutton{
+  position:absolute;
+  right: 0;
+  top: 0;
+  height: 1.8rem;
+  width: 1.7rem;
 }
 

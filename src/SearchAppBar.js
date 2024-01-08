@@ -72,9 +72,7 @@ export default function SearchAppBar(props) {
               border: '0px!important',
               borderRadius: '16px!important',
             },
-            '& input::placeholder': {
-              color: '#FFF',
-            },
+
           },
         }}        
       />

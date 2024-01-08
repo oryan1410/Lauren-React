@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Card from '../HelpComponents/Card';
-import TempAlcCard from '../HelpComponents/TempAlcCard';
 import AlcoholCard from '../HelpComponents/AlcoholCard';
-import BeerCard from '../HelpComponents/BeerCard';
-import RecipeReviewCard2 from '../HelpComponents/Card2';
 import DishCard from '../HelpComponents/DishCard';
 import '../App.css';
 import '../styles/Wines.css'
@@ -33,89 +29,26 @@ const AlcoholMain = () => {
     const [anisExpanded, setAnisExpanded] = useState(false);
     const [vodkaExpanded, setVodkaExpanded] = useState(false);
     const [beerExpanded, setBeerExpanded] = useState(false);
-    const [cocltailExpanded, setCocktailExpanded] = useState(false);
-    const { alcoholArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr, cocktailsArr,beerArr, countries, getFilters } = useUserContext();
-    const [selectedDryness, setSelectedDryness] = useState('');
-    const [selectedColor, setSelectedColor] = useState('');
-    const [selectedCountry, setSelectedCountry] = useState('');
+    const { alcoholArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr } = useUserContext();
     const [isVisible, setIsVisable] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [allDishes, setAllDishes] = useState([]);
     const [noneFound, setNoneFound] = useState(false);
     const [displayDishes, setDisplayDishes] = useState([]);
 
-    const [dropArrays, setDropArrays] = useState([]);
-
-    //wine arrays for expansion panels
-    const [redWinesArr, setRedWinesArr] = useState([]);
-    const [whiteWinesArr, setWhiteWinesArr] = useState([]);
-    const [roseWinesArr, setRoseWinesArr] = useState([]);
-    const [bubbleWinesArr, setBubbleWinesArr] = useState([]);
-
-    const [resetKey, setResetKey] = useState(0);
-    const [filterReset, setFilterReset] = useState(false);
-    const [isLoading, setIsLoading] = useState(true);
-    const [isAnimating, setIsAnimating] = useState(false);
-
-    function handleValueChange(value, label) {
-        console.log('Value changed to:', value);
-        if (label === 'Dryness') {
-            setSelectedDryness(value);
-            if (value === 'Dry') {
-                setSelectedDryness('Y');
-            }
-            else {
-                setSelectedDryness('N');
-            }
-            //console.log('arr', arr);
-        }
-        else if (label === 'Country') {
-            setSelectedCountry(value);
-        }
 
 
-    };
+
+
 
     useEffect(() => {
         setIsVisable(true);
-        let dishArr = dishes.map((dish) => {
-            return <DishCard key={dish.IdDish} dish={dish} title={dish.Name_Eng} image={dish.ImageUrl} />
-        }
-        );
-        console.log('dishArr', dishArr);
-        setRedWinesArr(dishArr);
-        setWhiteWinesArr(dishArr);
-        setRoseWinesArr(dishArr);
-        setBubbleWinesArr(dishArr);
-        setAllDishes(dishArr);
-        setDisplayDishes(dishArr);
-        setIsLoading(false); // Data has loaded, set loading state to false
-    }, [dishes]);
+    }, []);
 
     //create filters for dryness and country
-    const sortFilters = async () => {
-        console.log('getFilters');
-        setSelectedDryness('');
-        setSelectedColor('');
-        setSelectedCountry('');
-        setResetKey(prevKey => prevKey + 1); // increment the key
-        setDropArrays([
-            <DropDown key={resetKey + '0'} label='Dryness' options={['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
-            <DropDown key={resetKey + '1'} label='Country' options={countries} setValue={handleValueChange} selected={''} />
-        ]);
-    }
 
     // get countries and sort filters
-    useEffect(() => {
-        if (countries.length === 0) {
-            console.log('countries', countries);
-            getFilters();
-        }
-        else {
-            console.log('countries', countries);
-            sortFilters();
-        }
-    }, [countries]);
+
 
     // epxand more for wine category based on color
     const ExpandMore = styled((props) => {
@@ -171,15 +104,9 @@ const AlcoholMain = () => {
         else if (type==='Beer'){
             setBeerExpanded(!beerExpanded)
         }
-        else if (type==='Cocktail'){
-            setCocktailExpanded(!cocltailExpanded)
-        }
+       
     };
 
-    useEffect(() => {
-        console.log('dropArrays', dropArrays);
-    }
-        , [dropArrays])
 
     //Search useeffect
     useEffect(() => {
@@ -203,10 +130,10 @@ const AlcoholMain = () => {
             //filter wines arr if name includes searchQuery
             let arr1 = alcoholArr.filter((alcohol) => alcohol.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
             let arr2 = alcoholArr.filter((alcohol) => alcohol.Name_Heb.includes(searchQuery));
-            console.log(arr2);
             let arr4 = arr1.concat(arr2);
             arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
+                console.log('arr4', arr4.length)
                 let arr = arr4.map((alcohol) => {
                     return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
@@ -223,6 +150,10 @@ const AlcoholMain = () => {
 
     }, [searchQuery]);
 
+    useEffect(() => {
+        console.log('noneFound', noneFound);
+    }, [noneFound])
+
     //search function
     const setSearch = (e) => {
         console.log('setSearchWines');
@@ -234,17 +165,10 @@ const AlcoholMain = () => {
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 <SearchAppBar searchFunc={setSearch} />
-                {/* <DropDown /> */}
-                {/* {searchQuery ==='' && <Grid container className='dishgridView'>
-                    {dropArrays}
-                </Grid>}
-                {searchQuery ==='' && <div className='resetButtonDiv'>
-                    <Button className='resetButton' onClick={(e) => {sortFilters();e.target.blur()}} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
-                </div>} */}
                 {searchQuery ===''? <div>
                 <ExpandMore
                     expand={expanded}
-                    header={'וויסקי||whiskey'}
+                    header={'וויסקי||Whiskey'}
                     aria-expanded={expanded}
                     aria-label="show more"
                     onClick={() => handleExpandClick('Red')}
@@ -371,7 +295,7 @@ const AlcoholMain = () => {
                 </Collapse>
                 <ExpandMore
                 expand={apperetivoExpanded}
-                header={`אפריטיף || aperitif`}
+                header={`אפריטיף || Aperitif`}
                 aria-expanded={apperetivoExpanded}
                 aria-label={'show more'}
                 onClick={() => handleExpandClick('Apperativo')}
@@ -423,28 +347,11 @@ const AlcoholMain = () => {
                         }
                         )}                    </div>
                 </Collapse>
-                {/* <ExpandMore
-                expand={beerExpanded}
-                header={`בירה || Beer`}
-                aria-expanded={beerExpanded}
-                aria-label={'show more'}
-                onClick={() => handleExpandClick('Beer')}
-                className='wineCategory'
-            >
-                <ExpandMoreIcon />
-            </ExpandMore>
-            <Collapse in={beerExpanded} timeout="auto" unmountOnExit>
-                    <div className='dishgridView'>
-                        {beerArr.map((rum) => {
-                            // return <TempAlcCard alcohol={whiskey}/>
-                            return <BeerCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                        }
-                        )}                    </div>
-                </Collapse> */}
                 </div>:
                 displayDishes
                 }
-                            
+                                            {noneFound && <h1>None Found</h1>}
+
                             </div>
         </Container>
     );

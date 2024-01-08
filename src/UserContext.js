@@ -147,19 +147,22 @@ export function UserProvider({ children }) {
                 wine.Desc_Eng=doc.data().Desc_Eng;
                 wine.inStock=doc.data().inStock;
                 wine.bestOf=doc.data().bestOf;
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Re' && doc.data().bestOf !== true) {
+                if (doc.data().bestOf === true) {
+                    bestOfArr.push(wine)
+                }
+                else if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Re' && doc.data().bestOf !== true) {
                     redArr.push(wine)
                 }
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Wh' && doc.data().bestOf !== true) {
+                else if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Wh' && doc.data().bestOf !== true) {
                     whiteArr.push(wine)
                 }
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Ro' && doc.data().bestOf !== true) {
+                else if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Ro' && doc.data().bestOf !== true) {
                     roseArr.push(wine)
                 }
-                if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Bu' && doc.data().bestOf !== true) {
+                else if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Bu' && doc.data().bestOf !== true) {
                     bubbleArr.push( wine)
                 }
-                if(doc.data().bestOf === true ){
+                else if(doc.data().bestOf === true ){
                     bestOfArr.push(wine)
                 }
                 countries.push(wine.Country_Eng);
@@ -254,6 +257,8 @@ export function UserProvider({ children }) {
                 alcohol.CPrice=doc.data().CPrice;
                 alcohol.inStock=doc.data().inStock;
                 alcohol.onMenu=doc.data().onMenu;
+                alcohol.chaser=doc.data().chaser;
+                alcohol.chaserPrice=doc.data().chaserPrice;
                 alcoholArr.push(alcohol)
                 if (alcohol.Type === 'Whiskey') {
                     whiskeyArr.push(alcohol)
@@ -321,6 +326,7 @@ export function UserProvider({ children }) {
             console.log('cleanup')
             getNames()
             getDishes();
+            getAlcohol();
         };
 
     }, []);
@@ -358,20 +364,9 @@ export function UserProvider({ children }) {
     }, [dishesArr])
 
     useEffect(() => {
-        console.log("easyArr",easyArr)
-    }, [easyArr])
+        console.log('wineArr', winesArr);
+    }, [winesArr])
 
-    useEffect(() => {
-        console.log("nextToWineArr",nextToWineArr)
-    }, [nextToWineArr])
-
-    useEffect(() => {
-        console.log("forTheHungryArr",forTheHungryArr)
-    }, [forTheHungryArr])
-
-    useEffect(() => {
-        console.log("bestOf",bestOfWines)
-    }, [bestOfWines])
 
     useEffect(() => {
         console.log("alc",alcoholArr)

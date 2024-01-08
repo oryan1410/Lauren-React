@@ -21,6 +21,9 @@ import FadeIn from './HelpComponents/FaidIn';
 import NotAllowed from './Screens/NotAllowed';
 import Beers from './Screens/Beers';
 import Cocktails from './Screens/Cocktail';
+import Cigars from './Screens/Cigars';
+
+import AccessibilityTab from './HelpComponents/AcessabilityTab';
 
 import { useUserContext } from './UserContext';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
@@ -45,6 +48,70 @@ function App() {
     const newFontSize = fontSize - 1;
     setFontSize(newFontSize);
     document.documentElement.style.setProperty('--main-font-size', `${newFontSize}px`);
+  }
+
+  const highContrast = () => {
+    document.documentElement.style.setProperty('--main-background-color', '#000');
+    document.documentElement.style.setProperty('--main-background-color2', '#000');
+    document.documentElement.style.setProperty('--secondary-background-color', '#000');
+    document.documentElement.style.setProperty('--main--shadow-color', '#fff');
+    document.documentElement.style.setProperty('--main-no-border', '2px solid #fff');
+    document.documentElement.style.setProperty('--main-card-border', '2px solid #fff');
+    document.documentElement.style.setProperty('--main-seperator-color', '#fff');
+    document.documentElement.style.setProperty('--footer-font-color', '#fff');  
+    document.documentElement.style.setProperty('--main-font-color', '#fff');
+    document.documentElement.style.setProperty('--secondary-font-color', '#fff');
+    document.documentElement.style.setProperty('--main-label-color', '#fff');
+    document.documentElement.style.setProperty('--main-selected-color', '#a5a5a5');
+    document.documentElement.style.setProperty('--main-button-border', '1px solid #ffffff!important');
+
+
+
+  }
+
+  const brightMode = () => {
+    document.documentElement.style.setProperty('--main-background-color', '#fff');
+    document.documentElement.style.setProperty('--main-background-color2', '#fff');
+    document.documentElement.style.setProperty('--secondary-background-color', '#fff');
+    document.documentElement.style.setProperty('--main--shadow-color', '#000000');
+    document.documentElement.style.setProperty('--main-no-border', '2px solid #000');
+    document.documentElement.style.setProperty('--main-card-border', '2px solid #000');
+    document.documentElement.style.setProperty('--main-seperator-color', '#000');
+    document.documentElement.style.setProperty('--footer-font-color', '#000');
+    document.documentElement.style.setProperty('--main-font-color', '#000');
+    document.documentElement.style.setProperty('--secondary-font-color', '#000');
+    document.documentElement.style.setProperty('--main-label-color', '#000');
+    document.documentElement.style.setProperty('--main-selected-color', '#a5a5a5');
+    document.documentElement.style.setProperty('--main-button-border', '1px solid #000000!important');   
+  }
+
+  const readableFonts = () => {
+    document.documentElement.style.setProperty('--main-font-family', "Arial,sans-serif");
+    document.documentElement.style.setProperty('--secondary-font-family', "Arial,sans-serif");
+    
+    document.documentElement.style.setProperty('--main-text-transform', 'none');
+  }
+
+  const resetAccessibility = () => {
+    document.documentElement.style.setProperty('--main-font-size', '16px');
+    document.documentElement.style.setProperty('--main-background-color', '#121A1C');
+    document.documentElement.style.setProperty('--main-background-color2', '#1E2423');
+    document.documentElement.style.setProperty('--secondary-background-color', '#967E68');
+    document.documentElement.style.setProperty('--main--shadow-color', '#967E68');
+    document.documentElement.style.setProperty('--secondary-shadow-color', '#000');
+    document.documentElement.style.setProperty('--main-seperator-color', '#967E68');
+    document.documentElement.style.setProperty('--main-no-border', '0px');
+    document.documentElement.style.setProperty('--main-card-border', '2px solid #967E68');
+    document.documentElement.style.setProperty('--main-button-border', '1px solid #ffffff!important');
+    document.documentElement.style.setProperty('--main-font-color', '#fff');
+    document.documentElement.style.setProperty('--secondary-font-color', '#967E68');
+    document.documentElement.style.setProperty('--footer-font-color', '#000');    
+    document.documentElement.style.setProperty('--main-label-color','#F1ECE6');
+    document.documentElement.style.setProperty('--main-selected-color', '#9b8f81');
+    document.documentElement.style.setProperty('--main-font-family', '"anisette-std", "Rubik"');  
+    document.documentElement.style.setProperty('--secondary-font-family', '"Urbanist", "Rubik"');
+    
+    document.documentElement.style.setProperty('--main-text-transform', 'lowercase');
   }
  
 
@@ -112,7 +179,7 @@ function App() {
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="App-Body">
-        { navBarVisable && <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
+        { navBarVisable && <Navbar style={{zIndex:'9999'}} bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
             <Navbar.Brand href="\home">
               <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={60} width={100} alt="Go Home" />
             </Navbar.Brand>
@@ -166,11 +233,14 @@ function App() {
                   <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Dishes':'מנות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Favorites':'מועדפים'}</Link>
+                  <Link to="/cigars" className={`nav-link ${location.pathname === '/cigars' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Cigars':'סיגרים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Login':'התחברות'}</Link>
+                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Favorites':'מועדפים'}</Link>
                 </Nav.Item>
+                {/* <Nav.Item>
+                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Login':'התחברות'}</Link>
+                </Nav.Item> */}
                 <Nav.Item>
                   <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Events':'אירועים'}</Link>
                 </Nav.Item>
@@ -197,6 +267,14 @@ function App() {
         </Navbar> 
         }
         <div style={{ height: '90px' }}></div>
+<AccessibilityTab 
+highContrast={highContrast} 
+increaseFontSize={increaseFontSize} 
+decreaseFontSize={decreaseFontSize} 
+resetAccessibility={resetAccessibility}
+brightMode={brightMode}
+readableFonts={readableFonts}
+/>
         
           <Routes>
             <Route path="/" element={<FadeIn setIsVisible={() => { setIsVisible(true) }} /> } />
@@ -207,6 +285,7 @@ function App() {
             <Route path="/beers" element={<Beers />} />
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/dishes" element={<Dishes />} />
+            <Route path="/cigars" element={<Cigars />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/events" element={<Events />} />
             
@@ -231,7 +310,4 @@ function App() {
     </div>
   );
 }
-
-
-
 export default App;

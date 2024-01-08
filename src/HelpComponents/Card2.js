@@ -10,11 +10,12 @@ import '../styles/WineCard.css'
 import { useUserContext } from '../UserContext';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Language } from '@mui/icons-material';
 
 export default function RecipeReviewCard2(props) {
     const [isImageClicked, setImageClicked] = useState(false);
     const [isFavorite, setIsFavorite] = useState(false);
-    const { addFavorite, removeFavorite, favorites, getFavorites } = useUserContext();
+    const { addFavorite, removeFavorite, favorites, getFavorites, language } = useUserContext();
     const { t } = useTranslation();
 
     let screenWidth = window.innerWidth;
@@ -75,15 +76,15 @@ export default function RecipeReviewCard2(props) {
 
     const setAsFavorite = (event) => {
         event.stopPropagation();
-        if(props.wine.inStock !==false){
-        if (isFavorite) {
-            removeFavorite(props.wine.Id);
+        if (props.wine.inStock !== false) {
+            if (isFavorite) {
+                removeFavorite(props.wine.Id);
+            }
+            else {
+                addFavorite(props.wine.Id);
+            }
+            setIsFavorite(!isFavorite);
         }
-        else {
-            addFavorite(props.wine.Id);
-        }
-        setIsFavorite(!isFavorite);
-    }
     }
 
     useEffect(() => {
@@ -106,7 +107,7 @@ export default function RecipeReviewCard2(props) {
                 {/*line seperatoe to seperate the divs */}
                 <div className='line'></div>
                 <div className='card2-subTitleDiv'>
-                    {screenWidth > 600 ? <span className='card2-Subtitle'>{props.wine.WineryName_Eng} || {props.wine.WineryName_Heb} </span> :
+                    {screenWidth > 600 ? <span className='card2-Subtitle'>{props.wine.WineryName_Eng} | {props.wine.WineryName_Heb} </span> :
                         <><span className='card2-Subtitle'>{props.wine.WineryName_Eng}</span>
                             <span className='card2-Subtitle hebSubTitle'>  {props.wine.WineryName_Heb}</span>
                         </>}
@@ -129,34 +130,37 @@ export default function RecipeReviewCard2(props) {
                 {/*a different way to view the details- with the seperation lines in an specific place */}
                 <div className='card2-details'>
                     <span className='card2-span card2-leftText'>{props.wine.Country_Heb}</span>
-                    <span>||</span>
+                    <span>|</span>
                     <span className='card2-span card2-rightText'>{props.wine.Country_Eng}</span>
                 </div>
                 <div className='card2-details'>
                     <span className='card2-span card2-leftText'>{getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
-                    <span>||</span>
+                    <span>|</span>
                     <span className='card2-span card2-rightText'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                 </div>
                 <div className='card2-details'>
                     <span className='card2-span card2-leftText'>{getDrynessHeb(props.wine.Dry_Y_N_)}</span>
-                    <span>||</span>
+                    <span>|</span>
                     <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_Y_N_)}</span>
                 </div>
                 <div className='card2-details'>
-                    {props.wine.Blend_Y_N_ === 'Y' ? <span className='card2-span card2-blentText'>blend</span> : <><span className='card2-span card2-leftText'>{props.wine.Grape_Heb[0]}</span>
-                        <span>||</span>
-                        <span className='card2-span card2-rightText'>{props.wine.Grape_Eng[0]}</span></>}
+                    {props.wine.Blend_Y_N_ === 'Y' ? <span className='card2-span card2-blentText'>{language==='en'? 'blend':'בלנד'}</span> :
+                        <>
+                            {/* <span className='card2-span card2-leftText'>{props.wine.Grape_Heb[0]}</span> */}
+                            <span className='card2-span card2-grape'>{language!=='en' ? props.wine.Grape_Heb[0]:props.wine.Grape_Eng[0]}</span>
+                            {/* <span className='card2-span card2-rightText'>{props.wine.Grape_Eng[0]}</span> */}
+                        </>
+                    }
                 </div>
-                {/* <span className='card2-details'>{props.wine.CountryName} || {props.wine.Country_Heb}</span>
-                <span className='card2-details'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)} || {getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
-                <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} || {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
+                {/* <span className='card2-details'>{props.wine.CountryName} | {props.wine.Country_Heb}</span>
+                <span className='card2-details'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)} | {getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
+                <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} | {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
                 <div className='card2-button'>
-                    <Link to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none' }}  >
+                    <Link to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none', marginTop:'5px' }}  >
                         <Button sx={{
                             color: 'white',
                             borderRadius: '16px!important',
                             fontFamily: 'Urbanist', textTransform: 'none',
-                            '&:hover ': { backgroundColor: '#917F6B', boxShadow: '0 0 0 2px #000' },
                             '&:focus': {
                                 outline: 'none'
                             }

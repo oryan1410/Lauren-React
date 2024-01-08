@@ -1,6 +1,6 @@
 /*card2- wine card*/
 .cardTwo {
-  border: 2px solid #967E68;
+  border: var(--main-card-border);
   display: flex;
   flex:1;
   border-radius: 15px;
@@ -10,14 +10,14 @@
   height: 12.5rem;
   position: relative;
   width: 100%;
-  color: #ffffff;
-  background-color: #121A1C;
-  font-family: 'anisette-std', 'Rubik';
-  text-transform: lowercase;
+  color: var(--main-font-color);
+  background-color: var(--main-background-color);
+  font-family: var(--main-font-family);
+  text-transform: var(--main-text-transform);
 }
 
 .outOfStock {
-  border: 2px solid #967E68;
+  border: var(--main-card-border);
   display: flex;
   flex:1;
   border-radius: 15px;
@@ -29,8 +29,8 @@
   width: 100%;
   color: #ffffff;
   background-color: #000000;
-  font-family: 'anisette-std', 'Rubik';
-  text-transform: lowercase;
+  font-family: var(--main-font-family);
+  text-transform: var(--main-text-transform);
   opacity: 0.5;
 }
 
@@ -109,19 +109,18 @@
 }
 
 .MuiButtonBase-root.linkWithoutSpace {
-  color: #ffffff;
+  color: var(--main-font-color);
   text-decoration: none;
   text-transform: none;
     border-radius: 16px!important;
-    border: 1px solid #ffffff!important;
-    background-color: #3c27c5;  
+    border: var(--main-no-border);
+    background-color: var(--secondary-background-color);  
 }
 
 @media (hover: none){
   .MuiButtonBase-root.MuiButton-root.linkWithoutSpace:hover{
     background-color: #291e6f!important;
     color: #ffffff!important;
-    border: 1px solid #ffffff!important;
 
 }
 }
@@ -136,8 +135,8 @@
 .card2-title {  
   font-size: 1.4rem;
   margin-bottom: 0;
-  font-family: 'anisette-std', 'Rubik';
-  text-transform: lowercase;
+  font-family: var(--main-font-family);
+  text-transform: var(--main-text-transform);
   font-weight: 300;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -155,20 +154,12 @@
   align-items: center;
 }
 
-.MuiButtonBase-root.linkWithoutSpace{
-  color: #ffffff;
-  text-decoration: none;
-  text-transform: none;
-    border-radius: 16px!important;
-    border: 1px solid #000!important;
-    background-color: #967E68;  
-}
 
 .priceDiv {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: flex-end;
   padding-top: 0.125rem;
 }
 
@@ -184,6 +175,7 @@
 .bottlePriceText{
   font-size: 1.2rem;
   margin: 0;
+  align-items: center;
  }
 
 .MuiSvgIcon-root.cardLogos {
@@ -204,8 +196,8 @@
   display: flex;
   justify-content: center;
   width: 100%;
-  height: 0.0625rem;
-  background-color: #967E68;
+  height: 0.09rem;
+  background-color: var(--main-seperator-color);
   margin-block: 0.4rem;
 }
 
@@ -242,10 +234,17 @@
   font-weight: 400;
 }
 
+.card2-span.card2-grape{
+  text-align: center;
+  justify-content: center;
+  font-weight: 500;
+}
+
 .card2-blentText{
   text-align: center;
   display: flex;
   justify-content: center;
+  font-weight: 500;
 }
 
 .infoIcon {

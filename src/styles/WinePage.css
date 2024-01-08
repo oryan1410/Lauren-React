@@ -42,13 +42,13 @@
 }
 
 .winePageTitleText {
-    font-family: 'anisette-std', 'Rubik';
+    font-family: var(--main-font-family);
     text-transform: lowercase;
     color: #ffffff;
 }
 
 .wineInfoTitle {
-    font-family: 'anisette-std', 'Rubik';
+    font-family: var(--main-font-family);
     text-transform: lowercase;
     color: #ffffff;
     font-size: 1.9rem;
@@ -164,7 +164,7 @@
     justify-content: center;
 
     color: #ffffff;
-    font-family: 'anisette-std', 'Rubik';
+    font-family: var(--main-font-family);
     margin-top: auto;
     margin-bottom: auto;
     text-transform: lowercase;

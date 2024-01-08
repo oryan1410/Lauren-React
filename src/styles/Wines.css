@@ -7,13 +7,13 @@
     padding: 0 0 0 0;
     width: 100%;
     height: 100%;
-    background-color: #1E2423;
+    background-color: var(--main-background-color2);
     padding: 10px;
     font-size: 1rem;
-    font-family: 'anisette-std', 'Rubik';
-    color: #967E68;
+    font-family: var(--main-font-family);
+    color: var(--secondary-font-color);
     border-radius: 15px;
-    box-shadow: 0 0 5px #967E68;
+    box-shadow: 0 0 5px var(--main--shadow-color);
     margin-Top: 20px;
     justify-content: center;
    
@@ -42,10 +42,12 @@
 }
 
 .MuiButtonBase-root.resetButton{
-background-color: #967E68;
-font-family: 'anisette-std', 'Rubik';
+background-color: var(--secondary-background-color);
+font-family: var(--main-font-family);
 text-transform: lowercase;
 font-size: 1rem;
+border: var(--main-no-border);
+color: var(--main-font-color);
 }
 
 
@@ -59,8 +61,8 @@ font-size: 1rem;
   
   .MuiMenuItem-root.menuItem {   
     font-size: 1em;
-    color: #ffffff;
-    font-family: 'anisette-std', 'Rubik';
+    color: var(--main-font-color);
+    font-family: var(--main-font-family);
     text-transform: lowercase;
 justify-content: center;
   }
@@ -73,22 +75,33 @@ justify-content: center;
   .MuiButtonBase-root.Mui-selected.menuItem {
     z-index: 1;    
     font-size: 1.2em;
-    background-color: #9b8f81;
+    background-color: var(--main-selected-color);
   }
   
   .MuiList-root.MuiMenu-list {
-    background-color: #967E68;
+    background-color: var(--secondary-background-color);
     border-radius: 16px;
+  }
+
+  .MuiSvgIcon-root.MuiSelect-icon{
+    color: var(--main-font-color);
   }
   
   #search-bar-label {
     color: #ffffff;
    
   }
+
+  #demo-simple-select{
+    background-color: var(--secondary-background-color);
+    border-radius: 16px;
+    border:var(--main-no-border)
+  }
   
   #demo-simple-select-label {
-    color: #ffffff;
-    font-family: 'anisette-std', 'Rubik';
+    color: var(--main-label-color);
+    font-family: var(--main-font-family);
+    background-color: var(--secondary-background-color);
     text-transform: lowercase;
   }
   
@@ -120,7 +133,7 @@ justify-content: center;
     display: flex;
     margin-top: 10px;
     justify-content: flex-start;
-    font-family: 'anisette-std', 'Rubik';
+    font-family: var(--main-font-family);
   }
 
 .resetButtonDiv.hebReset{

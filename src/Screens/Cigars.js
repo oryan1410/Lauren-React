@@ -1,43 +1,41 @@
 import React, { useState, useEffect } from 'react';
 import BeerCard from '../HelpComponents/BeerCard';
+import TempCocktailCard from '../HelpComponents/TempCocktailCard';
+import RecipeReviewCard2 from '../HelpComponents/Card2';
+import DishCard from '../HelpComponents/DishCard';
 import '../App.css';
 import '../styles/Wines.css'
+import dishes from '../DishesArr.json'
 // import SearchAppBar from '../SearchAppBar';
 import { Container } from 'react-bootstrap';
+import DropDown from '../HelpComponents/DropDown';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 
-
+import Collapse from '@mui/material/Collapse';
 import { styled } from '@mui/material/styles';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 
 
 
-
-const Beers = () => {
-    const {beerArr, isLoading } = useUserContext();
+const Cigars = () => {
+    const {cocktailsArr, isLoading } = useUserContext();
+    const [selectedDryness, setSelectedDryness] = useState('');
+    const [selectedColor, setSelectedColor] = useState('');
+    const [selectedCountry, setSelectedCountry] = useState('');
     const [isVisible, setIsVisable] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
-    const [noneFound, setNoneFound] = useState(false);
     const [displayDishes, setDisplayDishes] = useState([]);
 
+    const [dropArrays, setDropArrays] = useState([]);
+
     useEffect(() => {
-        if(!isLoading && beerArr.length !== 0){
         setIsVisable(true);
-        let beer = beerArr.map((alcohol) => {
-            return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
-        }
-        );
-        console.log('dishArr', beer);
-        setDisplayDishes(beer);
-        }
-    }, [isLoading,beerArr]);
+        console.log('cocktailsArr', cocktailsArr);
+    }, [cocktailsArr])
 
-    //create filters for dryness and country
-
-
-    // get countries and sort filters
-
+   
 
     // epxand more for wine category based on color
     const ExpandMore = styled((props) => {
@@ -60,42 +58,42 @@ const Beers = () => {
     }));
 
 
+    useEffect(() => {
+        console.log('dropArrays', dropArrays);
+    }
+        , [dropArrays])
 
     //Search useeffect
     useEffect(() => {
         if (searchQuery === "") {
-            setNoneFound(false);
-            if (beerArr.length === 0) {
-                setDisplayDishes(beerArr);
+            if (cocktailsArr.length === 0) {
+                setDisplayDishes(cocktailsArr);
             }
             else {
-                let arr = beerArr.map((alcohol) => {
-                    return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                let arr = cocktailsArr.map((alcohol) => {
+                    return <TempCocktailCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
             }
         } else {
-            setNoneFound(false);
             console.log("searchQuery is not empty");
             console.log(searchQuery)
             //filter wines arr if name includes searchQuery
-            let arr1 = beerArr.filter((alcohol) => alcohol.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
-            let arr2 = beerArr.filter((alcohol) => alcohol.Name_Heb.includes(searchQuery));
+            let arr1 = cocktailsArr.filter((alcohol) => alcohol.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
+            let arr2 = cocktailsArr.filter((alcohol) => alcohol.Name_Heb.includes(searchQuery));
             console.log(arr2);
             let arr4 = arr1.concat(arr2);
             arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
                 let arr = arr4.map((alcohol) => {
-                    return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                    return <TempCocktailCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
                 // setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
             }
             else {
-                setDisplayDishes([]);
-                setNoneFound(true);
             }
 
         }
@@ -113,20 +111,21 @@ const Beers = () => {
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 <SearchAppBar searchFunc={setSearch} />
+                {/* <DropDown /> */}
+                {/* {searchQuery ==='' && <Grid container className='dishgridView'>
+                    {dropArrays}
+                </Grid>}
+                {searchQuery ==='' && <div className='resetButtonDiv'>
+                    <Button className='resetButton' onClick={(e) => {sortFilters();e.target.blur()}} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
+                </div>} */}
                 {searchQuery ===''? <div>
-                {beerArr.map((rum) => {
-                            // return <TempAlcCard alcohol={whiskey}/>
-                            return <BeerCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                        }
-                        )}
                 </div>:
                 displayDishes
                 }
-                                            {noneFound && <h1>None Found</h1>}
-
+                            
                             </div>
         </Container>
     );
 };
 
-export default Beers;
+export default Cigars;

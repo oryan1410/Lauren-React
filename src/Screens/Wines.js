@@ -44,6 +44,7 @@ const Wines = () => {
     const [whiteWinesArr, setWhiteWinesArr] = useState([]);
     const [roseWinesArr, setRoseWinesArr] = useState([]);
     const [bubbleWinesArr, setBubbleWinesArr] = useState([]);
+    const [bestArr, setBestArr] = useState([]);
 
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
@@ -103,6 +104,7 @@ const Wines = () => {
         setWhiteExpanded(false);
         setRoseExpanded(false);
         setBubbleExpanded(false);
+        setBestOfExpanded(false);
         setFilterReset(true);
         }
 
@@ -141,9 +143,13 @@ const Wines = () => {
         let white = [];
         let rose = [];
         let bubble = [];
+        let best= []
 
         arr.forEach((wine) => {
-            if (wine.Type_Ro_Re_Wh_Bu_ === 'Re') {
+            if (wine.bestOf===true){
+                best.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
+            }
+            else if (wine.Type_Ro_Re_Wh_Bu_ === 'Re') {
                 red.push(<RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />);
             }
             else if (wine.Type_Ro_Re_Wh_Bu_ === 'Wh') {
@@ -162,6 +168,7 @@ const Wines = () => {
         setWhiteWinesArr(white);
         setRoseWinesArr(rose);
         setBubbleWinesArr(bubble);
+        setBestArr(best);
     }
 
     // useEffect(() => {
@@ -251,10 +258,15 @@ const Wines = () => {
             return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
         }
         );
+        let bestOfArr = bestOfWines.map((wine) => {
+            return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
+        }
+        );
         setRedWinesArr(redArr);
         setWhiteWinesArr(whiteArr);
         setRoseWinesArr(roseArr);
         setBubbleWinesArr(bubbleArr);
+        setBestArr(bestOfArr)
 
         
         if (expanded && expandedDivRef1.current) {
@@ -325,6 +337,7 @@ const Wines = () => {
         setWhiteExpanded(false);
         setRoseExpanded(false);
         setBubbleExpanded(false);
+        setBestOfExpanded(false);
         setResetKey(prevKey => prevKey + 1); // increment the key
         setDropArrays([
             <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-מתוק']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
@@ -375,6 +388,9 @@ const Wines = () => {
         }
         else if (type === 'Bubble') {
             setBubbleExpanded(!bubbleExpanded);
+        }
+        else if (type === 'BestOf') {
+            setBestOfExpanded(!bestOfExpanded);
         }
     };
 
@@ -518,12 +534,10 @@ const Wines = () => {
                         <ExpandMoreIcon />
                     </ExpandMore>
                     <Collapse ref={expandedDivRef4} in={bestOfExpanded} timeout="auto" unmountOnExit>
-                        {bestOfWines}
+                        {bestArr}
                     </Collapse>
                      </div> : displayWines2
                 }
-
-
                 {/* {displayWines2} */}
                 {noneFound && <h1>None Found</h1>}
                 {testDisplay}

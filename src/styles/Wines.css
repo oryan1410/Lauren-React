@@ -52,7 +52,7 @@ color: var(--main-font-color);
 
 
 .MuiButtonBase-root.resetButton:hover { 
-    background-color: #967E68;
+    background-color: var(--main-background-color2);
     box-shadow: 0 0 10px #000;
 }
 
@@ -95,7 +95,9 @@ justify-content: center;
   #demo-simple-select{
     background-color: var(--secondary-background-color);
     border-radius: 16px;
-    border:var(--main-no-border)
+    font-family: var(--main-font-family);
+    border:var(--main-no-border);
+    color: var(--main-label-color);
   }
   
   #demo-simple-select-label {

@@ -1,0 +1,60 @@
+.ContactTitle {
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+    height: 3.4375rem;
+    color: var(--main-font-color);
+    background-color: var(--secondary-background-color);
+    justify-content: center;
+    align-items: center;
+    text-transform: lowercase;
+
+}
+
+.ContactSubTitle {
+    display: flex;
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--main-font-color);
+    justify-content: center;
+    align-items: center;
+    text-transform: lowercase;
+    text-decoration: underline;
+
+}
+
+.contactUs {
+    display: flex;
+    flex-direction: column;
+}
+
+.contactUs>div {
+    display: flex;
+    flex-direction: column;
+    margin-block-start: 1rem;
+}
+
+.hebContactText {
+    direction: rtl;
+}
+
+.navigateButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    background-color: var(--main-background-color2);
+    border-radius: 16px!important;
+    width: 80%;
+    margin: 0 auto;
+    border: var(--main-contact-button-border)
+}
+
+.contactLink{
+    color: var(--main-font-color);
+    text-decoration: var(--main-link-decoration);
+    text-transform: none;
+}

@@ -473,7 +473,7 @@ const Wines = () => {
                 
                 {searchQuery === '' ? <div><ExpandMore
                     expand={expanded}
-                    header='יינות אדומים || red wines'
+                    header='יינות אדומים || Red wines'
                     onClick={() => handleExpandClick('Red')}
                     aria-expanded={expanded}
                     aria-label="show more"
@@ -486,7 +486,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={whiteExpanded}
-                        header='יינות לבנים || white wines'
+                        header='יינות לבנים || White wines'
                         onClick={() => handleExpandClick('White')}
                         aria-expanded={expanded}
                         aria-label="show more"
@@ -499,7 +499,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={roseExpanded}
-                        header='יינות רוזה || rose wines'
+                        header='יינות רוזה || Rose wines'
                         onClick={() => handleExpandClick('Rose')}
                         aria-expanded={expanded}
                         aria-label="show more"
@@ -512,7 +512,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore
                         expand={bubbleExpanded}
-                        header='יינות מבעבעים || bubble wines'
+                        header='יינות מבעבעים || Bubble wines'
                         onClick={() => handleExpandClick('Bubble')}
                         aria-expanded={expanded}
                         aria-label="show more"
@@ -525,7 +525,7 @@ const Wines = () => {
                     </Collapse>
                     <ExpandMore 
                     expand={bestOfExpanded}
-                    header='יינות מיוחדים || special wines'
+                    header='יינות מיוחדים || Special wines'
                     onClick={() => handleExpandClick('BestOf')}
                     aria-expanded={expanded}
                     aria-label="show more"

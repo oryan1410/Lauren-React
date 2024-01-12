@@ -7,7 +7,7 @@ import './App.css'
 import { useState, useEffect } from 'react';
 import wines from './WinesArr.json'
 import ClearIcon from '@mui/icons-material/Clear';
-
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function SearchAppBar(props) {
 
@@ -76,11 +76,13 @@ export default function SearchAppBar(props) {
           },
         }}        
       />
-            {searchQuery!=='' && (
+            {searchQuery!=='' ? 
         <div className='clearButton' onClick={handleClear}>
           <ClearIcon />
-        </div>
-      )}
+        </div>:
+         <div className='searchButton'> <SearchIcon className='searchIcon' /> </div>
+           
+    }
     </div>
   );
 }

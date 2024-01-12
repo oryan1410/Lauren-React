@@ -110,20 +110,19 @@
 
 .MuiButtonBase-root.linkWithoutSpace {
   color: var(--main-font-color);
-  text-decoration: none;
+  text-decoration: var(--main-link-decoration);
   text-transform: none;
     border-radius: 16px!important;
     border: var(--main-no-border);
     background-color: var(--secondary-background-color);  
 }
 
-@media (hover: none){
-  .MuiButtonBase-root.MuiButton-root.linkWithoutSpace:hover{
-    background-color: #291e6f!important;
-    color: #ffffff!important;
+.MuiButtonBase-root.MuiButton-root.linkWithoutSpace:hover{
+  background-color: var(--secondary-background-color);  
+  color: #ffffff!important;
 
 }
-}
+
 
 .card2-titleDiv{
   display: flex;
@@ -227,6 +226,15 @@
 .card2-span.card2-leftText {
   justify-content: end;
   font-weight: 500;
+  text-align: center;
+  width: 100%;
+}
+
+.beerCard-span.beerCard-leftText {
+  justify-content: center;
+  font-weight: 500;
+  text-align: center;
+  width: 100%;
 }
 
 .card2-span.card2-rightText {

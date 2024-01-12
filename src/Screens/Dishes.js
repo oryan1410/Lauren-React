@@ -19,6 +19,8 @@ import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import TempDishCard from '../HelpComponents/TempDishCard';
+import BeerCard from '../HelpComponents/BeerCard';
+
 
 
 
@@ -28,7 +30,9 @@ const Dishes = () => {
     const [nextExpanded, setNextExpanded] = useState(false);
     const [forExpanded, setForExpanded] = useState(false);
     const [desExpanded, setDesExpanded] = useState(false);
-    const { dishesArr, easyArr, nextToWineArr, dessertsArr, countries, language, isLoading, forTheHungryArr } = useUserContext();
+    const [coldExpanded, setColdExpanded] = useState(false);
+    const [hotExpanded, setHotExpanded] = useState(false);
+    const { dishesArr, easyArr, nextToWineArr, dessertsArr, countries, language, isLoading, forTheHungryArr, beveragesArr, hotDrinkArr, coldDrinkArr } = useUserContext();
     const [selectedType, setSelectedType] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -45,6 +49,8 @@ const Dishes = () => {
     const [mainArr, setMainArr] = useState([]);
     const [forArr, setForArr] = useState([]);
     const [desArr, setDesArr] = useState([]);
+    const [coldArr, setColdArr] = useState([]);
+    const [hotArr, setHotArr] = useState([]);
 
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
@@ -121,6 +127,18 @@ const Dishes = () => {
         }
         )
 
+        let cold = coldDrinkArr.map((beer) => {
+            // return <TempAlcCard alcohol={whiskey}/>
+            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
+        }
+        )
+
+        let hot = hotDrinkArr.map((beer) => {
+            // return <TempAlcCard alcohol={whiskey}/>
+            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
+        }
+        )
+
         let main = nextToWineArr.map((dish) => {
             return <TempDishCard key={dish.IdDish} dish={dish} />
         }
@@ -138,6 +156,8 @@ const Dishes = () => {
         setMainArr(main);
         setForArr(forTheHungry);
         setDesArr(des);
+        setColdArr(cold);
+        setHotArr(hot);
     }, [dishesArr, language, isLoading, resetKey]);
 
     //reset filter function
@@ -202,6 +222,12 @@ const Dishes = () => {
         else if (type === 'Desset') {
             setDesExpanded(!desExpanded);
         }
+        else if (type === 'Cold') {
+            setColdExpanded(!coldExpanded);
+        }
+        else if (type === 'Hot') {
+            setHotExpanded(!hotExpanded);
+        }
     };
 
     useEffect(() => {
@@ -238,11 +264,20 @@ const Dishes = () => {
             console.log(arr2);
             let arr4 = arr1.concat(arr2);
             arr4 = [...new Set(arr4)];
-            if (arr4.length !== 0) {
+            let hebBev= beveragesArr.filter((bev) => bev.Name_Heb.includes(searchQuery));
+            let engBev= beveragesArr.filter((bev) => bev.Name_Eng.includes(searchQuery));
+            let bevArr = hebBev.concat(engBev);
+            bevArr = [...new Set(bevArr)];
+            if (arr4.length !== 0 || bevArr.length !== 0) {
                 let arr = arr4.map((dish) => {
                     return <TempDishCard key={dish.IdDish} dish={dish} />
                 }
                 )
+                let bev= bevArr.map((bev) => {
+                    return <BeerCard key={bev.IdBev} alcohol={bev} title={bev.Name_Eng} />
+                }
+                )
+                arr = arr.concat(bev);
                 setDisplayDishes(arr);
                 // setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
             }
@@ -250,7 +285,6 @@ const Dishes = () => {
                 setDisplayDishes([]);
                 setNoneFound(true);
             }
-
         }
 
     }, [searchQuery]);
@@ -274,15 +308,43 @@ const Dishes = () => {
                     <Button className='resetButton' onClick={(e) => { resetFilter(); e.target.blur() }} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
                 </div>}
 
-                {searchQuery === '' ? <div><ExpandMore
-                    expand={expanded}
-                    header='לנשנש בקליל  || Easy snacks'
-                    onClick={() => handleExpandClick('Easy')}
-                    aria-expanded={expanded}
-                    aria-label="show more"
-                    className='wineCategory'
-                >
-                </ExpandMore>
+                {searchQuery === '' ? <div>
+
+                    <ExpandMore
+                        expand={coldExpanded}
+                        header='שתייה קלה || Light drinks'
+                        onClick={() => handleExpandClick('Cold')}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                    </ExpandMore>
+                    <Collapse in={coldExpanded} timeout="auto" unmountOnExit>
+                        {coldArr}
+                    </Collapse>
+
+                    <ExpandMore
+                        expand={hotExpanded}
+                        header='שתייה חמה || Hot drinks'
+                        onClick={() => handleExpandClick('Hot')}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                    </ExpandMore>
+                    <Collapse in={hotExpanded} timeout="auto" unmountOnExit>
+                        {hotArr}
+                    </Collapse>
+
+                    <ExpandMore
+                        expand={expanded}
+                        header='לנשנש בקליל  || Easy snacks'
+                        onClick={() => handleExpandClick('Easy')}
+                        aria-expanded={expanded}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                    </ExpandMore>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
                         {appArr}
                     </Collapse>

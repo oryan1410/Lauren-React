@@ -30,6 +30,9 @@
   /* Background of the scrollbar thumb when hovered */
 }
 
+a{
+  text-decoration: var(--main-link-decoration);
+}
 
 
 
@@ -140,6 +143,7 @@ button:focus {
   font-size: 1.2em;
   color: #61dafb;
   transition: opacity 2 ease-in-out;
+  text-decoration: var(--main-link-decoration);
 }
 
 .App-logo {
@@ -231,7 +235,22 @@ button:focus {
 
   /* <---------- for the x button in searchbar ----------> */
   .clearButton {
-    color: #1E2423;
+    color: var(--main-font-color);
+    background-color: transparent;
+    position: absolute;
+    bottom: 17px;
+    left: 5%;
+    /* background-color: #1E2423; */
+    border-radius: 16px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .searchButton{
+    color:var(--main-font-color);
     background-color: transparent;
     position: absolute;
     bottom: 17px;
@@ -324,7 +343,7 @@ img {
 @media (prefers-reduced-motion: no-preference) {}
 
 .App-Body {
-  background-image: url('./Images/BackgroungImage_Final.png');
+  background-image: var(--main-background-image);
   background-color: var(--main-background-color);
   background-position: center;
   display: flex;
@@ -505,6 +524,8 @@ img {
   --main-background-color2: #1E2423;
   --secondary-background-color: #967E68;
 
+  --main-background-image: url('./Images/BackgroungImage_Final.png');
+
   --main-seperator-color: #967E68;
 
   --main--shadow-color: #967E68;
@@ -512,8 +533,9 @@ img {
 
   --main-no-border: 0px;
   --main-card-border: 2px solid #967E68;
+  --main-contact-button-border: 1px solid #ffffff;
 
-
+  --main-link-decoration: none;
 
   --main-font-color:#fff;
   --secondary-font-color: #967E68;

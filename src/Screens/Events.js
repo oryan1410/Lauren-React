@@ -6,10 +6,12 @@ import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 import { useTranslation } from 'react-i18next';
+import { useHistory } from 'react-router-dom';
+import '../styles/Events.css'
 export default function Events(props) {
 
     const [isVisible, setIsVisible] = useState(false);
-    const {getFilters} = useUserContext();
+    const {language} = useUserContext();
     const {t} = useTranslation();
 
     useEffect(() => {
@@ -21,7 +23,12 @@ export default function Events(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-        <span className='favoriteTitle'>{t('Events')}</span></div>
+        <span className='eventsTitle'>{t('Events')}</span>
+        <div className={`soonToBeDiv ${language==='heb' && 'hebrew'}`}>
+            <span className='soonToBeText'>{t('SoonToBe')}</span>
+        </div>
+        </div>
+        
     );
 };
 

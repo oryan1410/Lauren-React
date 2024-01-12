@@ -26,6 +26,7 @@ const WinePage = ({ match }) => {
 
     const [isVisible, setIsVisable] = useState(false);
     const [propsData, setPropsData] = useState({});
+    const [grapeArr, setGrapeArr] = useState([]);
 
     const { language, setUserLanguage, winesArr, isLoading } = useUserContext();
 
@@ -36,8 +37,15 @@ const WinePage = ({ match }) => {
             data = winesArr[0];
         }
         setPropsData(data);
-        setIsVisable(true);
+        setIsVisable(true); 
+
     }
+
+    useEffect(() => {
+       if(!isLoading){
+        setDataForPage(winesArr);
+       }    
+    }, [isLoading, language])
 
 
     useEffect(() => {
@@ -117,6 +125,23 @@ const WinePage = ({ match }) => {
         }
     }
 
+    function getGraps(grapes) {
+        if (grapes){
+        console.log(grapes);
+        let grapesArr = '';
+        let index=0
+        grapes.forEach(grape => {
+            grapesArr+= grape;
+            if(index<grapes.length-1){
+                grapesArr+=', '                
+            }
+            index++;
+        });
+        return grapesArr        
+    }
+}
+
+
     return (
         <Container>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
@@ -124,8 +149,8 @@ const WinePage = ({ match }) => {
                 <div className='winePage'>
                     <GoBackButton navigateBack={() => { window.history.back() }} />
                     <div className='winePageTitleDiv'>
-                        <span className='winePageTitleText engPageTitle'>{propsData.Name_Eng}</span>
-                        <span className='winePageTitleText hebPageTitle'>{propsData.Name_Heb}</span>
+                        <h1 className='winePageTitleText engPageTitle'>{propsData.Name_Eng}</h1>
+                        <h2 className='winePageTitleText hebPageTitle'>{propsData.Name_Heb}</h2>
                     </div>
                     <div className='DishPageImageDiv'>
                         <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
@@ -168,10 +193,16 @@ const WinePage = ({ match }) => {
                         <div className='wineInfo'>
                             <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `}>{language === 'heb' ? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)} - {language === 'heb' ? getDrynessHeb(propsData.Dry_Y_N_) : getDryness(propsData.Dry_Y_N_)}</p>
                         </div>
+                        <div className='wineInfo'>
+                        <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `}>
+
+                            {language==='heb'? getGraps(propsData.Grape_Heb): getGraps(propsData.Grape_Eng)}
+                        </p>
+                        </div>
                         <div className='wineInfo pricetext'>
-                        <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                            <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
                             <span>
-                                {propsData.BottlePrice}
+                                ₪{propsData.BottlePrice}
                             </span>
                         </div>
                     </div>

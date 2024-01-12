@@ -22,8 +22,11 @@ import NotAllowed from './Screens/NotAllowed';
 import Beers from './Screens/Beers';
 import Cocktails from './Screens/Cocktail';
 import Cigars from './Screens/Cigars';
+// import Beverages from './Screens/Beverages';
+import ContactUs from './Screens/ContactUs';
 
 import AccessibilityTab from './HelpComponents/AcessabilityTab';
+import backgroundImage from './Images/BackgroungImage_Final.png';
 
 import { useUserContext } from './UserContext';
 import MenuSharpIcon from '@mui/icons-material/MenuSharp';
@@ -64,9 +67,8 @@ function App() {
     document.documentElement.style.setProperty('--main-label-color', '#fff');
     document.documentElement.style.setProperty('--main-selected-color', '#a5a5a5');
     document.documentElement.style.setProperty('--main-button-border', '1px solid #ffffff!important');
-
-
-
+    document.documentElement.style.setProperty('--main-background-image', 'none');
+    document.documentElement.style.setProperty('--main-contact-button-border', '1px solid #ffffff');
   }
 
   const brightMode = () => {
@@ -82,7 +84,9 @@ function App() {
     document.documentElement.style.setProperty('--secondary-font-color', '#000');
     document.documentElement.style.setProperty('--main-label-color', '#000');
     document.documentElement.style.setProperty('--main-selected-color', '#a5a5a5');
-    document.documentElement.style.setProperty('--main-button-border', '1px solid #000000!important');   
+    document.documentElement.style.setProperty('--main-button-border', '1px solid #000000!important');
+    document.documentElement.style.setProperty('--main-background-image', 'none');
+    document.documentElement.style.setProperty('--main-contact-button-border', '1px solid #000000');
   }
 
   const readableFonts = () => {
@@ -90,6 +94,10 @@ function App() {
     document.documentElement.style.setProperty('--secondary-font-family', "Arial,sans-serif");
     
     document.documentElement.style.setProperty('--main-text-transform', 'none');
+  }
+
+  const markLinks = () => {
+    document.documentElement.style.setProperty('--main-link-decoration', "underline");
   }
 
   const resetAccessibility = () => {
@@ -110,10 +118,12 @@ function App() {
     document.documentElement.style.setProperty('--main-selected-color', '#9b8f81');
     document.documentElement.style.setProperty('--main-font-family', '"anisette-std", "Rubik"');  
     document.documentElement.style.setProperty('--secondary-font-family', '"Urbanist", "Rubik"');
-    
+    document.documentElement.style.setProperty('--main-background-image', `url(${backgroundImage})`);
     document.documentElement.style.setProperty('--main-text-transform', 'lowercase');
-  }
- 
+    document.documentElement.style.setProperty('--main-link-decoration', 'none');
+    document.documentElement.style.setProperty('--main-contact-button-border', '1px solid #fff');
+
+  } 
 
   const { language, setUserLanguage, navBarVisable } = useUserContext();
 
@@ -218,25 +228,25 @@ function App() {
                   <Link to="/home" className={`nav-link ${location.pathname === '/home' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Home':'בית'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Wines':'יינות'}</Link>
+                  <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Menu':'תפריט'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Alcoholic Beverages':'משקאות אלכוהולים'}</Link>
+                  <Link to="/wines" className={`nav-link ${location.pathname === '/wines' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Wines':'יין'}</Link>
                 </Nav.Item>
                 <Nav.Item>
+                  <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Alcohol':'אלכוהול'}</Link>
+                </Nav.Item>
+                {/* <Nav.Item>
                   <Link to="/beers" className={`nav-link ${location.pathname === '/beers' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Beers':'בירות'}</Link>
-                </Nav.Item>
+                </Nav.Item> */}
                 <Nav.Item>
                   <Link to="/cocktails" className={`nav-link ${location.pathname === '/cocktails' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Cocktails':'קוקטיילים'}</Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Link to="/dishes" className={`nav-link ${location.pathname === '/dishes' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Dishes':'מנות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link to="/cigars" className={`nav-link ${location.pathname === '/cigars' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Cigars':'סיגרים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Favorites':'מועדפים'}</Link>
+                  <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Favorite Wines':'יינות מועדפים'}</Link>
                 </Nav.Item>
                 {/* <Nav.Item>
                   <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Login':'התחברות'}</Link>
@@ -250,12 +260,12 @@ function App() {
                 <Nav.Item>
                   <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Contact':'צור קשר'}</Link>
                 </Nav.Item>
-                <Nav.Item>
+                {/* <Nav.Item>
                 <button onClick={increaseFontSize}>Increase Font Size</button>
                 </Nav.Item>
                 <Nav.Item>
                 <button onClick={decreaseFontSize}>Decrease Font Size</button>
-                </Nav.Item>
+                </Nav.Item> */}
 
                 {/* <Nav.Link href="\login" className='nav-link'>Login</Nav.Link>
               <Nav.Link href="\dishes">Dishes</Nav.Link>
@@ -274,6 +284,7 @@ decreaseFontSize={decreaseFontSize}
 resetAccessibility={resetAccessibility}
 brightMode={brightMode}
 readableFonts={readableFonts}
+markLinks={markLinks}
 />
         
           <Routes>
@@ -282,12 +293,14 @@ readableFonts={readableFonts}
             {/* <Route path="/about" element={<About />} />*/}
             <Route path="/wines" element={<Wines />} />
             <Route path="/alcohol" element={<AlcoholPage />} />
-            <Route path="/beers" element={<Beers />} />
+            {/* <Route path="/beers" element={<Beers />} /> */}
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/dishes" element={<Dishes />} />
             <Route path="/cigars" element={<Cigars />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/events" element={<Events />} />
+            {/* <Route path="/beverages" element={<Beverages />} /> */}
+            <Route path="/contact" element={<ContactUs />} />
             
             <Route path="/winePage/:id" element={<WinePage />} />
             <Route path="/dishPage/:id" element={<DishesPage />} />

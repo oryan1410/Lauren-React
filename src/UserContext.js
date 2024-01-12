@@ -34,6 +34,10 @@ export function UserProvider({ children }) {
     const [anisArr, setAnisArr] = useState([]);
     const [cocktailsArr, setCocktailsArr] = useState([]);
     const [beerArr, setBeerArr] = useState([]);
+    const [beveragesArr, setBeveragesArr] = useState([]);
+    const [hotDrinkArr, setHotDrinkArr] = useState([]);
+    const [coldDrinkArr, setColdDrinkArr] = useState([]);
+    const [cigars, setCigars] = useState([]);
 
 
     const [countries, setCountries] = useState([]);
@@ -317,6 +321,63 @@ export function UserProvider({ children }) {
         }
         )
 
+        const bevQuery= query(collection(db,'Beverages'),where('onMenu','==','Y'));
+        const getBeverages= onSnapshot(bevQuery, (snapshot) => {
+            let beveragesArr=[];
+            let hot=[];
+            let cold=[];
+            setBeveragesArr(snapshot.docs.map((doc) => {
+                let beverage={};
+                beverage.IdBev=doc.data().IdBev;
+                beverage.Name_Heb=doc.data().Name_Heb;
+                beverage.Name_Eng=doc.data().Name_Eng;
+                beverage.Type=doc.data().Type;
+                beverage.ImageUrl=doc.data().ImageUrl;
+                beverage.Desc_Heb=doc.data().Desc_Heb;
+                beverage.Desc_Eng=doc.data().Desc_Eng;
+                beverage.CPrice=doc.data().CPrice;
+                beverage.inStock=doc.data().inStock;
+                beverage.onMenu=doc.data().onMenu;
+                beveragesArr.push(beverage)
+                if (beverage.Type === 'Hot') {
+                    hot.push(beverage)
+                }
+                if (beverage.Type==='Light'){
+                    cold.push(beverage)
+                }
+                return beverage;
+            })
+            )
+            setIsLoading(false);
+            setBeveragesArr(beveragesArr);
+            setHotDrinkArr(hot);
+            setColdDrinkArr(cold);
+        }
+        )
+
+        const cigarQuery= query(collection(db,'Cigars'),where('onMenu','==','Y'));
+        const getCigars= onSnapshot(cigarQuery, (snapshot) => {
+            let cigarsArr=[];
+            setCigars(snapshot.docs.map((doc) => {
+                let cigar={};
+                cigar.IdCigar=doc.data().IdCigar;
+                cigar.Name_Heb=doc.data().Name_Heb;
+                cigar.Name_Eng=doc.data().Name_Eng;
+                cigar.ImageUrl=doc.data().ImageUrl;
+                cigar.Desc_Heb=doc.data().Desc_Heb;
+                cigar.Desc_Eng=doc.data().Desc_Eng;
+                cigar.CPrice=doc.data().CPrice;
+                cigar.inStock=doc.data().inStock;
+                cigar.onMenu=doc.data().onMenu;
+                cigarsArr.push(cigar)
+                return cigar;
+            })
+            )
+            setIsLoading(false);
+        }
+        )
+
+
         //add docs to collection- all wine Arr
         
         
@@ -327,6 +388,8 @@ export function UserProvider({ children }) {
             getNames()
             getDishes();
             getAlcohol();
+            getBeverages();
+            getCigars();
         };
 
     }, []);
@@ -392,7 +455,8 @@ export function UserProvider({ children }) {
         addDocToFiresore,
         navBarVisable, setNavBarVisable,
         dishesArr, easyArr, nextToWineArr, dessertsArr, forTheHungryArr,
-        alcoholArr, whiskeyArr,americanArr,smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr, cocktailsArr,beerArr
+        alcoholArr, whiskeyArr,americanArr,smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr, cocktailsArr,beerArr,beveragesArr,hotDrinkArr,coldDrinkArr,
+        cigars
     };
 
     return (

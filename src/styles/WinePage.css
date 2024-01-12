@@ -72,6 +72,7 @@
 .DishPageImageDiv{
    justify-content: center;
    position: relative;
+   background-color: #ffffff;
 }
 
 .DishPageImage {
@@ -160,6 +161,17 @@
 
 .wineInfoText{
     flex: 6;
+    font-size: 1.25rem;
+    justify-content: center;
+
+    color: #ffffff;
+    font-family: var(--main-font-family);
+    margin-top: auto;
+    margin-bottom: auto;
+    text-transform: lowercase;
+}
+
+.wineGrapes{
     font-size: 1.25rem;
     justify-content: center;
 

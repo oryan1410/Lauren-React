@@ -52,7 +52,7 @@ export default function AlcoholCard(props) {
                     </div>
                     {props.alcohol.chaser === "Yes" && <div className='cupPriceDiv'><span className='BottlePrice'>
                         <WineBarIcon className='cardLogos' /></span>
-                        <span className='bottlePriceText'>{props.alcohol.CPrice}₪</span></div>}
+                        <span className='bottlePriceText'>{props.alcohol.chaserPrice}₪</span></div>}
                 </div>
             </div>
             <div className='card2-right' >

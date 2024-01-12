@@ -108,8 +108,8 @@ export default function RecipeReviewCard2(props) {
                 <div className='line'></div>
                 <div className='card2-subTitleDiv'>
                     {screenWidth > 600 ? <span className='card2-Subtitle'>{props.wine.WineryName_Eng} | {props.wine.WineryName_Heb} </span> :
-                        <><span className='card2-Subtitle'>{props.wine.WineryName_Eng}</span>
-                            <span className='card2-Subtitle hebSubTitle'>  {props.wine.WineryName_Heb}</span>
+                        <><span className='card2-Subtitle'>{props.wine.WineryName_Eng.length> 25 ? `${props.wine.WineryName_Eng.substring(0, 25)}...`:props.wine.WineryName_Eng}</span>
+                            <span className='card2-Subtitle hebSubTitle'>  {props.wine.WineryName_Heb.length> 27 ? `${props.wine.WineryName_Heb.substring(0, 25)}...`:props.wine.WineryName_Heb}</span>
                         </>}
                 </div>
                 <div className='priceDiv'>
@@ -163,7 +163,8 @@ export default function RecipeReviewCard2(props) {
                             fontFamily: 'Urbanist', textTransform: 'none',
                             '&:focus': {
                                 outline: 'none'
-                            }
+                            },
+                            
                         }} size="small" className='linkWithoutSpace' onClick={(e) => { e.target.blur() }} >Go to Wine</Button>
                     </Link>
                 </div>

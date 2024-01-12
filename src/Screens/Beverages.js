@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import BeerCard from '../HelpComponents/BeerCard';
-import CigarCard from '../HelpComponents/CigarCard';
 import '../App.css';
 import '../styles/Wines.css'
 // import SearchAppBar from '../SearchAppBar';
 import { Container } from 'react-bootstrap';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
+import Collapse from '@mui/material/Collapse';
+
 
 
 import { styled } from '@mui/material/styles';
@@ -15,24 +16,27 @@ import { styled } from '@mui/material/styles';
 
 
 
-const Cigars = () => {
-    const {cigars, isLoading } = useUserContext();
+const Beverages = () => {
+    const {beveragesArr, isLoading,hotDrinkArr,coldDrinkArr } = useUserContext();
     const [isVisible, setIsVisable] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [noneFound, setNoneFound] = useState(false);
     const [displayDishes, setDisplayDishes] = useState([]);
 
+    const [lightExpand, setLightExpand] = useState(false);
+    const [hotExpand, setHotExpand] = useState(false);
+
     useEffect(() => {
-        if(!isLoading && cigars.length !== 0){
+        if(!isLoading && beveragesArr.length !== 0){
         setIsVisable(true);
-        let beer = cigars.map((cigar) => {
-            return <CigarCard key={cigar.IdCigar} alcohol={cigar} title={cigar.Name_Eng} />
+        let beer = beveragesArr.map((alcohol) => {
+            return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
         }
         );
         console.log('dishArr', beer);
         setDisplayDishes(beer);
         }
-    }, [isLoading,cigars]);
+    }, [isLoading,beveragesArr]);
 
     //create filters for dryness and country
 
@@ -66,12 +70,12 @@ const Cigars = () => {
     useEffect(() => {
         if (searchQuery === "") {
             setNoneFound(false);
-            if (cigars.length === 0) {
-                setDisplayDishes(cigars);
+            if (beveragesArr.length === 0) {
+                setDisplayDishes(beveragesArr);
             }
             else {
-                let arr = cigars.map((cigar) => {
-                    return <CigarCard key={cigar.IdCigar} cigar={cigar} title={cigar.Name_Eng} />
+                let arr = beveragesArr.map((alcohol) => {
+                    return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
@@ -81,14 +85,14 @@ const Cigars = () => {
             console.log("searchQuery is not empty");
             console.log(searchQuery)
             //filter wines arr if name includes searchQuery
-            let arr1 = cigars.filter((cigar) => cigar.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
-            let arr2 = cigars.filter((cigar) => cigar.Name_Heb.includes(searchQuery));
+            let arr1 = beveragesArr.filter((alcohol) => alcohol.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
+            let arr2 = beveragesArr.filter((alcohol) => alcohol.Name_Heb.includes(searchQuery));
             console.log(arr2);
             let arr4 = arr1.concat(arr2);
             arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
-                let arr = arr4.map((cigar) => {
-                    return <CigarCard key={cigar.IdCigar} cigar={cigar} title={cigar.Name_Eng} />
+                let arr = arr4.map((alcohol) => {
+                    return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
@@ -109,20 +113,54 @@ const Cigars = () => {
         setSearchQuery(e);
     }
 
+    const handleExpandClick = (type) => {
+        if (type === 'light') {
+            setLightExpand(!lightExpand);
+        }
+        if (type === 'White') {
+            setHotExpand(!hotExpand);
+        }
+    }
+
 
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 <SearchAppBar searchFunc={setSearch} />
-                {searchQuery ===''? <div>
-                {cigars.map((cigar) => {
+                <ExpandMore
+                    expand={lightExpand}
+                    header='שתייה קלה || light drinks'
+                    onClick={() => handleExpandClick('light')}
+                    aria-expanded={lightExpand}
+                    aria-label="show more"
+                    className='wineCategory'
+                >
+                </ExpandMore>
+                    <Collapse in={lightExpand} timeout="auto" unmountOnExit>
+                        {coldDrinkArr.map((beer) => {
                             // return <TempAlcCard alcohol={whiskey}/>
-                            return <CigarCard key={cigar.IdCigar} cigar={cigar} title={cigar.Name_Eng} />
+                            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
                         }
-                        )}
-                </div>:
-                displayDishes
-                }
+                        )
+                    }
+                    </Collapse>
+                    <ExpandMore
+                        expand={hotExpand}
+                        header='שתייה חמה || Hot drinks'
+                        onClick={() => handleExpandClick('White')}
+                        aria-expanded={hotExpand}
+                        aria-label="show more"
+                        className='wineCategory'
+                    >
+                    </ExpandMore>
+                    <Collapse in={hotExpand} timeout="auto" unmountOnExit>
+                        {hotDrinkArr.map((beer) => {
+                            // return <TempAlcCard alcohol={whiskey}/>
+                            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
+                        }
+                        )
+                    }
+                    </Collapse>
                                             {noneFound && <h1>None Found</h1>}
 
                             </div>
@@ -130,4 +168,4 @@ const Cigars = () => {
     );
 };
 
-export default Cigars;
+export default Beverages;

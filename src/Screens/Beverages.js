@@ -126,7 +126,7 @@ const Beverages = () => {
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <SearchAppBar searchFunc={setSearch} />
+                <SearchAppBar alt='beverages' searchFunc={setSearch} />
                 <ExpandMore
                     expand={lightExpand}
                     header='שתייה קלה || light drinks'

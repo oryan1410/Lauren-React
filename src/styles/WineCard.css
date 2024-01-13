@@ -142,6 +142,8 @@
   white-space: nowrap;
 }
 
+
+
 .hebTitle{
   direction: rtl;
   font-weight: 400;
@@ -184,6 +186,8 @@
 .card2-Subtitle {
   font-size: 1rem;
   font-weight: 400;
+  padding: 1px;
+  
 }
 
 .card2-subTitleDiv{

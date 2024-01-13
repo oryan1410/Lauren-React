@@ -112,7 +112,7 @@ const Beers = () => {
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <SearchAppBar searchFunc={setSearch} />
+                <SearchAppBar alt='beers' searchFunc={setSearch} />
                 {searchQuery ===''? <div>
                 {beerArr.map((rum) => {
                             // return <TempAlcCard alcohol={whiskey}/>

@@ -62,7 +62,7 @@ const {language} = useUserContext();
         </div>
       </div>
       <div className='footerBottom'>
-        <CopyrightIcon className='copyRightIcon' />
+        <CopyrightIcon className='copyRightIcon' alt='copyRight icon' />
         <span className='footerCopyrightText'>All rights reseved to Oryan Barnea, Tay Levi, Lauren wine bar</span>
       </div>
     </div>

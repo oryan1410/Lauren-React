@@ -21,26 +21,7 @@ export default function SearchAppBar(props) {
     props.searchFunc(e);
   }
 
-  useEffect(() => {
-    if (searchQuery === "") {
-      setArr(wines);
-    } else {
-      console.log("searchQuery is not empty");
-      //filter wines arr if name includes searchQuery
-      let arr1 = wines.filter((wine) => wine.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
-      let arr2 = wines.filter((wine) => wine.Name_Heb.includes(searchQuery));
-      console.log(arr2);
-      let arr3 = arr1.concat(arr2);
-      let arr4 = arr3.filter((wine, index, self) =>
-        index === self.findIndex((t) => (
-          t.Id === wine.Id
-        ))
-      )
-      console.log(arr4);
-      setArr(arr4);
-      // setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
-    }
-  }, [searchQuery]);
+
 
   const handleClear = () => {
     setSearchText('');
@@ -50,16 +31,17 @@ export default function SearchAppBar(props) {
 
 
   return (
-    <div className='searchInput'>
+    <div className='searchInput' aria-label={`Search ${props.label}`}>
       <TextField
         id="search-bar"
+        alt={`Search ${props.label}`}
         className="textInput center-placeholder"
         onInput={(e) => {
           setSearch(e.target.value);
         }}
         value={searchText}
-        placeholder="what are you looking for?"
-        
+        placeholder={`search ${props.label}`}
+        aria-label={`Search ${props.label}`}        
         InputProps={{
           sx: {
             textTransform: 'none',
@@ -78,9 +60,9 @@ export default function SearchAppBar(props) {
       />
             {searchQuery!=='' ? 
         <div className='clearButton' onClick={handleClear}>
-          <ClearIcon />
+          <ClearIcon alt='press to clear text' />
         </div>:
-         <div className='searchButton'> <SearchIcon className='searchIcon' /> </div>
+         <div className='searchButton'> <SearchIcon alt='magnifying glass icon' className='searchIcon' /> </div>
            
     }
     </div>

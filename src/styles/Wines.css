@@ -14,9 +14,8 @@
     color: var(--secondary-font-color);
     border-radius: 15px;
     box-shadow: 0 0 5px var(--main--shadow-color);
-    margin-Top: 20px;
-    justify-content: center;
-   
+    margin-Top: 15px;
+    justify-content: center;  
 }
 
 .wineSubCategory{

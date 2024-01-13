@@ -98,56 +98,56 @@ export default function RecipeReviewCard2(props) {
 
 
     return (
-        <div className={`cardTwo ${props.wine.inStock === false && 'outOfStock'}`}>
+        <div className={`cardTwo ${props.wine.inStock === false && 'outOfStock'}`} tabIndex={0}>
             {props.wine.inStock === false && <div className="out-of-stock-text">{t('OutOfStock')}</div>}
             <div className={`card2Content`}>
                 <div className='card2-titleDiv'>
-                    <span className='card2-title'>{props.title.length > 18 ? props.title.substring(0, 15) + '...' : props.title}</span><span className='card2-title hebTitle'>{props.wine.Name_Heb.length > 20 ? props.wine.Name_Heb.substring(0, 15) + '...' : props.wine.Name_Heb}</span>
+                    <h1 className='card2-title' tabIndex={0}>{props.title.length > 18 ? props.title.substring(0, 15) + '...' : props.title}</h1><h1 className='card2-title hebTitle'>{props.wine.Name_Heb.length > 20 ? props.wine.Name_Heb.substring(0, 15) + '...' : props.wine.Name_Heb}</h1>
                 </div>
                 {/*line seperatoe to seperate the divs */}
                 <div className='line'></div>
                 <div className='card2-subTitleDiv'>
-                    {screenWidth > 600 ? <span className='card2-Subtitle'>{props.wine.WineryName_Eng} | {props.wine.WineryName_Heb} </span> :
-                        <><span className='card2-Subtitle'>{props.wine.WineryName_Eng.length> 25 ? `${props.wine.WineryName_Eng.substring(0, 25)}...`:props.wine.WineryName_Eng}</span>
-                            <span className='card2-Subtitle hebSubTitle'>  {props.wine.WineryName_Heb.length> 27 ? `${props.wine.WineryName_Heb.substring(0, 25)}...`:props.wine.WineryName_Heb}</span>
+                    {screenWidth > 600 ? <h2 className='card2-Subtitle' tabIndex={0}>{props.wine.WineryName_Eng} | {props.wine.WineryName_Heb} </h2> :
+                        <><h2 className='card2-Subtitle' tabIndex={0}>{props.wine.WineryName_Eng.length> 25 ? `${props.wine.WineryName_Eng.substring(0, 25)}...`:props.wine.WineryName_Eng}</h2>
+                            <h2 className='card2-Subtitle hebSubTitle' tabIndex={0}>  {props.wine.WineryName_Heb.length> 27 ? `${props.wine.WineryName_Heb.substring(0, 25)}...`:props.wine.WineryName_Heb}</h2>
                         </>}
                 </div>
                 <div className='priceDiv'>
                     <div className='bottlePriceDiv'>
-                        <span className='BottlePrice'>
-                            <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                        </span>
-                        <span className='bottlePriceText'>
+                        <h3 className='BottlePrice'>
+                            <LiquorIcon className='cardLogos' alt='bottle icon' style={{ margin: '0px 5px' }} />
+                        </h3>
+                        <h3 className='bottlePriceText' aria-label={`Bottle price ${props.wine.BottlePrice}`}>
                             {props.wine.BottlePrice}
-                        </span>
+                        </h3>
                     </div>
                     {props.wine.Cup_Y_N_ === 'Y' && <div className='cupPriceDiv'><span className='BottlePrice'>
-                        <WineBarIcon className='cardLogos' /></span>
-                        <span className='bottlePriceText'>{props.wine.CupPrice}</span></div>}
+                        <WineBarIcon className='cardLogos' alt='cup Icon' /></span>
+                        <span className='bottlePriceText' aria-label={`Bottle price ${props.wine.CupPrice}`}>{props.wine.CupPrice}</span></div>}
                 </div>
             </div>
             <div className='card2-right' >
                 {/*a different way to view the details- with the seperation lines in an specific place */}
                 <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{props.wine.Country_Heb}</span>
+                    <span className='card2-span card2-leftText' tabIndex={0}>{props.wine.Country_Heb}</span>
                     <span>|</span>
-                    <span className='card2-span card2-rightText'>{props.wine.Country_Eng}</span>
+                    <span className='card2-span card2-rightText' tabIndex={0}>{props.wine.Country_Eng}</span>
                 </div>
                 <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
+                    <span className='card2-span card2-leftText' tabIndex={0}>{getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                     <span>|</span>
-                    <span className='card2-span card2-rightText'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
+                    <span className='card2-span card2-rightText' tabIndex={0}>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                 </div>
                 <div className='card2-details'>
-                    <span className='card2-span card2-leftText'>{getDrynessHeb(props.wine.Dry_Y_N_)}</span>
+                    <span className='card2-span card2-leftText' tabIndex={0}>{getDrynessHeb(props.wine.Dry_Y_N_)}</span>
                     <span>|</span>
-                    <span className='card2-span card2-rightText'>{getDryness(props.wine.Dry_Y_N_)}</span>
+                    <span className='card2-span card2-rightText' tabIndex={0}>{getDryness(props.wine.Dry_Y_N_)}</span>
                 </div>
                 <div className='card2-details'>
-                    {props.wine.Blend_Y_N_ === 'Y' ? <span className='card2-span card2-blentText'>{language==='en'? 'blend':'בלנד'}</span> :
+                    {props.wine.Blend_Y_N_ === 'Y' ? <span className='card2-span card2-blentText' tabIndex={0}>{language==='en'? 'blend':'בלנד'}</span> :
                         <>
                             {/* <span className='card2-span card2-leftText'>{props.wine.Grape_Heb[0]}</span> */}
-                            <span className='card2-span card2-grape'>{language!=='en' ? props.wine.Grape_Heb[0]:props.wine.Grape_Eng[0]}</span>
+                            <span className='card2-span card2-grape' tabIndex={0}>{language!=='en' ? props.wine.Grape_Heb[0]:props.wine.Grape_Eng[0]}</span>
                             {/* <span className='card2-span card2-rightText'>{props.wine.Grape_Eng[0]}</span> */}
                         </>
                     }
@@ -156,7 +156,7 @@ export default function RecipeReviewCard2(props) {
                 <span className='card2-details'>{getTypes(props.wine.Type_Ro_Re_Wh_Bu_)} | {getTypesHeb(props.wine.Type_Ro_Re_Wh_Bu_)}</span>
                 <span className='card2-details'>{getDryness(props.wine.Dry_y_n_)} | {getDrynessHeb(props.wine.Dry_y_n_)}</span>               */}
                 <div className='card2-button'>
-                    <Link to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none', marginTop:'5px' }}  >
+                    <Link alt='go To specific wine' to={`/winePage/${props.wine.Id}`} className='linkWithoutSpace' style={{ textDecoration: 'none', marginTop:'5px' }}  >
                         <Button sx={{
                             color: 'white',
                             borderRadius: '16px!important',
@@ -165,15 +165,15 @@ export default function RecipeReviewCard2(props) {
                                 outline: 'none'
                             },
                             
-                        }} size="small" className='linkWithoutSpace' onClick={(e) => { e.target.blur() }} >Go to Wine</Button>
+                        }} size="small" className='linkWithoutSpace' alt='press to Navigate to specific wine' onClick={(e) => { e.target.blur() }} >Go to Wine</Button>
                     </Link>
                 </div>
             </div>
             <div className={`card2-imageDiv ${isImageClicked ? 'slide' : ''}`} onClick={handleImageClick}>
-                <div>
+                <div aria-label='press image/info icon to reveal more info'>
                     <InfoTwoToneIcon className='infoIcon' />
-                    <FavoriteIcon onClick={setAsFavorite} className={`favoriteIcon ${isFavorite && 'isFavorite'}`} />
-                    <img src={props.image} alt={`${props.title} bottle image`} className="card2image" />
+                    <FavoriteIcon alt='favorite Icon. press to toggle' onClick={setAsFavorite} className={`favoriteIcon ${isFavorite && 'isFavorite'}`} />
+                    <img src={props.image} alt={`${props.title} bottle image..press to reveal more info`} className="card2image" />
                 </div>
             </div>
         </div>

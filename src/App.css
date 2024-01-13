@@ -34,6 +34,10 @@ a{
   text-decoration: var(--main-link-decoration);
 }
 
+h2{
+  margin-bottom: 0px;
+}
+
 
 
 
@@ -107,10 +111,6 @@ a{
 
   }
 
-}
-
-button:focus {
-  outline: none;
 }
 
 .bg-light {

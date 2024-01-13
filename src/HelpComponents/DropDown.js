@@ -72,18 +72,18 @@ export default function BasicSelect({ label, options, setValue,selected }) {
 
 
   return (
-    <Grid item xs={5.9} >
+    <Grid item xs={5.9} aria-label={`Press to select ${label}`} tabIndex={0} >
       <FormControl className={`${language==='heb' && 'hebDropDown'}`} fullWidth sx={ {
           "&.MuiOutlinedInput-input:hover": {
             border: "2px solid #fff"
           }
         }}>
-        <InputLabel id="demo-simple-select-label" className={`inputLabel ${language==='heb' && 'hebInputLabel'}`}>{label}</InputLabel>
+        <InputLabel id="demo-simple-select-label" aria-label={`Select ${label}`} className={`inputLabel ${language==='heb' && 'hebInputLabel'}`}>{label}</InputLabel>
         <Select
           id="demo-simple-select"
+          label={`Select ${label}`}
           value={age}
           className='selectDropDown'
-          label="Age"
           MenuProps={{
             PaperProps: {
               sx: {

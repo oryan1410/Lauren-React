@@ -46,7 +46,7 @@ export default function TempDishCard(props) {
 
 
     return (
-        <div className={`dishCardDiv ${!dish.inStock && 'dishoutOfStock'}`} key={dish.IdDish}>
+        <div className={`dishCardDiv ${!dish.inStock && 'dishoutOfStock'}`} key={dish.IdDish} tabIndex={0}>
             {!dish.inStock && <div className="dish-out-of-stock-text">{t('OutOfStock')}</div>}
             <div className='dishTitlesDiv'>
                 <span className='dishCardTitle'>{dish.Name_Eng}</span>

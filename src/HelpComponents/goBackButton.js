@@ -14,8 +14,8 @@ export default function GoBackButton  (props) {
     }
 
     return (
-        <div className={`goBackButton`} onClick={()=>navigateBack()}>
-            <ArrowBackIcon />
+        <div arie-labe={'press To go back'}className={`goBackButton`} onClick={()=>navigateBack()}>
+            <ArrowBackIcon alt='arrow back icon' />
             {/* <span>{t('Back')}</span> */}
         </div>
     )

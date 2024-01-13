@@ -27,11 +27,11 @@ export default function AlcoholCard(props) {
 
 
     return (
-        <div className={`cardTwo ${props.alcohol.inStock === false && 'outOfStock'}`}>
+        <div className={`cardTwo ${props.alcohol.inStock === false && 'outOfStock'}`} tabIndex={0}>
             {props.alcohol.inStock === false && <div className="out-of-stock-text">{t('OutOfStock')}</div>}
             <div className={`card2Content`}>
                 <div className='card2-titleDiv'>
-                    <span className='card2-title'>{props.title.length > 18 ? props.title.substring(0, 15) + '...' : props.title}</span><span className='card2-title hebTitle'>{props.alcohol.Name_Heb.length > 20 ? props.alcohol.Name_Heb.substring(0, 15) + '...' : props.alcohol.Name_Heb}</span>
+                    <h1 className='card2-title' tabIndex={0}>{props.title.length > 18 ? props.title.substring(0, 15) + '...' : props.title}</h1><h1 className='card2-title hebTitle' tabIndex={0}>{props.alcohol.Name_Heb.length > 20 ? props.alcohol.Name_Heb.substring(0, 15) + '...' : props.alcohol.Name_Heb}</h1>
                 </div>
                 {/*line seperatoe to seperate the divs */}
                 <div className='line'></div>
@@ -43,16 +43,16 @@ export default function AlcoholCard(props) {
                 </div> */}
                 <div className='priceDiv'>
                     <div className='bottlePriceDiv'>
-                        <span className='BottlePrice'>
+                        <h2 className='BottlePrice'>
                             <LocalDrinkIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                        </span>
-                        <span className='bottlePriceText'>
+                        </h2>
+                        <h2 className='bottlePriceText' aria-label={`Shot price ${props.alcohol.CPrice}`}>
                         ₪{props.alcohol.CPrice}
-                        </span>
+                        </h2>
                     </div>
                     {props.alcohol.chaser === "Yes" && <div className='cupPriceDiv'><span className='BottlePrice'>
                         <WineBarIcon className='cardLogos' /></span>
-                        <span className='bottlePriceText'>{props.alcohol.chaserPrice}₪</span></div>}
+                        <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>{props.alcohol.chaserPrice}₪</span></div>}
                 </div>
             </div>
             <div className='card2-right' >
@@ -94,7 +94,7 @@ export default function AlcoholCard(props) {
                     </Link>
                 </div> */}
                 <div className='card2-details'>
-                    <span className={`card2-span card2-leftText ${language==='heb' && 'AlchebText'} `}>{language==='heb'?props.alcohol.Desc_Heb: props.alcohol.Desc_Eng}</span>
+                    <span className={`card2-span card2-leftText ${language==='heb' && 'AlchebText'} `} tabIndex={0}>{language==='heb'?props.alcohol.Desc_Heb: props.alcohol.Desc_Eng}</span>
                     </div>
             </div>
             <div className={`card2-imageDiv ${isImageClicked ? 'slide' : ''}`} onClick={handleImageClick}>

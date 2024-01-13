@@ -44,7 +44,7 @@ const Dishes = () => {
 
     const [dropArrays, setDropArrays] = useState([]);
 
-    //wine arrays for expansion panels
+    //dishes and beverages arrays for expansion panels
     const [appArr, setAppArr] = useState([]);
     const [mainArr, setMainArr] = useState([]);
     const [forArr, setForArr] = useState([]);
@@ -55,6 +55,15 @@ const Dishes = () => {
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+
+    // clicked states for autoFocus
+    const [appClicked, setAppClicked] = useState(false);
+    const [mainClicked, setMainClicked] = useState(false);
+    const [forClicked, setForClicked] = useState(false);
+    const [desClicked, setDesClicked] = useState(false);
+    const [coldClicked, setColdClicked] = useState(false);
+    const [hotClicked, setHotClicked] = useState(false);
+    const [resetClicked, setResetClicked] = useState(false);
 
     function handleValueChange(value, label) {
         console.log('Value changed to:', value);
@@ -172,6 +181,14 @@ const Dishes = () => {
         setSelectedColor('');
         setSelectedCountry('');
         setSelectedType('');
+        setAppClicked(false);
+        setMainClicked(false);
+        setForClicked(false);
+        setDesClicked(false);
+        setColdClicked(false);
+        setHotClicked(false);
+        setResetClicked(true);
+
         // setResetKey(prevKey => prevKey + 1); // increment the key
     }
 
@@ -194,11 +211,11 @@ const Dishes = () => {
         const { expand, header, ...other } = props;
         const [part1, part2] = header.split('||'); // Split the header into three parts
         return (
-            <div {...other}>
+            <button {...other}>
                 <div className='CategoryDivLeft'>{part1}</div>
                 <div>||</div>
                 <div className='CategoryDivRight'>{part2}</div>
-            </div>
+            </button>
         );
     })(({ theme, expand }) => ({
         display: 'flex', // Use Flexbox for alignment
@@ -210,30 +227,24 @@ const Dishes = () => {
     }));
 
     const handleExpandClick = (type) => {
-        if (type === 'Easy') {
-            setExpanded(!expanded);
-        }
-        else if (type === 'Next') {
-            setNextExpanded(!nextExpanded);
-        }
-        else if (type === 'For') {
-            setForExpanded(!forExpanded);
-        }
-        else if (type === 'Desset') {
-            setDesExpanded(!desExpanded);
-        }
-        else if (type === 'Cold') {
-            setColdExpanded(!coldExpanded);
-        }
-        else if (type === 'Hot') {
-            setHotExpanded(!hotExpanded);
-        }
+        const expandStates = {
+            Easy: { expanded: expanded, setExpanded:setExpanded, appClicked: appClicked, setClicked: setAppClicked },
+            Next: { expanded: nextExpanded, setExpanded:setNextExpanded, mainClicked: mainClicked, setClicked: setMainClicked },
+            For: { expanded: forExpanded, setExpanded:setForExpanded, forClicked: forClicked, setClicked: setForClicked },
+            Desset: { expanded: desExpanded, setExpanded:setDesExpanded, desClicked: desClicked, setClicked: setDesClicked },
+            Cold: { expanded: coldExpanded, setExpanded:setColdExpanded, coldClicked: coldClicked, setClicked: setColdClicked },
+            Hot: { expanded: hotExpanded, setExpanded:setHotExpanded, hotClicked: hotClicked, setClicked: setHotClicked }
+        };
+        Object.entries(expandStates).forEach(([key, value]) => {
+            if (key===type) {
+                value.setExpanded(!value.expanded);
+                value.setClicked(true);
+            }
+            else {
+                value.setClicked(false);
+            }
+        });
     };
-
-    useEffect(() => {
-        console.log('dropArrays', dropArrays);
-    }
-        , [dropArrays])
 
     //Search useeffect
     useEffect(() => {
@@ -295,11 +306,10 @@ const Dishes = () => {
         setSearchQuery(e);
     }
 
-
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <SearchAppBar searchFunc={setSearch} />
+                <SearchAppBar label={'menu'} searchFunc={setSearch} />
                 {/* <DropDown /> */}
                 {searchQuery === '' && <div className='dishgridView'>
                     <DropDown label='Type' options={['Meat', 'Fish', 'Vegan', 'Vegetarian']} setValue={handleValueChange} selected={selectedType} />
@@ -309,40 +319,14 @@ const Dishes = () => {
                 </div>}
 
                 {searchQuery === '' ? <div>
-
-                    <ExpandMore
-                        expand={coldExpanded}
-                        header='שתייה קלה || Light drinks'
-                        onClick={() => handleExpandClick('Cold')}
-                        aria-expanded={expanded}
-                        aria-label="show more"
-                        className='wineCategory'
-                    >
-                    </ExpandMore>
-                    <Collapse in={coldExpanded} timeout="auto" unmountOnExit>
-                        {coldArr}
-                    </Collapse>
-
-                    <ExpandMore
-                        expand={hotExpanded}
-                        header='שתייה חמה || Hot drinks'
-                        onClick={() => handleExpandClick('Hot')}
-                        aria-expanded={expanded}
-                        aria-label="show more"
-                        className='wineCategory'
-                    >
-                    </ExpandMore>
-                    <Collapse in={hotExpanded} timeout="auto" unmountOnExit>
-                        {hotArr}
-                    </Collapse>
-
                     <ExpandMore
                         expand={expanded}
                         header='לנשנש בקליל  || Easy snacks'
                         onClick={() => handleExpandClick('Easy')}
                         aria-expanded={expanded}
-                        aria-label="show more"
+                        aria-label="show more- easy snacks"
                         className='wineCategory'
+                        autoFocus={appClicked}
                     >
                     </ExpandMore>
                     <Collapse in={expanded} timeout="auto" unmountOnExit>
@@ -353,8 +337,9 @@ const Dishes = () => {
                         header='ליד היין || Next to the wine'
                         onClick={() => handleExpandClick('Next')}
                         aria-expanded={expanded}
-                        aria-label="show more"
+                        aria-label="show more- next to the wine"
                         className='wineCategory'
+                        autoFocus={mainClicked}
                     >
                     </ExpandMore>
                     <Collapse in={nextExpanded} timeout="auto" unmountOnExit>
@@ -365,8 +350,9 @@ const Dishes = () => {
                         header='לרעבים בנינו || For the hungry'
                         onClick={() => handleExpandClick('For')}
                         aria-expanded={expanded}
-                        aria-label="show more"
+                        aria-label="show more- for the hungry"
                         className='wineCategory'
+                        autoFocus={forClicked}
                     >
                     </ExpandMore>
                     <Collapse in={forExpanded} timeout="auto" unmountOnExit>
@@ -377,12 +363,39 @@ const Dishes = () => {
                         header='סיום מתוק || Sweet ending'
                         onClick={() => handleExpandClick('Desset')}
                         aria-expanded={expanded}
-                        aria-label="show more"
+                        aria-label="show more- desserts"
                         className='wineCategory'
+                        autoFocus={desClicked}
                     >
                     </ExpandMore>
                     <Collapse in={desExpanded} timeout="auto" unmountOnExit>
                         {desArr}
+                    </Collapse>
+                    <ExpandMore
+                        expand={coldExpanded}
+                        header='שתייה קלה || Light drinks'
+                        onClick={() => handleExpandClick('Cold')}
+                        aria-expanded={expanded}
+                        aria-label="show more- cold drinks"
+                        className='wineCategory'
+                        autoFocus={coldClicked}
+                    >
+                    </ExpandMore>
+                    <Collapse in={coldExpanded} timeout="auto" unmountOnExit>
+                        {coldArr}
+                    </Collapse>
+                    <ExpandMore
+                        expand={hotExpanded}
+                        header='שתייה חמה || Hot drinks'
+                        onClick={() => handleExpandClick('Hot')}
+                        aria-expanded={expanded}
+                        aria-label="show more- hot drinks"
+                        className='wineCategory'
+                        autoFocus={hotClicked}
+                    >
+                    </ExpandMore>
+                    <Collapse in={hotExpanded} timeout="auto" unmountOnExit>
+                        {hotArr}
                     </Collapse>
                 </div> : displayDishes
                 }

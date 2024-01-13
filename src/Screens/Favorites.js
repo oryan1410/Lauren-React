@@ -25,6 +25,12 @@ const Favorites = () => {
     const [roseExpanded, setRoseExpanded] = useState(false);
     const [bubbleExpanded, setBubbleExpanded] = useState(false);
 
+    // focuse state
+    const [redClicked, setRedClicked] = useState(false);
+    const [whiteClicked, setWhiteClicked] = useState(false);
+    const [roseClicked, setRoseClicked] = useState(false);
+    const [bubbleClicked, setBubbleClicked] = useState(false);
+
     const { t } = useTranslation();
 
     const renderFavorites = () => {
@@ -70,11 +76,11 @@ renderFavorites();
         const { expand, header, ...other } = props;
         const [part1, part2] = header.split('||'); // Split the header into three parts
         return (
-            <div {...other}>
+            <button {...other}>
                 <div className='CategoryDivLeft'>{part1}</div>
                 <div>||</div>
                 <div className='CategoryDivRight'>{part2}</div>
-            </div>
+            </button>
         );
     })(({ theme, expand }) => ({
         display: 'flex', // Use Flexbox for alignment
@@ -86,18 +92,36 @@ renderFavorites();
     }));
 
     const handleExpandClick = (type) => {
-        if (type === 'Red') {
-            setExpanded(!expanded);
+        // if (type === 'Red') {
+        //     setExpanded(!expanded);
+
+        // }
+        // else if (type === 'White') {
+        //     setWhiteExpanded(!whiteExpanded);
+        // }
+        // else if (type === 'Rose') {
+        //     setRoseExpanded(!roseExpanded);
+        // }
+        // else if (type === 'Bubble') {
+        //     setBubbleExpanded(!bubbleExpanded);
+        // }
+
+        const typesofWines = {
+            Red: {expanded: expanded, setExpanded: setExpanded, clicked: redClicked, setClicked: setRedClicked},
+            White: {expanded: whiteExpanded, setExpanded: setWhiteExpanded, clicked: whiteClicked, setClicked: setWhiteClicked},
+            Rose: {expanded: roseExpanded, setExpanded: setRoseExpanded, clicked: roseClicked, setClicked: setRoseClicked},
+            Bubble: {expanded: bubbleExpanded, setExpanded: setBubbleExpanded, clicked: bubbleClicked, setClicked: setBubbleClicked},
         }
-        else if (type === 'White') {
-            setWhiteExpanded(!whiteExpanded);
-        }
-        else if (type === 'Rose') {
-            setRoseExpanded(!roseExpanded);
-        }
-        else if (type === 'Bubble') {
-            setBubbleExpanded(!bubbleExpanded);
-        }
+        
+        Object.entries(typesofWines).forEach(([key, value]) => {
+            if (key===type) {
+                value.setExpanded(!value.expanded);
+                value.setClicked(true);
+            }   
+            else {
+                value.setClicked(false);
+            }
+        });
     };
 
     useEffect(() => {
@@ -110,7 +134,7 @@ renderFavorites();
     return (
         <Container>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <span className='favoriteTitle'>{t('Favorite')}</span>
+                <h1 className='favoriteTitle'>{t('Favorite')}</h1>
                 {/* {favorites.map((wineId) => (
                 <WineCard key={wineId} wineId={wineId} />
             ))} */}
@@ -119,8 +143,10 @@ renderFavorites();
                     header='יינות אדומים || red wines'
                     onClick={() => handleExpandClick('Red')}
                     aria-expanded={expanded}
-                    aria-label="show more"
+                    aria-label="show more red wines"
                     className='wineCategory'
+                    autoFocus={redClicked}
+                    key='red'
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>
@@ -134,8 +160,9 @@ renderFavorites();
                     header='יינות לבנים || white wines'
                     onClick={() => handleExpandClick('White')}
                     aria-expanded={whiteExpanded}
-                    aria-label="show more"
+                    aria-label="show more white wines"
                     className='wineCategory'
+                    autoFocus={whiteClicked}
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>
@@ -149,8 +176,9 @@ renderFavorites();
                     header='יינות רוזה || rose wines'
                     onClick={() => handleExpandClick('Rose')}
                     aria-expanded={roseExpanded}
-                    aria-label="show more"
+                    aria-label="show more rose wines"
                     className='wineCategory'
+                    autoFocus={roseClicked}
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>
@@ -164,8 +192,9 @@ renderFavorites();
                     header='יינות מבעבעים || sparkling wines'
                     onClick={() => handleExpandClick('Bubble')}
                     aria-expanded={bubbleExpanded}
-                    aria-label="show more"
+                    aria-label="show more bubble wines"
                     className='wineCategory'
+                    autoFocus={bubbleClicked}
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>

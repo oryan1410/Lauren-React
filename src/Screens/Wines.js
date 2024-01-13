@@ -56,6 +56,16 @@ const Wines = () => {
     const expandedDivRef3 = useRef(null);
     const expandedDivRef4 = useRef(null);
 
+    //for focusing on expanded panel
+    const [redClicked, setRedClicked] = useState(false);
+    const [whiteClicked, setWhiteClicked] = useState(false);
+    const [roseClicked, setRoseClicked] = useState(false);
+    const [bubbleClicked, setBubbleClicked] = useState(false);
+    const [bestOfClicked, setBestOfClicked] = useState(false);
+    const [resetClicked, setResetClicked] = useState(false);
+
+
+
     useEffect(() => {
         setDropArrays([
             <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-מתוק']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={selectedDryness} />,
@@ -171,64 +181,6 @@ const Wines = () => {
         setBestArr(best);
     }
 
-    // useEffect(() => {
-    //     // if (winesArr.length === 0) {
-    //     //     getWinesArr();
-    //     // }
-    //     // if (!wines.length) {
-    //     //     // Data has not loaded yet, exit the useEffect
-    //     //     return;
-    //     // }
-    //     // let arr2= winesArr.map((wine) => {
-    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
-    //     // }
-    //     // );
-    //     // setTestDisplay(arr2);
-    //     // setIsVisable(true);
-    //     // let arr = wines.map((wine) => {
-    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
-    //     // });
-    //     // setAllWines(arr);
-    //     // let redArr = redWines.map((wine) => {
-    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
-    //     // });
-
-    //     // let whiteArr = whiteWines.map((wine) => {
-    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
-    //     // });
-
-    //     // let roseArr = roseWines.map((wine) => {
-    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
-    //     // }
-    //     // );
-
-    //     // let bubbleArr = bubbleWines.map((wine) => {
-    //     //     return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
-    //     // }
-    //     // );
-
-
-    //     // // setRedWinesArr(redArr);
-    //     // // setWhiteWinesArr(whiteArr);
-    //     // // setRoseWinesArr(roseArr);
-    //     // // setBubbleWinesArr(bubbleArr);
-    //     // setAllWines(arr);
-    //     // setDisplayWines2(arr);
-
-    //     // if (expanded && expandedDivRef1.current) {
-    //     //     expandedDivRef1.current.scrollIntoView({ behavior: 'smooth' });
-    //     //   }
-    //     //   else if (whiteExpanded && expandedDivRef2.current) {
-    //     //       expandedDivRef2.current.scrollIntoView({ behavior: 'smooth' });
-    //     //   }
-    //     //   else if (roseExpanded && expandedDivRef3.current) {
-    //     //       expandedDivRef3.current.scrollIntoView({ behavior: 'smooth' });
-    //     //   }
-    //     //   else if (bubbleExpanded && expandedDivRef4.current) {
-    //     //       console.log('bubbleExpanded true');
-    //     //       expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
-    //     //   }       
-    // }, [redWines, whiteWines, roseWines, bubbleWines, wines]);
 
     const renderWines = (winesArr) => {
         setIsVisable(true);
@@ -315,6 +267,33 @@ const Wines = () => {
         }
     }
 
+    // useEffect(() => {
+    //     if (redClicked && focusedRed.current) {
+
+    //         focusedRed.current.focus();
+    //         setRedClicked(false);
+    //         console.log('redClicked');
+    //     }
+    //     else if (whiteClicked && focusedWhite.current) {
+    //         setWhiteClicked(false);
+    //         setTimeout(() => focusedWhite.current.focus(), 0);
+    //     }
+    //     else if (roseClicked && focusedRose.current) {
+    //         setRoseClicked(false);
+    //     }
+    //     else if (bubbleClicked && focusedBubble.current) {
+    //         focusedBubble.current.focus();
+    //         setBubbleClicked(false);
+    //     }
+    //     else if (bestOfClicked && focusedBestOf.current) {
+    //         console.log('bestOfClicked');
+    //         focusedBestOf.current.focus();
+    //         setBestOfClicked(false);
+    //     }
+    // }
+    // , [redClicked, whiteClicked, roseClicked, bubbleClicked, bestOfClicked]);
+
+
     //create filters for dryness and country
     const sortFilters = async () => {
         console.log('sortFilters');
@@ -338,6 +317,12 @@ const Wines = () => {
         setRoseExpanded(false);
         setBubbleExpanded(false);
         setBestOfExpanded(false);
+        setBestOfClicked(false);
+        setRedClicked(false);
+        setWhiteClicked(false);
+        setRoseClicked(false);
+        setBubbleClicked(false);
+        setResetClicked(true);
         setResetKey(prevKey => prevKey + 1); // increment the key
         setDropArrays([
             <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-מתוק']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={''} />,
@@ -361,11 +346,11 @@ const Wines = () => {
         const { expand, header, ...other } = props;
         const [part1, part2] = header.split('||'); // Split the header into three parts
         return (
-          <div {...other}>
+          <button {...other} >
             <div className='CategoryDivLeft'>{part1}</div>
             <div>||</div>
             <div className='CategoryDivRight'>{part2}</div>
-          </div>
+          </button>
         );
       })(({ theme, expand }) => ({
         display: 'flex', // Use Flexbox for alignment
@@ -378,19 +363,51 @@ const Wines = () => {
 
     const handleExpandClick = (type) => {
         if (type === 'Red') {
+            console.log('red');
             setExpanded(!expanded);
+            setRedClicked(true);
+            setWhiteClicked(false);
+            setRoseClicked(false);
+            setBubbleClicked(false);
+            setBestOfClicked(false);
+            setResetClicked(false);
         }
         else if (type === 'White') {
             setWhiteExpanded(!whiteExpanded);
+            setWhiteClicked(true);
+            setRedClicked(false);
+            setRoseClicked(false);
+            setBubbleClicked(false);
+            setBestOfClicked(false);
+            setResetClicked(false);
+
         }
         else if (type === 'Rose') {
             setRoseExpanded(!roseExpanded);
+            setRoseClicked(true);
+            setRedClicked(false);
+            setWhiteClicked(false);
+            setBubbleClicked(false);
+            setBestOfClicked(false);
+            setResetClicked(false);
         }
         else if (type === 'Bubble') {
             setBubbleExpanded(!bubbleExpanded);
+            setBubbleClicked(true);
+            setRedClicked(false);
+            setWhiteClicked(false);
+            setRoseClicked(false);
+            setBestOfClicked(false);
+            setResetClicked(false);
         }
         else if (type === 'BestOf') {
             setBestOfExpanded(!bestOfExpanded);
+            setBestOfClicked(true);
+            setRedClicked(false);
+            setWhiteClicked(false);
+            setRoseClicked(false);
+            setBubbleClicked(false);
+            setResetClicked(false);
         }
     };
 
@@ -455,7 +472,7 @@ const Wines = () => {
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <SearchAppBar searchFunc={setSearch} />
+                <SearchAppBar label={'wines'} searchFunc={setSearch} />
                 {/* <DropDown /> */}
                 {searchQuery ==='' && <Grid container className='dishgridView'>
                     {dropArrays}
@@ -463,7 +480,7 @@ const Wines = () => {
                 {searchQuery ==='' && <div className={`resetButtonDiv ${language==='heb'&& 'hebReset'}`}>
                     <Button
                     className='resetButton' 
-                    onClick={(e) => {resetFilter();e.target.blur()}}
+                    onClick={(e) => {resetFilter()}}
                     sx={{ color: 'white', 
                     borderRadius: '16px!important',             
                     '&:focus': {
@@ -471,13 +488,15 @@ const Wines = () => {
                       } }}>{language==='heb'?'איפוס':'Reset'}</Button>
                 </div>}
                 
-                {searchQuery === '' ? <div><ExpandMore
-                    expand={expanded}
+                {searchQuery === '' ? <div>
+                    <ExpandMore
                     header='יינות אדומים || Red wines'
                     onClick={() => handleExpandClick('Red')}
                     aria-expanded={expanded}
-                    aria-label="show more"
+                    aria-label="show more red wines"
                     className='wineCategory'
+                    key={'red'}
+                    autoFocus={redClicked}
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>
@@ -489,8 +508,11 @@ const Wines = () => {
                         header='יינות לבנים || White wines'
                         onClick={() => handleExpandClick('White')}
                         aria-expanded={expanded}
-                        aria-label="show more"
+                        aria-label="show more white wines"
                         className='wineCategory'
+                        key={'white'}
+                        autoFocus={whiteClicked}
+
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -502,8 +524,10 @@ const Wines = () => {
                         header='יינות רוזה || Rose wines'
                         onClick={() => handleExpandClick('Rose')}
                         aria-expanded={expanded}
-                        aria-label="show more"
+                        aria-label="show more rose wines"
                         className='wineCategory'
+                        key={'rose'}
+                        autoFocus={roseClicked}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -515,8 +539,10 @@ const Wines = () => {
                         header='יינות מבעבעים || Bubble wines'
                         onClick={() => handleExpandClick('Bubble')}
                         aria-expanded={expanded}
-                        aria-label="show more"
+                        aria-label="show more bubble wines"
                         className='wineCategory'
+                        key={'bubble'}
+                        autoFocus={bubbleClicked}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -528,8 +554,10 @@ const Wines = () => {
                     header='יינות מיוחדים || Special wines'
                     onClick={() => handleExpandClick('BestOf')}
                     aria-expanded={expanded}
-                    aria-label="show more"
+                    aria-label="show more special wines"
                     className='wineCategory'
+                    key={'bestOf'}
+                    autoFocus={bestOfClicked}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>

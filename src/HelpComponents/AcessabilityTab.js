@@ -27,19 +27,19 @@ const AccessibilityTab = (props) => {
         <div
             style={{
                 position: 'fixed',
-                left: 0, // Updated to position on the right side
+                right: 0, // Updated to position on the right side
                 bottom: '10%',
                 backgroundColor: '#f1f1f1',
                 borderRadius: '5px',
                 zIndex: 90,
-                transition: 'height 0.3s ease-in-out, width 0.3s ease-in-out', // Updated to include width
+                transition: 'right 0.3s ease-in-out', // Updated to include only right transition
             }}
         >
             {!expanded && (
                 <button onClick={toggleExpanded}>
                     <img
                         src='../../Images/accesability_icon.png'
-                        alt={t('Accessibility Icon')}
+                        alt={'Accessibility Icon'}
                         style={{ width: '50px', height: '50px' }}
                     />
                 </button>

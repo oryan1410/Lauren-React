@@ -45,32 +45,12 @@ export default function TempAlcCard(props) {
         }
     }
 
-    const getDishKosher = () => {
-        if (language === 'heb') {
-            if (alcohol.Kosher) {
-                return 'כשר'
-            }
-            else {
-                return 'לא כשר'
-            }
-        }
-        else {
-            if (alcohol.Kosher) {
-                return 'Kosher'
-            }
-            else {
-                return 'Not Kosher'
-            }
-        }
-    }
-
-
     return (
-        <div className={`dishCardDiv ${!alcohol.inStock && 'dishoutOfStock'}`} key={alcohol.IdAlc}>
+        <div className={`dishCardDiv ${!alcohol.inStock && 'dishoutOfStock'}`} key={alcohol.IdAlc} tabIndex={0}>
             {!alcohol.inStock && <div className="dish-out-of-stock-text">{t('OutOfStock')}</div>}
             <div className='dishTitlesDiv'>
-                <span className='dishCardTitle'>{alcohol.Name_Eng}</span>
-                <span className='dishCardTitle hebTitle'>{alcohol.Name_Heb}</span>
+                <h1 className='dishCardTitle'>{alcohol.Name_Eng}</h1>
+                <h1 className='dishCardTitle hebTitle'>{alcohol.Name_Heb}</h1>
             </div>
             <div className='line'></div>
             {language === 'heb' ? <span className='dishCardSubtitle hebSubtitle'>{alcohol.Desc_Heb}</span> : <span className='dishCardSubtitle'>{alcohol.Desc_Eng}</span>}

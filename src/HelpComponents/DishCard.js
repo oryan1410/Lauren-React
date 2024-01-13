@@ -79,7 +79,7 @@ export default function DishCard(props) {
 
 
     return (
-        <div className="cardTwo">
+        <div className="cardTwo" tabIndex={0}>
             <div className={`DishCardContent`}>
                 <div>
                     <h1 className='DishCard-title'>{props.dish.Name_Eng}<br />{props.dish.Name_Heb}</h1>
@@ -89,8 +89,8 @@ export default function DishCard(props) {
 
                 </div>
                 <div className='DishpriceDiv'>
-                    <span className='DishPrice'>
-                        <RestaurantIcon className='DishcardLogos' style={{ margin: '0px 5px' }} />
+                    <span className='DishPrice' aria-label={`Price: ${props.dish.CPrice}`}>
+                        <RestaurantIcon alt='knife and fork icon' className='DishcardLogos' style={{ margin: '0px 5px' }} />
                         {props.dish.CPrice}
                     </span>
                 </div>

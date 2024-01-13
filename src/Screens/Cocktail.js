@@ -173,7 +173,7 @@ const Cocktails = () => {
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <SearchAppBar searchFunc={setSearch} />
+                <SearchAppBar label={'cocktails'} searchFunc={setSearch} />
                 {/* <DropDown /> */}
                 {/* {searchQuery ==='' && <Grid container className='dishgridView'>
                     {dropArrays}

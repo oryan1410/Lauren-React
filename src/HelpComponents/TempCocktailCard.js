@@ -47,7 +47,7 @@ export default function TempCocktailCard(props) {
 
 
     return (
-        <div className={`dishCardDiv ${!alcohol.inStock && 'dishoutOfStock'}`} key={alcohol.IdAlc}>
+        <div className={`dishCardDiv ${!alcohol.inStock && 'dishoutOfStock'}`} key={alcohol.IdAlc} tabIndex={0}>
             {!alcohol.inStock && <div className="dish-out-of-stock-text">{t('OutOfStock')}</div>}
             <div className='dishTitlesDiv'>
                 <span className='dishCardTitle'>{alcohol.Name_Eng}</span>
@@ -58,7 +58,7 @@ export default function TempCocktailCard(props) {
             <div className='line'></div>
             <div className='attributesDiv'>
                 <div className='dishpriceDiv'>
-                    <span className='dishCardSubtitle'>₪{alcohol.CPrice}</span>
+                    <span className='dishCardSubtitle' aria-label={`.Price ${alcohol.CPrice}`}>₪{alcohol.CPrice}</span>
                 </div>
                 {/* <div className='kosherDiv'>
                     <span className='kosherText'>{getDishKosher()}</span>

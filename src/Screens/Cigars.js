@@ -3,129 +3,83 @@ import BeerCard from '../HelpComponents/BeerCard';
 import CigarCard from '../HelpComponents/CigarCard';
 import '../App.css';
 import '../styles/Wines.css'
-// import SearchAppBar from '../SearchAppBar';
 import { Container } from 'react-bootstrap';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
-
-
 import { styled } from '@mui/material/styles';
 
-
-
-
-
 const Cigars = () => {
-    const {cigars, isLoading } = useUserContext();
-    const [isVisible, setIsVisable] = useState(false);
+    const { cigars, isLoading } = useUserContext();
+    const [isVisible, setIsVisible] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [noneFound, setNoneFound] = useState(false);
     const [displayDishes, setDisplayDishes] = useState([]);
 
     useEffect(() => {
-        if(!isLoading && cigars.length !== 0){
-        setIsVisable(true);
-        let beer = cigars.map((cigar) => {
-            return <CigarCard key={cigar.IdCigar} alcohol={cigar} title={cigar.Name_Eng} />
+        if (!isLoading && cigars.length !== 0) {
+            setIsVisible(true);
+            let beer = cigars.map((cigar) => {
+                return <CigarCard key={cigar.IdCigar} alcohol={cigar} title={cigar.Name_Eng} />
+            });
+            console.log('dishArr', beer);
+            setDisplayDishes(beer);
         }
-        );
-        console.log('dishArr', beer);
-        setDisplayDishes(beer);
-        }
-    }, [isLoading,cigars]);
+    }, [isLoading, cigars]);
 
-    //create filters for dryness and country
-
-
-    // get countries and sort filters
-
-
-    // epxand more for wine category based on color
-    const ExpandMore = styled((props) => {
-        const { expand, header, ...other } = props;
-        const [part1, part2] = header.split('||'); // Split the header into three parts
-        return (
-            <div {...other}>
-                <div className='CategoryDivLeft'>{part1}</div>
-                <div>||</div>
-                <div className='CategoryDivRight'>{part2}</div>
-            </div>
-        );
-    })(({ theme, expand }) => ({
-        display: 'flex', // Use Flexbox for alignment
-        justifyContent: 'space-between', // Distribute the space evenly between the div elements
-        marginLeft: '0 auto',
-        transition: theme.transitions.create('transform', {
-            duration: theme.transitions.duration.shortest,
-        }),
-    }));
-
-
-
-    //Search useeffect
     useEffect(() => {
         if (searchQuery === "") {
             setNoneFound(false);
             if (cigars.length === 0) {
                 setDisplayDishes(cigars);
-            }
-            else {
+            } else {
                 let arr = cigars.map((cigar) => {
                     return <CigarCard key={cigar.IdCigar} cigar={cigar} title={cigar.Name_Eng} />
-                }
-                )
+                });
                 setDisplayDishes(arr);
             }
         } else {
             setNoneFound(false);
-            console.log("searchQuery is not empty");
-            console.log(searchQuery)
-            //filter wines arr if name includes searchQuery
             let arr1 = cigars.filter((cigar) => cigar.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
             let arr2 = cigars.filter((cigar) => cigar.Name_Heb.includes(searchQuery));
-            console.log(arr2);
             let arr4 = arr1.concat(arr2);
             arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
                 let arr = arr4.map((cigar) => {
                     return <CigarCard key={cigar.IdCigar} cigar={cigar} title={cigar.Name_Eng} />
-                }
-                )
+                });
                 setDisplayDishes(arr);
-                // setArr(wines.filter((wine) => wine.name.toLowerCase().includes(searchQuery.toLowerCase())));
-            }
-            else {
+            } else {
                 setDisplayDishes([]);
                 setNoneFound(true);
             }
-
         }
-
     }, [searchQuery]);
 
-    //search function
     const setSearch = (e) => {
         console.log('setSearchWines');
         setSearchQuery(e);
     }
 
-
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
-            <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <SearchAppBar searchFunc={setSearch} />
-                {searchQuery ===''? <div>
-                {cigars.map((cigar) => {
-                            // return <TempAlcCard alcohol={whiskey}/>
-                            return <CigarCard key={cigar.IdCigar} cigar={cigar} title={cigar.Name_Eng} />
-                        }
-                        )}
-                </div>:
-                displayDishes
-                }
-                                            {noneFound && <h1>None Found</h1>}
+            <div className={`home ${isVisible ? 'visible' : 'notVisible'}`} role="main">
+                <SearchAppBar label='cigars' searchFunc={setSearch} />
 
-                            </div>
+                {searchQuery === '' ? (
+                    <div>
+                        {cigars.map((cigar) => (
+                            <CigarCard key={cigar.IdCigar} cigar={cigar} title={cigar.Name_Eng} />
+                        ))}
+                    </div>
+                ) : (
+                    <div>
+                        <h2>Search Results:</h2>
+                        {displayDishes}
+                    </div>
+                )}
+
+                {noneFound && <h1>No Results Found</h1>}
+            </div>
         </Container>
     );
 };

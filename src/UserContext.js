@@ -2,7 +2,7 @@ import React, { useState, useEffect, createContext, useContext } from 'react'
 import wines from './WinesArr.json'
 import i18next from 'i18next'
 import { db } from './firebase_setup/firebase'
-import { query, getDocs,collection, onSnapshot, addDoc, where } from 'firebase/firestore'
+import { query, getDocs,collection, onSnapshot, addDoc, where, orderBy, or } from 'firebase/firestore'
 
 
 
@@ -31,9 +31,13 @@ export function UserProvider({ children }) {
     const [ginArr, setGinArr] = useState([]);
     const [taquillaArr, setTaquillaArr] = useState([]);
     const [apperativoArr, setApperativoArr] = useState([]);
+    const [digestifArr, setDigestifArr] = useState([]);
     const [anisArr, setAnisArr] = useState([]);
     const [cocktailsArr, setCocktailsArr] = useState([]);
     const [beerArr, setBeerArr] = useState([]);
+    const [bestOFALcArr, setBestOFALcArr] = useState([]);
+
+
     const [beveragesArr, setBeveragesArr] = useState([]);
     const [hotDrinkArr, setHotDrinkArr] = useState([]);
     const [coldDrinkArr, setColdDrinkArr] = useState([]);
@@ -121,6 +125,7 @@ export function UserProvider({ children }) {
         setIsLoading(true);
 
         const getNames= onSnapshot(tempNames, (snapshot) => {
+            console.log('getNamesChanges',snapshot.docChanges());
             let countries = [];
             let countriesHeb = [];           
             let redArr = [];
@@ -185,7 +190,6 @@ export function UserProvider({ children }) {
         }
         )
 
-
         const dishQuery= query(collection(db,'Dishes'),where('onMenu','==','Y'));
         const getDishes= onSnapshot(dishQuery, (snapshot) => {
             let appArr=[];
@@ -232,8 +236,147 @@ export function UserProvider({ children }) {
         }
         )
 
+        //for onetime update
+        // const dishDocs= getDocs(dishQuery).then((querySnapshot) => {
+        //     let appArr=[];
+        //     let mainArr=[];
+        //     let dessertArr=[];
+        //     let forTheHungryArr=[];
+        //     querySnapshot.forEach((doc) => {
+        //         let dish={};
+        //         dish.IdDish=doc.data().IdDish;
+        //         dish.Name_Heb=doc.data().Name_Heb;
+        //         dish.Name_Eng=doc.data().Name_Eng;
+        //         dish.Type=doc.data().Type;
+        //         dish.ImageUrl=doc.data().ImageUrl;
+        //         dish.Desc_Heb=doc.data().Desc_Heb;
+        //         dish.Desc_Eng=doc.data().Desc_Eng;
+        //         dish.CPrice=doc.data().CPrice;
+        //         dish.IngType=doc.data().IngType;
+        //         dish.inStock=doc.data().inStock;
+        //         dish.onMenu=doc.data().onMenu;
+        //         if (dish.Type === 'Easy Snack') {
+        //             appArr.push(dish)
+        //         }
+        //         if (dish.Type === 'Next to Wine') {
+        //             mainArr.push(dish)
+        //         }
+        //         if (dish.Type === 'For The Hungry') {
+        //             forTheHungryArr.push(dish)
+        //         }
+        //         if (dish.Type === 'Dessert') {
+        //             dessertArr.push(dish)
+        //         }
+        //     });
+        //     setEasyArr(appArr);
+        //     setNextToWineArr(mainArr);
+        //     setForTheHungryArr(forTheHungryArr);
+        //     setDessertsArr(dessertArr);
+        //     return appArr;
+        // });        
+
         const alcoholQuery= query(collection(db,'Alcohol'),where('onMenu','==','Y'));
-        const getAlcohol= onSnapshot(alcoholQuery, (snapshot) => {
+
+        //for realtime updates
+        // const getAlcohol= onSnapshot(alcoholQuery, (snapshot) => {
+        //     let alcoholArr=[];
+        //     let whiskeyArr=[];
+        //     let AmericanArr=[];
+        //     let smokedArr=[];
+        //     let vodkaArr=[];
+        //     let coniacArr=[];
+        //     let rumArr=[];
+        //     let ginArr= [];
+        //     let taquillaArr=[];
+        //     let apperativoArr=[];
+        //     let dejistifArr=[];
+        //     let anisArr=[];
+        //     let cocktailsArr=[];
+        //     let beerArr=[];
+        //     let bestOfArr=[];
+
+        //     setAlcoholArr(snapshot.docs.map((doc) => {
+        //         let alcohol={};
+        //         alcohol.IdAlc=doc.data().IdAlc;
+        //         alcohol.ImageUrl=doc.data().ImageUrl;
+        //         alcohol.Name_Heb=doc.data().Name_Heb;
+        //         alcohol.Name_Eng=doc.data().Name_Eng;
+        //         alcohol.Type=doc.data().Type;
+        //         alcohol.ImageUrl=doc.data().ImageUrl;
+        //         alcohol.Desc_Heb=doc.data().Desc_Heb;
+        //         alcohol.Desc_Eng=doc.data().Desc_Eng;
+        //         alcohol.CPrice=doc.data().CPrice;
+        //         alcohol.inStock=doc.data().inStock;
+        //         alcohol.onMenu=doc.data().onMenu;
+        //         alcohol.chaser=doc.data().chaser;
+        //         alcohol.chaserPrice=doc.data().chaserPrice;
+        //         alcoholArr.push(alcohol)
+        //         if (doc.data().bestOf === true) {
+        //             bestOfArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Whiskey') {
+        //             whiskeyArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type==='American'){
+        //             AmericanArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Smoked') {
+        //             smokedArr.push(alcohol)
+        //         }                    
+        //         else if (alcohol.Type === 'Vodka') {
+        //             vodkaArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Coniac') {
+        //             coniacArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Rum') {
+        //             rumArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Gin') {
+        //             ginArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Tequila') {
+        //             taquillaArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Apperativo') {
+        //             apperativoArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Digestif') {
+        //             dejistifArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Anis') {
+        //             anisArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Cocktail') {
+        //             cocktailsArr.push(alcohol)
+        //         }
+        //         else if (alcohol.Type === 'Beer') {
+        //             beerArr.push(alcohol)
+        //         }
+        //         return alcohol;
+        //     })
+        //     )
+        //     setIsLoading(false);
+        //     setAlcoholArr(alcoholArr);
+        //     setWhiskeyArr(whiskeyArr);
+        //     setAmericanArr(AmericanArr);
+        //     setSmokedArr(smokedArr);
+        //     setVodkaArr(vodkaArr);
+        //     setConiacArr(coniacArr);
+        //     setRumArr(rumArr);
+        //     setGinArr(ginArr);
+        //     setTaquillaArr(taquillaArr);
+        //     setApperativoArr(apperativoArr);
+        //     setAnisArr(anisArr);
+        //     setBeerArr(beerArr);
+        //     setCocktailsArr(cocktailsArr);
+        //     setDigestifArr(dejistifArr);
+        //     setBestOFALcArr(bestOfArr);
+        // }
+        // )
+
+        // for onetime update
+        const alcDocs= getDocs(alcoholQuery).then((querySnapshot) => {
             let alcoholArr=[];
             let whiskeyArr=[];
             let AmericanArr=[];
@@ -244,11 +387,13 @@ export function UserProvider({ children }) {
             let ginArr= [];
             let taquillaArr=[];
             let apperativoArr=[];
+            let dejistifArr=[];
             let anisArr=[];
             let cocktailsArr=[];
             let beerArr=[];
+            let bestOfArr=[];
 
-            setAlcoholArr(snapshot.docs.map((doc) => {
+            querySnapshot.forEach((doc) => {
                 let alcohol={};
                 alcohol.IdAlc=doc.data().IdAlc;
                 alcohol.ImageUrl=doc.data().ImageUrl;
@@ -264,46 +409,50 @@ export function UserProvider({ children }) {
                 alcohol.chaser=doc.data().chaser;
                 alcohol.chaserPrice=doc.data().chaserPrice;
                 alcoholArr.push(alcohol)
-                if (alcohol.Type === 'Whiskey') {
-                    whiskeyArr.push(alcohol)
-                }
-                if (alcohol.Type==='American'){
-                    AmericanArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Smoked') {
-                    smokedArr.push(alcohol)
-                }                    
-                if (alcohol.Type === 'Vodka') {
-                    vodkaArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Coniac') {
-                    coniacArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Rum') {
-                    rumArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Gin') {
-                    ginArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Tequila') {
-                    taquillaArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Apperativo') {
-                    apperativoArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Anis') {
-                    anisArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Cocktail') {
-                    cocktailsArr.push(alcohol)
-                }
-                if (alcohol.Type === 'Beer') {
-                    beerArr.push(alcohol)
-                }
-                return alcohol;
-            })
-            )
-            setIsLoading(false);
+                if (doc.data().bestOf === true) {
+                                bestOfArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Whiskey') {
+                                whiskeyArr.push(alcohol)
+                            }
+                            else if (alcohol.Type==='American'){
+                                AmericanArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Smoked') {
+                                smokedArr.push(alcohol)
+                            }                    
+                            else if (alcohol.Type === 'Vodka') {
+                                vodkaArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Coniac') {
+                                coniacArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Rum') {
+                                rumArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Gin') {
+                                ginArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Tequila') {
+                                taquillaArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Apperativo') {
+                                apperativoArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Digestif') {
+                                dejistifArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Anis') {
+                                anisArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Cocktail') {
+                                cocktailsArr.push(alcohol)
+                            }
+                            else if (alcohol.Type === 'Beer') {
+                                beerArr.push(alcohol)
+                            }
+            });
+            console.log('alcoholArraaa',alcoholArr);
             setAlcoholArr(alcoholArr);
             setWhiskeyArr(whiskeyArr);
             setAmericanArr(AmericanArr);
@@ -317,9 +466,13 @@ export function UserProvider({ children }) {
             setAnisArr(anisArr);
             setBeerArr(beerArr);
             setCocktailsArr(cocktailsArr);
+            setDigestifArr(dejistifArr);
+            setBestOFALcArr(bestOfArr);
+            return alcoholArr;
+        });
 
-        }
-        )
+        // setAlcoholArr(alc);
+
 
         const bevQuery= query(collection(db,'Beverages'),where('onMenu','==','Y'));
         const getBeverages= onSnapshot(bevQuery, (snapshot) => {
@@ -387,7 +540,7 @@ export function UserProvider({ children }) {
             console.log('cleanup')
             getNames()
             getDishes();
-            getAlcohol();
+            // getAlcohol();
             getBeverages();
             getCigars();
         };
@@ -421,21 +574,6 @@ export function UserProvider({ children }) {
         })
     }
 
-
-    useEffect(() => {
-        console.log("dishesArr",dishesArr)
-    }, [dishesArr])
-
-    useEffect(() => {
-        console.log('wineArr', winesArr);
-    }, [winesArr])
-
-
-    useEffect(() => {
-        console.log("alc",alcoholArr)
-    }, [alcoholArr])
-
-
     const value = {
         redWines,
         whiteWines,
@@ -455,7 +593,8 @@ export function UserProvider({ children }) {
         addDocToFiresore,
         navBarVisable, setNavBarVisable,
         dishesArr, easyArr, nextToWineArr, dessertsArr, forTheHungryArr,
-        alcoholArr, whiskeyArr,americanArr,smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr, cocktailsArr,beerArr,beveragesArr,hotDrinkArr,coldDrinkArr,
+        alcoholArr, whiskeyArr,americanArr,smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr,digestifArr, anisArr, cocktailsArr,beerArr, bestOFALcArr,
+        beveragesArr,hotDrinkArr,coldDrinkArr,
         cigars
     };
 

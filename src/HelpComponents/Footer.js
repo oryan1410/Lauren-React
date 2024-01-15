@@ -45,6 +45,7 @@ const {language} = useUserContext();
 
     // </div>
     //         </div>
+    <footer>
     <div className='footer'>
       <div className='footerTop'>
         {/* <div className='leftTop'>
@@ -66,5 +67,6 @@ const {language} = useUserContext();
         <span className='footerCopyrightText'>All rights reseved to Oryan Barnea, Tay Levi, Lauren wine bar</span>
       </div>
     </div>
+    </footer>
   );
 }

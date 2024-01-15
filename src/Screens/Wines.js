@@ -16,11 +16,13 @@ import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useLocation } from 'react-router-dom';
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Wines = () => {
 
     const location = useLocation();
 
+    const { t } = useTranslation();
     const [expanded, setExpanded] = useState(location.state?.expanded || false);
     const [whiteExpanded, setWhiteExpanded] = useState(location.state?.whiteExpanded || false);
     const [roseExpanded, setRoseExpanded] = useState(location.state?.roseExpanded || false);
@@ -362,53 +364,75 @@ const Wines = () => {
       }));
 
     const handleExpandClick = (type) => {
-        if (type === 'Red') {
-            console.log('red');
-            setExpanded(!expanded);
-            setRedClicked(true);
-            setWhiteClicked(false);
-            setRoseClicked(false);
-            setBubbleClicked(false);
-            setBestOfClicked(false);
-            setResetClicked(false);
-        }
-        else if (type === 'White') {
-            setWhiteExpanded(!whiteExpanded);
-            setWhiteClicked(true);
-            setRedClicked(false);
-            setRoseClicked(false);
-            setBubbleClicked(false);
-            setBestOfClicked(false);
-            setResetClicked(false);
 
+        const typeOfExpands = {
+            Red: {expanded: expanded, setExpanded: setExpanded, clicked: redClicked, setClicked: setRedClicked},
+            White: {expanded: whiteExpanded, setExpanded: setWhiteExpanded, clicked: whiteClicked, setClicked: setWhiteClicked},
+            Rose: {expanded: roseExpanded, setExpanded: setRoseExpanded, clicked: roseClicked, setClicked: setRoseClicked},
+            Bubble: {expanded: bubbleExpanded, setExpanded: setBubbleExpanded, clicked: bubbleClicked, setClicked: setBubbleClicked},
+            BestOf: {expanded: bestOfExpanded, setExpanded: setBestOfExpanded, clicked: bestOfClicked, setClicked: setBestOfClicked},
         }
-        else if (type === 'Rose') {
-            setRoseExpanded(!roseExpanded);
-            setRoseClicked(true);
-            setRedClicked(false);
-            setWhiteClicked(false);
-            setBubbleClicked(false);
-            setBestOfClicked(false);
-            setResetClicked(false);
-        }
-        else if (type === 'Bubble') {
-            setBubbleExpanded(!bubbleExpanded);
-            setBubbleClicked(true);
-            setRedClicked(false);
-            setWhiteClicked(false);
-            setRoseClicked(false);
-            setBestOfClicked(false);
-            setResetClicked(false);
-        }
-        else if (type === 'BestOf') {
-            setBestOfExpanded(!bestOfExpanded);
-            setBestOfClicked(true);
-            setRedClicked(false);
-            setWhiteClicked(false);
-            setRoseClicked(false);
-            setBubbleClicked(false);
-            setResetClicked(false);
-        }
+
+        Object.entries(typeOfExpands).forEach(([key, value]) => {
+            if (key===type) {
+                value.setExpanded(!value.expanded);
+                value.setClicked(true);
+                setTimeout(() => {
+                    value.setClicked(false);
+                }, 2000);
+            }
+            else {
+                value.setClicked(false);
+            }
+        });
+
+        // if (type === 'Red') {
+        //     console.log('red');
+        //     setExpanded(!expanded);
+        //     // setRedClicked(true);
+        //     // setWhiteClicked(false);
+        //     // setRoseClicked(false);
+        //     // setBubbleClicked(false);
+        //     // setBestOfClicked(false);
+        //     // setResetClicked(false);
+        // }
+        // else if (type === 'White') {
+        //     setWhiteExpanded(!whiteExpanded);
+        //     // setWhiteClicked(true);
+        //     // setRedClicked(false);
+        //     // setRoseClicked(false);
+        //     // setBubbleClicked(false);
+        //     // setBestOfClicked(false);
+        //     // setResetClicked(false);
+
+        // }
+        // else if (type === 'Rose') {
+        //     setRoseExpanded(!roseExpanded);
+        //     // setRoseClicked(true);
+        //     // setRedClicked(false);
+        //     // setWhiteClicked(false);
+        //     // setBubbleClicked(false);
+        //     // setBestOfClicked(false);
+        //     // setResetClicked(false);
+        // }
+        // else if (type === 'Bubble') {
+        //     setBubbleExpanded(!bubbleExpanded);
+        // //     setBubbleClicked(true);
+        // //     setRedClicked(false);
+        // //     setWhiteClicked(false);
+        // //     setRoseClicked(false);
+        // //     setBestOfClicked(false);
+        // //     setResetClicked(false);
+        // }
+        // else if (type === 'BestOf') {
+        //     setBestOfExpanded(!bestOfExpanded);
+        //     // setBestOfClicked(true);
+        //     // setRedClicked(false);
+        //     // setWhiteClicked(false);
+        //     // setRoseClicked(false);
+        //     // setBubbleClicked(false);
+        //     // setResetClicked(false);
+        // }
     };
 
 
@@ -472,8 +496,12 @@ const Wines = () => {
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
+                <header role="header">
+                <h1 className='homeTitle' aria-label='Wines'>{t('Wines')}</h1>
+                </header>               
                 <SearchAppBar label={'wines'} searchFunc={setSearch} />
                 {/* <DropDown /> */}
+                <main role='main'>
                 {searchQuery ==='' && <Grid container className='dishgridView'>
                     {dropArrays}
                 </Grid>}
@@ -488,7 +516,9 @@ const Wines = () => {
                       } }}>{language==='heb'?'איפוס':'Reset'}</Button>
                 </div>}
                 
-                {searchQuery === '' ? <div>
+                {searchQuery === '' ? 
+           
+                <div>
                     <ExpandMore
                     header='יינות אדומים || Red wines'
                     onClick={() => handleExpandClick('Red')}
@@ -564,13 +594,14 @@ const Wines = () => {
                     <Collapse ref={expandedDivRef4} in={bestOfExpanded} timeout="auto" unmountOnExit>
                         {bestArr}
                     </Collapse>
-                     </div> : displayWines2
+                     </div>
+                      : displayWines2
                 }
                 {/* {displayWines2} */}
                 {noneFound && <h1>None Found</h1>}
                 {testDisplay}
+                </main>
             </div>
-            
         </Container>
     );
 };

@@ -42,6 +42,7 @@ export default function AlcoholCard(props) {
                         </>}
                 </div> */}
                 <div className='priceDiv'>
+                    {props.alcohol.CPrice!=='0' &&
                     <div className='bottlePriceDiv'>
                         <h2 className='BottlePrice'>
                             <LocalDrinkIcon className='cardLogos' style={{ margin: '0px 5px' }} />
@@ -50,6 +51,7 @@ export default function AlcoholCard(props) {
                         ₪{props.alcohol.CPrice}
                         </h2>
                     </div>
+}
                     {props.alcohol.chaser === "Yes" && <div className='cupPriceDiv'><span className='BottlePrice'>
                         <WineBarIcon className='cardLogos' /></span>
                         <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>{props.alcohol.chaserPrice}₪</span></div>}

@@ -114,12 +114,12 @@ export default function RecipeReviewCard2(props) {
                 </div>
                 <div className='priceDiv'>
                     <div className='bottlePriceDiv'>
-                        <h3 className='BottlePrice'>
+                        <span className='BottlePrice'>
                             <LiquorIcon className='cardLogos' alt='bottle icon' style={{ margin: '0px 5px' }} />
-                        </h3>
-                        <h3 className='bottlePriceText' aria-label={`Bottle price ${props.wine.BottlePrice}`}>
+                        </span>
+                        <span className='bottlePriceText' aria-label={`Bottle price ${props.wine.BottlePrice}`}>
                             {props.wine.BottlePrice}
-                        </h3>
+                        </span>
                     </div>
                     {props.wine.Cup_Y_N_ === 'Y' && <div className='cupPriceDiv'><span className='BottlePrice'>
                         <WineBarIcon className='cardLogos' alt='cup Icon' /></span>

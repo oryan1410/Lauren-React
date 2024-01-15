@@ -38,6 +38,7 @@ const Favorites = () => {
         let whiteArr = []
         let roseArr = []
         let bubbleArr = []
+        if (favorites && favorites.length > 0) {
         winesArr.forEach(wine => {
             if (favorites.includes(wine.Id)) {
                 if (wine.Type_Ro_Re_Wh_Bu_ === 'Re') {
@@ -63,6 +64,7 @@ const Favorites = () => {
         setRoseWines(roseArr);
         setBubbleWines(bubbleArr);
     }
+}
 
 
 

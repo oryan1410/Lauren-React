@@ -48,3 +48,16 @@ border: var(--main-card-border);    /* Adjust the border radius as needed */
   font-weight: 300;
   text-transform: lowercase;
 }
+
+.homeTitle{
+  display: flex;
+  font-size: 1.35rem;
+  font-weight: 600;
+  text-align: center;
+  color: var(--main-font-color);
+  justify-content: center;
+  align-items: center;
+  text-transform: lowercase;  
+  text-decoration: underline;
+  margin-block-end: 0px;
+}

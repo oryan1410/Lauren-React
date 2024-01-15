@@ -20,7 +20,7 @@ export default function AboutUs(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-        <p>About Us</p></div>
+        <h1 className='homeTitle'>About Us</h1></div>
     );
 };
 

@@ -149,69 +149,69 @@ const WinePage = ({ match }) => {
                 <div className='winePage'>
                     <GoBackButton navigateBack={() => { window.history.back() }} />
                     <div className='winePageTitleDiv'>
-                        <h1 className='winePageTitleText engPageTitle'>{propsData.Name_Eng}</h1>
-                        <h2 className='winePageTitleText hebPageTitle'>{propsData.Name_Heb}</h2>
+                        <header>
+                        <h1 className='winePageTitleText engPageTitle' aria-label={propsData.Name_Eng}>{propsData.Name_Eng}</h1>
+                        <h2 className='winePageTitleText hebPageTitle' aria-label={propsData.Name_Heb}>{propsData.Name_Heb}</h2>
+                        </header>
                     </div>
                     <div className='DishPageImageDiv'>
                         <img className='DishPageImage' src={propsData.ImageUrl} alt={propsData.Name_Eng} />
                         <div className='wineInfoPrice bottlePrice'>
                             <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                            <span>₪{propsData.BottlePrice}</span>
+                            <span aria-label={`Bottle price ${propsData.BottlePrice} shekels`}>₪{propsData.BottlePrice}</span>
                         </div>
                         {propsData.Cup_Y_N_ === 'Y' ?
                             <div className='wineInfoPrice cupPrice'>
                                 <WineBarIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                                <span>₪{propsData.CupPrice}</span>
+                                <span aria-label={`Cup price ${propsData.CupPrice} shekels`}>₪{propsData.CupPrice}</span>
                             </div> : null
                         }
                     </div>
                     {/* <div className='languageIconWinePageDiv'>
-                        <CircleFlag
-                            countryCode={'il'}
-                            className='langIcon'
-                            alt={'Hebrew'}
-                            onClick={() => setUserLanguage('heb')}
-                            style={{
-                                boxShadow: language === 'heb' ? '0px 0px 30px #917F6B' : 'none',
-                            }}
-                        />
-                        <CircleFlag
-                            countryCode={'us'}
-                            alt={'English'}
-                            className='langIcon'
-                            onClick={() => setUserLanguage('eng')}
-                            style={{
-                                boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
-                            }}
-                        />
+                            <CircleFlag
+                                    countryCode={'il'}
+                                    className='langIcon'
+                                    alt={'Hebrew'}
+                                    onClick={() => setUserLanguage('heb')}
+                                    style={{
+                                            boxShadow: language === 'heb' ? '0px 0px 30px #917F6B' : 'none',
+                                    }}
+                            />
+                            <CircleFlag
+                                    countryCode={'us'}
+                                    alt={'English'}
+                                    className='langIcon'
+                                    onClick={() => setUserLanguage('eng')}
+                                    style={{
+                                            boxShadow: language === 'eng' ? '0px 0px 30px #917F6B' : 'none',
+                                    }}
+                            />
                     </div> */}
+                   <main>
                     <div className='winePageInfo'>
-                        <span className='winePageTitleText wineInfoTitle'>{t("WineInfo")}</span>
+                        <h2 className='winePageTitleText wineInfoTitle' aria-label={t("WineInfo")}>{t("WineInfo")}</h2>
                         <div className='wineInfo'>
-                            <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `}>{language === 'heb' ? propsData.Country_Heb : propsData.Country_Eng} - {language === 'heb' ? propsData.WineryName_Heb : propsData.WineryName_Eng}</p>
+                            <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `} aria-label={language === 'heb' ?propsData.Country_Eng+'.' : propsData.Country_Eng+'.'}>{language === 'heb' ? propsData.Country_Heb : propsData.Country_Eng} | {language === 'heb' ? propsData.WineryName_Heb : propsData.WineryName_Eng}</p>
                         </div>
                         <div className='wineInfo'>
-                            <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `}>{language === 'heb' ? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)} - {language === 'heb' ? getDrynessHeb(propsData.Dry_Y_N_) : getDryness(propsData.Dry_Y_N_)}</p>
+                            <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `} aria-label={language === 'heb' ? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)}>{language === 'heb' ? getTypesHeb(propsData.Type_Ro_Re_Wh_Bu_) : getTypes(propsData.Type_Ro_Re_Wh_Bu_)} | {language === 'heb' ? getDrynessHeb(propsData.Dry_Y_N_) : getDryness(propsData.Dry_Y_N_)}</p>
                         </div>
                         <div className='wineInfo'>
-                        <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `}>
-
-                            {language==='heb'? getGraps(propsData.Grape_Heb): getGraps(propsData.Grape_Eng)}
-                        </p>
+                            <p className={`wineInfoText ${language === 'heb' ? 'hebWineInfo' : 'engWineInfo'} `} aria-label={language === 'heb' ? getGraps(propsData.Grape_Heb)+'.' : getGraps(propsData.Grape_Eng)+'.'}>{language === 'heb' ? getGraps(propsData.Grape_Heb) : getGraps(propsData.Grape_Eng)}</p>
                         </div>
                         <div className='wineInfo pricetext'>
                             <LiquorIcon className='cardLogos' style={{ margin: '0px 5px' }} />
-                            <span>
+                            <span aria-label={`Bottle price ${propsData.BottlePrice} shekels..`}>
                                 ₪{propsData.BottlePrice}
                             </span>
                         </div>
                     </div>
                     <div className='descDiv'>
-
                         <div className={`descText ${language === 'heb' ? 'hebDesc' : 'engDesc'}`} >
-                            <p >{language === 'heb' ? propsData.Desc_Heb : propsData.Desc_Eng}</p>
+                            <p aria-label={`Description: ${language === 'heb' ? propsData.Desc_Heb : propsData.Desc_Eng}`}>{language === 'heb' ? propsData.Desc_Heb : propsData.Desc_Eng}</p>
                         </div>
                     </div>
+                    </main>
                 </div>
             </div>
         </Container>

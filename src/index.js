@@ -6,23 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, } from 'react-router-dom';
 import { UserProvider } from './UserContext';
 import { I18nextProvider } from 'react-i18next';
-
-
 import './i18n';
 
+// if (process.env.NODE_ENV !== 'production') {
+//   const axe = require('@axe-core/react');
+//   axe(React, ReactDOM, 1000);
+// }
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <BrowserRouter>
-<I18nextProvider>
-    <UserProvider>
-    <App />
-    </UserProvider>
-    </I18nextProvider>
+        <I18nextProvider>
+            <UserProvider>
+                <App />
+            </UserProvider>
+        </I18nextProvider>
     </BrowserRouter>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();

@@ -11,7 +11,6 @@ import Wines from './Screens/Wines';
 import AlcoholPage from './Screens/AlcoholMain';
 import Dishes from './Screens/Dishes';
 import WinePage from './Screens/WinePage';
-import DishesPage from './Screens/DishesPage';
 import AboutUs from './Screens/AboutUs';
 import Events from './Screens/Events';
 import Footer from './HelpComponents/Footer';
@@ -19,7 +18,6 @@ import LoginPage from './Screens/LoginPage';
 import Favorites from './Screens/Favorites';
 import FadeIn from './HelpComponents/FaidIn';
 import NotAllowed from './Screens/NotAllowed';
-import Beers from './Screens/Beers';
 import Cocktails from './Screens/Cocktail';
 import Cigars from './Screens/Cigars';
 // import Beverages from './Screens/Beverages';
@@ -38,6 +36,24 @@ function App() {
   // goToHome = () => {
   //   history.push('/home');
   // }
+
+  useEffect(() => {
+    const handleKeyDown = () => {
+      document.body.classList.add('using-keyboard');
+    };
+
+    const handleMouseDown = () => {
+      document.body.classList.remove('using-keyboard');
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('mousedown', handleMouseDown);
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('mousedown', handleMouseDown);
+    };
+  }, []);
 
   const [fontSize, setFontSize] = useState(16);
 
@@ -205,7 +221,7 @@ function App() {
                         <CircleFlag
                             countryCode={'il'}
                             className='langIcon'
-                            alt={'Hebrew'}
+                            alt={'language changed to english. press to change to hebrew'}
                             onClick={() => setUserLanguage('heb')}
                             style={{
                                 boxShadow: language === 'heb' ? '0px 0px 20px #000' : 'none',
@@ -214,7 +230,7 @@ function App() {
                         />:
                         <CircleFlag
                             countryCode={'us'}
-                            alt={'English'}
+                            alt={'language changed to hebrew. press to change to english'}
                             className='langIcon'
                             onClick={() => setUserLanguage('en')}
                             style={{
@@ -277,7 +293,7 @@ function App() {
         </Navbar> 
         }
         <div style={{ height: '90px' }}></div>
-<AccessibilityTab 
+{/* <AccessibilityTab 
 highContrast={highContrast} 
 increaseFontSize={increaseFontSize} 
 decreaseFontSize={decreaseFontSize} 
@@ -285,7 +301,7 @@ resetAccessibility={resetAccessibility}
 brightMode={brightMode}
 readableFonts={readableFonts}
 markLinks={markLinks}
-/>
+/> */}
         
           <Routes>
             <Route path="/" element={<FadeIn setIsVisible={() => { setIsVisible(true) }} /> } />
@@ -303,7 +319,6 @@ markLinks={markLinks}
             <Route path="/contact" element={<ContactUs />} />
             
             <Route path="/winePage/:id" element={<WinePage />} />
-            <Route path="/dishPage/:id" element={<DishesPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/not-allowed" element={<NotAllowed />} />

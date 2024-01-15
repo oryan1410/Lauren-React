@@ -24,30 +24,27 @@ export default function ContactUs(props) {
 
 
     return (
-        <Container>
-            <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
+             <Container>
+            <div className={`home ${isVisible ? 'visible' : 'notVisible'}`}>
                 <div className='contactUs'>
-                    <span className='ContactTitle'>Contact Us || צור קשר</span>
-                    <span className={`ContactText ${language === 'heb' && 'hebContactText'}`}>טלפון: </span>
-                    <span className={`ContactText ${language === 'heb' && 'hebContactText'}`}>מייל: </span>
-                    <span className={`ContactText ${language === 'heb' && 'hebContactText'}`}>פייסבוק: </span>
-                    <span className={`ContactText ${language === 'heb' && 'hebContactText'}`}>אינסטגרם:<a className='contactLink' href='https://www.instagram.com/lauren_winebar/'> Go To Instagram </a></span>
-
+                    <h2 className='ContactTitle'>Contact Us || צור קשר</h2>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>טלפון: </p>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>מייל: </p>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>פייסבוק: </p>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>אינסטגרם:<a className='contactLink' href='https://www.instagram.com/lauren_winebar/'> Go To Instagram </a></p>
 
                     <div className='wirkingHours'>
-                        <span className='ContactSubTitle'>Working Hours || שעות פעילות</span>
-                        <span className='ContactText'>{t('weekDays')}: 18:00-2:00</span>
-                        <span className='ContactText'>{t('weekEnds')}: 9:00-2:00</span>
-
+                        <h3 className='ContactSubTitle'>Working Hours || שעות פעילות</h3>
+                        <p className='ContactText'>{t('weekDays')}: 18:00-2:00</p>
+                        <p className='ContactText'>{t('weekEnds')}: 12:00-2:00</p>
                     </div>
-                    <span className={`ContactText ${language === 'heb' && 'hebContactText'}`}>{t('Adress')}</span>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>{t('Adress')}</p>
 
                     <div className='navigateButton'>
-                        <a className='contactLink' target='_blank' href='https://ul.waze.com/ul?preview_venue_id=22872388.228527268.3889&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'>
+                        <a aria-label='Navigate to Us using Waze' className='contactLink' target='_blank' href='https://ul.waze.com/ul?preview_venue_id=22872388.228527268.3889&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'>
                             {t('NavigateToUs')}
                         </a>
                     </div>
-
                 </div>
             </div>
         </Container>

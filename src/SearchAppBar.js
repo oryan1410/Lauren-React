@@ -31,6 +31,7 @@ export default function SearchAppBar(props) {
 
 
   return (
+    <search>
     <div className='searchInput' aria-label={`Search ${props.label}`}>
       <TextField
         id="search-bar"
@@ -66,5 +67,6 @@ export default function SearchAppBar(props) {
            
     }
     </div>
+    </search>
   );
 }

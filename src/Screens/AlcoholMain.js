@@ -377,6 +377,7 @@ import Collapse from '@mui/material/Collapse';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import BeerCard from '../HelpComponents/BeerCard';
+import { useTranslation } from 'react-i18next';
 
 
 
@@ -394,12 +395,15 @@ const AlcoholMain = () => {
     const [anisExpanded, setAnisExpanded] = useState(false);
     const [vodkaExpanded, setVodkaExpanded] = useState(false);
     const [beerExpanded, setBeerExpanded] = useState(false);
-    const { alcoholArr, beerArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, anisArr } = useUserContext();
+    const [digestifExpanded, setDigestifExpanded] = useState(false);
+    const [bestExpanded, setBestExpanded] = useState(false);
+    const { alcoholArr, beerArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, digestifArr, anisArr,bestOFALcArr} = useUserContext();
     const [isVisible, setIsVisable] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [allDishes, setAllDishes] = useState([]);
     const [noneFound, setNoneFound] = useState(false);
     const [displayDishes, setDisplayDishes] = useState([]);
+    const { t } = useTranslation();
 
 
     //for focus- accessability
@@ -416,6 +420,8 @@ const AlcoholMain = () => {
     const [anisClicked, setAnisClicked] = useState(false);
     const [vodkaClicked, setVodkaClicked] = useState(false);
     const [singleClicked, setSingleClicked] = useState(false);
+    const [digestifClicked, setDigestifClicked] = useState(false);
+    const [bestOfClicked, setBestOfClicked] = useState(false);
 
 
 
@@ -453,25 +459,32 @@ const AlcoholMain = () => {
     }));
 
     const handleExpandClick = (type) => {
+        console.log('type', type);
         const typeToStateMap = {
-            Red: { state: expanded, setState: setExpanded, setClicked:setWhiskeyClicked },
-            White: { state: americanExpanded, setState: setAmericanExpanded, setClicked:setAmericanClicked },
-            Rose: { state: smokedExpanded, setState: setSmokedExpanded, setClicked:setSmokedClicked },
-            Bubble: { state: coniacExpanded, setState: setConiacExpanded, setClicked:setConiacClicked },
-            Rum: { state: rumExpanded, setState: setRumExpanded, setClicked:setRumClicked },
-            Gin: { state: ginExpanded, setState: setGinExpanded, setClicked:setGinClicked },
-            Tequila: { state: taqilaExpanded, setState: setTaquilaExpanded, setClicked:setTaquilaClicked },
-            Apperativo: { state: apperetivoExpanded, setState: setApperetivoExpanded, setClicked:setApperetivoClicked },
-            Anis: { state: anisExpanded, setState: setAnisExpanded, setClicked:setAnisClicked },
-            Vodka: { state: vodkaExpanded, setState: setVodkaExpanded, setClicked:setVodkaClicked },
-            Beer: { state: beerExpanded, setState: setBeerExpanded, setClicked:setBeerClicked },
-            Single: { state: singleExpanded, setState: setSingleExpanded , setClicked:setSingleClicked},
+            Red: { state: expanded, setState: setExpanded, setClicked: setWhiskeyClicked },
+            White: { state: americanExpanded, setState: setAmericanExpanded, setClicked: setAmericanClicked },
+            Rose: { state: smokedExpanded, setState: setSmokedExpanded, setClicked: setSmokedClicked },
+            Bubble: { state: coniacExpanded, setState: setConiacExpanded, setClicked: setConiacClicked },
+            Rum: { state: rumExpanded, setState: setRumExpanded, setClicked: setRumClicked },
+            Gin: { state: ginExpanded, setState: setGinExpanded, setClicked: setGinClicked },
+            Tequila: { state: taqilaExpanded, setState: setTaquilaExpanded, setClicked: setTaquilaClicked },
+            Apperativo: { state: apperetivoExpanded, setState: setApperetivoExpanded, setClicked: setApperetivoClicked },
+            Anis: { state: anisExpanded, setState: setAnisExpanded, setClicked: setAnisClicked },
+            Vodka: { state: vodkaExpanded, setState: setVodkaExpanded, setClicked: setVodkaClicked },
+            Beer: { state: beerExpanded, setState: setBeerExpanded, setClicked: setBeerClicked },
+            Single: { state: singleExpanded, setState: setSingleExpanded, setClicked: setSingleClicked },
+            Digestif: { state: digestifExpanded, setState: setDigestifExpanded, setClicked: setDigestifClicked },
+            Best: { state: bestExpanded, setState: setBestExpanded, setClicked: setBestOfClicked },
+            
         };
         Object.entries(typeToStateMap).forEach(([key, value]) => {
             if (key === type) {
                 value.setState(!value.state);
                 value.setClicked(true);
-            }
+                setTimeout(() => {
+                    value.setClicked(false);
+                }, 2000); 
+           }
             else {
                 value.setClicked(false);
             }
@@ -534,33 +547,57 @@ const AlcoholMain = () => {
         setSearchQuery(e);
     }
 
+    const handleSkipLinkClick = (e) => {
+        e.preventDefault();
+        const element = document.getElementById(e.target.href.split('#')[1]);
+        handleExpandClick(element.id);
+    }
+
 
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
+                {/* <header>
+                    <div className='SkipLinks'>
+                    <h1 className='homeTitle'>{t('Alcohol')}</h1>
+                    <a href='#Red' onClick={handleSkipLinkClick} className='homeLink'>{t('Whiskey')}</a>
+                    <a href='#Bubble' onClick={handleSkipLinkClick} className='homeLink'>{t('Coniac')}</a>
+                    <a href='#Rum' onClick={handleSkipLinkClick} className='homeLink'>{t('Rum')}</a>
+                    <a href='#Gin' onClick={handleSkipLinkClick} className='homeLink'>{t('Gin')}</a>
+                    <a href='#Tequila' onClick={handleSkipLinkClick} className='homeLink'>{t('Tequila')}</a>
+                    <a href='#Apperativo' onClick={handleSkipLinkClick} className='homeLink'>{t('Apperativo')}</a>
+                    <a href='#Digestif' onClick={handleSkipLinkClick} className='homeLink'>{t('Digestif')}</a>
+                    <a href='#Anis' onClick={handleSkipLinkClick} className='homeLink'>{t('Anis')}</a>
+                    <a href='#Vodka' onClick={handleSkipLinkClick} className='homeLink'>{t('Vodka')}</a>
+                    <a href='#Beer' onClick={handleSkipLinkClick} className='homeLink'>{t('Beer')}</a>
+                    </div>
+                </header> */}
                 <SearchAppBar label='alcohol' searchFunc={setSearch} />
                 {searchQuery === '' ? <div>
-
-                    <ExpandMore
-                        expand={beerExpanded}
-                        header={'בירה||Beer'}
-                        aria-expanded={beerExpanded}
-                        aria-label="open beer"
-                        onClick={() => handleExpandClick('Beer')}
-                        className='wineCategory'
-                        key='beer'
-                        autoFocus={beerClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={beerExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {beerArr.map((beer) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <BeerCard key={beer.IdAlc} alcohol={beer} title={beer.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                    <aside id='Beer'>
+                        <ExpandMore
+                            expand={beerExpanded}
+                            header={'בירה||Beer'}
+                            aria-expanded={beerExpanded}
+                            aria-label="open beer"
+                            onClick={() => handleExpandClick('Beer')}
+                            className='wineCategory'
+                            key='Beer'
+                            autoFocus={beerClicked}
+                            tabIndex={beerClicked ? 0 : -1}
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse in={beerExpanded} timeout="auto" unmountOnExit>
+                            <div className='dishgridView'>
+                                {beerArr.map((beer) => {
+                                    // return <TempAlcCard alcohol={whiskey}/>
+                                    return <BeerCard key={beer.IdAlc} alcohol={beer} title={beer.Name_Eng} />
+                                }
+                                )}                    </div>
+                        </Collapse>
+                    </aside>
+                        <aside id='Red' >
                     <ExpandMore
                         expand={expanded}
                         header={'וויסקי||Whiskey'}
@@ -570,7 +607,8 @@ const AlcoholMain = () => {
                         className='wineCategory'
                         key='whiskey'
                         autoFocus={whiskeyClicked}
-
+                        id='Whiskey'
+                        tabIndex={whiskeyClicked ? 0 : -1}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -581,7 +619,7 @@ const AlcoholMain = () => {
                             return <AlcoholCard key={whiskey.IdAlc} alcohol={whiskey} title={whiskey.Name_Eng} />
                         }
                         )}  */}
-
+<aside id='Single'>
                             <ExpandMore
                                 expand={singleExpanded}
                                 header={'סינגל מאלט||Single Malt'}
@@ -589,7 +627,7 @@ const AlcoholMain = () => {
                                 aria-label="open single malt"
                                 onClick={() => handleExpandClick('Single')}
                                 className='wineSubCategory'
-                                key='single'
+                                key='Single'
                                 autoFocus={singleClicked}
                             >
                                 <ExpandMoreIcon />
@@ -603,6 +641,8 @@ const AlcoholMain = () => {
                                     )}
                                 </div>
                             </Collapse>
+                            </aside>
+                            <aside id='American'>
                             <ExpandMore
                                 expand={americanExpanded}
                                 header={'אמריקאיים||American'}
@@ -610,7 +650,7 @@ const AlcoholMain = () => {
                                 aria-label="open american whiskey"
                                 onClick={() => handleExpandClick('White')}
                                 className='wineSubCategory'
-                                key='american'
+                                key='American'
                                 autoFocus={americanClicked}
                             >
                                 <ExpandMoreIcon />
@@ -623,6 +663,8 @@ const AlcoholMain = () => {
                                     }
                                     )}                    </div>
                             </Collapse>
+                            </aside>
+                            <aside id='Smoked'>
                             <ExpandMore
                                 expand={smokedExpanded}
                                 header={'מעושנים||Smoked'}
@@ -630,7 +672,7 @@ const AlcoholMain = () => {
                                 aria-label="open smoked whiskey"
                                 onClick={() => handleExpandClick('Rose')}
                                 className='wineSubCategory'
-                                key='smoked'
+                                key='Smoked'
                                 autoFocus={smokedClicked}
                             >
                                 <ExpandMoreIcon />
@@ -643,8 +685,11 @@ const AlcoholMain = () => {
                                     }
                                     )}                    </div>
                             </Collapse>
+                            </aside>
                         </div>
                     </Collapse>
+                    </aside>
+                    <aside id='Bubble'>
                     <ExpandMore
                         expand={coniacExpanded}
                         header={'קוניאק||Coniac'}
@@ -654,6 +699,7 @@ const AlcoholMain = () => {
                         className='wineCategory'
                         key='coniac'
                         autoFocus={coniacClicked}
+                        id='Coniac'
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -665,6 +711,8 @@ const AlcoholMain = () => {
                             }
                             )}                    </div>
                     </Collapse>
+                    </aside>
+                    <aside id='Rum'>
                     <ExpandMore
                         expand={rumExpanded}
                         header={'רום||Rum'}
@@ -672,7 +720,7 @@ const AlcoholMain = () => {
                         aria-label="open rum"
                         onClick={() => handleExpandClick('Rum')}
                         className='wineCategory'
-                        key='rum'
+                        key='Rum'
                         autoFocus={rumClicked}
                     >
                         <ExpandMoreIcon />
@@ -685,6 +733,8 @@ const AlcoholMain = () => {
                             }
                             )}                    </div>
                     </Collapse>
+                    </aside>
+                    <aside id='Gin'>
                     <ExpandMore
                         expand={ginExpanded}
                         header={`ג'ין||Gin`}
@@ -692,7 +742,7 @@ const AlcoholMain = () => {
                         aria-label={'open gin'}
                         onClick={() => handleExpandClick('Gin')}
                         className='wineCategory'
-                        key='gin'
+                        key='Gin'
                         autoFocus={ginClicked}
                     >
                         <ExpandMoreIcon />
@@ -705,6 +755,8 @@ const AlcoholMain = () => {
                             }
                             )}                    </div>
                     </Collapse>
+                    </aside>
+                    <aside id='Tequila'>
                     <ExpandMore
                         expand={taqilaExpanded}
                         header={`טקילה || Tequila`}
@@ -712,7 +764,7 @@ const AlcoholMain = () => {
                         aria-label={'open tequila'}
                         onClick={() => handleExpandClick('Tequila')}
                         className='wineCategory'
-                        key='tequila'
+                        key='Tequila'
                         autoFocus={taquilaClicked}
                     >
                         <ExpandMoreIcon />
@@ -725,6 +777,8 @@ const AlcoholMain = () => {
                             }
                             )}                    </div>
                     </Collapse>
+                    </aside>
+                    <aside id='Apperativo'>
                     <ExpandMore
                         expand={apperetivoExpanded}
                         header={`אפריטיף || Aperitif`}
@@ -732,7 +786,7 @@ const AlcoholMain = () => {
                         aria-label={'open apperetivo'}
                         onClick={() => handleExpandClick('Apperativo')}
                         className='wineCategory'
-                        key='apperetivo'
+                        key='Apperetivo'
                         autoFocus={apperetivoClicked}
                     >
                         <ExpandMoreIcon />
@@ -745,6 +799,31 @@ const AlcoholMain = () => {
                             }
                             )}                    </div>
                     </Collapse>
+                    </aside>
+                    <aside id='Digestif'>
+                    <ExpandMore
+                        expand={digestifExpanded}
+                        header={`דיג'סטיף || Digestif`}
+                        aria-expanded={digestifExpanded}
+                        aria-label={'open digestif'}
+                        onClick={() => handleExpandClick('Digestif')}
+                        className='wineCategory'
+                        key='Digestif'
+                        autoFocus={digestifClicked}
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse in={digestifExpanded} timeout="auto" unmountOnExit>
+                        <div className='dishgridView'>
+                            {digestifArr.map((rum) => {
+                                // return <TempAlcCard alcohol={whiskey}/>
+                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                            }
+                            )}
+                        </div>
+                    </Collapse>
+                    </aside>
+                    <aside id='Anis'>
                     <ExpandMore
                         expand={anisExpanded}
                         header={`אניס || Anis`}
@@ -752,8 +831,8 @@ const AlcoholMain = () => {
                         aria-label={'open anis'}
                         onClick={() => handleExpandClick('Anis')}
                         className='wineCategory'
-                        key='anis'
-                        autoFocus={anisClicked}                        
+                        key='Anis'
+                        autoFocus={anisClicked}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -765,6 +844,8 @@ const AlcoholMain = () => {
                             }
                             )}                    </div>
                     </Collapse>
+                    </aside>
+                    <aside id='Vodka'>
                     <ExpandMore
                         expand={vodkaExpanded}
                         header={`וודקה || Vodka`}
@@ -772,7 +853,7 @@ const AlcoholMain = () => {
                         aria-label={'open vodka'}
                         onClick={() => handleExpandClick('Vodka')}
                         className='wineCategory'
-                        key='vodka'
+                        key='Vodka'
                         autoFocus={vodkaClicked}
                     >
                         <ExpandMoreIcon />
@@ -785,6 +866,30 @@ const AlcoholMain = () => {
                             }
                             )}                    </div>
                     </Collapse>
+                    </aside>
+                    <aside id="bestOfAlcohol">
+                        <ExpandMore
+                            expand={bestExpanded}
+                            header={'המובחרים שביותר||Best of the best'}
+                            aria-expanded={bestExpanded}
+                            aria-label="open single malt"
+                            onClick={() => handleExpandClick('Best')}
+                            className='wineCategory'
+                            key='best'
+                            autoFocus={bestOfClicked}
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse in={bestExpanded} timeout="auto" unmountOnExit>
+                            <div className='dishgridView'>
+                                {bestOFALcArr.map((alcohol) => {
+                                    // return <TempAlcCard alcohol={whiskey}/>
+                                    return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                                }
+                                )}
+                            </div>
+                        </Collapse>
+                        </aside>
                 </div> :
                     displayDishes
                 }

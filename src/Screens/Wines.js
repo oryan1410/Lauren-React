@@ -77,7 +77,6 @@ const Wines = () => {
 
 
     function handleValueChange(value, label) {
-        console.log('Value changed to:', value);
         if (label === 'Dryness') {
             setSelectedDryness(value);
             if (value === 'Dry' || value === 'יבש') {
@@ -86,13 +85,9 @@ const Wines = () => {
             else {
                 setSelectedDryness('N');
             }
-            //console.log('arr', arr);
         }
         else if (label === 'Country') {
             if (language==='heb'){
-                console.log("asas",countriesHeb.indexOf(value))
-                console.log(countries[4])
-                console.log("value after transform",)
                 setSelectedCountry(countries[countriesHeb.indexOf(value)]);
             }
             else if (language==='en'){
@@ -103,15 +98,11 @@ const Wines = () => {
 
     };
 
-    useEffect(() => {
-        console.log('useEffect selectCountry',selectedCountry);
-    }, [selectedCountry]);
     
 
     //useEffect to reset filters- after a filter has been chosen
     useEffect(() => {
         if(selectedDryness !== '' || selectedCountry !== ''){
-        console.log('useEffect selectedDryness');
         setExpanded(false);
         setWhiteExpanded(false);
         setRoseExpanded(false);
@@ -138,7 +129,6 @@ const Wines = () => {
 
     // filter wines according to selected filters
     const filterWines = async () => {
-        console.log('filterWines');
         let arr = winesArr;
       
         if (selectedCountry !== '') {
@@ -146,10 +136,7 @@ const Wines = () => {
         }
         if (selectedDryness !== '') {
             arr = arr.filter((wine) => wine.Dry_Y_N_ === selectedDryness);
-        }
-    
-   
-    console.log('arr', arr);
+        }   
 
         let red = [];
         let white = [];
@@ -187,7 +174,6 @@ const Wines = () => {
     const renderWines = (winesArr) => {
         setIsVisable(true);
 
-        console.log('renderWines');
         let arr = winesArr.map((wine) => {
             return <RecipeReviewCard2 key={wine.Id} wine={wine} title={wine.Name_Eng} image={wine.ImageUrl} Description={wine.Description} />
         });
@@ -233,7 +219,6 @@ const Wines = () => {
               expandedDivRef3.current.scrollIntoView({ behavior: 'smooth' });
           }
           else if (bubbleExpanded && expandedDivRef4.current) {
-              console.log('bubbleExpanded true');
               expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
           }       
        
@@ -264,7 +249,6 @@ const Wines = () => {
             expandedDivRef3.current.scrollIntoView({ behavior: 'smooth' });
         }
         else if (bubbleExpanded && expandedDivRef4.current) {
-            console.log('bubbleExpanded true');
             expandedDivRef4.current.scrollIntoView({ behavior: 'smooth' });
         }
     }
@@ -298,7 +282,6 @@ const Wines = () => {
 
     //create filters for dryness and country
     const sortFilters = async () => {
-        console.log('sortFilters');
         setSelectedDryness('');
         setSelectedColor('');
         setSelectedCountry('');
@@ -310,7 +293,6 @@ const Wines = () => {
     }
 
     const resetFilter = () => {
-        console.log('resetFilter');
         setSelectedDryness('');
         setSelectedColor('');
         setSelectedCountry('');
@@ -349,9 +331,9 @@ const Wines = () => {
         const [part1, part2] = header.split('||'); // Split the header into three parts
         return (
           <button {...other} >
-            <div className='CategoryDivLeft'>{part1}</div>
+            <div className='CategoryDivLeft'><span>{part1}</span></div>
             <div>||</div>
-            <div className='CategoryDivRight'>{part2}</div>
+            <div className='CategoryDivRight'><span>{part2}</span></div>
           </button>
         );
       })(({ theme, expand }) => ({
@@ -452,11 +434,9 @@ const Wines = () => {
             }
         } else {
             setNoneFound(false);
-            console.log("searchQuery is not empty");
             //filter wines arr if name includes searchQuery
             let arr1 = winesArr.filter((wine) => wine.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
             let arr2 = winesArr.filter((wine) => wine.Name_Heb.includes(searchQuery));
-            console.log(arr2);
             let arr3 = arr1.concat(arr2);
             let arr4 = arr3.filter((wine, index, self) =>
                 index === self.findIndex((t) => (
@@ -482,7 +462,6 @@ const Wines = () => {
 
     //search function
     const setSearch = (e) => {
-        console.log('setSearchWines');
         setSearchQuery(e);
     }
 
@@ -506,14 +485,14 @@ const Wines = () => {
                     {dropArrays}
                 </Grid>}
                 {searchQuery ==='' && <div className={`resetButtonDiv ${language==='heb'&& 'hebReset'}`}>
-                    <Button
+                    <button
                     className='resetButton' 
                     onClick={(e) => {resetFilter()}}
                     sx={{ color: 'white', 
                     borderRadius: '16px!important',             
                     '&:focus': {
                         outline: 'none'
-                      } }}>{language==='heb'?'איפוס':'Reset'}</Button>
+                      } }}><p>{language==='heb'?'איפוס':'Reset'}</p></button>
                 </div>}
                 
                 {searchQuery === '' ? 

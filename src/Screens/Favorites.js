@@ -79,9 +79,9 @@ renderFavorites();
         const [part1, part2] = header.split('||'); // Split the header into three parts
         return (
             <button {...other}>
-                <div className='CategoryDivLeft'>{part1}</div>
+                <div className='CategoryDivLeft'><span>{part1}</span></div>
                 <div>||</div>
-                <div className='CategoryDivRight'>{part2}</div>
+                <div className='CategoryDivRight'><span>{part2}</span></div>
             </button>
         );
     })(({ theme, expand }) => ({

@@ -121,9 +121,10 @@ export function UserProvider({ children }) {
             setLanguage('heb');
             i18next.changeLanguage('heb');
         }
+
+
         const tempNames = query(collection(db,'Wines'),where('onMenu','==','Y'));
         setIsLoading(true);
-
         const getNames= onSnapshot(tempNames, (snapshot) => {
             console.log('getNamesChanges',snapshot.docChanges());
             let countries = [];
@@ -408,6 +409,7 @@ export function UserProvider({ children }) {
                 alcohol.onMenu=doc.data().onMenu;
                 alcohol.chaser=doc.data().chaser;
                 alcohol.chaserPrice=doc.data().chaserPrice;
+                alcohol.bottlePrice=doc.data().bottlePrice;
                 alcoholArr.push(alcohol)
                 if (doc.data().bestOf === true) {
                                 bestOfArr.push(alcohol)

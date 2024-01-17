@@ -33,7 +33,7 @@ export default function SearchAppBar(props) {
   return (
     <search>
     <div className='searchInput' aria-label={`Search ${props.label}`}>
-      <TextField
+      <input type="text"
         id="search-bar"
         alt={`Search ${props.label}`}
         className="textInput center-placeholder"
@@ -43,21 +43,7 @@ export default function SearchAppBar(props) {
         value={searchText}
         placeholder={`search ${props.label}`}
         aria-label={`Search ${props.label}`}        
-        InputProps={{
-          sx: {
-            textTransform: 'none',
-            color: 'white',
-            borderRadius: '16px!important',
-            fontFamily: '"anisette-std", "IBM Plex Sans Hebrew"',
-            fontSize: '18px',
-            fontWeight:400,
-            '&:hover fieldset': {
-              border: '0px!important',
-              borderRadius: '16px!important',
-            },
-
-          },
-        }}        
+      
       />
             {searchQuery!=='' ? 
         <div className='clearButton' onClick={handleClear}>

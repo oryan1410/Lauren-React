@@ -7,7 +7,7 @@
   flex-direction: row !important;
   justify-content: space-between;
   margin-top: 1rem;
-  height: 12.5rem;
+  min-height: 12.5rem;
   position: relative;
   width: 100%;
   color: var(--main-font-color);
@@ -160,8 +160,11 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: flex-end;
   padding-top: 0.125rem;
+}
+
+.priceDiv > div {
+  margin-inline: 5px;
 }
 
 .priceDiv>span {
@@ -319,7 +322,7 @@
 
 @media screen and (max-width: 775px) {
   .cardTwo {
-    height: 11.25rem;
+    min-height: 11.25rem;
   }
 
   .card2image {
@@ -348,7 +351,7 @@
 
 @media screen and (max-width: 395px) {
   .cardTwo {
-    height: 11.25rem;
+    min-height: 11.25rem;
   }
 
   .card2-text {
@@ -379,7 +382,7 @@
 
 @media screen and (max-width: 335px) {
   .cardTwo {
-    height: 11.25rem;
+    min-height: 11.25rem;
   }
 
   .card2Content,

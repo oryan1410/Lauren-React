@@ -238,11 +238,11 @@ p{
 
 
   /* <---------- for the x button in searchbar ----------> */
-  .clearButton {
+  .clearButton, .searchButton {
     color: var(--main-font-color);
     background-color: transparent;
     position: absolute;
-    bottom: 17px;
+    bottom: 20%;
     left: 5%;
     /* background-color: #1E2423; */
     border-radius: 16px;
@@ -253,20 +253,7 @@ p{
     align-items: center;
   }
 
-  .searchButton{
-    color:var(--main-font-color);
-    background-color: transparent;
-    position: absolute;
-    bottom: 17px;
-    left: 5%;
-    /* background-color: #1E2423; */
-    border-radius: 16px;
-    height: 25px;
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+
 
 
   .App-logo {
@@ -382,6 +369,15 @@ img {
   border-radius: 16px;
   text-decoration: none;
   text-transform: none;
+  text-align: center;
+  min-height: 2.5rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+
+.textInput::placeholder{
+  color: var(--main-font-color);
+  opacity: 1;
 }
 
 .searchInput {

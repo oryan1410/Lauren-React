@@ -70,6 +70,41 @@ export default function BasicSelect({ label, options, setValue,selected }) {
   }
   , [selected])
 
+  const getLabel = () => {
+    if (language==='heb') {
+      if (label==='Color') {
+        return 'צבע';
+      }
+      if (label==='Country') {
+        return 'מדינה';
+      }
+      if (label==='Region') {
+        return 'אזור';
+      }
+      if (label==='Grape') {
+        return 'ענבים';
+      }
+      if (label==='Kosher') {
+        return 'כשר';
+      }
+      if (label==='Price') {
+        return 'מחיר';
+      }
+      if (label==='Year') {
+        return 'שנה';
+      }
+      if (label==='Dryness') {
+        return 'רמת יובש';
+      }
+      if (label==='Type') {
+        return 'סוג מנה';
+      }
+    }
+    else {
+      return label;
+    }
+  }
+
 
   return (
     <Grid item xs={5.9} aria-label={`Press to select ${label}`} tabIndex={0} >
@@ -78,43 +113,25 @@ export default function BasicSelect({ label, options, setValue,selected }) {
             border: "2px solid #fff"
           }
         }}>
-        <InputLabel id="demo-simple-select-label" aria-label={`Select ${label}`} className={`inputLabel ${language==='heb' && 'hebInputLabel'}`}>{label}</InputLabel>
-        <Select
-          id="demo-simple-select"
-          label={`Select ${label}`}
+        <select
+          label={language!=='heb'?`בחר ${label}`:`Select ${label}`}
+          name={label}
           value={age}
           className='selectDropDown'
-          MenuProps={{
-            PaperProps: {
-              sx: {
-               
-              }
-            }
-          }}
           onChange={(e)=>{handleChange(e)}}
+          placeholder={`Select ${label}`}
           onClose={(e)=>{
           setTimeout(() => {
             document.activeElement.blur();
           }, 0);
         }}
-          sx={{
-            color:'white',
-            borderRadius:'16px!important', 
-            textTransform:'lowercase',
-            fontWeight:language==='heb' ? '600' : 'normal',
-            fontFamily:"'anisette-std','IBM Plex Sans Hebrew'",  
-            "&:hover": {
-            "&& fieldset": {
-              border: "0px"
-            }
-            },
-        }}
         >
+          <option disabled value=""className={`menuItem ${language==='heb' && 'hebMenuItem'}`}>{language==='heb'?`בחר ${getLabel()}`:`Select ${getLabel()}`}</option>
           {options.map((option) => (
-            <MenuItem key={option} value={option} className={`menuItem ${language==='heb' && 'hebMenuItem'} `}>{option}</MenuItem>
+            <option key={option} value={option} className={`menuItem ${language==='heb' && 'hebMenuItem'} `}>{option}</option>
           ))
           }
-        </Select>
+        </select>
       </FormControl>
     </Grid>
   );

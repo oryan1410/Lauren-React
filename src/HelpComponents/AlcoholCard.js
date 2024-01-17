@@ -11,6 +11,10 @@ import '../styles/WineCard.css'
 import { useUserContext } from '../UserContext';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { GiGlassShot } from "react-icons/gi";
+import { FaWhiskeyGlass } from "react-icons/fa6";
+import { GiBrandyBottle } from "react-icons/gi";
+
 
 export default function AlcoholCard(props) {
     const [isImageClicked, setImageClicked] = useState(false);
@@ -42,10 +46,10 @@ export default function AlcoholCard(props) {
                         </>}
                 </div> */}
                 <div className='priceDiv'>
-                    {props.alcohol.CPrice!=='0' &&
+                    {props.alcohol.CPrice!=="0" && props.alcohol.CPrice!==0 &&
                     <div className='bottlePriceDiv'>
                         <h2 className='BottlePrice'>
-                            <LocalDrinkIcon className='cardLogos' style={{ margin: '0px 5px' }} />
+                            <FaWhiskeyGlass className='cardLogos' style={{ margin: '0px 5px', fontSize:'1.3rem' }} />
                         </h2>
                         <h2 className='bottlePriceText' aria-label={`Shot price ${props.alcohol.CPrice}`}>
                         ₪{props.alcohol.CPrice}
@@ -53,8 +57,12 @@ export default function AlcoholCard(props) {
                     </div>
 }
                     {props.alcohol.chaser === "Yes" && <div className='cupPriceDiv'><span className='BottlePrice'>
-                        <WineBarIcon className='cardLogos' /></span>
-                        <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>{props.alcohol.chaserPrice}₪</span></div>}
+                        <GiGlassShot className='cardLogos' style={{fontSize:'1rem'}} src='../../Images/shot.png' alt='chaser icon' color='white' /></span>
+                        <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>₪{props.alcohol.chaserPrice}</span></div>}
+                    {props.alcohol.chaser==='No' && (props.alcohol.CPrice===0 || props.alcohol.CPrice==='0') && <div className='cupPriceDiv'><span className='BottlePrice'>
+                        <GiBrandyBottle className='cardLogos' style={{ fontSize:'1.5rem' }} src='../../Images/shot.png' alt='chaser icon' color='white' /></span>
+                        <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>₪{props.alcohol.bottlePrice}</span></div>}
+                        
                 </div>
             </div>
             <div className='card2-right' >

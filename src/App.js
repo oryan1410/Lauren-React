@@ -205,7 +205,7 @@ function App() {
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="App-Body">
-        { navBarVisable && <Navbar style={{zIndex:'9999'}} bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
+        { navBarVisable && <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
             <Navbar.Brand href="\home">
               <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={60} width={100} alt="Go Home" />
             </Navbar.Brand>
@@ -331,10 +331,8 @@ markLinks={markLinks}
                
 
       </div>
-      {!isPageBottom && !isPageTop &&<ArrowCircleUpIcon className='scrollToTop' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}/>}
+      {!isPageBottom && !isPageTop &&<ArrowCircleUpIcon alt='go To Top' className='scrollToTop' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}/>}
       <Footer />
-
-
     </div>
   );
 }

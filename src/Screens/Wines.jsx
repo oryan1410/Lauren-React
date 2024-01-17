@@ -11,7 +11,8 @@ import { Button } from '@mui/material';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 
-import Collapse from '@mui/material/Collapse';
+// import Collapse from '@mui/material/Collapse';
+import Collapse from '../HelpComponents/Collapse';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { useLocation } from 'react-router-dom';
@@ -346,7 +347,6 @@ const Wines = () => {
       }));
 
     const handleExpandClick = (type) => {
-
         const typeOfExpands = {
             Red: {expanded: expanded, setExpanded: setExpanded, clicked: redClicked, setClicked: setRedClicked},
             White: {expanded: whiteExpanded, setExpanded: setWhiteExpanded, clicked: whiteClicked, setClicked: setWhiteClicked},
@@ -367,54 +367,6 @@ const Wines = () => {
                 value.setClicked(false);
             }
         });
-
-        // if (type === 'Red') {
-        //     console.log('red');
-        //     setExpanded(!expanded);
-        //     // setRedClicked(true);
-        //     // setWhiteClicked(false);
-        //     // setRoseClicked(false);
-        //     // setBubbleClicked(false);
-        //     // setBestOfClicked(false);
-        //     // setResetClicked(false);
-        // }
-        // else if (type === 'White') {
-        //     setWhiteExpanded(!whiteExpanded);
-        //     // setWhiteClicked(true);
-        //     // setRedClicked(false);
-        //     // setRoseClicked(false);
-        //     // setBubbleClicked(false);
-        //     // setBestOfClicked(false);
-        //     // setResetClicked(false);
-
-        // }
-        // else if (type === 'Rose') {
-        //     setRoseExpanded(!roseExpanded);
-        //     // setRoseClicked(true);
-        //     // setRedClicked(false);
-        //     // setWhiteClicked(false);
-        //     // setBubbleClicked(false);
-        //     // setBestOfClicked(false);
-        //     // setResetClicked(false);
-        // }
-        // else if (type === 'Bubble') {
-        //     setBubbleExpanded(!bubbleExpanded);
-        // //     setBubbleClicked(true);
-        // //     setRedClicked(false);
-        // //     setWhiteClicked(false);
-        // //     setRoseClicked(false);
-        // //     setBestOfClicked(false);
-        // //     setResetClicked(false);
-        // }
-        // else if (type === 'BestOf') {
-        //     setBestOfExpanded(!bestOfExpanded);
-        //     // setBestOfClicked(true);
-        //     // setRedClicked(false);
-        //     // setWhiteClicked(false);
-        //     // setRoseClicked(false);
-        //     // setBubbleClicked(false);
-        //     // setResetClicked(false);
-        // }
     };
 
 
@@ -509,9 +461,7 @@ const Wines = () => {
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>
-                    <Collapse ref={expandedDivRef1} in={expanded} timeout="auto" unmountOnExit>
-                        {redWinesArr}
-                    </Collapse>
+                    <Collapse ref={expandedDivRef1} isOpen={expanded} children={redWinesArr} />
                     <ExpandMore
                         expand={whiteExpanded}
                         header='יינות לבנים || White wines'
@@ -525,9 +475,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse ref={expandedDivRef2} in={whiteExpanded} timeout="auto" unmountOnExit>
-                        {whiteWinesArr}
-                    </Collapse>
+                    <Collapse ref={expandedDivRef2} isOpen={whiteExpanded} children={whiteWinesArr} />
                     <ExpandMore
                         expand={roseExpanded}
                         header='יינות רוזה || Rose wines'
@@ -540,9 +488,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse ref={expandedDivRef3} in={roseExpanded} timeout="auto" unmountOnExit>
-                        {roseWinesArr}
-                    </Collapse>
+                    <Collapse ref={expandedDivRef3} isOpen={roseExpanded} children={roseWinesArr} />
                     <ExpandMore
                         expand={bubbleExpanded}
                         header='יינות מבעבעים || Bubble wines'
@@ -555,9 +501,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse ref={expandedDivRef4} in={bubbleExpanded} timeout="auto" unmountOnExit>
-                        {bubbleWinesArr}
-                    </Collapse>
+                    <Collapse ref={expandedDivRef4} isOpen={bubbleExpanded} children={bubbleWinesArr} />
                     <ExpandMore 
                     expand={bestOfExpanded}
                     header='יינות מיוחדים || Special wines'
@@ -570,9 +514,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse ref={expandedDivRef4} in={bestOfExpanded} timeout="auto" unmountOnExit>
-                        {bestArr}
-                    </Collapse>
+                    <Collapse isOpen={bestOfExpanded} children={bestArr} ref={expandedDivRef4} />
                      </div>
                       : displayWines2
                 }

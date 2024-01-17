@@ -155,6 +155,23 @@ justify-content: center;
     
     font-family:'anisette-std','Rubik';  
   }
+
+    .collapsible-container {
+      overflow: hidden;
+      height: auto; /* Set to 'auto' to allow dynamic content height */
+      max-height: 10000px; /* Set a maximum height that is taller than your content */
+      transition: max-height 0.7s ease; /* Adjust the duration and easing function as needed */
+    }
+    
+    .collapsible-container.collapsed {
+      max-height: 0;
+      overflow: hidden; /* Ensure overflow is set to 'hidden' when collapsed */
+    }
+    
+    .collapsible-content {
+      padding: 2px;
+    }
+
   
   #demo-simple-select-label {
     color: var(--main-label-color);

@@ -373,7 +373,8 @@ import DropDown from '../HelpComponents/DropDown';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 
-import Collapse from '@mui/material/Collapse';
+// import Collapse from '@mui/material/Collapse';
+import Collapse from '../HelpComponents/Collapse';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import BeerCard from '../HelpComponents/BeerCard';
@@ -397,7 +398,7 @@ const AlcoholMain = () => {
     const [beerExpanded, setBeerExpanded] = useState(false);
     const [digestifExpanded, setDigestifExpanded] = useState(false);
     const [bestExpanded, setBestExpanded] = useState(false);
-    const { alcoholArr, beerArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, digestifArr, anisArr,bestOFALcArr} = useUserContext();
+    const { alcoholArr, beerArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, digestifArr, anisArr, bestOFALcArr } = useUserContext();
     const [isVisible, setIsVisable] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [allDishes, setAllDishes] = useState([]);
@@ -475,7 +476,7 @@ const AlcoholMain = () => {
             Single: { state: singleExpanded, setState: setSingleExpanded, setClicked: setSingleClicked },
             Digestif: { state: digestifExpanded, setState: setDigestifExpanded, setClicked: setDigestifClicked },
             Best: { state: bestExpanded, setState: setBestExpanded, setClicked: setBestOfClicked },
-            
+
         };
         Object.entries(typeToStateMap).forEach(([key, value]) => {
             if (key === type) {
@@ -483,8 +484,8 @@ const AlcoholMain = () => {
                 value.setClicked(true);
                 setTimeout(() => {
                     value.setClicked(false);
-                }, 2000); 
-           }
+                }, 2000);
+            }
             else {
                 value.setClicked(false);
             }
@@ -574,296 +575,232 @@ const AlcoholMain = () => {
                 </header> */}
                 <SearchAppBar label='alcohol' searchFunc={setSearch} />
                 {searchQuery === '' ? <div>
+                    <ExpandMore
+                        expand={beerExpanded}
+                        header={'בירה||Beer'}
+                        aria-expanded={beerExpanded}
+                        aria-label="open beer"
+                        onClick={() => handleExpandClick('Beer')}
+                        className='wineCategory'
+                        key='Beer'
+                        tabIndex={beerClicked ? 0 : -1}
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse isOpen={beerExpanded} children={beerArr.map((beer) => {
+                        // return <TempAlcCard alcohol={whiskey}/>
+                        return <BeerCard key={beer.IdAlc} alcohol={beer} title={beer.Name_Eng} />
+                    }
+                    )}
+                    />
+
+                    <aside id='Red' >
                         <ExpandMore
-                            expand={beerExpanded}
-                            header={'בירה||Beer'}
-                            aria-expanded={beerExpanded}
-                            aria-label="open beer"
-                            onClick={() => handleExpandClick('Beer')}
+                            expand={expanded}
+                            header={'וויסקי||Whiskey'}
+                            aria-expanded={expanded}
+                            aria-label="open whiskey"
+                            onClick={() => handleExpandClick('Red')}
                             className='wineCategory'
-                            key='Beer'
-                            autoFocus={beerClicked}
-                            tabIndex={beerClicked ? 0 : -1}
+                            key='whiskey'
+                            id='Whiskey'
+                            tabIndex={whiskeyClicked ? 0 : -1}
                         >
                             <ExpandMoreIcon />
                         </ExpandMore>
-                        <Collapse in={beerExpanded} timeout="auto" unmountOnExit>
-                            <div className='dishgridView'>
-                                {beerArr.map((beer) => {
-                                    // return <TempAlcCard alcohol={whiskey}/>
-                                    return <BeerCard key={beer.IdAlc} alcohol={beer} title={beer.Name_Eng} />
-                                }
-                                )}                    </div>
-                        </Collapse>
-                        <aside id='Red' >
-                    <ExpandMore
-                        expand={expanded}
-                        header={'וויסקי||Whiskey'}
-                        aria-expanded={expanded}
-                        aria-label="open whiskey"
-                        onClick={() => handleExpandClick('Red')}
-                        className='wineCategory'
-                        key='whiskey'
-                        autoFocus={whiskeyClicked}
-                        id='Whiskey'
-                        tabIndex={whiskeyClicked ? 0 : -1}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={expanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {/* {whiskeyArr.map((whiskey) => {
-                            // return <TempAlcCard alcohol={whiskey}/>
-                            return <AlcoholCard key={whiskey.IdAlc} alcohol={whiskey} title={whiskey.Name_Eng} />
-                        }
-                        )}  */}
-<aside id='Single'>
-                            <ExpandMore
-                                expand={singleExpanded}
-                                header={'סינגל מאלט||Single Malt'}
-                                aria-expanded={americanExpanded}
-                                aria-label="open single malt"
-                                onClick={() => handleExpandClick('Single')}
-                                className='wineSubCategory'
-                                key='Single'
-                                autoFocus={singleClicked}
-                            >
-                                <ExpandMoreIcon />
-                            </ExpandMore>
-                            <Collapse in={singleExpanded} timeout="auto" unmountOnExit>
-                                <div className='dishgridView'>
-                                    {whiskeyArr.map((whiskey) => {
+                        <Collapse isOpen={expanded} children={
+                            <>
+                                <aside id='whiskey'>
+                                    <ExpandMore
+                                        expand={singleExpanded}
+                                        header={'סינגל מאלט||Single Malt'}
+                                        aria-expanded={americanExpanded}
+                                        aria-label="open single malt"
+                                        onClick={() => handleExpandClick('Single')}
+                                        className='wineSubCategory'
+                                        key='Single'
+                                    >
+                                        <ExpandMoreIcon />
+                                    </ExpandMore>
+                                    <Collapse isOpen={singleClicked} children={whiskeyArr.map((whiskey) => {
                                         // return <TempAlcCard alcohol={whiskey}/>
                                         return <AlcoholCard key={whiskey.IdAlc} alcohol={whiskey} title={whiskey.Name_Eng} />
                                     }
-                                    )}
-                                </div>
-                            </Collapse>
-                            </aside>
-                            <aside id='American'>
-                            <ExpandMore
-                                expand={americanExpanded}
-                                header={'אמריקאיים||American'}
-                                aria-expanded={americanExpanded}
-                                aria-label="open american whiskey"
-                                onClick={() => handleExpandClick('White')}
-                                className='wineSubCategory'
-                                key='American'
-                                autoFocus={americanClicked}
-                            >
-                                <ExpandMoreIcon />
-                            </ExpandMore>
-                            <Collapse in={americanExpanded} timeout="auto" unmountOnExit>
-                                <div className='dishgridView'>
-                                    {americanArr.map((american) => {
+                                    )} />
+                                    <ExpandMore
+                                        expand={americanExpanded}
+                                        header={'אמריקאיים||American'}
+                                        aria-expanded={americanExpanded}
+                                        aria-label="open american whiskey"
+                                        onClick={() => handleExpandClick('White')}
+                                        className='wineSubCategory'
+                                        key='American'
+                                    >
+                                        <ExpandMoreIcon />
+                                    </ExpandMore>
+                                    <Collapse isOpen={americanClicked} children={americanArr.map((american) => {
                                         // return <TempAlcCard alcohol={whiskey}/>
                                         return <AlcoholCard key={american.IdAlc} alcohol={american} title={american.Name_Eng} />
                                     }
-                                    )}                    </div>
-                            </Collapse>
-                            </aside>
-                            <aside id='Smoked'>
-                            <ExpandMore
-                                expand={smokedExpanded}
-                                header={'מעושנים||Smoked'}
-                                aria-expanded={smokedExpanded}
-                                aria-label="open smoked whiskey"
-                                onClick={() => handleExpandClick('Rose')}
-                                className='wineSubCategory'
-                                key='Smoked'
-                                autoFocus={smokedClicked}
-                            >
-                                <ExpandMoreIcon />
-                            </ExpandMore>
-                            <Collapse in={smokedExpanded} timeout="auto" unmountOnExit>
-                                <div className='dishgridView'>
-                                    {smokedArr.map((smoked) => {
+                                    )} />
+                                    <ExpandMore
+                                        expand={smokedExpanded}
+                                        header={'מעושנים||Smoked'}
+                                        aria-expanded={smokedExpanded}
+                                        aria-label="open smoked whiskey"
+                                        onClick={() => handleExpandClick('Rose')}
+                                        className='wineSubCategory'
+                                        key='Smoked'
+                                    >
+                                        <ExpandMoreIcon />
+                                    </ExpandMore>
+                                    <Collapse isOpen={smokedClicked} children={smokedArr.map((smoked) => {
                                         // return <TempAlcCard alcohol={whiskey}/>
                                         return <AlcoholCard key={smoked.IdAlc} alcohol={smoked} title={smoked.Name_Eng} />
                                     }
-                                    )}                    </div>
-                            </Collapse>
-                            </aside>
-                        </div>
-                    </Collapse>
+                                    )} />
+                                </aside>
+                            </>
+                        }
+                        />
                     </aside>
                     <aside id='Bubble'>
-                    <ExpandMore
-                        expand={coniacExpanded}
-                        header={'קוניאק||Coniac'}
-                        aria-expanded={coniacExpanded}
-                        aria-label="open coniac"
-                        onClick={() => handleExpandClick('Bubble')}
-                        className='wineCategory'
-                        key='coniac'
-                        autoFocus={coniacClicked}
-                        id='Coniac'
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={coniacExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {coniacArr.map((coniac) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={coniac.IdAlc} alcohol={coniac} title={coniac.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={coniacExpanded}
+                            header={'קוניאק||Coniac'}
+                            aria-expanded={coniacExpanded}
+                            aria-label="open coniac"
+                            onClick={() => handleExpandClick('Bubble')}
+                            className='wineCategory'
+                            key='coniac'
+                            id='Coniac'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={coniacExpanded} children={coniacArr.map((coniac) => {
+
+                            return <AlcoholCard key={coniac.IdAlc} alcohol={coniac} title={coniac.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id='Rum'>
-                    <ExpandMore
-                        expand={rumExpanded}
-                        header={'רום||Rum'}
-                        aria-expanded={rumExpanded}
-                        aria-label="open rum"
-                        onClick={() => handleExpandClick('Rum')}
-                        className='wineCategory'
-                        key='Rum'
-                        autoFocus={rumClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={rumExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {rumArr.map((rum) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={rumExpanded}
+                            header={'רום||Rum'}
+                            aria-expanded={rumExpanded}
+                            aria-label="open rum"
+                            onClick={() => handleExpandClick('Rum')}
+                            className='wineCategory'
+                            key='Rum'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={rumExpanded} children={rumArr.map((rum) => {
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id='Gin'>
-                    <ExpandMore
-                        expand={ginExpanded}
-                        header={`ג'ין||Gin`}
-                        aria-expanded={ginExpanded}
-                        aria-label={'open gin'}
-                        onClick={() => handleExpandClick('Gin')}
-                        className='wineCategory'
-                        key='Gin'
-                        autoFocus={ginClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={ginExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {ginArr.map((rum) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={ginExpanded}
+                            header={`ג'ין||Gin`}
+                            aria-expanded={ginExpanded}
+                            aria-label={'open gin'}
+                            onClick={() => handleExpandClick('Gin')}
+                            className='wineCategory'
+                            key='Gin'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={ginExpanded} children={ginArr.map((rum) => {
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id='Tequila'>
-                    <ExpandMore
-                        expand={taqilaExpanded}
-                        header={`טקילה || Tequila`}
-                        aria-expanded={taqilaExpanded}
-                        aria-label={'open tequila'}
-                        onClick={() => handleExpandClick('Tequila')}
-                        className='wineCategory'
-                        key='Tequila'
-                        autoFocus={taquilaClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={taqilaExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {taquillaArr.map((rum) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={taqilaExpanded}
+                            header={`טקילה || Tequila`}
+                            aria-expanded={taqilaExpanded}
+                            aria-label={'open tequila'}
+                            onClick={() => handleExpandClick('Tequila')}
+                            className='wineCategory'
+                            key='Tequila'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={taqilaExpanded} children={taquillaArr.map((rum) => {
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id='Apperativo'>
-                    <ExpandMore
-                        expand={apperetivoExpanded}
-                        header={`אפריטיף || Aperitif`}
-                        aria-expanded={apperetivoExpanded}
-                        aria-label={'open apperetivo'}
-                        onClick={() => handleExpandClick('Apperativo')}
-                        className='wineCategory'
-                        key='Apperetivo'
-                        autoFocus={apperetivoClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={apperetivoExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {apperativoArr.map((rum) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={apperetivoExpanded}
+                            header={`אפריטיף || Aperitif`}
+                            aria-expanded={apperetivoExpanded}
+                            aria-label={'open apperetivo'}
+                            onClick={() => handleExpandClick('Apperativo')}
+                            className='wineCategory'
+                            key='Apperetivo'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={apperetivoExpanded} children={apperativoArr.map((rum) => {
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id='Digestif'>
-                    <ExpandMore
-                        expand={digestifExpanded}
-                        header={`דיג'סטיף || Digestif`}
-                        aria-expanded={digestifExpanded}
-                        aria-label={'open digestif'}
-                        onClick={() => handleExpandClick('Digestif')}
-                        className='wineCategory'
-                        key='Digestif'
-                        autoFocus={digestifClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={digestifExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {digestifArr.map((rum) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                            }
-                            )}
-                        </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={digestifExpanded}
+                            header={`דיג'סטיף || Digestif`}
+                            aria-expanded={digestifExpanded}
+                            aria-label={'open digestif'}
+                            onClick={() => handleExpandClick('Digestif')}
+                            className='wineCategory'
+                            key='Digestif'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={digestifExpanded} children={digestifArr.map((rum) => {
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id='Anis'>
-                    <ExpandMore
-                        expand={anisExpanded}
-                        header={`אניס || Anis`}
-                        aria-expanded={anisExpanded}
-                        aria-label={'open anis'}
-                        onClick={() => handleExpandClick('Anis')}
-                        className='wineCategory'
-                        key='Anis'
-                        autoFocus={anisClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={anisExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {anisArr.map((rum) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={anisExpanded}
+                            header={`אניס || Anis`}
+                            aria-expanded={anisExpanded}
+                            aria-label={'open anis'}
+                            onClick={() => handleExpandClick('Anis')}
+                            className='wineCategory'
+                            key='Anis'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={anisExpanded} children={anisArr.map((rum) => {
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id='Vodka'>
-                    <ExpandMore
-                        expand={vodkaExpanded}
-                        header={`וודקה || Vodka`}
-                        aria-expanded={vodkaExpanded}
-                        aria-label={'open vodka'}
-                        onClick={() => handleExpandClick('Vodka')}
-                        className='wineCategory'
-                        key='Vodka'
-                        autoFocus={vodkaClicked}
-                    >
-                        <ExpandMoreIcon />
-                    </ExpandMore>
-                    <Collapse in={vodkaExpanded} timeout="auto" unmountOnExit>
-                        <div className='dishgridView'>
-                            {vodkaArr.map((rum) => {
-                                // return <TempAlcCard alcohol={whiskey}/>
-                                return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
-                            }
-                            )}                    </div>
-                    </Collapse>
+                        <ExpandMore
+                            expand={vodkaExpanded}
+                            header={`וודקה || Vodka`}
+                            aria-expanded={vodkaExpanded}
+                            aria-label={'open vodka'}
+                            onClick={() => handleExpandClick('Vodka')}
+                            className='wineCategory'
+                            key='Vodka'
+                        >
+                            <ExpandMoreIcon />
+                        </ExpandMore>
+                        <Collapse isOpen={vodkaExpanded} children={vodkaArr.map((rum) => {
+                            return <AlcoholCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                        }
+                        )} />
                     </aside>
                     <aside id="bestOfAlcohol">
                         <ExpandMore
@@ -874,20 +811,14 @@ const AlcoholMain = () => {
                             onClick={() => handleExpandClick('Best')}
                             className='wineCategory'
                             key='best'
-                            autoFocus={bestOfClicked}
                         >
                             <ExpandMoreIcon />
                         </ExpandMore>
-                        <Collapse in={bestExpanded} timeout="auto" unmountOnExit>
-                            <div className='dishgridView'>
-                                {bestOFALcArr.map((alcohol) => {
-                                    // return <TempAlcCard alcohol={whiskey}/>
-                                    return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
-                                }
-                                )}
-                            </div>
-                        </Collapse>
-                        </aside>
+                        <Collapse isOpen={bestExpanded} children={bestOFALcArr.map((alcohol) => {
+                            return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                        }
+                        )} />
+                    </aside>
                 </div> :
                     displayDishes
                 }

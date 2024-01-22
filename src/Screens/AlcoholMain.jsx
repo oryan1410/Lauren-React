@@ -480,11 +480,9 @@ const AlcoholMain = () => {
         };
         Object.entries(typeToStateMap).forEach(([key, value]) => {
             if (key === type) {
+                console.log(key, value)
                 value.setState(!value.state);
                 value.setClicked(true);
-                setTimeout(() => {
-                    value.setClicked(false);
-                }, 2000);
             }
             else {
                 value.setClicked(false);
@@ -556,7 +554,7 @@ const AlcoholMain = () => {
 
 
     return (
-        <Container style={{ width: '100%', justifyContent: 'center' }}>
+        <Container style={{ width: '100%', justifyContent: 'center', paddingBottom:'3.5rem' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 {/* <header>
                     <div className='SkipLinks'>
@@ -573,6 +571,7 @@ const AlcoholMain = () => {
                     <a href='#Beer' onClick={handleSkipLinkClick} className='homeLink'>{t('Beer')}</a>
                     </div>
                 </header> */}
+                <h1 className='homeTitle'>{t('Alcohol')}</h1>
                 <SearchAppBar label='alcohol' searchFunc={setSearch} />
                 {searchQuery === '' ? <div>
                     <ExpandMore
@@ -614,7 +613,7 @@ const AlcoholMain = () => {
                                     <ExpandMore
                                         expand={singleExpanded}
                                         header={'סינגל מאלט||Single Malt'}
-                                        aria-expanded={americanExpanded}
+                                        aria-expanded={singleExpanded}
                                         aria-label="open single malt"
                                         onClick={() => handleExpandClick('Single')}
                                         className='wineSubCategory'
@@ -622,7 +621,7 @@ const AlcoholMain = () => {
                                     >
                                         <ExpandMoreIcon />
                                     </ExpandMore>
-                                    <Collapse isOpen={singleClicked} children={whiskeyArr.map((whiskey) => {
+                                    <Collapse isOpen={singleExpanded} children={whiskeyArr.map((whiskey) => {
                                         // return <TempAlcCard alcohol={whiskey}/>
                                         return <AlcoholCard key={whiskey.IdAlc} alcohol={whiskey} title={whiskey.Name_Eng} />
                                     }
@@ -638,7 +637,7 @@ const AlcoholMain = () => {
                                     >
                                         <ExpandMoreIcon />
                                     </ExpandMore>
-                                    <Collapse isOpen={americanClicked} children={americanArr.map((american) => {
+                                    <Collapse isOpen={americanExpanded} children={americanArr.map((american) => {
                                         // return <TempAlcCard alcohol={whiskey}/>
                                         return <AlcoholCard key={american.IdAlc} alcohol={american} title={american.Name_Eng} />
                                     }
@@ -654,7 +653,7 @@ const AlcoholMain = () => {
                                     >
                                         <ExpandMoreIcon />
                                     </ExpandMore>
-                                    <Collapse isOpen={smokedClicked} children={smokedArr.map((smoked) => {
+                                    <Collapse isOpen={smokedExpanded} children={smokedArr.map((smoked) => {
                                         // return <TempAlcCard alcohol={whiskey}/>
                                         return <AlcoholCard key={smoked.IdAlc} alcohol={smoked} title={smoked.Name_Eng} />
                                     }

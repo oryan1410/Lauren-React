@@ -7,6 +7,7 @@ import { Container } from 'react-bootstrap';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 import { styled } from '@mui/material/styles';
+import { t } from 'i18next';
 
 const Cigars = () => {
     const { cigars, isLoading } = useUserContext();
@@ -61,8 +62,9 @@ const Cigars = () => {
     }
 
     return (
-        <Container style={{ width: '100%', justifyContent: 'center' }}>
+        <Container style={{ width: '100%', justifyContent: 'center', paddingBottom:'3.5rem' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisible'}`} role="main">
+                <h1 className="homeTitle">{t("Cigars")}</h1>
                 <SearchAppBar label='cigars' searchFunc={setSearch} />
 
                 {searchQuery === '' ? (

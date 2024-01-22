@@ -28,10 +28,10 @@ export default function ContactUs(props) {
             <div className={`home ${isVisible ? 'visible' : 'notVisible'}`}>
                 <div className='contactUs'>
                     <h2 className='ContactTitle'>Contact Us || צור קשר</h2>
-                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>טלפון: </p>
-                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>מייל: </p>
-                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>פייסבוק: </p>
-                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>אינסטגרם:<a className='contactLink' href='https://www.instagram.com/lauren_winebar/'> Go To Instagram </a></p>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>{t('Phone Number')}: 073-363-3523 </p>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>{t("Email")}: lauren.wine.bar@gmail.com</p>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>{t("Facebook")}: <a className='contactLink' href='https://www.facebook.com/profile.php?id=61553617899137' >Go To Facebook</a> </p>
+                    <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>{t("Instagram")}:<a className='contactLink' href='https://www.instagram.com/lauren_winebar/'> Go To Instagram </a></p>
 
                     <div className='wirkingHours'>
                         <h3 className='ContactSubTitle'>Working Hours || שעות פעילות</h3>

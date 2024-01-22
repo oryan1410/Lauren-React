@@ -38,6 +38,8 @@
     display: flex;
     justify-content: center;
     text-transform: lowercase;
+    width: 100%;
+    text-align: center;
 }
 
 .dishCardType{

@@ -23,7 +23,7 @@ export default function Events(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-        <span className='eventsTitle'>{t('Events')}</span>
+        <span className='homeTitle'>{t('Events')}</span>
         <div className={`soonToBeDiv ${language==='heb' && 'hebrew'}`}>
             <span className='soonToBeText'>{t('SoonToBe')}</span>
         </div>

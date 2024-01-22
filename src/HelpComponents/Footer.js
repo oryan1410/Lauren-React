@@ -1,6 +1,6 @@
 import * as React from 'react';
 import Typography from '@mui/material/Typography';
-import Link from '@mui/material/Link';
+import { Link } from 'react-router-dom';
 import CopyrightIcon from '@mui/icons-material/Copyright';
 import '../styles/Footer.css'
 import MapIcon from '@mui/icons-material/Map';
@@ -46,7 +46,7 @@ const {language} = useUserContext();
     // </div>
     //         </div>
     <footer>
-    <div className='footer'>
+    <div className='footer' style={{position:'fixed', bottom:0, zIndex:4, border:'1px solid black'}}>
       <div className='footerTop'>
         {/* <div className='leftTop'>
           <span className='findUs'>Find Us</span>
@@ -58,6 +58,7 @@ const {language} = useUserContext();
           </a>
           <img className='footerWhastAppIcon' src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Icons-%20permitted%2FDigital_Inline_Black.svg?alt=media&token=9db803ab-16b2-41d6-a6a4-2883054819d9' />
         </div> */}
+
         <div className='rightTop'>
           <span className={`warningDiv ${language==='heb' && 'hebWarning'}`}>{t('Warning')}</span>
         </div>

@@ -13,37 +13,6 @@ export default function TempCocktailCard(props) {
     const { language } = useUserContext();
 
 
-    const getDishType = () => {
-        if (language === 'heb') {
-            if (alcohol.IngType === 'Meat') {
-                return 'בשרי'
-            }
-            else if (alcohol.IngType === 'Dairy') {
-                return 'חלבי'
-            }
-            else if (alcohol.IngType === 'Parve') {
-                return 'פרווה'
-            }
-            else if (alcohol.IngType === 'Fish') {
-                return 'דגים'
-            }
-            else if (alcohol.IngType === 'Vegan') {
-                return 'טבעוני'
-            }
-            else if (alcohol.IngType === 'Vegetarian') {
-                return 'צמחוני'
-            }
-            else if (alcohol.IngType === 'Gluten Free') {
-                return 'ללא גלוטן'
-            }
-            else if (alcohol.IngType === 'Vegiterian') {
-                return 'צמחוני'
-            }
-        }
-        else {
-            return alcohol.IngType;
-        }
-    }
 
 
     return (
@@ -58,14 +27,11 @@ export default function TempCocktailCard(props) {
             <div className='line'></div>
             <div className='attributesDiv'>
                 <div className='dishpriceDiv'>
-                    <span className='dishCardSubtitle' aria-label={`.Price ${alcohol.CPrice}`}>₪{alcohol.CPrice}</span>
+                    <span className='dishCardPrice' aria-label={`.Price ${alcohol.CPrice}`}>₪{alcohol.CPrice}</span>
                 </div>
                 {/* <div className='kosherDiv'>
                     <span className='kosherText'>{getDishKosher()}</span>
                 </div> */}
-                <div className='typeDiv'>
-                    <span className='dishCardType'>{getDishType()}</span>
-                </div>
             </div>
 
 

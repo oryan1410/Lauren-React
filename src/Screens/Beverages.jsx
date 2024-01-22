@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BeerCard from '../HelpComponents/BeerCard';
+import TempDrinkCard from '../HelpComponents/TempDrinkCard';
 import '../App.css';
 import '../styles/Wines.css'
 // import SearchAppBar from '../SearchAppBar';
@@ -11,6 +12,7 @@ import Collapse from '@mui/material/Collapse';
 
 
 import { styled } from '@mui/material/styles';
+import { t } from 'i18next';
 
 
 
@@ -30,10 +32,9 @@ const Beverages = () => {
         if(!isLoading && beveragesArr.length !== 0){
         setIsVisable(true);
         let beer = beveragesArr.map((alcohol) => {
-            return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+            return <TempDrinkCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
         }
         );
-        console.log('dishArr', beer);
         setDisplayDishes(beer);
         }
     }, [isLoading,beveragesArr]);
@@ -75,7 +76,7 @@ const Beverages = () => {
             }
             else {
                 let arr = beveragesArr.map((alcohol) => {
-                    return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                    return <TempDrinkCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
@@ -92,7 +93,7 @@ const Beverages = () => {
             arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
                 let arr = arr4.map((alcohol) => {
-                    return <BeerCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                    return <TempDrinkCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
@@ -126,7 +127,8 @@ const Beverages = () => {
     return (
         <Container style={{ width: '100%', justifyContent: 'center' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <SearchAppBar alt='beverages' searchFunc={setSearch} />
+                <h1 className='homeTitle'>{t('beverages')}</h1>
+                {/* <SearchAppBar label="Beverages" setSearch={setSearch} /> */}
                 <ExpandMore
                     expand={lightExpand}
                     header='שתייה קלה || light drinks'
@@ -139,7 +141,7 @@ const Beverages = () => {
                     <Collapse in={lightExpand} timeout="auto" unmountOnExit>
                         {coldDrinkArr.map((beer) => {
                             // return <TempAlcCard alcohol={whiskey}/>
-                            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
+                            return <TempDrinkCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
                         }
                         )
                     }
@@ -156,7 +158,7 @@ const Beverages = () => {
                     <Collapse in={hotExpand} timeout="auto" unmountOnExit>
                         {hotDrinkArr.map((beer) => {
                             // return <TempAlcCard alcohol={whiskey}/>
-                            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
+                            return <TempDrinkCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
                         }
                         )
                     }

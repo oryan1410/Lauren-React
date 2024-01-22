@@ -61,7 +61,7 @@ export default function RecipeReviewCard2(props) {
             return 'Dry';
         }
         if (dryness === 'N') {
-            return 'Sweet';
+            return 'Semi-dry';
         }
     }
 
@@ -70,7 +70,7 @@ export default function RecipeReviewCard2(props) {
             return 'יבש';
         }
         if (dryness === 'N') {
-            return 'חצי-מתוק';
+            return 'חצי-יבש';
         }
     }
 

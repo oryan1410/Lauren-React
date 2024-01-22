@@ -2,8 +2,49 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   background-color: var(--secondary-background-color);
+  width: 100%;
+}
+
+.pagefooter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--secondary-background-color);
+}
+
+.footerUpper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 18.8px;
+}
+
+.pageFotterUpper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 18.8px;
+  background-color: var(--main-background-color2);
+  justify-content: flex-end;
+}
+.footerLink{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.footerUpperRight, .footerUpperLeft, .footerUpperCenter{
+  display: flex;
+  text-align: right;
+  flex-direction: column;
+  width: 100%;
+  color: #000000;
 }
 
 .footerBottom {
@@ -15,7 +56,7 @@
 
 .footerTop{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: flex-start;
     width: 100%;
 }
@@ -36,14 +77,12 @@
   flex: 5;
 }
 
-.footerTop> * {
-  padding-inline: 5px;
-}
 
 .footerTop > .rightTop{
   display: flex;
   flex: 5;
 }
+
 
 .warningDiv{
   width: 100%;

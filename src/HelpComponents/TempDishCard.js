@@ -57,7 +57,7 @@ export default function TempDishCard(props) {
             <div className='line'></div>
             <div className='attributesDiv'>
                 <div className='dishpriceDiv'>
-                    <span className='dishCardSubtitle'>₪{dish.CPrice}</span>
+                    <span className='dishCardPrice'>₪{dish.CPrice}</span>
                 </div>
                 {/* <div className='kosherDiv'>
                     <span className='kosherText'>{getDishKosher()}</span>

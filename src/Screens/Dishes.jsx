@@ -444,6 +444,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 
 import TempDishCard from '../HelpComponents/TempDishCard';
 import BeerCard from '../HelpComponents/BeerCard';
+import TempDrinkCard from '../HelpComponents/TempDrinkCard';
 
 
 
@@ -489,22 +490,36 @@ const Dishes = () => {
     const [hotClicked, setHotClicked] = useState(false);
     const [resetClicked, setResetClicked] = useState(false);
 
+    const dropOptionsEng = [
+         'Meat', 'Fish', 'Vegan', 'Vegetarian'
+    ];
+
+    const dropOptionsHeb = [
+        'בשרי', 'דגים', 'טבעוני', 'צמחוני'
+    ];
+
+
     function handleValueChange(value, label) {
         console.log('Value changed to:', value);
-        if (label === 'Dryness') {
-            setSelectedType(value);
-            if (value === 'Dry') {
-                setSelectedType('Y');
+        if (language==='heb'){
+            if (value==='בשרי'){
+                setSelectedType('Meat');
+                filterDishes('Meat');
             }
-            else {
-                setSelectedType('N');
+            else if (value==='דגים'){
+                setSelectedType('Fish');
+                filterDishes('Fish');
             }
-            //console.log('arr', arr);
+            else if (value==='טבעוני'){
+                setSelectedType('Vegan');
+                filterDishes('Vegan');
+            }
+            else if (value==='צמחוני'){
+                setSelectedType('Vegetarian');
+                filterDishes('Vegetarian');
+            }
         }
-        else if (label === 'Country') {
-            setSelectedCountry(value);
-        }
-        else if (label === 'Type') {
+        else {
             setSelectedType(value);
             filterDishes(value);
         }
@@ -562,13 +577,13 @@ const Dishes = () => {
 
         let cold = coldDrinkArr.map((beer) => {
             // return <TempAlcCard alcohol={whiskey}/>
-            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
+            return <TempDrinkCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
         }
         )
 
         let hot = hotDrinkArr.map((beer) => {
             // return <TempAlcCard alcohol={whiskey}/>
-            return <BeerCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
+            return <TempDrinkCard key={beer.IdBev} alcohol={beer} title={beer.Name_Eng} />
         }
         )
 
@@ -711,7 +726,7 @@ const Dishes = () => {
             )
             console.log('finalDish', finalDish);
             let finalBev= bevArr.map((bev) => {
-                return <BeerCard key={`bev${bev.IdBev}`} alcohol={bev} title={bev.Name_Eng} />
+                return <TempDrinkCard key={`bev${bev.IdBev}`} alcohol={bev} title={bev.Name_Eng} />
             }
             )
             console.log('finalBev', finalBev);
@@ -725,7 +740,7 @@ const Dishes = () => {
     }
         
     return (
-        <Container style={{ width: '100%', justifyContent: 'center' }}>
+        <Container style={{ width: '100%', justifyContent: 'center', paddingBottom:'3.5rem' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 <header>
                     <h1 className='homeTitle'>Menu</h1>
@@ -734,7 +749,7 @@ const Dishes = () => {
                 <SearchAppBar label={'menu'} searchFunc={setSearch} />
                 {/* <DropDown /> */}
                 {searchQuery === '' && <div className='dishgridView'>
-                    <DropDown label='Type' options={['Meat', 'Fish', 'Vegan', 'Vegetarian']} setValue={handleValueChange} selected={selectedType} />
+                    <DropDown label='Type' options={language==='heb'? dropOptionsHeb:dropOptionsEng} setValue={handleValueChange} selected={selectedType} />
                 </div>}
                 {searchQuery === '' && <div className='resetButtonDiv'>
                     <button className='resetButton' onClick={(e) => { resetFilter(); e.target.blur() }}>Reset</button>

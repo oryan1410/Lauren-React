@@ -134,9 +134,9 @@ renderFavorites();
     }, []);
 
     return (
-        <Container>
+        <Container style={{ paddingBottom:'3.5rem'}}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-                <h1 className='favoriteTitle'>{t('Favorite')}</h1>
+                <h1 className='homeTitle'>{t('Favorite')}</h1>
                 {/* {favorites.map((wineId) => (
                 <WineCard key={wineId} wineId={wineId} />
             ))} */}

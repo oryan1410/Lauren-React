@@ -19,6 +19,8 @@ import { useLocation } from 'react-router-dom';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
+import PageFooter from '../HelpComponents/PageFooters';
+
 const Wines = () => {
 
     const location = useLocation();
@@ -425,7 +427,8 @@ const Wines = () => {
 
 
     return (
-        <Container style={{ width: '100%', justifyContent: 'center' }}>
+        <>
+        <Container style={{ width: '100%', justifyContent: 'center', paddingBottom:'3.5rem' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
                 <header role="header">
                 <h1 className='homeTitle' aria-label='Wines'>{t('Wines')}</h1>
@@ -457,7 +460,6 @@ const Wines = () => {
                     aria-label="show more red wines"
                     className='wineCategory'
                     key={'red'}
-                    autoFocus={redClicked}
                 >
                     <ExpandMoreIcon />
                 </ExpandMore>
@@ -470,8 +472,6 @@ const Wines = () => {
                         aria-label="show more white wines"
                         className='wineCategory'
                         key={'white'}
-                        autoFocus={whiteClicked}
-
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -484,7 +484,6 @@ const Wines = () => {
                         aria-label="show more rose wines"
                         className='wineCategory'
                         key={'rose'}
-                        autoFocus={roseClicked}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -497,7 +496,6 @@ const Wines = () => {
                         aria-label="show more bubble wines"
                         className='wineCategory'
                         key={'bubble'}
-                        autoFocus={bubbleClicked}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -510,7 +508,6 @@ const Wines = () => {
                     aria-label="show more special wines"
                     className='wineCategory'
                     key={'bestOf'}
-                    autoFocus={bestOfClicked}
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
@@ -522,8 +519,13 @@ const Wines = () => {
                 {noneFound && <h1>None Found</h1>}
                 {testDisplay}
                 </main>
+                
+
             </div>
+           
         </Container>
+        {/* <PageFooter /> */}
+        </>
     );
 };
 

@@ -28,7 +28,7 @@ export default function Home(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-            <Container style={{ width: '100%', justifyContent: 'center' }}>
+            <Container style={{ width: '100%', justifyContent: 'center', paddingBottom:'3.5rem' }}>
                 {/* <SearchAppBar /> */}
                 <header>
                 <h1 className='homeTitle'>{t('lauren wine bar')}</h1>
@@ -37,32 +37,46 @@ export default function Home(props) {
                 <Grid container spacing={2} >
                     <Grid role={'navigation button'} item xs={5.8}  lg={2.8} className='homeGridItem'>
                         <Link alt='go To red wines' to={{
-                            pathname: "/wines",
+                            pathname: "/dishes",
                         }} state={{expanded: true}}>
-                            <span>יינות אדומים</span><br /><span className='engButton'>Red Wines</span>
+                            <span>מהמטבח שלנו</span><br /><span className='engButton'>Our Dishes</span>
                         </Link>
                     </Grid>
                     <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
                         <Link alt='go to white wines' to={{
                             pathname: "/wines",
-                        }} state={{whiteExpanded: true}}>
-                            <span>יינות לבנים</span><br/><span className='engButton'>White Wines</span>
+                        }}>
+                            <span>תפריט יינות</span><br/><span className='engButton'>Wines Menu</span>
                         </Link>
                                             </Grid>
                     <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
-                        <Link alt=' go to rose wines' to={{
-                            pathname: "/wines",
+                        <Link alt=' go to cocktails' to={{
+                            pathname: "/cocktails",
                         }} state={{roseExpanded: true}}>
-                             <span>יינות רוזה</span><br/> <span className='engButton'>Rose Wines</span>
+                             <span>קוקטיילים</span><br/> <span className='engButton'>Cocktails</span>
                         </Link>
                     </Grid>
                     <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
-                        <Link alt='go to bubble wines' to={{
-                            pathname: "/wines",
+                        <Link alt='go to Alcohol Menu' to={{
+                            pathname: "/alcohol",
                         }} state={{bubbleExpanded: true}}>
-                             <span>יינות מבעבעים</span><br/> <span className='engButton'>Bubble Wines</span>
+                             <span>תפריט אלכוהול</span><br/> <span className='engButton'>Alcohol menu</span>
                         </Link>
                     </Grid>
+                    <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
+                        <Link alt='go to Beverages' to={{
+                            pathname: "/beverages",
+                        }} state={{bubbleExpanded: true}}>
+                             <span>שתייה קלה/חמה</span><br/> <span className='engButton'>Beverages</span>
+                        </Link>
+                        </Grid>
+                        <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
+                        <Link alt='go to cigars' to={{
+                            pathname: "/cigars",
+                        }} state={{bubbleExpanded: true}}>
+                             <span>סיגרים</span><br/> <span className='engButton'>Cigars</span>
+                        </Link>
+                        </Grid>
                 </Grid>
                 </main>
                 <main>

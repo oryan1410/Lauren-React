@@ -1,25 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import BeerCard from '../HelpComponents/BeerCard';
-import TempCocktailCard from '../HelpComponents/TempCocktailCard';
-import RecipeReviewCard2 from '../HelpComponents/Card2';
-import DishCard from '../HelpComponents/DishCard';
+import TempDrinkCard from '../HelpComponents/TempDrinkCard';
 import '../App.css';
 import '../styles/Wines.css'
-import dishes from '../DishesArr.json'
 // import SearchAppBar from '../SearchAppBar';
 import { Container } from 'react-bootstrap';
 import DropDown from '../HelpComponents/DropDown';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
 
-import Collapse from '@mui/material/Collapse';
 import { styled } from '@mui/material/styles';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import { useTranslation } from 'react-i18next';
 
 
 
 const Cocktails = () => {
+    const {t} = useTranslation();
     const {cocktailsArr, countries, getFilters, isLoading } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
@@ -63,13 +58,11 @@ const Cocktails = () => {
 
     useEffect(() => {
         if(!isLoading && cocktailsArr.length !== 0){
-            console.log('cocktailsArr', cocktailsArr);
         setIsVisable(true);
         let beer = cocktailsArr.map((alcohol) => {
-            return <TempCocktailCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+            return <TempDrinkCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
         }
         );
-        console.log('dishArr', beer);
         setRedWinesArr(beer);
         setWhiteWinesArr(beer);
         setRoseWinesArr(beer);
@@ -116,11 +109,6 @@ const Cocktails = () => {
     }));
 
 
-    useEffect(() => {
-        console.log('dropArrays', dropArrays);
-    }
-        , [dropArrays])
-
     //Search useeffect
     useEffect(() => {
         if (searchQuery === "") {
@@ -130,7 +118,7 @@ const Cocktails = () => {
             }
             else {
                 let arr = cocktailsArr.map((alcohol) => {
-                    return <TempCocktailCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                    return <TempDrinkCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setAllDishes(arr);
@@ -148,7 +136,7 @@ const Cocktails = () => {
             arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
                 let arr = arr4.map((alcohol) => {
-                    return <TempCocktailCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
+                    return <TempDrinkCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
                 )
                 setDisplayDishes(arr);
@@ -171,8 +159,9 @@ const Cocktails = () => {
 
 
     return (
-        <Container style={{ width: '100%', justifyContent: 'center' }}>
+        <Container style={{ width: '100%', justifyContent: 'center', paddingBottom:'3.5rem' }}>
             <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
+                <h1 className='homeTitle'>{t("Cocktails")}</h1>
                 <SearchAppBar label={'cocktails'} searchFunc={setSearch} />
                 {/* <DropDown /> */}
                 {/* {searchQuery ==='' && <Grid container className='dishgridView'>
@@ -183,8 +172,8 @@ const Cocktails = () => {
                 </div>} */}
                 {searchQuery ===''? <div>
                 {cocktailsArr.map((rum) => {
-                            // return <TempAlcCard alcohol={whiskey}/>
-                            return <TempCocktailCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
+                            // return <TempDrinkCard alcohol={whiskey}/>
+                            return <TempDrinkCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />
                         }
                         )}
                 </div>:

@@ -126,7 +126,6 @@ export function UserProvider({ children }) {
         const tempNames = query(collection(db,'Wines'),where('onMenu','==','Y'));
         setIsLoading(true);
         const getNames= onSnapshot(tempNames, (snapshot) => {
-            console.log('getNamesChanges',snapshot.docChanges());
             let countries = [];
             let countriesHeb = [];           
             let redArr = [];
@@ -454,7 +453,6 @@ export function UserProvider({ children }) {
                                 beerArr.push(alcohol)
                             }
             });
-            console.log('alcoholArraaa',alcoholArr);
             setAlcoholArr(alcoholArr);
             setWhiskeyArr(whiskeyArr);
             setAmericanArr(AmericanArr);

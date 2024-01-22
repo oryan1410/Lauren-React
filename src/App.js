@@ -14,16 +14,17 @@ import WinePage from './Screens/WinePage';
 import AboutUs from './Screens/AboutUs';
 import Events from './Screens/Events';
 import Footer from './HelpComponents/Footer';
+import PageFooter from './HelpComponents/PageFooters';
 import LoginPage from './Screens/LoginPage';
 import Favorites from './Screens/Favorites';
 import FadeIn from './HelpComponents/FaidIn';
 import NotAllowed from './Screens/NotAllowed';
 import Cocktails from './Screens/Cocktail';
 import Cigars from './Screens/Cigars';
-// import Beverages from './Screens/Beverages';
+import Beverages from './Screens/Beverages';
 import ContactUs from './Screens/ContactUs';
+import AccessibilityDec from './Screens/AccessibilityDec';
 
-import AccessibilityTab from './HelpComponents/AcessabilityTab';
 import backgroundImage from './Images/BackgroungImage_Final.png';
 
 import { useUserContext } from './UserContext';
@@ -142,11 +143,6 @@ function App() {
   } 
 
   const { language, setUserLanguage, navBarVisable } = useUserContext();
-
-  useEffect(() => {
-    console.log('language', language);
-  }, [language]);
-
   const [isVisible, setIsVisible] = useState(false);
   const [expanded, setExpanded] = useState(false);
   // go to home page after 4 seconds
@@ -191,21 +187,10 @@ function App() {
       };
     }, []);
   
-  useEffect(() => {
-      console.log('isPageBottoma', isPageBottom);
-  }, [isPageBottom]);
-
-  useEffect(() => {
-    console.log('language', language);
-  }, [language]);
-
-
-
-
   return (
     <div className="App" style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div className="App-Body">
-        { navBarVisable && <Navbar bg="light" expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
+        { navBarVisable && <Navbar bg="light" style={{zIndex:5}} expand="xxl" fixed='top' expanded={expanded} onToggle={() => setExpanded(!expanded)} collapseOnSelect>
             <Navbar.Brand href="\home">
               <img src={'https://firebasestorage.googleapis.com/v0/b/wines-6e89f.appspot.com/o/Logos%2F%D7%9C%D7%95%D7%A8%D7%9F%20%D7%9C%D7%95%D7%92%D7%95%20%D7%95%D7%A7%D7%98%D7%95%D7%A8%D7%99-05.png?alt=media&token=ca7d6b59-a71a-4547-87db-970a9d75dc63'} height={60} width={100} alt="Go Home" />
             </Navbar.Brand>
@@ -252,12 +237,14 @@ function App() {
                 <Nav.Item>
                   <Link to="/alcohol" className={`nav-link ${location.pathname === '/alcohol' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Alcohol':'אלכוהול'}</Link>
                 </Nav.Item>
-                {/* <Nav.Item>
-                  <Link to="/beers" className={`nav-link ${location.pathname === '/beers' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Beers':'בירות'}</Link>
-                </Nav.Item> */}
                 <Nav.Item>
                   <Link to="/cocktails" className={`nav-link ${location.pathname === '/cocktails' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Cocktails':'קוקטיילים'}</Link>
                 </Nav.Item>
+                <Nav.Item>
+                  <Link to='/beverages' className={`nav-link ${location.pathname === '/beverages' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>
+                    <span className='beveragesLink'>{language==='en'?'Beverages':'שתייה'}</span>
+                    </Link></Nav.Item>
+                <Nav.Item>
                 <Nav.Item>
                   <Link to="/cigars" className={`nav-link ${location.pathname === '/cigars' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Cigars':'סיגרים'}</Link>
                 </Nav.Item>
@@ -265,13 +252,13 @@ function App() {
                   <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Favorite Wines':'יינות מועדפים'}</Link>
                 </Nav.Item>
                 {/* <Nav.Item>
-                  <Link to="/login" className={`nav-link ${location.pathname === '/login' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Login':'התחברות'}</Link>
-                </Nav.Item> */}
-                <Nav.Item>
                   <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Events':'אירועים'}</Link>
+                </Nav.Item> */}
+     
+                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'About Us':'אודותינו'}</Link>
                 </Nav.Item>
                 <Nav.Item>
-                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'About Us':'אודותינו'}</Link>
+                  <Link to="/accessibility" className={`nav-link ${location.pathname === '/accessibility' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Accessibility Declaration':'הצהרת נגישות'}</Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link to="/contact" className={`nav-link ${location.pathname === '/contact' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Contact':'צור קשר'}</Link>
@@ -301,8 +288,7 @@ resetAccessibility={resetAccessibility}
 brightMode={brightMode}
 readableFonts={readableFonts}
 markLinks={markLinks}
-/> */}
-        
+/> */}        
           <Routes>
             <Route path="/" element={<FadeIn setIsVisible={() => { setIsVisible(true) }} /> } />
             <Route path="/home" element={<Home isVisible={true} />} />
@@ -315,13 +301,14 @@ markLinks={markLinks}
             <Route path="/cigars" element={<Cigars />} />
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/events" element={<Events />} />
-            {/* <Route path="/beverages" element={<Beverages />} /> */}
+            <Route path="/beverages" element={<Beverages />} />
             <Route path="/contact" element={<ContactUs />} />
             
             <Route path="/winePage/:id" element={<WinePage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/favorites" element={<Favorites />} />
             <Route path="/not-allowed" element={<NotAllowed />} />
+            <Route path="/accessibility" element={<AccessibilityDec />} />
 
 
             {/* <Route path="/contact" element={<Contact />} />
@@ -332,6 +319,7 @@ markLinks={markLinks}
 
       </div>
       {!isPageBottom && !isPageTop &&<ArrowCircleUpIcon alt='go To Top' className='scrollToTop' onClick={() => window.scrollTo({top: 0, behavior: 'smooth'})}/>}
+      {/* <PageFooter /> */}
       <Footer />
     </div>
   );

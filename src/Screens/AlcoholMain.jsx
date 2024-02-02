@@ -536,9 +536,7 @@ const AlcoholMain = () => {
 
     }, [searchQuery]);
 
-    useEffect(() => {
-        console.log('noneFound', noneFound);
-    }, [noneFound])
+
 
     //search function
     const setSearch = (e) => {
@@ -809,7 +807,7 @@ const AlcoholMain = () => {
                             aria-label="open single malt"
                             onClick={() => handleExpandClick('Best')}
                             className='wineCategory'
-                            key='best'
+                            key={'best'}
                         >
                             <ExpandMoreIcon />
                         </ExpandMore>

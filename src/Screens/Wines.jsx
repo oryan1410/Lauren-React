@@ -73,10 +73,12 @@ const Wines = () => {
 
     useEffect(() => {
         setDropArrays([
-            <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-מתוק']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={selectedDryness} />,
+            <DropDown key={resetKey + '0'} label='Dryness' options={language==='heb'?['יבש','חצי-יבש']:['Dry', 'Half-Sweet']} setValue={handleValueChange} selected={selectedDryness} />,
             <DropDown key={resetKey + '1'} label='Country' options={language==='heb'? countriesHeb:countries} setValue={handleValueChange} selected={selectedCountry} />
         ]);
     }, [language]);
+
+
 
 
     function handleValueChange(value, label) {
@@ -320,12 +322,9 @@ const Wines = () => {
 
     // get countries and sort filters
     useEffect(() => {
-        if (countries.length === 0) {
-            getFilters();
-        }
-        else {
-            sortFilters();
-        }
+       
+         sortFilters();
+        
     }, [countries]);
 
     // epxand more for wine category based on color

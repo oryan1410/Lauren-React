@@ -10,7 +10,6 @@ import '../styles/Accessibility.css'
 export default function AccessibilityDec(props) {
 
     const [isVisible, setIsVisible] = useState(false);
-    const {getFilters} = useUserContext();
 
     useEffect(() => {
         setIsVisible(true);

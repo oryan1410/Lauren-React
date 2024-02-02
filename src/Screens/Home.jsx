@@ -12,12 +12,9 @@ import { useTranslation } from 'react-i18next';
 export default function Home(props) {
 
     const [isVisible, setIsVisible] = useState(false);
-    const { getFilters } = useUserContext();
     const { t } = useTranslation();
 
-    useEffect(() => {
-        getFilters();
-    }, []);
+
 
     useEffect(() => {
         if (props.isVisible) {

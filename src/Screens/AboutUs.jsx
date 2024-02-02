@@ -9,7 +9,6 @@ import { useUserContext } from '../UserContext';
 export default function AboutUs(props) {
 
     const [isVisible, setIsVisible] = useState(false);
-    const {getFilters} = useUserContext();
 
     useEffect(() => {
         setIsVisible(true);

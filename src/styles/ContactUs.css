@@ -54,7 +54,7 @@
 }
 
 .contactLink{
-    color: var(--main-font-color);
+    color: #5370f4;
     text-decoration: var(--main-link-decoration);
     text-transform: none;
 }

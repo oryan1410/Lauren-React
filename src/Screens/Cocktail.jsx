@@ -15,7 +15,7 @@ import { useTranslation } from 'react-i18next';
 
 const Cocktails = () => {
     const {t} = useTranslation();
-    const {cocktailsArr, countries, getFilters, isLoading } = useUserContext();
+    const {cocktailsArr, countries, isLoading } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');

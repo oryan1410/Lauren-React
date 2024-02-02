@@ -688,10 +688,6 @@ const Dishes = () => {
         });
     };
 
-    useEffect(() => {
-        console.log('useEffect');
-        console.log('displayDishes', displayDishes);
-    }, [displayDishes])
 
     //search function
     const setSearch = (e) => {

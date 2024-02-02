@@ -24,7 +24,7 @@ export default function ContactUs(props) {
 
 
     return (
-             <Container>
+        <Container>
             <div className={`home ${isVisible ? 'visible' : 'notVisible'}`}>
                 <div className='contactUs'>
                     <h2 className='ContactTitle'>Contact Us || צור קשר</h2>
@@ -39,7 +39,11 @@ export default function ContactUs(props) {
                         <p className='ContactText'>{t('weekEnds')}: 12:00-2:00</p>
                     </div>
                     <p className={`ContactText ${language === 'heb' && 'hebContactText'}`}>{t('Adress')}</p>
-
+                    <div className='navigateButton'>
+                        <a aria-label='Navigate to Tabit- reserve a seat' className='contactLink' target='_blank' href='https://tabitisrael.co.il/site/לורן-בר-יין-בית-אהרון' >
+                            {t('ReserveASeat')}
+                        </a>
+                    </div>
                     <div className='navigateButton'>
                         <a aria-label='Navigate to Us using Waze' className='contactLink' target='_blank' href='https://ul.waze.com/ul?preview_venue_id=22872388.228527268.3889&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location'>
                             {t('NavigateToUs')}

@@ -22,7 +22,6 @@ const Cigars = () => {
             let beer = cigars.map((cigar) => {
                 return <CigarCard key={cigar.IdCigar} alcohol={cigar} title={cigar.Name_Eng} />
             });
-            console.log('dishArr', beer);
             setDisplayDishes(beer);
         }
     }, [isLoading, cigars]);

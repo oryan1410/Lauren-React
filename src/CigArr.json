@@ -1,0 +1,57 @@
+[
+    {
+      "IdCigar": "3",
+      "Name_Heb": "מונטה קריסטו לבן",
+      "Name_Eng": "Montecristo White ",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FMonte_Cristo_Cigar.jpg?alt=media&token=73457ec3-d56b-4dc6-8e28-604b980a9b02",
+      "Desc_Heb": "כולל עטיפת קונטיקט אקוודורית מדהימה ותערובת של חומרי המילוי המשובחים ביותר.",
+      "Desc_Eng": "features a gorgeous Ecuadorian Connecticut Shade wrapper, a Nicaraguan binder, and a blend of the finest Dominican and Nicaraguan long-fillers.",
+      "CPrice": "109",
+      "inStock": true,
+      "onMenu": "Y"
+    },
+    {
+      "IdCigar": "1",
+      "Name_Heb": "רומיאו ויוליה 1875",
+      "Name_Eng": "Romeo Y Julieta 1875",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FRomeo%20Y%20Julieta%201875?alt=media&token=773ebbae-306a-4523-8ebf-327ebde5a9b7",
+      "Desc_Heb": "סיגר קלאסי בעבודה יד אשר נקרא על שם המחזה האהוב מידי שייקספיר",
+      "Desc_Eng": "classic toro-sized handmade cigar packaged in aluminum tubos, named after a Shakespeare literary favorite",
+      "CPrice": 96,
+      "inStock": true,
+      "onMenu": "Y"
+    },
+    {
+      "IdCigar": "4",
+      "Name_Heb": "Gordo Maduro ",
+      "Name_Eng": "Gordo Maduro ",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FGordo%20Maduro%20?alt=media&token=c7980ccb-5691-4886-9489-08c0602d9b62",
+      "Desc_Heb": "סיגר זה משתלב נהדר עם וויסקי איכותי",
+      "Desc_Eng": "This cigar can be paired with a scotch and we suggest to use a straight cut.",
+      "CPrice": "75",
+      "inStock": true,
+      "onMenu": "Y"
+    },
+    {
+      "IdCigar": "2",
+      "Name_Heb": "Toro Habano ",
+      "Name_Eng": "Toro Habano ",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FToro%20Habano%20?alt=media&token=5027d19b-d8d9-4128-bc07-f61fa11c2129",
+      "Desc_Heb": "ניתן לשלב את הסיגר הזה עם אספרסו או קפה קר ואנו מציעים להשתמש בחיתוך ישר.",
+      "Desc_Eng": "This cigar can be paired with a espresso or iced coffee and we suggest to use a straight cut.",
+      "CPrice": "59",
+      "inStock": true,
+      "onMenu": "Y"
+    },
+    {
+      "IdCigar": "5",
+      "Name_Heb": "LandLord",
+      "Name_Eng": "The LandLord",
+      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FLandLord.png?alt=media&token=7e5c16f7-7466-477c-8c94-e086496831a1",
+      "Desc_Heb": "הטעמים של בעל הבית כרוכים יחד כדי לתת לך את התחושה של מה זה להיות בעל הבית",
+      "Desc_Eng": "the flavours of the landlord are bounded together to give you the feeling of what it is like to be a part of the landlord mafia",
+      "CPrice": "64",
+      "inStock": true,
+      "onMenu": "Y"
+    }
+  ]

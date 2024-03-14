@@ -567,6 +567,13 @@ const Dishes = () => {
         }
     }
 
+    // useEffect(() => {
+    //     console.log('dishesArr', dishesArr);
+    //     let json= JSON.stringify(dishesArr);
+    //     // Assuming your array is named 'firestoreArray'
+    //     console.log(JSON.stringify(dishesArr, null, 2));
+    // }, [dishesArr])
+
     useEffect(() => {
         if (!isLoading)
             setIsVisable(true);
@@ -708,26 +715,17 @@ const Dishes = () => {
 
 
     const searchArrays = async() => {
-        let hebBev= beveragesArr.filter((bev) => bev.Name_Heb.includes(searchQuery));
-        let engBev= beveragesArr.filter((bev) => bev.Name_Eng.includes(searchQuery));
-        let bevArr = hebBev.concat(engBev);
-        let hebDish = dishesArr.filter((dish) => dish.Name_Eng.includes(searchQuery.toLowerCase()));
-        let engDish = dishesArr.filter((dish) => dish.Name_Heb.includes(searchQuery));
+        let engDish = dishesArr.filter((dish) => dish.Name_Eng.toLowerCase().includes(searchQuery.toLowerCase()));
+        let hebDish = dishesArr.filter((dish) => dish.Name_Heb.includes(searchQuery));
         let dishArr = hebDish.concat(engDish);
-        if (dishArr.length !== 0 || bevArr.length !== 0) {
+        if (dishArr.length !== 0 ) {
             setNoneFound(false);
             let finalDish = dishArr.map((dish) => {
                 return <TempDishCard key={`dish${dish.IdDish}`} dish={dish} />
             }
             )
             console.log('finalDish', finalDish);
-            let finalBev= bevArr.map((bev) => {
-                return <TempDrinkCard key={`bev${bev.IdBev}`} alcohol={bev} title={bev.Name_Eng} />
-            }
-            )
-            console.log('finalBev', finalBev);
-            let finalArr = finalDish.concat(finalBev);
-            setDisplayDishes(finalArr);
+            setDisplayDishes(finalDish);
         }        
         else {
             setNoneFound(true);

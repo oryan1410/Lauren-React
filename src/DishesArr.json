@@ -78,19 +78,6 @@
       "onMenu": "Y"
     },
     {
-      "IdDish": 10,
-      "Name_Heb": "קריספי קלמארי",
-      "Name_Eng": "Crispy squid",
-      "Type": "Easy Snack",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FCrispy%20squid?alt=media&token=b8064a60-7575-4383-a39a-e50ed3728066",
-      "Desc_Heb": "טבעות קלמארי פריכות בציפוי פנקו גרידת ליים בליווי איולי לימון כבוש ",
-      "Desc_Eng": "Crispy calamari rings coated with panko and lime zest accompanied by pickled lemon aioli",
-      "CPrice": "48",
-      "IngType": "Fish",
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
       "IdDish": 29,
       "Name_Heb": "נקניקיות למבינים ",
       "Name_Eng": "Hot dogs for those in the know",
@@ -100,19 +87,6 @@
       "Desc_Eng": "Smoked veal sausages grilled on the plancha accompanied by mustard aioli and sauerkraut",
       "CPrice": "52",
       "IngType": "Meat",
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
-      "IdDish": 16,
-      "Name_Heb": "שעועית בטמפורה",
-      "Name_Eng": "Beans in tempura",
-      "Type": "Easy Snack",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBeans%20in%20tempura?alt=media&token=e1b3ebbe-155a-4e79-be0c-dd7de3fbbaba",
-      "Desc_Heb": "שעועית גינה בציפוי טמפורה פריכה בתיבול תערובת תבלינים מזרחית עדינה ",
-      "Desc_Eng": "Garden beans coated in crispy tempura seasoned with a mild oriental spice mix",
-      "CPrice": "39",
-      "IngType": "Vegetarian",
       "inStock": true,
       "onMenu": "Y"
     },
@@ -221,19 +195,6 @@
       "onMenu": "Y"
     },
     {
-      "IdDish": 24,
-      "Name_Heb": "מים עמוקים ",
-      "Name_Eng": "Deep Sea",
-      "Type": "Next to Wine",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FDeep%20Sea?alt=media&token=a1ff9f1d-16c0-4b93-bcc0-45b255dedbc9",
-      "Desc_Heb": "פרוסות ביצי בורי בשעווה (אדמחוט) 20 גרם, גלילות סלמון כבוש 20 גרם וקוויאר שחור 5 גרם",
-      "Desc_Eng": "Slices of mullet eggs in wax (Adamkhut) 20 grams, pickled salmon rolls 20 grams and black caviar 5 grams",
-      "CPrice": "82",
-      "IngType": "Fish",
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
       "IdDish": 11,
       "Name_Heb": "כנפיים סצ'ואן",
       "Name_Eng": "Szechuan wings",
@@ -268,19 +229,6 @@
       "Desc_Heb": "לקט ירקות בציפוי טמפורה פריכה ",
       "Desc_Eng": "vegetables coated in crispy tempura",
       "CPrice": "39",
-      "IngType": "Vegetarian",
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
-      "IdDish": 23,
-      "Name_Heb": "פלטת גבינות לדאבל דייט",
-      "Name_Eng": "cheese plate for a Double Date",
-      "Type": "Next to Wine",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2Fcheese%20plate?alt=media&token=ec6a7bfe-cb5a-43fc-96a9-5613d3b26352",
-      "Desc_Heb": "12 סוגי גבינות קשות במגוון טעמים לצד זיתים מתובלים, מטבל פסטו וממרח עגבניות מיובשות, ריבת השף וסלסלת לחמי מחמצת   ",
-      "Desc_Eng": "12 types of hard cheeses in a variety of flavors alongside seasoned olives, pesto dip and dried tomato spread, the chef's jam and a basket of sourdough bread",
-      "CPrice": "156",
       "IngType": "Vegetarian",
       "inStock": true,
       "onMenu": "Y"

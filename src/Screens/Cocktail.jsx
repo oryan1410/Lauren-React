@@ -11,11 +11,15 @@ import { useUserContext } from '../UserContext';
 import { styled } from '@mui/material/styles';
 import { useTranslation } from 'react-i18next';
 
+import SpritzCard from '../HelpComponents/ShpritzCard';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Collapse from '../HelpComponents/Collapse';
+
 
 
 const Cocktails = () => {
     const {t} = useTranslation();
-    const {cocktailsArr, countries, isLoading } = useUserContext();
+    const {cocktailsArr, countries, isLoading, spritzArr } = useUserContext();
     const [selectedDryness, setSelectedDryness] = useState('');
     const [selectedColor, setSelectedColor] = useState('');
     const [selectedCountry, setSelectedCountry] = useState('');
@@ -28,14 +32,32 @@ const Cocktails = () => {
     const [dropArrays, setDropArrays] = useState([]);
 
     //wine arrays for expansion panels
-    const [redWinesArr, setRedWinesArr] = useState([]);
-    const [whiteWinesArr, setWhiteWinesArr] = useState([]);
-    const [roseWinesArr, setRoseWinesArr] = useState([]);
-    const [bubbleWinesArr, setBubbleWinesArr] = useState([]);
+
 
     const [resetKey, setResetKey] = useState(0);
     const [filterReset, setFilterReset] = useState(false);
     const [isAnimating, setIsAnimating] = useState(false);
+
+    const [spritzClicked,setSpritzClicked]= useState(false);
+    const [spritzExpanded, setSpritzExpanded] = useState(false);
+
+    const handleExpandClick = (type) => {
+        console.log('type', type);
+        const typeToStateMap = {
+            Spritz: { state: spritzExpanded, setState: setSpritzExpanded, setClicked: setSpritzClicked }
+
+        };
+        Object.entries(typeToStateMap).forEach(([key, value]) => {
+            if (key === type) {
+                console.log(key, value)
+                value.setState(!value.state);
+                value.setClicked(true);
+            }
+            else {
+                value.setClicked(false);
+            }
+        });
+    };
 
     function handleValueChange(value, label) {
         console.log('Value changed to:', value);
@@ -63,10 +85,6 @@ const Cocktails = () => {
             return <TempDrinkCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
         }
         );
-        setRedWinesArr(beer);
-        setWhiteWinesArr(beer);
-        setRoseWinesArr(beer);
-        setBubbleWinesArr(beer);
         setAllDishes(beer);
         setDisplayDishes(beer);
         }
@@ -171,6 +189,22 @@ const Cocktails = () => {
                     <Button className='resetButton' onClick={(e) => {sortFilters();e.target.blur()}} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
                 </div>} */}
                 {searchQuery ===''? <div>
+                <ExpandMore
+                     header={'שפריץ||Spritz'}
+                        aria-expanded={spritzExpanded}
+                        aria-label="open spritz"
+                        onClick={() => handleExpandClick('Spritz')}
+                        className='wineCategory'
+                        key='Spritz'
+                        tabIndex={spritzClicked ? 0 : -1}
+
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse isOpen={spritzExpanded} children={spritzArr.map((alc) => {
+                        return <SpritzCard key={alc.IdAlc} alcohol={alc} title={alc.Name_Eng} />
+                    }
+                    )} />
                 {cocktailsArr.map((rum) => {
                             // return <TempDrinkCard alcohol={whiskey}/>
                             return <TempDrinkCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />

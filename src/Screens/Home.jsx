@@ -8,11 +8,15 @@ import { useUserContext } from '../UserContext';
 import { InstagramEmbed } from 'react-social-media-embed';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
+import SpecialDialog from '../HelpComponents/SpecialDialog';
 
 export default function Home(props) {
 
     const [isVisible, setIsVisible] = useState(false);
     const { t } = useTranslation();
+    const [openDialog, setOpenDialog] = useState(true);
+    const [displayDialog, setDisplayDialog] = useState('block');
+    const {firstLoad,setFirstLoad} = useUserContext();
 
 
 
@@ -26,11 +30,14 @@ export default function Home(props) {
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
             <Container style={{ width: '100%', justifyContent: 'center', paddingBottom:'3.5rem' }}>
+
                 {/* <SearchAppBar /> */}
                 <header>
                 <h1 className='homeTitle'>{t('lauren wine bar')}</h1>
                 </header>
                 <main>
+{openDialog && firstLoad     &&          <SpecialDialog setOpenDialog={setOpenDialog} dialogOpen={openDialog} setDisplayDialog={setDisplayDialog} style={{display:`none`}}  />
+}
                 <Grid container spacing={2} >
                     <Grid role={'navigation button'} item xs={5.8}  lg={2.8} className='homeGridItem'>
                         <Link alt='go To red wines' to={{

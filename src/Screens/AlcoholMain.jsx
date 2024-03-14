@@ -363,6 +363,7 @@
 
 import React, { useState, useEffect } from 'react';
 import AlcoholCard from '../HelpComponents/AlcoholCard';
+// import SpritzCard from '../HelpComponents/SpritzCard';
 import DishCard from '../HelpComponents/DishCard';
 import '../App.css';
 import '../styles/Wines.css'
@@ -398,7 +399,8 @@ const AlcoholMain = () => {
     const [beerExpanded, setBeerExpanded] = useState(false);
     const [digestifExpanded, setDigestifExpanded] = useState(false);
     const [bestExpanded, setBestExpanded] = useState(false);
-    const { alcoholArr, beerArr, whiskeyArr, americanArr, smokedArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, digestifArr, anisArr, bestOFALcArr } = useUserContext();
+    const [spritzExpanded, setSpritzExpanded] = useState(false);
+    const { alcoholArr, beerArr, whiskeyArr, americanArr, smokedArr,spritzArr, coniacArr, vodkaArr, rumArr, ginArr, taquillaArr, apperativoArr, digestifArr, anisArr, bestOFALcArr } = useUserContext();
     const [isVisible, setIsVisable] = useState(false);
     const [searchQuery, setSearchQuery] = useState("");
     const [allDishes, setAllDishes] = useState([]);
@@ -423,12 +425,15 @@ const AlcoholMain = () => {
     const [singleClicked, setSingleClicked] = useState(false);
     const [digestifClicked, setDigestifClicked] = useState(false);
     const [bestOfClicked, setBestOfClicked] = useState(false);
+    const [spritzClicked,setSpritzClicked]= useState(false);
 
 
-
-
-
-
+    useEffect(() => {
+        console.log('alcoholArr', alcoholArr);
+        //         let json= JSON.stringify(winesArr);
+        // // Assuming your array is named 'firestoreArray'
+        console.log(JSON.stringify(alcoholArr, null, 2));
+    }, [alcoholArr]);
 
     useEffect(() => {
         setIsVisable(true);
@@ -462,6 +467,7 @@ const AlcoholMain = () => {
     const handleExpandClick = (type) => {
         console.log('type', type);
         const typeToStateMap = {
+            Spritz: { state: spritzExpanded, setState: setSpritzExpanded, setClicked: setSpritzClicked },
             Red: { state: expanded, setState: setExpanded, setClicked: setWhiskeyClicked },
             White: { state: americanExpanded, setState: setAmericanExpanded, setClicked: setAmericanClicked },
             Rose: { state: smokedExpanded, setState: setSmokedExpanded, setClicked: setSmokedClicked },
@@ -572,6 +578,22 @@ const AlcoholMain = () => {
                 <h1 className='homeTitle'>{t('Alcohol')}</h1>
                 <SearchAppBar label='alcohol' searchFunc={setSearch} />
                 {searchQuery === '' ? <div>
+                    {/* <ExpandMore
+                     header={'שפריץ||Spritz'}
+                        aria-expanded={spritzExpanded}
+                        aria-label="open spritz"
+                        onClick={() => handleExpandClick('Spritz')}
+                        className='wineCategory'
+                        key='Spritz'
+                        tabIndex={spritzClicked ? 0 : -1}
+
+                    >
+                        <ExpandMoreIcon />
+                    </ExpandMore>
+                    <Collapse isOpen={spritzExpanded} children={spritzArr.map((alc) => {
+                        return <SpritzCard key={alc.IdAlc} alcohol={alc} title={alc.Name_Eng} />
+                    }
+                    )} /> */}
                     <ExpandMore
                         expand={beerExpanded}
                         header={'בירה||Beer'}

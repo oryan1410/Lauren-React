@@ -413,3 +413,32 @@
     padding: 2px;
   }
 }
+
+
+/*for spritz Card*/
+.spritzCardImage {
+  height: 11.875rem;
+  width: 100%;
+  border: #020202;
+  border-radius: 16px;
+}
+
+.spritzCard-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;  
+  max-width: 50%;
+  flex: 4;
+
+}
+
+.spritzCard-Left {
+  display: flex;
+  flex: 4;
+  max-width: 80%;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1rem 1rem;
+  text-overflow: ellipsis;
+}

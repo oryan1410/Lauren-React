@@ -516,6 +516,7 @@ img {
 
 
 
+
 /* <-------------------  CSS for the Font Size Switch -------------------> */
 
 :root {
@@ -594,5 +595,28 @@ html {
   top: 0;
   height: 1.8rem;
   width: 1.7rem;
+}
+
+.MuiDialogActions-root.specialActions{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  position:absolute;
+  bottom: 0;
+  right: auto;
+  width: 100%;
+}
+
+.MuiButtonBase-root.MuiButton-root.specialdialogButton {
+  font-family: var(--main-font-family);
+  font-size: 1em;
+  text-transform: lowercase;
+  text-decoration: underline;
+  color: #050505;
+  border: 1px solid #967E68;
+  border-radius: 16px;
+  background-color: #967E68;
+  padding: 4px;
+  margin: 0 0.5rem;
 }
 

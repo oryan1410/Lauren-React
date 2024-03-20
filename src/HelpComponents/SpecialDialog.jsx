@@ -62,13 +62,12 @@ export default function SpecialDialog(props) {
             keepMounted
             onClose={handleClose}
             aria-describedby="alert-dialog-slide-description"
-            className={`${language === 'heb' && 'dialogContainerHeb'}`}
+            className={`specialDialog ${language === 'heb' && 'dialogContainerHeb'}`}
         >
             <CloseIcon className='closeIcon' style={{position:'absolute', left:0, border:'0.5px solid #000000',borderRadius:'15px', backgroundColor:'#000000', color:'#ffffff'}} onClick={handleClose} />
-            <DialogTitle className={`dialogTitle ${language === 'heb' && 'hebTitle'}`}>{t("spritz special")}</DialogTitle>
-                <img style={{width:'100%',padding:'5px', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Specials%2F%D7%A1%D7%A4%D7%99%D7%99%D7%A9%D7%9C%20%D7%97%D7%9E%D7%99%D7%A9%D7%99.jpg?alt=media&token=5a291b0d-a58e-4cb5-aaaa-bd5bed228003' />
-            <DialogActions>
-                <Button className='dialogButton' onClick={() => confirm(true)}>{t('To see the Specials')}</Button>
+                <img style={{width:'100%', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Specials%2F%D7%A1%D7%A4%D7%99%D7%99%D7%A9%D7%9C%20%D7%A9%D7%99%D7%A9%D7%99.jpeg?alt=media&token=333f4275-13ea-4c30-b58e-385feac23426' />
+            <DialogActions className='specialActions'>
+                <Button className='specialdialogButton' onClick={() => confirm(true)}>{t('To see the Specials')}</Button>
             </DialogActions>
         </Dialog>
     )

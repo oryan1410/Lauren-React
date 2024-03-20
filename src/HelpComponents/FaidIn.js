@@ -56,6 +56,7 @@ function FadeIn() {
 
     const handleClose = () => {
         setDialogOpen(false);
+        navigate('/not-allowed');
     }
 
     useEffect(() => {
@@ -75,7 +76,7 @@ function FadeIn() {
                 keepMounted
                 onClose={handleClose}
                 aria-describedby="alert-dialog-slide-description"
-                className={`${language==='heb' && 'dialogContainerHeb'}`}
+                className={`dialogPaper ${language==='heb' && 'dialogContainerHeb'}`}
             >
                 <DialogTitle className={`dialogTitle ${language ==='heb'&& 'hebTitle'}`}>{t("Confirm you are over 18")}</DialogTitle>
                 <DialogContent>

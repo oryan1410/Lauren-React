@@ -39,6 +39,9 @@ export default function RecipeReviewCard2(props) {
         if (type === 'Ro') {
             return 'Rose';
         }
+        if (type === 'Or') {
+            return 'Orange';
+        }
     }
 
     const getTypesHeb = (type) => {
@@ -53,6 +56,9 @@ export default function RecipeReviewCard2(props) {
         }
         if (type === 'Ro') {
             return 'רוזה';
+        }
+        if (type === 'Or') {
+            return 'כתום';
         }
     }
 

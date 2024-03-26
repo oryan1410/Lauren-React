@@ -428,12 +428,12 @@ const AlcoholMain = () => {
     const [spritzClicked,setSpritzClicked]= useState(false);
 
 
-    useEffect(() => {
-        console.log('alcoholArr', alcoholArr);
-        //         let json= JSON.stringify(winesArr);
-        // // Assuming your array is named 'firestoreArray'
-        console.log(JSON.stringify(alcoholArr, null, 2));
-    }, [alcoholArr]);
+    // useEffect(() => {
+    //     console.log('alcoholArr', alcoholArr);
+    //     //         let json= JSON.stringify(winesArr);
+    //     // // Assuming your array is named 'firestoreArray'
+    //     console.log(JSON.stringify(alcoholArr, null, 2));
+    // }, [alcoholArr]);
 
     useEffect(() => {
         setIsVisable(true);
@@ -465,7 +465,6 @@ const AlcoholMain = () => {
     }));
 
     const handleExpandClick = (type) => {
-        console.log('type', type);
         const typeToStateMap = {
             Spritz: { state: spritzExpanded, setState: setSpritzExpanded, setClicked: setSpritzClicked },
             Red: { state: expanded, setState: setExpanded, setClicked: setWhiskeyClicked },
@@ -486,7 +485,6 @@ const AlcoholMain = () => {
         };
         Object.entries(typeToStateMap).forEach(([key, value]) => {
             if (key === type) {
-                console.log(key, value)
                 value.setState(!value.state);
                 value.setClicked(true);
             }
@@ -525,7 +523,6 @@ const AlcoholMain = () => {
             let arr4 = arr1.concat(arr2);
             arr4 = [...new Set(arr4)]
             if (arr4.length !== 0) {
-                console.log('arr4', arr4.length)
                 let arr = arr4.map((alcohol) => {
                     return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                 }
@@ -546,7 +543,6 @@ const AlcoholMain = () => {
 
     //search function
     const setSearch = (e) => {
-        console.log('setSearchWines');
         setSearchQuery(e);
     }
 

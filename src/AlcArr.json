@@ -26,7 +26,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 75,
@@ -55,7 +56,24 @@
     "onMenu": "Y",
     "chaser": "Yes",
     "chaserPrice": "32",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 127,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBacardi%20Spiced?alt=media&token=bec81e18-7b1f-4dcc-b5be-f10c27c278d1",
+    "Name_Heb": "בקרדי ספייסד",
+    "Name_Eng": "Bacardi Spiced",
+    "Type": "Rum",
+    "Desc_Heb": " רום משובח שהתיישן בין 1-2 שנים בחביות עץ אלון אמריקאי חרוכות ולאחר מכן טובל במגוון תבלינים.",
+    "Desc_Eng": "A fine rum aged between 1-2 years in charred American oak barrels and then dipped in a variety of spices.",
+    "CPrice": "48",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 1,
@@ -98,7 +116,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 66,
@@ -113,7 +132,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 46,
@@ -128,7 +148,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 69,
@@ -173,6 +194,22 @@
     "chaserPrice": "0"
   },
   {
+    "IdAlc": 121,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FAberfeldi%2016?alt=media&token=316e9f97-cebe-436f-9451-df77f19e28a6",
+    "Name_Heb": "אברפלדי 16",
+    "Name_Eng": "Aberfeldi 16",
+    "Type": "Whiskey",
+    "Desc_Heb": "ניחוחות דבש, הדרים וציפורן מעט חריפה. גוף ומלא המזכיר טעמי עוגת פירות, שוקולד מריר עשיר וסיומת מלאה בכל חלל הפה.",
+    "Desc_Eng": "Aromas of honey, citrus and slightly spicy cloves. Body and full reminiscent of flavors of fruit cake, rich dark chocolate and a full finish throughout the mouth.",
+    "CPrice": "74",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
     "IdAlc": 30,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMacallan%2012?alt=media&token=44eeb80b-2a3b-4357-931e-642d0d128d6b",
     "Name_Heb": "מקאלן 12",
@@ -185,7 +222,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 57,
@@ -214,7 +252,24 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 129,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPatron%20Silver?alt=media&token=436ca826-d90c-4af8-96fe-d51b99a02eaf",
+    "Name_Heb": "פטרון סילבר",
+    "Name_Eng": "Patron Silver",
+    "Type": "Tequila",
+    "Desc_Heb": "צלולה לחלוטין, בעלת ארומות עשבוניות של אגבה ורמזי פרי הדר",
+    "Desc_Eng": "Completely clear, with herbaceous aromas of agave and hints of citrus fruit",
+    "CPrice": "56",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "Yes",
+    "chaserPrice": "34",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 92,
@@ -229,7 +284,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 94,
@@ -244,7 +300,24 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "32",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 122,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FGlenlivet%2012?alt=media&token=87916045-c3cf-49a0-84f8-6987cefafeeb",
+    "Name_Heb": "גלנליוט 12",
+    "Name_Eng": "Glenlivet 12",
+    "Type": "Whiskey",
+    "Desc_Heb": "הגלנליוויט הקלאסי משכן בתוכו את כל הטוב של המזקקה. חלק ומעודן מלא בארומות פירותיות, עם נוכחות ברורה של אננס.",
+    "Desc_Eng": "The classic Glenlivet contains all the goodness of the distillery. Smooth and refined full of fruity aromas, with a clear presence of pineapple.",
+    "CPrice": "78",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 62,
@@ -258,7 +331,24 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 125,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FLaphRoaig%2010?alt=media&token=dc9012db-eddc-4efc-a768-078d961236bb",
+    "Name_Heb": "לפרויג 10",
+    "Name_Eng": "LaphRoaig 10",
+    "Type": "Smoked",
+    "Desc_Heb": "טעמו מועשן, כבול וקצת מלוח ביחס לגילו. בעיני רבים נחשב לוויסקי המעושן ביותר.",
+    "Desc_Eng": "Its taste is smoky, peaty and a little salty in relation to its age. In the eyes of many, it is considered the most smoky whiskey.",
+    "CPrice": "66",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 115,
@@ -273,7 +363,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 42,
@@ -316,7 +407,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 58,
@@ -344,7 +436,25 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32"
+    "chaserPrice": "30",
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 131,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPatron%20Reposado?alt=media&token=81200da8-8346-43f7-b263-227551c133b0",
+    "Name_Heb": "פטרון רפוסדו",
+    "Name_Eng": "Patron Reposado",
+    "Type": "Tequila",
+    "Desc_Heb": "הטעם הנקי של פטרון סילבר עם טעמי העץ של פטרון אנייחו ומתקתקות פירותית והדרית",
+    "Desc_Eng": "The clean taste of Patron Silver with the woody flavors of Patron Anijo and fruity and citrus sweetness",
+    "CPrice": "61",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "Yes",
+    "chaserPrice": "36",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 91,
@@ -358,7 +468,24 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32"
+    "chaserPrice": "32",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 123,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FGlenlivet%2015?alt=media&token=85934a42-2d0f-4d60-9040-83bb4906cca0",
+    "Name_Heb": "גלנליווט 15",
+    "Name_Eng": "Glenlivet 15",
+    "Type": "Whiskey",
+    "Desc_Heb": "סינגל מאלט סקוטי אשר התיישן בחביות עץ אלון אמריקאי, ועבר תקופת יישון נוספת בחביות אלון-לימוזין צרפתי.",
+    "Desc_Eng": "A Scottish single malt that was aged in American oak barrels, and went through an additional aging period in French Limousin oak barrels.",
+    "CPrice": "96",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 47,
@@ -401,7 +528,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 93,
@@ -416,7 +544,24 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 126,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBacardi%20Blanca?alt=media&token=3371ca31-3448-4fe5-a6ea-9dc27f084826",
+    "Name_Heb": "בקרדי לבן",
+    "Name_Eng": "Bacardi Blanca",
+    "Type": "Rum",
+    "Desc_Heb": "למשקה טעמים ברורים של וניל ושקדים שהתפתחו עצם הישון בחביות הבורבון מעץ אלון.",
+    "Desc_Eng": "The drink has distinct flavors of vanilla and almonds that have developed over time in the oak bourbon barrels.",
+    "CPrice": "42",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 104,
@@ -431,7 +576,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "1700"
+    "bottlePrice": "1700",
+    "bestOf": true
   },
   {
     "IdAlc": 38,
@@ -462,20 +608,6 @@
     "chaserPrice": "0"
   },
   {
-    "IdAlc": 53,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FVolcan%20Reposado%20Tequila?alt=media&token=b9cee66f-9b55-4c8a-ab00-960061975e9b",
-    "Name_Heb": "טקילה וולקן רפוסאדו",
-    "Name_Eng": "Volcan Reposado Tequila",
-    "Type": "Tequila",
-    "Desc_Heb": "טקילה ייחודית המיוצרת בעבודת יד מ-100% אגבה כחולה המגיעה מהאזור ההררי בחאליסקו (HIGHLANDS ) המאופיין באדמה אדומה עשירה בחימר עליה גדלה אגבה בעלת תווים פירותיים ופרחוניים.",
-    "Desc_Eng": "A unique tequila that is made by hand from 100% blue agave that comes from the mountainous region of Jalisco (HIGHLANDS), characterized by red soil rich in clay on which agave with fruity and floral notes grows.",
-    "CPrice": "69",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "Yes",
-    "chaserPrice": "44"
-  },
-  {
     "IdAlc": 73,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FNegroni%20XO?alt=media&token=af823c22-6939-4a16-83a7-4d039d99050e",
     "Name_Heb": "נגרוני XO",
@@ -502,7 +634,8 @@
     "onMenu": "Y",
     "chaser": "Yes",
     "chaserPrice": "32",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 102,
@@ -516,7 +649,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bestOf": true
   },
   {
     "IdAlc": 40,
@@ -559,7 +693,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": true
   },
   {
     "IdAlc": 48,
@@ -590,6 +725,22 @@
     "chaserPrice": "0"
   },
   {
+    "IdAlc": 119,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FLeifmans?alt=media&token=3549c6d7-05a5-45d1-b01a-aa9036b1b11a",
+    "Name_Heb": "ליפמנס",
+    "Name_Eng": "Leifmans",
+    "Type": "Beer",
+    "Desc_Heb": "בירה ליפמנס פירות מבוססת על חמישה סוגים של פירות אדומים: תות, אוכמניות, דובדבנים, פטל וסמבוק. בעלת צבע אדמדם, ניחוח מרענן ופירותי, טעם מתוק המאוזן בסיומת חמצמצה ומעודנת.",
+    "Desc_Eng": "Lipmans fruit beer is based on five types of red fruits: strawberry, blueberry, cherry, raspberry and elderberry. It has a reddish color, a refreshing and fruity aroma, a sweet taste balanced by a sour and refined finish.",
+    "CPrice": "34",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
+  },
+  {
     "IdAlc": 74,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FNew%20York%20Twist?alt=media&token=9a18f0ce-d375-44a4-98f8-dcba0023a271",
     "Name_Heb": "ניו יורק טוויסט ",
@@ -618,21 +769,6 @@
     "chaserPrice": "27"
   },
   {
-    "IdAlc": 64,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBeloga%20Transatlantic?alt=media&token=c3bbc940-dc00-43a4-b304-c0a80e29475b",
-    "Name_Heb": "בלוגה טרנסאטלנטיק- בקבוק בלבד",
-    "Name_Eng": "Beloga Transatlantic- bottle only",
-    "Type": "Vodka",
-    "Desc_Heb": "הבלוגה הטרנסאטלנטיק נחשבת לחלקה וטהורה יותר הודות לסינון מיוחד דרך חול קוורץ ומסנן כסף ויישון של 45 יום לפני הביקבוק, המאפשר לה “לנוח” מתהליך הזיקוק.",
-    "Desc_Eng": "The Transatlantic Beluga is considered smoother and purer thanks to special filtering through quartz sand and a silver filter and aging for 45 days before bottling, which allows it to \"rest\" from the distillation process.",
-    "CPrice": "0",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": "700"
-  },
-  {
     "IdAlc": 81,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMirage?alt=media&token=88c834a9-eaac-4897-bfb2-6dd7c8d1b383",
     "Name_Heb": "מיראז'",
@@ -645,7 +781,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 96,
@@ -660,7 +797,40 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": true
+  },
+  {
+    "IdAlc": 130,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPatron%20Anejo?alt=media&token=b10659bd-fd01-490e-82e8-abc66afbe626",
+    "Name_Heb": "פטרון אנייחו",
+    "Name_Eng": "Patron Anejo",
+    "Type": "Tequila",
+    "Desc_Heb": "בעלת טעמי ווניל, צימוקים ודבש מחמיאים לטעם עץ האלון הייחודי של פטרון אנייחו, ולסיומת יש טעמי קרמל ורמזים מעושנים",
+    "Desc_Eng": "It has vanilla, raisin and honey flavors that compliment the unique oak flavor of Patron Anijo, and the finish has caramel flavors and smoky hints",
+    "CPrice": "65",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "Yes",
+    "chaserPrice": "39",
+    "bottlePrice": 0,
+    "bestOf": false
+  },
+  {
+    "IdAlc": 128,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2F'bombay%20Gin?alt=media&token=8fea3f7b-7f85-4cdc-935b-142c51e54773",
+    "Name_Heb": "ג'ין בומביי",
+    "Name_Eng": "'bombay Gin",
+    "Type": "Gin",
+    "Desc_Heb": "ג’ין בומביי ספייר נולד ב- 1950 אך מבוסס על נוסחה עתיקה מ- 1761 שהתגלתה במזקקה ישנה.",
+    "Desc_Eng": "Bombay Spear gin was born in 1950 but is based on an ancient formula from 1761 that was discovered in an old distillery.",
+    "CPrice": "47",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 54,
@@ -717,7 +887,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "2500"
+    "bottlePrice": "2500",
+    "bestOf": true
   },
   {
     "IdAlc": 106,
@@ -732,7 +903,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "1800"
+    "bottlePrice": "1800",
+    "bestOf": true
   },
   {
     "IdAlc": 49,
@@ -775,7 +947,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 63,
@@ -790,7 +963,24 @@
     "onMenu": "Y",
     "chaser": "Yes",
     "chaserPrice": "32",
-    "bottlePrice": ""
+    "bottlePrice": "",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 124,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FGlenlivet%2018?alt=media&token=22e0197e-7d11-4490-ba97-66fe1951c57a",
+    "Name_Heb": "גלנליוט 18",
+    "Name_Eng": "Glenlivet 18",
+    "Type": "Whiskey",
+    "Desc_Heb": "התיישן בחביות אלון אמריקאי ובחביות שרי ספרדי, שהעניקו לו טעמים עמוקים נוספים של דבש ופירות יבשים.",
+    "Desc_Eng": "Aged in American oak barrels and Spanish sherry barrels, which gave it additional deep flavors of honey and dried fruits.",
+    "CPrice": "140",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 85,
@@ -805,7 +995,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 108,
@@ -820,7 +1011,24 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "700"
+    "bottlePrice": "700",
+    "bestOf": true
+  },
+  {
+    "IdAlc": 120,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FAberfeldi%2012?alt=media&token=9e8b7638-05f0-4df1-9300-90977401d4be",
+    "Name_Heb": "אברפלדי 12",
+    "Name_Eng": "Aberfeldi 12",
+    "Type": "Whiskey",
+    "Desc_Heb": "תווים נדירים של דבש – המפתח למתיקות והחתימה לסדרת המאלטים של אברפלדי.",
+    "Desc_Eng": "characters Rare honey - the key to sweetness and the signature to the malt series of Aberfeldy.",
+    "CPrice": "68",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 100,
@@ -834,22 +1042,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
-  },
-  {
-    "IdAlc": 45,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FTalisker%2010?alt=media&token=bb36db48-2ea9-4a5e-b307-c3ebef366868",
-    "Name_Heb": "טאליסקר 10",
-    "Name_Eng": "Talisker 10",
-    "Type": "Smoked",
-    "Desc_Heb": "וויסקי טאליסקר, המיושן 10 שנים, ארומות של עשן כבול ומליחות ים, וברקע דבש, טופי ווניל עדינים.",
-    "Desc_Eng": "Talisker whiskey, aged 10 years, aromas of peat smoke and sea saltiness, with a background of honey, delicate vanilla toffees.",
-    "CPrice": "58",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bestOf": true
   },
   {
     "IdAlc": 105,
@@ -864,7 +1058,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "1500"
+    "bottlePrice": "1500",
+    "bestOf": true
   },
   {
     "IdAlc": 89,
@@ -893,7 +1088,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0
+    "bottlePrice": 0,
+    "bestOf": true
   },
   {
     "IdAlc": 71,
@@ -908,7 +1104,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 77,
@@ -925,18 +1122,20 @@
     "chaserPrice": "0"
   },
   {
-    "IdAlc": 44,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FEzra%20Brooks?alt=media&token=518ab5c4-cbf7-49fd-88e0-1d953c4d4564",
-    "Name_Heb": "עזרה ברוקס",
-    "Name_Eng": "Ezra Brooks",
-    "Type": "American",
-    "Desc_Heb": "הבורבון של עזרא ברוקס מבוקבק בחוזק של 49.5% אלכוהול ומיושן בחביות עץ בדרכים המסורתיות להשגת הטעם הטוב ביותר וסיומת חלקה ונעימה",
-    "Desc_Eng": "Ezra Brooks' bourbon is bottled at a strength of 49.5% alcohol and aged in wooden barrels in the traditional ways to achieve the best taste and a smooth and pleasant finish",
-    "CPrice": "62",
+    "IdAlc": 132,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FGrey%20Goose%201%20liter?alt=media&token=cf568ce3-afe2-4870-bfa5-22d1b834dc4c",
+    "Name_Heb": "גרייגוס ליטר",
+    "Name_Eng": "Grey Goose 1 liter",
+    "Type": "Vodka",
+    "Desc_Heb": "וודקה אולטרה פרימיום צרפתית מהמובילות בעולם, המיוצרת מ 100%- חיטה צרפתית מעודנת",
+    "Desc_Eng": "One of the world's leading ultra-premium French vodkas, made from 100% refined French wheat",
+    "CPrice": 0,
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bottlePrice": "600",
+    "bestOf": false
   },
   {
     "IdAlc": 103,
@@ -950,7 +1149,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32"
+    "chaserPrice": "32",
+    "bestOf": false
   },
   {
     "IdAlc": 101,
@@ -964,7 +1164,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bestOf": true
   },
   {
     "IdAlc": 56,
@@ -992,21 +1193,24 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bestOf": true
   },
   {
-    "IdAlc": 51,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FHavana%20club?alt=media&token=9cbf8c1f-7257-47b6-9123-1dd2c192847a",
-    "Name_Heb": "הוואנה קלאב",
-    "Name_Eng": "Havana club",
-    "Type": "Rum",
-    "Desc_Heb": "הוואנה קלאב הינו רום קובני המיוצר משנת 1878. הרום הקובני מאופיין רובו ככולו ברום בעל גוף יחסית קל ומרקם חלק ונעים לשתייה, העשוי ממולאסות קני הסוכר.",
-    "Desc_Eng": "Havana Club is a Cuban rum produced since 1878. Cuban rum is mostly characterized as a rum with a relatively light body and a smooth texture that is pleasant to drink, made from sugar cane molasses.",
-    "CPrice": "42",
+    "IdAlc": 118,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FWhite%20Rabbit%20Black?alt=media&token=d5439be2-ceb7-403e-82cf-545c51a59a08",
+    "Name_Heb": "וויט ראביט שחור ",
+    "Name_Eng": "White Rabbit Black",
+    "Type": "Beer",
+    "Desc_Heb": "בירה עכורה, רכה, קרמית, ומלאת גוף. עשירה בארומות  וטעמים טרופיים של מלון, מנגו גויאבה, ומכילה שיבולת שועל וחיטה.",
+    "Desc_Eng": "A cloudy, soft, creamy, and full-bodied beer. Rich in aromas and tropical flavors of melon, mango guava, and contains oats and wheat.",
+    "CPrice": "38",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 99,
@@ -1020,7 +1224,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bestOf": true
   },
   {
     "IdAlc": 95,
@@ -1035,7 +1240,8 @@
     "onMenu": "Y",
     "chaser": "Yes",
     "chaserPrice": "27",
-    "bottlePrice": "0"
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 55,
@@ -1064,6 +1270,7 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "1200"
+    "bottlePrice": "1200",
+    "bestOf": true
   }
 ]

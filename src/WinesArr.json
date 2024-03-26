@@ -38,8 +38,8 @@
     "Dry_Y_N_": "Y",
     "Price": "38.61",
     "Cup_Y_N_": "Y",
-    "CupPrice": "37",
-    "BottlePrice": "128",
+    "CupPrice": "39",
+    "BottlePrice": "145",
     "Grape_Eng": [
       "Pinot noir"
     ],
@@ -52,33 +52,6 @@
     "WineryName_Eng": "VILARNAU",
     "Desc_Heb": "קאווה ורודה אורגנית בעלת מורכבות ארומטית של סיגליות ופירות יער בשלים. בעלת מרקם נעים ותחושה רעננה ואלגנטית.",
     "Desc_Eng": "An organic pink cava with an aromatic complexity of violets and ripe berries. has a pleasant texture and a fresh and elegant feeling. .",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
-    "Id": 52,
-    "Name_Heb": "פסגות קברנה סוביניון",
-    "Name_Eng": "Cabernet Sauvignon Peaks",
-    "Country_Eng": "Israel",
-    "Country_Heb": "ישראל",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "76.83",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "245",
-    "Grape_Eng": [
-      "Cabernet Sauvignon"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "קברנה סוביניון"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FCabernet%20Sauvignon%20Peaks?alt=media&token=dce9c290-36cb-4f5f-a4c0-7fdebe7a53b4",
-    "WineryName_Heb": "פסגות",
-    "WineryName_Eng": "Psagot",
-    "Desc_Heb": "היין אלגנטי, בעל מבנה עשיר וסיומת ארוכה ומפגין עוצמה של קברנה סוביניון קלאסי עם טעמים עשירים של פירות יער, שזיפים דובדבנים ופטל.",
-    "Desc_Eng": "The wine is elegant, has a rich structure and a long finish and exhibits the power of a classic Cabernet Sauvignon with rich flavors of berries, cherry plums and raspberries.",
     "inStock": true,
     "bestOf": false
   },
@@ -119,8 +92,8 @@
     "Dry_Y_N_": "Y",
     "Price": 0,
     "Cup_Y_N_": "Y",
-    "CupPrice": "54",
-    "BottlePrice": "196",
+    "CupPrice": "59",
+    "BottlePrice": "220",
     "Grape_Eng": [
       "Cabernet Sauvignon",
       "Merlot",
@@ -201,8 +174,62 @@
     "bestOf": true
   },
   {
+    "Id": 107,
+    "Name_Heb": "מאקון וילאג’ שרדונה",
+    "Name_Eng": "Macon-Villages Chardonnay",
+    "Country_Eng": "France",
+    "Country_Heb": "צרפת",
+    "Type_Ro_Re_Wh_Bu_": "Wh",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "190",
+    "Grape_Eng": [
+      "Chardonnay"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "שרדונה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FMacon-Villages%20Chardonnay?alt=media&token=24fc60c5-688f-4543-8ce0-89cb2f22f72c",
+    "WineryName_Heb": "מולארד",
+    "WineryName_Eng": "Moillard",
+    "Desc_Heb": "100% שרדונה המגיעים מאזור מאקון בדרום בורגון, בעל מזג אוויר חם יותר לעומת שאבלי ובעל תוואי שטח מעט שטוח יותר. חלק מן היין עובר תסיסה מלו-לקטית והתבגרות במיכל.",
+    "Desc_Eng": "100% Chardonnay coming from the Macon region in southern Bourgogne, which has a warmer climate than Chablis and has a slightly flatter terrain route. Part of the wine undergoes malolactic fermentation and maturation in the tank.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 103,
+    "Name_Heb": "פינו בלאן ריבוביל",
+    "Name_Eng": "Pinot Blanc",
+    "Country_Eng": "France",
+    "Country_Heb": "צרפת",
+    "Type_Ro_Re_Wh_Bu_": "Wh",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "55",
+    "BottlePrice": "205",
+    "Grape_Eng": [
+      "Pinot Blanc"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "פינו בלאן"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPinot%20Blanc?alt=media&token=df662829-aab7-4467-96e5-92c662070704",
+    "WineryName_Heb": "ריבוביל",
+    "WineryName_Eng": "Cave De Rubeauville",
+    "Desc_Heb": "הענבים ליין זה מגיעות מכרם שנמצא על מדרונות ונבצר כולו בעבודת יד על קו השבר המפורסם של Ribeauvillé המציע מגוון מדהים של טרוארים. זהו יין קל ופירותי, בעל תחושה קלילה ומרעננת. את הפינו בלאן הזה צריך לשתות צעיר.",
+    "Desc_Eng": "The grapes for this wine come from a vineyard located on slopes and fortified entirely by hand on the famous fault line of Ribeauvillé that offers an amazing variety of terroirs. This is a light and fruity wine, with a light and refreshing feel. This Pinot Blanc should be drunk young.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 44,
-    "Name_Heb": "שבלי שבליזיין",
+    "Name_Heb": "שאבלי שבליזיין",
     "Name_Eng": "Chablis La Chablisienne",
     "Country_Eng": "France",
     "Country_Heb": "צרפת",
@@ -210,8 +237,8 @@
     "Dry_Y_N_": "Y",
     "Price": 0,
     "Cup_Y_N_": "Y",
-    "CupPrice": "54",
-    "BottlePrice": "196",
+    "CupPrice": "56",
+    "BottlePrice": "210",
     "Grape_Eng": [
       "Chardonnay"
     ],
@@ -284,39 +311,6 @@
     "bestOf": true
   },
   {
-    "Id": 82,
-    "Name_Heb": "פיציני רוזה",
-    "Name_Eng": "Piccini Ros'e",
-    "Country_Eng": "Italy",
-    "Country_Heb": "איטליה",
-    "Type_Ro_Re_Wh_Bu_": "Ro",
-    "Dry_Y_N_": "N",
-    "Price": "39.38",
-    "Cup_Y_N_": "Y",
-    "CupPrice": "56",
-    "BottlePrice": "204",
-    "Grape_Eng": [
-      "Merlot",
-      "Negroamaro",
-      "Nero d'Avola",
-      "Montepulciano"
-    ],
-    "Blend_Y_N_": "Y",
-    "Grape_Heb": [
-      "מרלו",
-      "מונטפולצ'יאנו",
-      "נרו ד'אבולה",
-      "נגרומארו"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPiccini%20Ros'e?alt=media&token=3463cc42-a483-48be-ac12-10e91017eb6f",
-    "WineryName_Heb": "פיצ'יני",
-    "WineryName_Eng": "Piccini",
-    "Desc_Heb": "בעל אופי פירותי כמו פטל ותות עם רמז למנטה עדינה",
-    "Desc_Eng": "Has a fruity character like raspberry and strawberry with a hint of subtle mint",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
     "Id": 91,
     "Name_Heb": "קורטון גראן קרו קלו דה מארשו",
     "Name_Eng": "Corton Gran Cru Clos de Marcheau",
@@ -344,33 +338,56 @@
     "bestOf": true
   },
   {
-    "Id": 80,
-    "Name_Heb": "ביסטרו שיק",
-    "Name_Eng": "Bistro chic",
+    "Id": 105,
+    "Name_Heb": "פרימיטיבו",
+    "Name_Eng": "primitivo",
+    "Country_Eng": "Italy",
+    "Country_Heb": "איטליה",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "190",
+    "Grape_Eng": [
+      "Primitivo"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "פרימיטיבו"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2Fprimitivo?alt=media&token=9a641885-275a-4024-841f-3d2380d5bbaf",
+    "WineryName_Heb": "מאסטרו",
+    "WineryName_Eng": "Maestro",
+    "Desc_Heb": "100% ענבי פרימיטיבו המגיעים מכרמים בוגרות באזור פוליה. לאחר תסיסה של שבועיים היין עובר להתיישנות של חודשי כשמונה בחברות. בעל גוף ומבינוני, טאנינים רכים סוכר שארי. באף- שזיפים, תאנים, פירות אדומים, וניל ותבלינים מתוקים. בפה- פירות יער, קינמון, מוסקט, דובדבנים ושזיפים שחורים.",
+    "Desc_Eng": "100% Primitivo grapes that arrive From mature vineyards in the Apulia region. after the Fermentation of two weeks the wine passes for an expiration of about eight months in companies Medium bodied, tannins Soften the remaining sugar. Nose - plums, figs, fruits Reds, vanilla and sweet spices. In the mouth - berries, cinnamon, nutmeg, Cherries and black plums.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 106,
+    "Name_Heb": "פינו נואר",
+    "Name_Eng": "Pinot Noir Moillard ",
     "Country_Eng": "France",
     "Country_Heb": "צרפת",
     "Type_Ro_Re_Wh_Bu_": "Re",
     "Dry_Y_N_": "Y",
-    "Price": "41.18",
-    "Cup_Y_N_": "Y",
-    "CupPrice": "42",
-    "BottlePrice": "148",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "210",
     "Grape_Eng": [
-      "Cabernet Sauvignon",
-      "Merlot",
-      "Syrah"
+      "Pinot noir"
     ],
-    "Blend_Y_N_": "Y",
+    "Blend_Y_N_": "N",
     "Grape_Heb": [
-      "קברנה סוביניון",
-      "מרלו",
-      "סירה"
+      "פינו נואר"
     ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FBistro%20chic?alt=media&token=a33cb83f-ff41-4178-b765-d41f0dd6e31f",
-    "WineryName_Heb": "ביסטרו שיק",
-    "WineryName_Eng": "Bistro chic",
-    "Desc_Heb": "מכיל ריכוז ועושר של פרי יער עם רמזים לפטל ודומדמניות ברקע וניל ומוקה",
-    "Desc_Eng": "Contains concentration and richness of forest fruit with hints of raspberry and currant in the background of vanilla and mocha",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FMoillard%20Pinot%20Noir?alt=media&token=460d47f2-3a96-448d-8b18-f60651da07dc",
+    "WineryName_Heb": "מולארד",
+    "WineryName_Eng": "Moillard",
+    "Desc_Heb": "100% פינו נואר המגיע מחלקות באזור קוט דה נואי וקוט דה בון בחלקה הצפוני של בורגון. עובר תסיסה ארוכה על הקליפות למיצוי הצבע והארומה. ומתבגר בחביות למשך כשנה.",
+    "Desc_Eng": "100% Pinot Noir coming from departments in the Cote de Noy and Cote de Beaune in the northern part of Bourgogne. Passes a long fermentation on the skins to extract the color and aroma. and matures in barrels for about a year.",
     "inStock": true,
     "bestOf": false
   },
@@ -415,8 +432,8 @@
     "Dry_Y_N_": "Y",
     "Price": "33",
     "Cup_Y_N_": "Y",
-    "CupPrice": "42",
-    "BottlePrice": "148",
+    "CupPrice": "44",
+    "BottlePrice": "165",
     "Grape_Eng": [
       "Primitivo"
     ],
@@ -460,6 +477,60 @@
     "bestOf": true
   },
   {
+    "Id": 102,
+    "Name_Heb": "זרעי קיץ",
+    "Name_Eng": "Summer Seeds",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Or",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "56",
+    "BottlePrice": "210",
+    "Grape_Eng": [
+      "Chardonnay"
+    ],
+    "Blend_Y_N_": "Y",
+    "Grape_Heb": [
+      "שרדונה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FSummer%20Seeds?alt=media&token=aa71c787-d9ab-4a37-aaa8-1780ac018a8c",
+    "WineryName_Heb": "בזק",
+    "WineryName_Eng": "Bazak",
+    "Desc_Heb": "יין כתום המורכב מזנים לבנים. רוסן ומוסקט אלכסנדרוני. הענבים הותססו על קליפותיהן במיכלים נפרדים ובשילובם יחד נוצר יין מרענן בעל מינרליות עשירה וארומות פרחוניות",
+    "Desc_Eng": "An orange wine composed of white varieties. Rosen and Alexandrian musket. The grapes were fermented on their skins in separate tanks and combined together to create a refreshing wine with rich minerality and floral aromas",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 101,
+    "Name_Heb": "גראג’ דה פאפא- לבן",
+    "Name_Eng": "Garage De Papa- white",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Wh",
+    "Dry_Y_N_": "Y",
+    "Price": "-3",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "62",
+    "BottlePrice": "230",
+    "Grape_Eng": [
+      "Chardonnay"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "שרדונה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FGarage%20De%20Papa-%20white?alt=media&token=36264651-8b6d-4319-a7b0-83fc5552ff70",
+    "WineryName_Heb": "לוינסון",
+    "WineryName_Eng": "LEWINSON",
+    "Desc_Heb": "עדין ואלגנטי, לוינסון לבן הוא יין המייצג סגנון, אדמה ושנת בציר. לאחר חורף גשום באופן חריג, האביב היה מאופק ברובו למעט מספר שרבים, והקיץ ממוצע עד חם. גראז' דה פאפא לבן 2019 הוא ביטוי לשנה חמה יחסית, עם פרי בשל וארומטי מאד, גוף מלא, ובמקביל חמיצות ורעננות האופיינית לכרמי ההר הגבוהים.",
+    "Desc_Eng": "Delicate and elegant, Levinson White is a wine that represents style, soil and vintage year. After an unusually rainy winter, the spring was mostly subdued with the exception of a large number of shrews, and the summer average to warm. Garage de Papa white 2019 is an expression of a relatively warm year, with ripe and very aromatic fruit, full body, and at the same time acidity and freshness typical of the high mountain vineyards.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 78,
     "Name_Heb": "שנדון גארדן",
     "Name_Eng": "Shandon Garden",
@@ -498,7 +569,7 @@
     "Price": "80",
     "Cup_Y_N_": "N",
     "CupPrice": "0",
-    "BottlePrice": "240",
+    "BottlePrice": "220",
     "Grape_Eng": [
       "Tempranillo",
       "Garganega",
@@ -528,8 +599,8 @@
     "Dry_Y_N_": "Y",
     "Price": "34.10",
     "Cup_Y_N_": "Y",
-    "CupPrice": "42",
-    "BottlePrice": "140",
+    "CupPrice": "44",
+    "BottlePrice": "165",
     "Grape_Eng": [
       "Pinot Gris"
     ],
@@ -556,7 +627,7 @@
     "Price": "41.18",
     "Cup_Y_N_": "Y",
     "CupPrice": "42",
-    "BottlePrice": "148",
+    "BottlePrice": "155",
     "Grape_Eng": [
       "Gewurztraminer"
     ],
@@ -667,8 +738,8 @@
     "Dry_Y_N_": "Y",
     "Price": "123.55",
     "Cup_Y_N_": "Y",
-    "CupPrice": "64",
-    "BottlePrice": "262",
+    "CupPrice": "69",
+    "BottlePrice": "255",
     "Grape_Eng": [
       "Syrah",
       "Petite Sirah"
@@ -805,33 +876,6 @@
     "bestOf": true
   },
   {
-    "Id": 36,
-    "Name_Heb": "ברנקיה רוזה",
-    "Name_Eng": "Brancaia Rosa",
-    "Country_Eng": "Italy",
-    "Country_Heb": "איטליה",
-    "Type_Ro_Re_Wh_Bu_": "Ro",
-    "Dry_Y_N_": "Y",
-    "Price": "56.63",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "180",
-    "Grape_Eng": [
-      "Merlot"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "מרלו"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2Fbrancaia-rose-indicazione-geografica-tipica-toscana-rosato-brancaia_600x600-600x600%20(1).png?alt=media&token=6117c43b-3ac5-4276-bc32-d801f4bb4d31",
-    "WineryName_Heb": "ברנקיה",
-    "WineryName_Eng": "Brancaia",
-    "Desc_Heb": "זהו יין רוזה יבש אך עם זאת מורגשים בפה פירות כמו אפרסק לבן, לימונים ותפוחים.",
-    "Desc_Eng": "This is a dry rosé wine, but nevertheless fruits such as white peach, lemons and apples are noticeable in the mouth.",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
     "Id": 88,
     "Name_Heb": "מצדה גבעות",
     "Name_Eng": "Masada Gva'ot",
@@ -873,7 +917,7 @@
     "Price": "0",
     "Cup_Y_N_": "N",
     "CupPrice": "0",
-    "BottlePrice": "290",
+    "BottlePrice": "249",
     "Grape_Eng": [
       "Sauvignon Blanc"
     ],
@@ -888,6 +932,33 @@
     "Desc_Eng": "Greenish yellow gold color and an intense and powerful nose. With hints of citrus and apricots.",
     "inStock": true,
     "bestOf": false
+  },
+  {
+    "Id": 108,
+    "Name_Heb": "אשכולות שלמים גראג' דה פפה",
+    "Name_Eng": "Whole clusters Garage De Papa",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "615",
+    "Grape_Eng": [
+      "Petite Sirah"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "פטיט סירה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FWhole%20clusters%20Garage%20De%20Papa?alt=media&token=8b7634c9-8468-4c75-aa56-d38ffa41ec70",
+    "WineryName_Heb": "לוינסון",
+    "WineryName_Eng": "LEWINSON",
+    "Desc_Heb": "100% מענבי הפטיט סירה תססו עם שזרותיהם, כלומר תסיסה ב\"אשכולות שלמים\". לאחר מכן הענבים עברו סחיטה עדינה ב-Basket press היין המשיך להתיישנות בשתי חביות צרפתיות במשך 12 חודשים.",
+    "Desc_Eng": "100% of the Petit Sirah grapes were fermented with their vines, meaning fermentation in \"whole clusters\". The grapes were then gently pressed in a basket press and the wine continued to age in two French barrels for 12 months.",
+    "inStock": true,
+    "bestOf": true
   },
   {
     "Id": 62,
@@ -931,7 +1002,7 @@
     "Price": "43",
     "Cup_Y_N_": "Y",
     "CupPrice": "54",
-    "BottlePrice": "196",
+    "BottlePrice": "200",
     "Grape_Eng": [
       "Merlot"
     ],
@@ -958,7 +1029,7 @@
     "Price": "60.49",
     "Cup_Y_N_": "Y",
     "CupPrice": "54",
-    "BottlePrice": "196",
+    "BottlePrice": "200",
     "Grape_Eng": [
       "Syrah",
       "Grenache"
@@ -1031,6 +1102,60 @@
     "bestOf": false
   },
   {
+    "Id": 100,
+    "Name_Heb": "טרה מלבק",
+    "Name_Eng": "Terra Malbeck",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "44",
+    "BottlePrice": "165",
+    "Grape_Eng": [
+      "Malbec"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "מלבק"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FTerra%20Malbeck?alt=media&token=1d716989-7082-4515-b981-5002939c7ac0",
+    "WineryName_Heb": "טרה",
+    "WineryName_Eng": "Terra",
+    "Desc_Heb": "טאנינים רכים, פיניש בינוני, וחומציות נמוכה יחד עם ארומות של פירות שחורים, אגוז מוסקט, ופירות אדומים ושחורים.",
+    "Desc_Eng": "Soft tannins, medium finish, and low acidity along with aromas of black fruits, nutmeg, and red and black fruits.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 104,
+    "Name_Heb": "קברנה סוביניון בזק",
+    "Name_Eng": "cabernet sauvignon Bazak",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "229",
+    "Grape_Eng": [
+      "Cabernet Sauvignon"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "קברנה סוביניון"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2Fcabernet%20sauvignon%20Bazak?alt=media&token=2fc7a7b9-f534-4354-b50e-3c796803f34f",
+    "WineryName_Heb": "בזק",
+    "WineryName_Eng": "Bazak",
+    "Desc_Heb": "ניחוחות גרגירי יער שחורים ואדמתיות. מכרם גבעת הבשמים כרמי יוסף. התיישן במשך 24 חודשים בחביות עץ אלון",
+    "Desc_Eng": "aromas of earthy blackberries. from the vineyard in Karmei Yosef' called Fragrance Hill. Aged for 24 months in oak barrels",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 14,
     "Name_Heb": "פרוסקו מיונטו ",
     "Name_Eng": "Prosecco Mionetto",
@@ -1040,8 +1165,8 @@
     "Dry_Y_N_": "Y",
     "Price": 0,
     "Cup_Y_N_": "Y",
-    "CupPrice": "37",
-    "BottlePrice": "128",
+    "CupPrice": "39",
+    "BottlePrice": "145",
     "Grape_Eng": [
       "Chardonnay"
     ],
@@ -1068,7 +1193,7 @@
     "Price": 35,
     "Cup_Y_N_": "Y",
     "CupPrice": "42",
-    "BottlePrice": "148",
+    "BottlePrice": "155",
     "Grape_Eng": [
       "Sauvignon Blanc"
     ],
@@ -1081,7 +1206,8 @@
     "WineryName_Eng": "Poli",
     "Desc_Heb": "ראשן ג'ק מגיע אלינו ממרלבורו, הקצה הצפוני-מזרחי של האי הדרומי, מרלבורו הוא אזור הגידול הבכיר של ענבי סוביניון בלאן בניו זילנד. האזור מורכב משני עמקים, שלכל אחד מהם מאפיינים מובהקים. עמק WAIRAU שהוא הגדול מבין שני העמקים ובעל טמפרטורות חמות יותר. ועמק המים הקטן מבין השניים, עם טמפרטורות קרירות יותר בשעות היום וגפנים נטועים על טרסות נהרות לאורך גבעות מתגלגלות.",
     "Desc_Eng": "Jack Tadpole comes to us from Marlborough, the north-eastern tip of the South Island, Marlborough is the prime growing area for Sauvignon Blanc grapes in New Zealand. The area consists of two valleys, each of which has distinct characteristics. The WAIRAU valley which is the larger of the two valleys and has warmer temperatures. and the smaller of the two, Water Valley, with cooler daytime temperatures and vines planted on river terraces along rolling hills.",
-    "inStock": true
+    "inStock": true,
+    "bestOf": false
   },
   {
     "Id": 22,
@@ -1093,8 +1219,8 @@
     "Dry_Y_N_": "Y",
     "Price": "42.47",
     "Cup_Y_N_": "Y",
-    "CupPrice": "42",
-    "BottlePrice": "148",
+    "CupPrice": "44",
+    "BottlePrice": "165",
     "Grape_Eng": [
       "Syrah",
       "Grenache",
@@ -1115,35 +1241,6 @@
     "bestOf": false
   },
   {
-    "Id": 81,
-    "Name_Heb": "פנדורה",
-    "Name_Eng": "Pandora",
-    "Country_Eng": "Greece",
-    "Country_Heb": "יוון",
-    "Type_Ro_Re_Wh_Bu_": "Wh",
-    "Dry_Y_N_": "Y",
-    "Price": "32.82",
-    "Cup_Y_N_": "Y",
-    "CupPrice": "42",
-    "BottlePrice": "150",
-    "Grape_Eng": [
-      "Sauvignon Blanc",
-      "Roditis"
-    ],
-    "Blend_Y_N_": "Y",
-    "Grape_Heb": [
-      "סוביניון בלאן",
-      "רודיטיס"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPandora?alt=media&token=d97e253b-e0cc-4d22-ae1f-326618af1665",
-    "WineryName_Heb": "הכרמים ההרריים של פלופונסוס",
-    "WineryName_Eng": "Mountainous vineyards of Peloponnese",
-    "Desc_Heb": "צבע צהוב בהיר עם ניחוחות הדרים עדינים וטעם פרי פריך",
-    "Desc_Eng": "Pale yellow limpid color with fine citrus aromas and crispy fruity taste",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
     "Id": 57,
     "Name_Heb": "ג'קוזה ברולו ",
     "Name_Eng": "Barolo",
@@ -1154,7 +1251,7 @@
     "Price": "109.4",
     "Cup_Y_N_": "N",
     "CupPrice": "0",
-    "BottlePrice": "350",
+    "BottlePrice": "290",
     "Grape_Eng": [
       "Barolo"
     ],
@@ -1171,6 +1268,37 @@
     "bestOf": false
   },
   {
+    "Id": 99,
+    "Name_Heb": "יין הבית אדום",
+    "Name_Eng": "Lauren Red",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "44",
+    "BottlePrice": "165",
+    "Grape_Eng": [
+      "Cabernet Sauvignon",
+      "Merlot",
+      "Syrah"
+    ],
+    "Blend_Y_N_": "Y",
+    "Grape_Heb": [
+      "קברנה סוביניון",
+      "מרלו",
+      "סירה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FLauren%20Red?alt=media&token=18d03e7c-2326-4f67-9d9c-c519bc503709",
+    "WineryName_Heb": "יקב עמק האלה",
+    "WineryName_Eng": "The Ella valley Winery",
+    "Desc_Heb": "בלנד הבית המורכב מענבי קברנה סוביניון, מרלו וסירה",
+    "Desc_Eng": "The house blend consisting of Cabernet Sauvignon, Merlot and Syrah grapes",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 94,
     "Name_Heb": "קוט דה רון לבן",
     "Name_Eng": "cotes-du-rhone White",
@@ -1179,9 +1307,9 @@
     "Type_Ro_Re_Wh_Bu_": "Wh",
     "Dry_Y_N_": "Y",
     "Price": "0",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "135",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "44",
+    "BottlePrice": "165",
     "Grape_Eng": [
       "Grenache",
       "Viognier"
@@ -1210,7 +1338,7 @@
     "Price": "83.66",
     "Cup_Y_N_": "N",
     "CupPrice": 0,
-    "BottlePrice": "270",
+    "BottlePrice": "220",
     "Grape_Eng": [
       "Cortese"
     ],
@@ -1324,7 +1452,7 @@
     "Price": "36",
     "Cup_Y_N_": "Y",
     "CupPrice": "52",
-    "BottlePrice": "188",
+    "BottlePrice": "195",
     "Grape_Eng": [
       "Corvina",
       "Rondinella",
@@ -1353,9 +1481,9 @@
     "Type_Ro_Re_Wh_Bu_": "Wh",
     "Dry_Y_N_": "Y",
     "Price": "45",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "145",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "44",
+    "BottlePrice": "165",
     "Grape_Eng": [
       "Verdeca"
     ],
@@ -1401,6 +1529,33 @@
     "bestOf": false
   },
   {
+    "Id": 109,
+    "Name_Heb": "שאבלי גרנד קרו אלבר בישו",
+    "Name_Eng": "Chablis Grand Cru Albert Bishou",
+    "Country_Eng": "France",
+    "Country_Heb": "צרפת",
+    "Type_Ro_Re_Wh_Bu_": "Wh",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "370",
+    "Grape_Eng": [
+      "Chardonnay"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "שרדונה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FChablis%20Grand%20Cru%20Albert%20Bishou?alt=media&token=5d2e80ac-677e-4706-a282-b58f14416c38",
+    "WineryName_Heb": "אלברט בישו",
+    "WineryName_Eng": "Albert Bichot",
+    "Desc_Heb": "הענבים ביין זה עוברים התיישנות של כעשרה חודשים בחביות עץ אלון צרפתי ועוד שישה חודשים על שמרים במיכלי נירוסטה. גרנד קרו זה מתחיל באף בפרי הדר ורמזים פרחוניים עדינים (שושנת העמקים, קמומיל). החך מבטא חומציות מתונה ונעימה מאוד מה שהופך את היין הזה למייצג טיפוסי של שאבלי גראנד קרו: מינרלי ואינטנסיבי.",
+    "Desc_Eng": "The grapes in this wine are aged for about ten months in French oak barrels and another six months on yeast in stainless steel tanks. This Grand Cru begins on the nose with citrus fruit and subtle floral hints (lily of the valley, chamomile). The palate expresses moderate and very pleasant acidity which makes this wine a typical representative of Chablis Grand Cru: mineral and intense.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 71,
     "Name_Heb": "נוריקו",
     "Name_Eng": "Norico Rosé Vigneti delle Dolomiti",
@@ -1410,8 +1565,8 @@
     "Dry_Y_N_": "Y",
     "Price": "27.03",
     "Cup_Y_N_": "Y",
-    "CupPrice": "40",
-    "BottlePrice": "140",
+    "CupPrice": "44",
+    "BottlePrice": "165",
     "Grape_Eng": [
       "Chardonnay"
     ],

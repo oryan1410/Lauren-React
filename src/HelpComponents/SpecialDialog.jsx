@@ -65,10 +65,10 @@ export default function SpecialDialog(props) {
             className={`specialDialog ${language === 'heb' && 'dialogContainerHeb'}`}
         >
             <CloseIcon className='closeIcon' style={{position:'absolute', left:0, border:'0.5px solid #000000',borderRadius:'15px', backgroundColor:'#000000', color:'#ffffff'}} onClick={handleClose} />
-                <img style={{width:'100%', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Specials%2F%D7%A1%D7%A4%D7%99%D7%99%D7%A9%D7%9C%20%D7%A9%D7%99%D7%A9%D7%99.jpeg?alt=media&token=333f4275-13ea-4c30-b58e-385feac23426' />
-            <DialogActions className='specialActions'>
+                <img style={{width:'100%', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Specials%2FWhatsApp%20Image%202024-03-20%20at%2015.56.59.jpeg?alt=media&token=c4b2b091-9bbe-46b4-bec8-03d697678501' />
+            {/* <DialogActions className='specialActions'>
                 <Button className='specialdialogButton' onClick={() => confirm(true)}>{t('To see the Specials')}</Button>
-            </DialogActions>
+            </DialogActions> */}
         </Dialog>
     )
 }

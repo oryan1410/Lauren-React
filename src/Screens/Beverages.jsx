@@ -28,6 +28,14 @@ const Beverages = () => {
     const [lightExpand, setLightExpand] = useState(false);
     const [hotExpand, setHotExpand] = useState(false);
 
+    // useEffect(() => {
+    //     console.log('dishesArr', beveragesArr);
+    //     let json= JSON.stringify(beveragesArr);
+    //     // Assuming your array is named 'firestoreArray'
+    //     console.log(JSON.stringify(beveragesArr, null, 2));
+    // }, [beveragesArr])
+
+
     useEffect(() => {
         if(!isLoading && beveragesArr.length !== 0){
         setIsVisable(true);

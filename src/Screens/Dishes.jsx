@@ -567,12 +567,12 @@ const Dishes = () => {
         }
     }
 
-    // useEffect(() => {
-    //     console.log('dishesArr', dishesArr);
-    //     let json= JSON.stringify(dishesArr);
-    //     // Assuming your array is named 'firestoreArray'
-    //     console.log(JSON.stringify(dishesArr, null, 2));
-    // }, [dishesArr])
+    useEffect(() => {
+        console.log('dishesArr', dishesArr);
+        let json= JSON.stringify(dishesArr);
+        // Assuming your array is named 'firestoreArray'
+        console.log(JSON.stringify(dishesArr, null, 2));
+    }, [dishesArr])
 
     useEffect(() => {
         if (!isLoading)

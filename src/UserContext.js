@@ -137,6 +137,9 @@ export function UserProvider({ children }) {
             else if (wine.Type_Ro_Re_Wh_Bu_ === 'Wh' && wine.bestOf !== true) {
                 whiteArr.push(wine)
             }
+            else if (wine.Type_Ro_Re_Wh_Bu_ === 'Or' && wine.bestOf !== true) {
+                roseArr.push(wine)
+            }
             else if (wine.Type_Ro_Re_Wh_Bu_ === 'Ro' && wine.bestOf !== true) {
                 roseArr.push(wine)
             }
@@ -349,6 +352,9 @@ export function UserProvider({ children }) {
 //                 else if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Wh' && doc.data().bestOf !== true) {
 //                     whiteArr.push(wine)
 //                 }
+//                 else if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Or' && doc.data().bestOf !== true) {
+//                     roseArr.push(wine)
+//                 }
 //                 else if (doc.data().Type_Ro_Re_Wh_Bu_ === 'Ro' && doc.data().bestOf !== true) {
 //                     roseArr.push(wine)
 //                 }
@@ -499,6 +505,7 @@ export function UserProvider({ children }) {
 //                 alcohol.chaser=doc.data().chaser;
 //                 alcohol.chaserPrice=doc.data().chaserPrice;
 // alcohol.bottlePrice=doc.data().bottlePrice;
+// alcohol.bestOf=doc.data().bestOf;
 //                 alcoholArr.push(alcohol)
 //                 if (doc.data().bestOf === true) {
 //                     bestOfArr.push(alcohol)

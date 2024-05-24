@@ -30,7 +30,7 @@ export default function SpecialDialog(props) {
             setDialogOpen(false);
             props.setDisplayDialog('none');
             props.setOpenDialog(false);
-            navigate('/cocktails');
+            navigate('/aboutUs');
             setFirstLoad(false);
 
         }
@@ -65,10 +65,10 @@ export default function SpecialDialog(props) {
             className={`specialDialog ${language === 'heb' && 'dialogContainerHeb'}`}
         >
             <CloseIcon className='closeIcon' style={{position:'absolute', left:0, border:'0.5px solid #000000',borderRadius:'15px', backgroundColor:'#000000', color:'#ffffff'}} onClick={handleClose} />
-                <img style={{width:'100%', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Specials%2FWhatsApp%20Image%202024-03-20%20at%2015.56.59.jpeg?alt=media&token=c4b2b091-9bbe-46b4-bec8-03d697678501' />
-            {/* <DialogActions className='specialActions'>
-                <Button className='specialdialogButton' onClick={() => confirm(true)}>{t('To see the Specials')}</Button>
-            </DialogActions> */}
+                <img style={{width:'100%', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WhatsApp%20Image%202024-04-02%20at%2016.58.10.jpeg?alt=media&token=fbe80124-4d6d-4eff-9f23-961629b94733' />
+            <DialogActions className='specialActions' style={{marginBottom:'0px'}}>
+                <Button className='specialdialogButton' onClick={() => confirm(true)}>{'לפרטים נוספים'}</Button>
+            </DialogActions>
         </Dialog>
     )
 }

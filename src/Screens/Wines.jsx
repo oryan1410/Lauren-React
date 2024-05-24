@@ -236,12 +236,12 @@ const Wines = () => {
     }
     , [winesArr, isLoading]);
 
-            useEffect(() => {
-            console.log('winesArr', winesArr);
-            let json= JSON.stringify(winesArr);
-    // Assuming your array is named 'firestoreArray'
-    console.log(JSON.stringify(winesArr, null, 2));
-        }, [winesArr]);
+    //         useEffect(() => {
+    //         console.log('winesArr', winesArr);
+    //         let json= JSON.stringify(winesArr);
+    // // Assuming your array is named 'firestoreArray'
+    // console.log(JSON.stringify(winesArr, null, 2));
+    //     }, [winesArr]);
 
 
     useEffect(() => {

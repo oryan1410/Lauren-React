@@ -428,12 +428,12 @@ const AlcoholMain = () => {
     const [spritzClicked,setSpritzClicked]= useState(false);
 
 
-    // useEffect(() => {
-    //     console.log('alcoholArr', alcoholArr);
-    //     //         let json= JSON.stringify(winesArr);
-    //     // // Assuming your array is named 'firestoreArray'
-    //     console.log(JSON.stringify(alcoholArr, null, 2));
-    // }, [alcoholArr]);
+    useEffect(() => {
+        console.log('alcoholArr', alcoholArr);
+        //         let json= JSON.stringify(winesArr);
+        // // Assuming your array is named 'firestoreArray'
+        console.log(JSON.stringify(alcoholArr, null, 2));
+    }, [alcoholArr]);
 
     useEffect(() => {
         setIsVisable(true);

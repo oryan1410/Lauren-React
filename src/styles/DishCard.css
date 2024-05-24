@@ -240,3 +240,36 @@ top: 30%;
 .dishCardPrice{
   font-size: 1rem;
 }
+
+.dishCardBodyDiv{
+display: flex;  flex-direction: row; width: 100%;
+}
+
+.dishCradRightDiv{
+flex:2
+}
+
+.dishCardImg{
+max-height: 120px;
+width: 120px;
+border-radius: 16px;
+border: 0.5px solid #000000;
+}
+
+.newDishCardTitle{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.newDishCardDesc{
+  padding: 5px;
+  font-size: 1rem;
+  font-weight: 100;
+  flex: 6;
+}
+
+.newDishCardDesc .newDishCardDescHeb{
+  direction: rtl;
+}

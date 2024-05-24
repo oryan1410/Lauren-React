@@ -5,8 +5,11 @@ import { Grid } from '@mui/material';
 import { useState } from 'react';
 import SearchAppBar from '../SearchAppBar';
 import { useUserContext } from '../UserContext';
+import { useTranslation } from 'react-i18next';
 
 export default function AboutUs(props) {
+
+    const {t}= useTranslation();
 
     const [isVisible, setIsVisible] = useState(false);
 
@@ -19,7 +22,10 @@ export default function AboutUs(props) {
 
     return (
         <div className={`home ${isVisible ? 'visible' : 'notVisable'}`}>
-        <h1 className='homeTitle'>About Us</h1></div>
+        <h1 className='homeTitle'>{t('Events')}</h1>
+        <iframe src='https://forms.gle/Kco27BTFaf6smRMYA' width='100%' height='1000px'></iframe>
+        <div style={{height: '50px'}}></div>
+        </div>
     );
 };
 

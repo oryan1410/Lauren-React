@@ -30,8 +30,8 @@
   },
   {
     "Id": 73,
-    "Name_Heb": "קאווה וילרנאו ברוט רזרבה רוזה",
-    "Name_Eng": "Cava Villerneau Brut Reserva Rosé",
+    "Name_Heb": "קאווה וילרנאו",
+    "Name_Eng": "Cava VILARNAU",
     "Country_Eng": "Spain",
     "Country_Heb": "ספרד",
     "Type_Ro_Re_Wh_Bu_": "Bu",
@@ -85,7 +85,7 @@
   {
     "Id": 28,
     "Name_Heb": "קלארנדל בורדו מדוק",
-    "Name_Eng": "Clarendle Bordeaux Medoc",
+    "Name_Eng": "Clarendelle Bordeaux Medoc",
     "Country_Eng": "France",
     "Country_Heb": "צרפת",
     "Type_Ro_Re_Wh_Bu_": "Re",
@@ -255,9 +255,36 @@
     "bestOf": false
   },
   {
+    "Id": 110,
+    "Name_Heb": "שיראז פנפולדס",
+    "Name_Eng": "Penfolds Shiraz",
+    "Country_Eng": "Italy",
+    "Country_Heb": "איטליה",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "57",
+    "BottlePrice": "205",
+    "Grape_Eng": [
+      "Syrah"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "סירה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPenfolds%20Shiraz?alt=media&token=b23e4330-29da-482a-a050-d86ee5261171",
+    "WineryName_Heb": "פנפולדס",
+    "WineryName_Eng": "Penfolds",
+    "Desc_Heb": "100% שיראז המגיע מאזורי בארוסה, אדלייד רוטנבולי וקונאוורה. לאחר השרייה ארוכה על הקליפות היין מתיישן כשנה בחביות כש – 80% מהם חביות ישנות. בעל פיניש ארוך, גוף בינוני- מלא. ארומות של פלפלים שחורים, אניס, פירות יער ותאנים בשלות.",
+    "Desc_Eng": "100% Shiraz grapes from the Barossa, Adelaide Rottenbulli and Coonawarra regions. After a long soaking on the skins, the wine ages for about a year in barrels, about 80% of which are old barrels. Has a long finish, medium-full body. Aromas of black pepper, anise, berries and ripe figs.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 77,
     "Name_Heb": "גואט הנרי ברוט שמפיין",
-    "Name_Eng": "Guate Henry Brut Champagne",
+    "Name_Eng": "Gouet Henry Brut Champagne",
     "Country_Eng": "France",
     "Country_Heb": "צרפת",
     "Type_Ro_Re_Wh_Bu_": "Bu",
@@ -311,6 +338,33 @@
     "bestOf": true
   },
   {
+    "Id": 113,
+    "Name_Heb": "פרימיטיבו דופיו פאסו",
+    "Name_Eng": "Primitivo Doppio Passo",
+    "Country_Eng": "Italy",
+    "Country_Heb": "איטליה",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "190",
+    "Grape_Eng": [
+      "Primitivo"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "פרימיטיבו"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPrimitivo%20Doppio%20Passo?alt=media&token=1115d6d2-6d22-4402-9cae-bb501830592f",
+    "WineryName_Heb": "דופיו פאסו",
+    "WineryName_Eng": "Doppio Passo",
+    "Desc_Heb": "עשוי מ-100% ענבי פרימיטיבו מחלקות נבחרות באזור מנדוריה שנבצרו בשני מועדים שונים, בציר ראשון בשיא ההבשלה של הענבים ובציר שני כשבוע לאחר מכן. התוצאה היא יין בעל גוף מלא, עוצמות ואופי. היין לאחר מכן מתיישן שנתיים גם בוואטים וגם בחביות. באף- שזיפים שחורים, דובדבני אמרנה, קינמון, קקאו. בפה- קקאו, שוקולד מריר, אוכמניות, תאנים יחד עם תבליני אפייה. פיניש ארוך וטאנינים עגולים.",
+    "Desc_Eng": "Made from 100% grapes Primitivo selected departments in the Mandoria area which were fortified at two different times, in the first harvest At the peak of the ripening of the grapes and in the second harvest About a week later. The result is a full-bodied wine Full, strength and character. The wine is then aged for two years also in watts And also in barrels. On the nose - black plums, amaranth cherries, Cinnamon, cocoa. In the mouth - cocoa, dark chocolate, blueberries, Figs together with baking spices. Long finish and round tannins.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 91,
     "Name_Heb": "קורטון גראן קרו קלו דה מארשו",
     "Name_Eng": "Corton Gran Cru Clos de Marcheau",
@@ -336,33 +390,6 @@
     "Desc_Eng": "A wine with a wonderful light red color with reflections in the color of red cherries. The fragrance is a delicate blend of smoky and spicy aromas with a subtle touch of licorice.",
     "inStock": true,
     "bestOf": true
-  },
-  {
-    "Id": 105,
-    "Name_Heb": "פרימיטיבו",
-    "Name_Eng": "primitivo",
-    "Country_Eng": "Italy",
-    "Country_Heb": "איטליה",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "0",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "190",
-    "Grape_Eng": [
-      "Primitivo"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "פרימיטיבו"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2Fprimitivo?alt=media&token=9a641885-275a-4024-841f-3d2380d5bbaf",
-    "WineryName_Heb": "מאסטרו",
-    "WineryName_Eng": "Maestro",
-    "Desc_Heb": "100% ענבי פרימיטיבו המגיעים מכרמים בוגרות באזור פוליה. לאחר תסיסה של שבועיים היין עובר להתיישנות של חודשי כשמונה בחברות. בעל גוף ומבינוני, טאנינים רכים סוכר שארי. באף- שזיפים, תאנים, פירות אדומים, וניל ותבלינים מתוקים. בפה- פירות יער, קינמון, מוסקט, דובדבנים ושזיפים שחורים.",
-    "Desc_Eng": "100% Primitivo grapes that arrive From mature vineyards in the Apulia region. after the Fermentation of two weeks the wine passes for an expiration of about eight months in companies Medium bodied, tannins Soften the remaining sugar. Nose - plums, figs, fruits Reds, vanilla and sweet spices. In the mouth - berries, cinnamon, nutmeg, Cherries and black plums.",
-    "inStock": true,
-    "bestOf": false
   },
   {
     "Id": 106,
@@ -425,7 +452,7 @@
   {
     "Id": 47,
     "Name_Heb": "פאסו קרדינל פרימיטיבו",
-    "Name_Eng": "Paso Cardinal Primitivo",
+    "Name_Eng": "Passo Cardinale Primitivo",
     "Country_Eng": "Italy",
     "Country_Heb": "איטליה",
     "Type_Ro_Re_Wh_Bu_": "Re",
@@ -442,8 +469,8 @@
       "פרימיטיבו"
     ],
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPaso%20Cardinal%20Primitivo?alt=media&token=43df3ba0-f914-4729-adac-de83420d0600",
-    "WineryName_Heb": "פאולאו",
-    "WineryName_Eng": "paolao",
+    "WineryName_Heb": "פאולולאו",
+    "WineryName_Eng": "PAOLOLEO",
     "Desc_Heb": "גוף מלא ומאוזן, צבע ארגמן עמוק מלווה בריחות של קסיס ופטל שחור, קוקוס וליקריץ ובפה טעמי פירות יער, תבלינים וריבה.",
     "Desc_Eng": "Full and balanced body, deep crimson color accompanied by aromas of cassis and black raspberry, coconut and licorice and in the mouth flavors of berries, spices and jam.",
     "inStock": true,
@@ -524,7 +551,7 @@
     ],
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FGarage%20De%20Papa-%20white?alt=media&token=36264651-8b6d-4319-a7b0-83fc5552ff70",
     "WineryName_Heb": "לוינסון",
-    "WineryName_Eng": "LEWINSON",
+    "WineryName_Eng": "LEWINSOhN",
     "Desc_Heb": "עדין ואלגנטי, לוינסון לבן הוא יין המייצג סגנון, אדמה ושנת בציר. לאחר חורף גשום באופן חריג, האביב היה מאופק ברובו למעט מספר שרבים, והקיץ ממוצע עד חם. גראז' דה פאפא לבן 2019 הוא ביטוי לשנה חמה יחסית, עם פרי בשל וארומטי מאד, גוף מלא, ובמקביל חמיצות ורעננות האופיינית לכרמי ההר הגבוהים.",
     "Desc_Eng": "Delicate and elegant, Levinson White is a wine that represents style, soil and vintage year. After an unusually rainy winter, the spring was mostly subdued with the exception of a large number of shrews, and the summer average to warm. Garage de Papa white 2019 is an expression of a relatively warm year, with ripe and very aromatic fruit, full body, and at the same time acidity and freshness typical of the high mountain vineyards.",
     "inStock": true,
@@ -533,7 +560,7 @@
   {
     "Id": 78,
     "Name_Heb": "שנדון גארדן",
-    "Name_Eng": "Shandon Garden",
+    "Name_Eng": "Chandon Garden",
     "Country_Eng": "Argentina",
     "Country_Heb": "ארגנטינה",
     "Type_Ro_Re_Wh_Bu_": "Bu",
@@ -556,12 +583,13 @@
     "WineryName_Eng": "CHANDON",
     "Desc_Heb": "ליקר תבלינים וקליפות תפוזים מרענן שפוגש יין מבעבע איכותי, מעורר קיץ מענג במפגשים שטופי שמש עם חברים טובים.",
     "Desc_Eng": "A refreshing liqueur of spices and orange peels that meets quality sparkling wine, evokes a delightful summer in sunny gatherings with good friends.",
-    "inStock": true
+    "inStock": true,
+    "bestOf": false
   },
   {
     "Id": 58,
     "Name_Heb": "ברוניה ריוחה גרנד ריזרבה",
-    "Name_Eng": "Brunia Rioja Grand Reserve",
+    "Name_Eng": "Beronia Rioja Grand Reserve",
     "Country_Eng": "Spain",
     "Country_Heb": "ספרד",
     "Type_Ro_Re_Wh_Bu_": "Re",
@@ -673,33 +701,6 @@
     "bestOf": true
   },
   {
-    "Id": 79,
-    "Name_Heb": "ספורנו מלבק",
-    "Name_Eng": "Malbeck Cforno",
-    "Country_Eng": "Argentina",
-    "Country_Heb": "ארגנטינה",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "34.75",
-    "Cup_Y_N_": "Y",
-    "CupPrice": "44",
-    "BottlePrice": "156",
-    "Grape_Eng": [
-      "Malbec"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "מלבק"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FMalbeck%20Cforno?alt=media&token=d48582d2-ccf2-4438-9a4f-6e0d056b1a62",
-    "WineryName_Heb": "ספורנו",
-    "WineryName_Eng": "Cforno",
-    "Desc_Heb": "ליין יש ארומה של אוכמניות ודבדבנים שחורים עם מעט טעם של תבלינים",
-    "Desc_Eng": "The wine has an aroma of blueberries and black cherries with a hint of spice",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
     "Id": 96,
     "Name_Heb": "רוזי פסגות ברוט",
     "Name_Eng": "Psagot Rosie Brut",
@@ -751,7 +752,7 @@
     ],
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FGarage%20De%20Papa?alt=media&token=51a118b3-b06b-4962-ac6a-2a75b9f6fd53",
     "WineryName_Heb": "לוינסון",
-    "WineryName_Eng": "LEWINSON",
+    "WineryName_Eng": "LEWINSOhN",
     "Desc_Heb": "ארומות של פלפל שחור, לבנדר ועשבי תיבול ים תיכוניים. יין בעל גוף מלא וחמוציות מאוזנת",
     "Desc_Eng": "Aromas black pepper, lavender and Mediterranean herbs. A full-bodied wine with balanced acidity",
     "inStock": true,
@@ -787,7 +788,7 @@
   {
     "Id": 74,
     "Name_Heb": "פסגות וויונה ",
-    "Name_Eng": "Psagot and Vienna",
+    "Name_Eng": "Psagot Viognier",
     "Country_Eng": "Israel",
     "Country_Heb": "ישראל",
     "Type_Ro_Re_Wh_Bu_": "Wh",
@@ -954,7 +955,7 @@
     ],
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FWhole%20clusters%20Garage%20De%20Papa?alt=media&token=8b7634c9-8468-4c75-aa56-d38ffa41ec70",
     "WineryName_Heb": "לוינסון",
-    "WineryName_Eng": "LEWINSON",
+    "WineryName_Eng": "LEWINSOhN",
     "Desc_Heb": "100% מענבי הפטיט סירה תססו עם שזרותיהם, כלומר תסיסה ב\"אשכולות שלמים\". לאחר מכן הענבים עברו סחיטה עדינה ב-Basket press היין המשיך להתיישנות בשתי חביות צרפתיות במשך 12 חודשים.",
     "Desc_Eng": "100% of the Petit Sirah grapes were fermented with their vines, meaning fermentation in \"whole clusters\". The grapes were then gently pressed in a basket press and the wine continued to age in two French barrels for 12 months.",
     "inStock": true,
@@ -1094,8 +1095,8 @@
       "פרימיטיבו"
     ],
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FDi%20menoria%20primitivo?alt=media&token=333fb95b-70d6-4872-90db-6141e3959ae0",
-    "WineryName_Heb": "פאולו לאו",
-    "WineryName_Eng": "Palulo lao",
+    "WineryName_Heb": "פאולולאו",
+    "WineryName_Eng": "PAOLOLEO",
     "Desc_Heb": "צבע בורדו כהה עם נימות סגלגלות וארומות בולטות של דובדבני מורילו ופירות יער שחורים, זהו יין בעל גוף מלא וסיומת טעמי פירות בשלים ארוכה ונעימה.",
     "Desc_Eng": "Dark burgundy in color with oval notes and prominent aromas of Murillo cherries and black berries, this is a full-bodied wine with a long and pleasant finish of ripe fruit flavors.",
     "inStock": true,
@@ -1104,9 +1105,9 @@
   {
     "Id": 100,
     "Name_Heb": "טרה מלבק",
-    "Name_Eng": "Terra Malbeck",
-    "Country_Eng": "Israel",
-    "Country_Heb": "ישראל",
+    "Name_Eng": "Terra Malbec",
+    "Country_Eng": "Argentina",
+    "Country_Heb": "ארגנטינה",
     "Type_Ro_Re_Wh_Bu_": "Re",
     "Dry_Y_N_": "Y",
     "Price": "0",
@@ -1152,6 +1153,33 @@
     "WineryName_Eng": "Bazak",
     "Desc_Heb": "ניחוחות גרגירי יער שחורים ואדמתיות. מכרם גבעת הבשמים כרמי יוסף. התיישן במשך 24 חודשים בחביות עץ אלון",
     "Desc_Eng": "aromas of earthy blackberries. from the vineyard in Karmei Yosef' called Fragrance Hill. Aged for 24 months in oak barrels",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 111,
+    "Name_Heb": "גבעת הבשמים",
+    "Name_Eng": "Fragrance Hill",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Wh",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "55",
+    "BottlePrice": "210",
+    "Grape_Eng": [
+      "Viognier"
+    ],
+    "Blend_Y_N_": "Y",
+    "Grape_Heb": [
+      "ויוניה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FFragrance%20Hill%3A%20Roussanne%20%26%20Viognier%202023?alt=media&token=46766f9e-f34f-45e3-9d41-d671c04e9069",
+    "WineryName_Heb": "בזק",
+    "WineryName_Eng": "Bazak",
+    "Desc_Heb": " בלנד של ויוניה ורוסאן שני זנים חדשים מבציר וידני שהצטרפו למשק המשפחתי.  כרמי המשק גדלים על גבעה בעלת קרקע גירית שתורמת ליין ארומות רעננות ומופלאות כמו ליים, קליפות הדר מסוכרות וגויאבה. תשומת הלב האישית, יחד עם תכונות הטרואר שבכרם, יצרו יין ייחודי, עשיר בארומה ובטעם.",
+    "Desc_Eng": "A blend of Vionia and Roussan, two new varieties from the Vidani vintage that joined the family farm.  The farm's vineyards grow on a hill with a badger soil that contributes to the wine fresh and wonderful aromas such as lime, candied citrus peels and guava. The personal attention, together with the characteristics of the terroir in the vineyard, created a unique wine, rich in aroma and taste.",
     "inStock": true,
     "bestOf": false
   },
@@ -1444,7 +1472,7 @@
   {
     "Id": 54,
     "Name_Heb": "זנטו אלנרה רוסו",
-    "Name_Eng": "Zento Alanara Rousseau",
+    "Name_Eng": "Zenato Alanera Rousseau",
     "Country_Eng": "Italy",
     "Country_Heb": "איטליה",
     "Type_Ro_Re_Wh_Bu_": "Re",
@@ -1469,6 +1497,33 @@
     "WineryName_Eng": "Zenato",
     "Desc_Heb": "ענבי קורבינה, רונדינלה וקורבינונה המגיעים מכרם קוסטאלונגה, צבעם ארגמן יפהפה וארומת דובדבנים טריים ומיובשים, שזיפים, תבלינים מתוקים עם רמיזות לקפה וטבק.",
     "Desc_Eng": "Corbina, Rondinella and Corbinone grapes from the Costalonga vineyard, beautiful crimson color and aroma of fresh and dried cherries, plums, sweet spices with hints of coffee and tobacco.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 112,
+    "Name_Heb": "פרמטיבו דופיו פאסו",
+    "Name_Eng": "Doppio passo Primitivo",
+    "Country_Eng": "Italy",
+    "Country_Heb": "איטליה",
+    "Type_Ro_Re_Wh_Bu_": "Ro",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "50",
+    "BottlePrice": "185",
+    "Grape_Eng": [
+      "Primitivo"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "פרימיטיבו"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FDoppio%20passo%20Primitivo?alt=media&token=6dd0616e-0182-4661-8a67-d4ff81ecac0f",
+    "WineryName_Heb": "דופיו פאסו",
+    "WineryName_Eng": "Doppio Passo",
+    "Desc_Heb": "מורכב מ-100% ענבי פרימיטיבו אזור פוליה בדרום איטליה. הענבים עוברים השריה קצרה השומרת על הסגנון והצבע הבהיר. לאחר תסיסה קרה בנירוסטה היין מתבגר תקופה קצרה במיכל לפני בקבוקו. רוזה כיפי לימי הקיץ המפתיע במורכבות הטעמים שבו. באף- מוסקט, אוכמניות ודומדניות יחד עם תפוזי דם. בפה- דובדבן, אוכמניות, דומדניות, תפוז ואשכולית אדומה, וניל עדין ופיניש ארוך.",
+    "Desc_Eng": "Consists of 100% Primitivo area grapes Puglia in southern Italy. The grapes pass Short soaking that preserves the style and the bright color. after fermentation Aged in stainless steel, the wine matures for a short time in the container before its bottle. A fun rosé for summer days The surprising in the complexity of the flavors in it. On the nose - nutmeg, blueberries and gooseberries together with blood oranges. In the mouth - cherry, blueberries, gooseberries, orange and red grapefruit, delicate vanilla and a long finish.",
     "inStock": true,
     "bestOf": false
   },
@@ -1500,38 +1555,9 @@
     "bestOf": false
   },
   {
-    "Id": 60,
-    "Name_Heb": "דדה מלבק ברברה",
-    "Name_Eng": "Deda Malbek",
-    "Country_Eng": "Israel",
-    "Country_Heb": "ישראל",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "88.8",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "280",
-    "Grape_Eng": [
-      "Malbec",
-      "Barbera"
-    ],
-    "Blend_Y_N_": "Y",
-    "Grape_Heb": [
-      "מלבק",
-      "ברברה"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FDeda%20Malbek?alt=media&token=a8700e31-75da-42dc-b1d2-ab9891a825f5",
-    "WineryName_Heb": "דדה",
-    "WineryName_Eng": "Deda",
-    "Desc_Heb": "בלנד ייחודי הניחן בארומה של גרגרי יער, פירות אדומים ודובדבנים. הטעם רענן, עצמתי, מאוזן ומיוחד. היין בעל גוון בורדו-סגול עמוק וקטיפתי.",
-    "Desc_Eng": "A unique blend endowed with the aroma of berries, red fruits and cherries. The taste is fresh, robust, balanced and special. The wine has a deep and velvety burgundy-purple hue.",
-    "inStock": false,
-    "bestOf": false
-  },
-  {
     "Id": 109,
     "Name_Heb": "שאבלי גרנד קרו אלבר בישו",
-    "Name_Eng": "Chablis Grand Cru Albert Bishou",
+    "Name_Eng": "Chablis Grand Cru ",
     "Country_Eng": "France",
     "Country_Heb": "צרפת",
     "Type_Ro_Re_Wh_Bu_": "Wh",
@@ -1548,7 +1574,7 @@
       "שרדונה"
     ],
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FChablis%20Grand%20Cru%20Albert%20Bishou?alt=media&token=5d2e80ac-677e-4706-a282-b58f14416c38",
-    "WineryName_Heb": "אלברט בישו",
+    "WineryName_Heb": "אלבר בישו",
     "WineryName_Eng": "Albert Bichot",
     "Desc_Heb": "הענבים ביין זה עוברים התיישנות של כעשרה חודשים בחביות עץ אלון צרפתי ועוד שישה חודשים על שמרים במיכלי נירוסטה. גרנד קרו זה מתחיל באף בפרי הדר ורמזים פרחוניים עדינים (שושנת העמקים, קמומיל). החך מבטא חומציות מתונה ונעימה מאוד מה שהופך את היין הזה למייצג טיפוסי של שאבלי גראנד קרו: מינרלי ואינטנסיבי.",
     "Desc_Eng": "The grapes in this wine are aged for about ten months in French oak barrels and another six months on yeast in stainless steel tanks. This Grand Cru begins on the nose with citrus fruit and subtle floral hints (lily of the valley, chamomile). The palate expresses moderate and very pleasant acidity which makes this wine a typical representative of Chablis Grand Cru: mineral and intense.",
@@ -1558,7 +1584,7 @@
   {
     "Id": 71,
     "Name_Heb": "נוריקו",
-    "Name_Eng": "Norico Rosé Vigneti delle Dolomiti",
+    "Name_Eng": "Norico",
     "Country_Eng": "Italy",
     "Country_Heb": "איטליה",
     "Type_Ro_Re_Wh_Bu_": "Ro",

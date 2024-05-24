@@ -189,7 +189,7 @@ const Cocktails = () => {
                     <Button className='resetButton' onClick={(e) => {sortFilters();e.target.blur()}} sx={{ color: 'white', backgroundColor: '#3c27c5', borderRadius: '16px!important', fontFamily: 'Urbanist', textTransform: 'none', '&:hover ': { backgroundColor: '#3c27c5' } }}>Reset</Button>
                 </div>} */}
                 {searchQuery ===''? <div>
-                    <ExpandMore
+                    {/* <ExpandMore
                         header={'שפריץ||Spritz'}
                             aria-expanded={spritzExpanded}
                             aria-label="open spritz"
@@ -204,7 +204,7 @@ const Cocktails = () => {
                         <Collapse isOpen={spritzExpanded} children={spritzArr.map((alc) => {
                             return <SpritzCard key={alc.IdAlc} alcohol={alc} title={alc.Name_Eng} />
                         }
-                        )} />
+                        )} /> */}
                 {cocktailsArr.map((rum) => {
                             // return <TempDrinkCard alcohol={whiskey}/>
                             return <TempDrinkCard key={rum.IdAlc} alcohol={rum} title={rum.Name_Eng} />

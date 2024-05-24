@@ -36,8 +36,8 @@ export default function Home(props) {
                 <h1 className='homeTitle'>{t('lauren wine bar')}</h1>
                 </header>
                 <main>
-{/* {openDialog && firstLoad     &&          <SpecialDialog setOpenDialog={setOpenDialog} dialogOpen={openDialog} setDisplayDialog={setDisplayDialog} style={{display:`none`}}  />
-} */}
+{openDialog && firstLoad     &&          <SpecialDialog setOpenDialog={setOpenDialog} dialogOpen={openDialog} setDisplayDialog={setDisplayDialog} style={{display:`none`}}  />
+}
                 <Grid container spacing={2} >
                     <Grid role={'navigation button'} item xs={5.8}  lg={2.8} className='homeGridItem'>
                         <Link alt='go To red wines' to={{

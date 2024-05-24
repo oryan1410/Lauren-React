@@ -445,6 +445,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import TempDishCard from '../HelpComponents/TempDishCard';
 import BeerCard from '../HelpComponents/BeerCard';
 import TempDrinkCard from '../HelpComponents/TempDrinkCard';
+import NewDishCard from '../HelpComponents/NewDishCard';
 
 
 
@@ -537,27 +538,27 @@ const Dishes = () => {
         if (selectedType !== '') {
             arr = arr.filter((dish) => dish.IngType === selectedType);
             arr = arr.map((dish) => {
-                return <TempDishCard key={dish.IdDish} dish={dish} />
+                return <NewDishCard key={dish.IdDish} dish={dish} />
             }
             )
             app = easyArr.filter((dish) => dish.IngType === selectedType);
             app = app.map((dish) => {
-                return <TempDishCard key={dish.IdDish} dish={dish} />
+                return <NewDishCard key={dish.IdDish} dish={dish} />
             }
             )
             main = nextToWineArr.filter((dish) => dish.IngType === selectedType);
             main = main.map((dish) => {
-                return <TempDishCard key={dish.IdDish} dish={dish} />
+                return <NewDishCard key={dish.IdDish} dish={dish} />
             }
             )
             forHungry = forTheHungryArr.filter((dish) => dish.IngType === selectedType);
             forHungry = forHungry.map((dish) => {
-                return <TempDishCard key={dish.IdDish} dish={dish} />
+                return <NewDishCard key={dish.IdDish} dish={dish} />
             }
             )
             des = dessertsArr.filter((dish) => dish.IngType === selectedType);
             des = des.map((dish) => {
-                return <TempDishCard key={dish.IdDish} dish={dish} />
+                return <NewDishCard key={dish.IdDish} dish={dish} />
             }
             )
             setAppArr(app);
@@ -567,18 +568,18 @@ const Dishes = () => {
         }
     }
 
-    useEffect(() => {
-        console.log('dishesArr', dishesArr);
-        let json= JSON.stringify(dishesArr);
-        // Assuming your array is named 'firestoreArray'
-        console.log(JSON.stringify(dishesArr, null, 2));
-    }, [dishesArr])
+    // useEffect(() => {
+    //     console.log('dishesArr', dishesArr);
+    //     let json= JSON.stringify(dishesArr);
+    //     // Assuming your array is named 'firestoreArray'
+    //     console.log(JSON.stringify(dishesArr, null, 2));
+    // }, [dishesArr])
 
     useEffect(() => {
         if (!isLoading)
             setIsVisable(true);
         let app = easyArr.map((dish) => {
-            return <TempDishCard key={dish.IdDish} dish={dish} />
+            return <NewDishCard key={dish.IdDish} dish={dish} />
         }
         )
 
@@ -595,16 +596,16 @@ const Dishes = () => {
         )
 
         let main = nextToWineArr.map((dish) => {
-            return <TempDishCard key={dish.IdDish} dish={dish} />
+            return <NewDishCard key={dish.IdDish} dish={dish} />
         }
         )
 
         let des = dessertsArr.map((dish) => {
-            return <TempDishCard key={dish.IdDish} dish={dish} />
+            return <NewDishCard key={dish.IdDish} dish={dish} />
         }
         )
         let forTheHungry = forTheHungryArr.map((dish) => {
-            return <TempDishCard key={dish.IdDish} dish={dish} />
+            return <NewDishCard key={dish.IdDish} dish={dish} />
         }
         )
         setAppArr(app);
@@ -721,7 +722,7 @@ const Dishes = () => {
         if (dishArr.length !== 0 ) {
             setNoneFound(false);
             let finalDish = dishArr.map((dish) => {
-                return <TempDishCard key={`dish${dish.IdDish}`} dish={dish} />
+                return <NewDishCard key={`dish${dish.IdDish}`} dish={dish} />
             }
             )
             console.log('finalDish', finalDish);
@@ -731,6 +732,20 @@ const Dishes = () => {
             setNoneFound(true);
             setDisplayDishes([]);
         }
+    }
+
+    const tempDish ={
+        "IdDish": 32,
+        "Name_Heb": "שוקולד למבוגרים",
+        "Name_Eng": "Chocolate for adults",
+        "Type": "Dessert",
+        "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FChocolate%20for%20adults?alt=media&token=e03ed6b1-fe09-4909-ad26-f5dc90de875a",
+        "Desc_Heb": "רינג שוקולד קטיפתי על מצע דקואז נוגט, גנאש קפה, קקאו מוזהב וטוויל שוקולד מריר ",
+        "Desc_Eng": "A velvety chocolate ring on a decoase nougat base, coffee ganache, golden cocoa and dark chocolate twill",
+        "CPrice": "52",
+        "IngType": "Vegetarian",
+        "inStock": true,
+        "onMenu": "Y",
     }
         
     return (
@@ -748,7 +763,6 @@ const Dishes = () => {
                 {searchQuery === '' && <div className='resetButtonDiv'>
                     <button className='resetButton' onClick={(e) => { resetFilter(); e.target.blur() }}>Reset</button>
                 </div>}
-
                 {searchQuery === '' ? 
                 <div>
                     <aside id='Easy'>

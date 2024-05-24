@@ -255,7 +255,7 @@ function App() {
                   <Link to="/events" className={`nav-link ${location.pathname === '/events' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Events':'אירועים'}</Link>
                 </Nav.Item> */}
      
-                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'About Us':'אודותינו'}</Link>
+                  <Link to="/aboutUs" className={`nav-link ${location.pathname === '/aboutUs' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Events':'אירועים'}</Link>
                 </Nav.Item>
                 <Nav.Item>
                   <Link to="/accessibility" className={`nav-link ${location.pathname === '/accessibility' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Accessibility Declaration':'הצהרת נגישות'}</Link>

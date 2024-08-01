@@ -428,12 +428,12 @@ const AlcoholMain = () => {
     const [spritzClicked,setSpritzClicked]= useState(false);
 
 
-    useEffect(() => {
-        console.log('alcoholArr', alcoholArr);
-        //         let json= JSON.stringify(winesArr);
-        // // Assuming your array is named 'firestoreArray'
-        console.log(JSON.stringify(alcoholArr, null, 2));
-    }, [alcoholArr]);
+        // useEffect(() => {
+        //     console.log('alcoholArr', alcoholArr);
+        //     //         let json= JSON.stringify(winesArr);
+        //     // // Assuming your array is named 'firestoreArray'
+        //     console.log(JSON.stringify(alcoholArr, null, 2));
+        // }, [alcoholArr]);
 
     useEffect(() => {
         setIsVisable(true);
@@ -817,7 +817,7 @@ const AlcoholMain = () => {
                         }
                         )} />
                     </aside>
-                    <aside id="bestOfAlcohol">
+                    {/* <aside id="bestOfAlcohol">
                         <ExpandMore
                             expand={bestExpanded}
                             header={'המובחרים שביותר||Best of the best'}
@@ -833,7 +833,7 @@ const AlcoholMain = () => {
                             return <AlcoholCard key={alcohol.IdAlc} alcohol={alcohol} title={alcohol.Name_Eng} />
                         }
                         )} />
-                    </aside>
+                    </aside> */}
                 </div> :
                     displayDishes
                 }

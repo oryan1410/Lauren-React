@@ -59,7 +59,10 @@ export default function AlcoholCard(props) {
                     {props.alcohol.chaser === "Yes" && <div className='cupPriceDiv'><span className='BottlePrice'>
                         <GiGlassShot className='cardLogos' style={{fontSize:'1rem'}} src='../../Images/shot.png' alt='chaser icon' color='white' /></span>
                         <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>₪{props.alcohol.chaserPrice}</span></div>}
-                    {props.alcohol.chaser==='No' && (props.alcohol.CPrice===0 || props.alcohol.CPrice==='0') && <div className='cupPriceDiv'><span className='BottlePrice'>
+                    {/* {(props.alcohol.CPrice===0 || props.alcohol.CPrice==='0') && <div className='cupPriceDiv'><span className='BottlePrice'>
+                        <GiBrandyBottle className='cardLogos' style={{ fontSize:'1.5rem' }} src='../../Images/shot.png' alt='chaser icon' color='white' /></span>
+                        <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>₪{props.alcohol.bottlePrice}</span></div>} */}
+                        {props.alcohol.bottlePrice && props.alcohol.bottlePrice!=="0" && props.alcohol.bottlePrice!==0 && <div className='cupPriceDiv'><span className='BottlePrice'>
                         <GiBrandyBottle className='cardLogos' style={{ fontSize:'1.5rem' }} src='../../Images/shot.png' alt='chaser icon' color='white' /></span>
                         <span className='bottlePriceText' aria-label={`chaser price ${props.alcohol.chaserPrice}`}>₪{props.alcohol.bottlePrice}</span></div>}
                         

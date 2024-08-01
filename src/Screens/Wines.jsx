@@ -506,7 +506,7 @@ const Wines = () => {
                         <ExpandMoreIcon />
                     </ExpandMore>
                     <Collapse ref={expandedDivRef4} isOpen={bubbleExpanded} children={bubbleWinesArr} />
-                    <ExpandMore 
+                    {/* <ExpandMore 
                     expand={bestOfExpanded}
                     header='יינות מיוחדים || Special wines'
                     onClick={() => handleExpandClick('BestOf')}
@@ -517,7 +517,7 @@ const Wines = () => {
                     >
                         <ExpandMoreIcon />
                     </ExpandMore>
-                    <Collapse isOpen={bestOfExpanded} children={bestArr} ref={expandedDivRef4} />
+                    <Collapse isOpen={bestOfExpanded} children={bestArr} ref={expandedDivRef4} /> */}
                      </div>
                       : displayWines2
                 }

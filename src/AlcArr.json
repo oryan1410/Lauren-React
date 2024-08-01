@@ -39,24 +39,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32",
+    "chaserPrice": "16",
     "bottlePrice": "0",
-    "bestOf": false
-  },
-  {
-    "IdAlc": 127,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBacardi%20Spiced?alt=media&token=bec81e18-7b1f-4dcc-b5be-f10c27c278d1",
-    "Name_Heb": "בקרדי ספייסד",
-    "Name_Eng": "Bacardi Spiced",
-    "Type": "Rum",
-    "Desc_Heb": " רום משובח שהתיישן בין 1-2 שנים בחביות עץ אלון אמריקאי חרוכות ולאחר מכן טובל במגוון תבלינים.",
-    "Desc_Eng": "A fine rum aged between 1-2 years in charred American oak barrels and then dipped in a variety of spices.",
-    "CPrice": "48",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": 0,
     "bestOf": false
   },
   {
@@ -72,20 +56,6 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": 0
-  },
-  {
-    "IdAlc": 80,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2Fdrunken%20pear?alt=media&token=47baa6ab-ada8-49ce-b398-c5d36316d775",
-    "Name_Heb": "אגס שיכור",
-    "Name_Eng": "drunken pear",
-    "Type": "Cocktail",
-    "Desc_Heb": "רום דון קולון, קולי אגס וקינמון , ליקר ארטישוק וליקר אולספייס",
-    "Desc_Eng": "Rum Don Colon, cool pear and cinnamon, artichoke liqueur and Allspice liqueur",
-    "CPrice": "52",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
   },
   {
     "IdAlc": 117,
@@ -130,8 +100,8 @@
     "CPrice": "74",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
+    "chaser": "Yes",
+    "chaserPrice": "34",
     "bottlePrice": "0",
     "bestOf": false
   },
@@ -150,47 +120,19 @@
     "chaserPrice": "0"
   },
   {
-    "IdAlc": 87,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FSierra%20Nevada?alt=media&token=0f2b798d-3b9e-4084-9449-f48e9e4626f7",
-    "Name_Heb": "סיירה נוודה",
-    "Name_Eng": "Sierra Nevada",
-    "Type": "Beer",
-    "Desc_Heb": "בירה עמוסה בטעם ומורכבות מהשימוש בלתת איכותי וכשות קסקייד גביע מלא. טעם זוהר ופרחוני, המאוזן עם לתת קלוי ומתוק.",
-    "Desc_Eng": "A beer packed with flavor and complexity from the use of quality malt and full cup Cascade hops. A bright and floral taste, balanced with roasted and sweet malt.",
-    "CPrice": "29",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
-  },
-  {
-    "IdAlc": 76,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMonkey%20Business?alt=media&token=d1afda0d-ed6d-4eec-9b8f-9c793175e903",
-    "Name_Heb": "מאנקי ביזנס ",
-    "Name_Eng": "Monkey Business",
+    "IdAlc": 141,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FCold%20sangria%D7%A1%D7%A0%D7%92%D7%A8%D7%99%D7%99%D7%94?alt=media&token=34e0a75f-41f4-473d-a2c4-7a8180d5848c",
+    "Name_Heb": "סנגרייה לוליילו",
+    "Name_Eng": "sangria lolailo",
     "Type": "Cocktail",
-    "Desc_Heb": "ג'ין בננות והל, ליקר אננס וביטר ליים",
-    "Desc_Eng": "Banana and cardamom gin, pineapple liqueur and bitter lime",
-    "CPrice": "54",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
-  },
-  {
-    "IdAlc": 121,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FAberfeldi%2016?alt=media&token=316e9f97-cebe-436f-9451-df77f19e28a6",
-    "Name_Heb": "אברפלדי 16",
-    "Name_Eng": "Aberfeldy 16",
-    "Type": "Whiskey",
-    "Desc_Heb": "ניחוחות דבש, הדרים וציפורן מעט חריפה. גוף ומלא המזכיר טעמי עוגת פירות, שוקולד מריר עשיר וסיומת מלאה בכל חלל הפה.",
-    "Desc_Eng": "Aromas of honey, citrus and slightly spicy cloves. Body and full reminiscent of flavors of fruit cake, rich dark chocolate and a full finish throughout the mouth.",
-    "CPrice": "74",
+    "Desc_Heb": "סנגרייה קרה איכותית בעבודת יד המבוססת על יין אדום, מענבי טמפריניו וקברנה, לצד תיבול של קנה סוכר וקינמון",
+    "Desc_Eng": "A high-quality handcrafted cold sangria based on red wine, Tempranillo and Cabernet grapes, along with the seasoning of sugar cane and cinnamon",
+    "CPrice": "42",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": "0",
+    "bottlePrice": 0,
     "bestOf": false
   },
   {
@@ -218,8 +160,8 @@
     "CPrice": "42",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
+    "chaser": "Yes",
+    "chaserPrice": "19",
     "bottlePrice": "0",
     "bestOf": false
   },
@@ -235,8 +177,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "34",
-    "bottlePrice": 0,
+    "chaserPrice": "29",
+    "bottlePrice": "0",
     "bestOf": false
   },
   {
@@ -263,11 +205,11 @@
     "Type": "Digestif",
     "Desc_Heb": "סדרת גראפה סיבונה המיוחדת הזו, שכבר התיישנה במשך תקופה ארוכה (כשנתיים) בעץ אלון, מיושנת למעלה מ- 24 חודשים בחביות שנרכשו בפורטוגל ושימש בעבר כ- “נמל הבציר” של כמה מהיקבים היוקרתיים ביותר.",
     "Desc_Eng": "This special Grappa Sibonne series, which has already been aged for a long time (about two years) in oak, is aged for over 24 months in barrels purchased in Portugal and used in the past as the \"harvest port\" of some of the most prestigious wineries.",
-    "CPrice": "46",
+    "CPrice": "42",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "32",
+    "chaser": "Yes",
+    "chaserPrice": "17",
     "bottlePrice": "0",
     "bestOf": false
   },
@@ -315,6 +257,22 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 137,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPornstar%20Martini?alt=media&token=41e5f943-2531-4cbd-8474-b9409fa9729f",
+    "Name_Heb": "פורנסטאר מרטיני",
+    "Name_Eng": "Pornstar Martini",
+    "Type": "Cocktail",
+    "Desc_Heb": "וודקה, ליקר פסיפלורה, ליקר וניל, ליקר אננס ולימון",
+    "Desc_Eng": "Vodka, passion fruit liqueur, vanilla liqueur, pineapple liqueur and lemon",
+    "CPrice": "56",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
     "bottlePrice": 0,
     "bestOf": false
   },
@@ -345,22 +303,10 @@
     "CPrice": "65",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
-  },
-  {
-    "IdAlc": 84,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FJohnny%20Boyz?alt=media&token=031cc185-2714-49f2-a9b1-8c5a4f3fda2b",
-    "Name_Heb": "ג'וני בויז",
-    "Name_Eng": "Johnny Boyz",
-    "Type": "Cocktail",
-    "Desc_Heb": "ג'ין, ליקר ליצ'י, תה יסמין, ליקר שרטרז צהוב, טוויל פטל וקוויאר ליצ'י",
-    "Desc_Eng": "Gin, lychee liqueur, jasmine tea, yellow chartreuse liqueur, raspberry twill and lychee caviar",
-    "CPrice": "59",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
+    "chaser": "Yes",
+    "chaserPrice": "27",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 114,
@@ -379,20 +325,6 @@
     "bestOf": false
   },
   {
-    "IdAlc": 58,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FAperol?alt=media&token=79d6868e-d2b2-44e9-80ea-0cd7a0173d32",
-    "Name_Heb": "אפרול ",
-    "Name_Eng": "Aperol",
-    "Type": "Apperativo",
-    "Desc_Heb": "הבסיס לאפרול שפריץ הפופולארי, בעל טעם מתוק-מריר העשוי לפי מתכון סודי שלא שונה מיום המצאתו.",
-    "Desc_Eng": "The basis for the popular Aperol Spritz, which has a bitter-sweet taste made according to a secret recipe that has not changed since the day it was invented.",
-    "CPrice": "45",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
-  },
-  {
     "IdAlc": 43,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FJack%20Daniels%20Honey?alt=media&token=68590345-acf8-413b-b2b8-bda21c65e31a",
     "Name_Heb": "ג'ק דניאלס דבש",
@@ -404,23 +336,39 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "30",
+    "chaserPrice": "22",
     "bottlePrice": "0",
     "bestOf": false
   },
   {
-    "IdAlc": 131,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPatron%20Reposado?alt=media&token=81200da8-8346-43f7-b263-227551c133b0",
-    "Name_Heb": "פטרון רפוסדו",
-    "Name_Eng": "Patron Reposado",
-    "Type": "Tequila",
-    "Desc_Heb": "הטעם הנקי של פטרון סילבר עם טעמי העץ של פטרון אנייחו ומתקתקות פירותית והדרית",
-    "Desc_Eng": "The clean taste of Patron Silver with the woody flavors of Patron Anijo and fruity and citrus sweetness",
-    "CPrice": "61",
+    "IdAlc": 140,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FFrench%2075%20Lauren%20Style?alt=media&token=264fe6df-590a-4e4d-90ed-d47881b3ae76",
+    "Name_Heb": "פרנץ 75 לורן סטייל",
+    "Name_Eng": "French 75 Lauren Style",
+    "Type": "Cocktail",
+    "Desc_Heb": "קלבדוס, מיץ לימון, מי סוכר ופרוסקו מיונטו",
+    "Desc_Eng": "Calvados, lemon juice, sugar water and prosecco mionto",
+    "CPrice": "56",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "Yes",
-    "chaserPrice": "36",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
+  },
+  {
+    "IdAlc": 138,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2Fpaloma?alt=media&token=008db564-71b7-422f-9811-e46e934d6fe1",
+    "Name_Heb": "פלומה",
+    "Name_Eng": "paloma",
+    "Type": "Cocktail",
+    "Desc_Heb": "טקילה, ליקר אשכולית אדומה וסודה",
+    "Desc_Eng": "Tequila, red grapefruit liqueur and soda",
+    "CPrice": "52",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
     "bottlePrice": 0,
     "bestOf": false
   },
@@ -432,11 +380,12 @@
     "Type": "Anis",
     "Desc_Heb": "טעם ייחודי של אוזו המיוצר לפי מתכון משפחתי מאז שנת 1940.",
     "Desc_Eng": "A unique taste of ouzo produced according to a family recipe since 1940.",
-    "CPrice": "0",
+    "CPrice": "35",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32",
+    "chaserPrice": "19",
+    "bottlePrice": "0",
     "bestOf": false
   },
   {
@@ -452,7 +401,7 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0,
+    "bottlePrice": "0",
     "bestOf": false
   },
   {
@@ -480,8 +429,8 @@
     "CPrice": "54",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
+    "chaser": "Yes",
+    "chaserPrice": "22",
     "bottlePrice": "0",
     "bestOf": false
   },
@@ -496,8 +445,10 @@
     "CPrice": "69",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
+    "chaser": "Yes",
+    "chaserPrice": "29",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 116,
@@ -526,8 +477,8 @@
     "CPrice": "49",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
+    "chaser": "Yes",
+    "chaserPrice": "21",
     "bottlePrice": "0",
     "bestOf": false
   },
@@ -544,7 +495,7 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0,
+    "bottlePrice": "0",
     "bestOf": false
   },
   {
@@ -575,7 +526,9 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32"
+    "chaserPrice": "23",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 65,
@@ -592,18 +545,36 @@
     "chaserPrice": "0"
   },
   {
+    "IdAlc": 53,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FVolcan%20Reposado%20Tequila?alt=media&token=b9cee66f-9b55-4c8a-ab00-960061975e9b",
+    "Name_Heb": "טקילה וולקן רפוסאדו",
+    "Name_Eng": "Volcan Reposado Tequila",
+    "Type": "Tequila",
+    "Desc_Heb": "טקילה ייחודית המיוצרת בעבודת יד מ-100% אגבה כחולה המגיעה מהאזור ההררי בחאליסקו (HIGHLANDS ) המאופיין באדמה אדומה עשירה בחימר עליה גדלה אגבה בעלת תווים פירותיים ופרחוניים.",
+    "Desc_Eng": "A unique tequila that is made by hand from 100% blue agave that comes from the mountainous region of Jalisco (HIGHLANDS), characterized by red soil rich in clay on which agave with fruity and floral notes grows.",
+    "CPrice": "60",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "Yes",
+    "chaserPrice": "29",
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
     "IdAlc": 73,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FNegroni%20XO?alt=media&token=af823c22-6939-4a16-83a7-4d039d99050e",
     "Name_Heb": "נגרוני XO",
     "Name_Eng": "Negroni XO",
     "Type": "Cocktail",
-    "Desc_Heb": "ג'ין הדרים, ליקר אפרטיבו קפה וורמוט אדום גרנד רזרב",
-    "Desc_Eng": "Citrus gin, coffee aperitivo liqueur and red grand reserve vermouth",
+    "Desc_Heb": "ג'ין, ביטר קקאו, סלקט אפרטיף וורמוט אדום",
+    "Desc_Eng": "Gin, cocoa bitter, select aperitif and red vermouth",
     "CPrice": "52",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
-    "chaserPrice": "0"
+    "chaserPrice": "0",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 52,
@@ -617,7 +588,7 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32",
+    "chaserPrice": "21",
     "bottlePrice": "0",
     "bestOf": false
   },
@@ -637,20 +608,6 @@
     "bestOf": true
   },
   {
-    "IdAlc": 67,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2F%22Queen%20of%20the%20Valley%22%20IPA?alt=media&token=c8589b85-4e56-46a0-8e62-7b6621ad28cb",
-    "Name_Heb": "מלכת העמק IPA",
-    "Name_Eng": "\"Queen of the Valley\" IPA",
-    "Type": "Beer",
-    "Desc_Heb": "ארומה טרופית עשירה ומשגעת, עם נוכחות של כשות כל הדרך",
-    "Desc_Eng": "A rich and wonderful tropical aroma, with the presence of hops throughout",
-    "CPrice": "38",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
-  },
-  {
     "IdAlc": 111,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FRoyal%20Salute%2021?alt=media&token=0b8ea965-380c-41d5-aac2-62a29ceec15b",
     "Name_Heb": "רויאל סאלוט 21",
@@ -665,6 +622,22 @@
     "chaserPrice": "0",
     "bottlePrice": "0",
     "bestOf": true
+  },
+  {
+    "IdAlc": 146,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FStella%20Artois?alt=media&token=c21535da-6bab-4ba6-aea6-59afce2b3adf",
+    "Name_Heb": "סטלה",
+    "Name_Eng": "Stella Artois",
+    "Type": "Beer",
+    "Desc_Heb": "סטלה היא בירת לאגר בלגית. הבירה היא בירת לאגר כהה מעט מסוג פילסנר המבושלת בתסיסה תחתית.",
+    "Desc_Eng": "Stella is a Belgian lager capital. The beer is a slightly dark pilsner-type lager brewed in bottom fermentation.",
+    "CPrice": "29",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 48,
@@ -691,8 +664,10 @@
     "CPrice": "69",
     "inStock": true,
     "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
+    "chaser": "Yes",
+    "chaserPrice": "23",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 119,
@@ -703,6 +678,22 @@
     "Desc_Heb": "בירה ליפמנס פירות מבוססת על חמישה סוגים של פירות אדומים: תות, אוכמניות, דובדבנים, פטל וסמבוק. בעלת צבע אדמדם, ניחוח מרענן ופירותי, טעם מתוק המאוזן בסיומת חמצמצה ומעודנת.",
     "Desc_Eng": "Leifmans fruit beer is based on five types of red fruits: strawberry, blueberry, cherry, raspberry and elderberry. It has a reddish color, a refreshing and fruity aroma, a sweet taste balanced by a sour and refined finish.",
     "CPrice": "34",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
+  },
+  {
+    "IdAlc": 139,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FLychee%20martini?alt=media&token=1291922e-d81a-47c7-874b-5e26fa81b3be",
+    "Name_Heb": "מרטיני ליצ'י",
+    "Name_Eng": "Lychee martini",
+    "Type": "Cocktail",
+    "Desc_Heb": "ג'ין, ליקר ליצ'י, טריפל סק ומיץ לימון",
+    "Desc_Eng": "Gin, lychee liqueur, triple sec and lemon juice",
+    "CPrice": "56",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
@@ -726,17 +717,19 @@
   },
   {
     "IdAlc": 60,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FCampari?alt=media&token=723e1f25-959f-475e-93d5-6822c6783ee8",
-    "Name_Heb": "קמפרי",
-    "Name_Eng": "Campari",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FSelect?alt=media&token=e5d10f16-4ad1-4a9c-b267-99179436ee39",
+    "Name_Heb": "סלקט אפרטיף",
+    "Name_Eng": "Select",
     "Type": "Apperativo",
-    "Desc_Heb": "קמפרי הינו משקה ייחודי אשר נרקח מעשרות צמחים, פירות ותבלינים. קמפרי מומלץ לשתיה בקוקטיילים קרים בתוספת מיצים שונים.",
-    "Desc_Eng": "Campari is a unique drink that is brewed from dozens of plants, fruits and spices. Campari is recommended for drinking in cold cocktails with the addition of various juices.",
+    "Desc_Heb": "ל–SELECT ארומות של פירות הדר עם נגיעות של בלסמי וצמחים, טעמים עשירים ומרירות מאוזנת הודות לתערובת ייחודית של 30 צמחים ותבלינים שיחדיו יוצרים את הדרינק המושלם.. (טעמים של אפרול)",
+    "Desc_Eng": "SELECT has aromas of citrus fruits with touches of balsamic and herbs, rich flavors and balanced bitterness thanks to a unique blend of 30 herbs and spices that together create the perfect drink. (reminds apperol tastes)",
     "CPrice": "45",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "27"
+    "chaserPrice": "19",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 96,
@@ -766,8 +759,8 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "39",
-    "bottlePrice": 0,
+    "chaserPrice": "33",
+    "bottlePrice": "0",
     "bestOf": false
   },
   {
@@ -783,7 +776,7 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0,
+    "bottlePrice": "0",
     "bestOf": false
   },
   {
@@ -798,7 +791,9 @@
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32"
+    "chaserPrice": "22",
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 90,
@@ -817,20 +812,6 @@
     "bestOf": false
   },
   {
-    "IdAlc": 70,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FLeffe%20Brune-Brown?alt=media&token=90a64bb1-c17b-4431-99f4-3f33ab511a53",
-    "Name_Heb": "לף בראון",
-    "Name_Eng": "Leffe Brune-Brown",
-    "Type": "Beer",
-    "Desc_Heb": "בעלת ארומה עשירה וצבעה כהה ועמוק.",
-    "Desc_Eng": "Has a rich aroma and a dark and deep color.",
-    "CPrice": "32",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
-  },
-  {
     "IdAlc": 109,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBoulard%20XO?alt=media&token=5326afec-3fe6-4c89-9be4-05bb046cf95d",
     "Name_Heb": "בולאד XO",
@@ -844,22 +825,6 @@
     "chaser": "No",
     "chaserPrice": "0",
     "bottlePrice": "2500",
-    "bestOf": true
-  },
-  {
-    "IdAlc": 106,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FTeeling%2018?alt=media&token=1faeabfb-ca8e-4b40-9c73-a19f7c6a18bb",
-    "Name_Heb": "טילינג רנסאנס 18",
-    "Name_Eng": "Teeling 18",
-    "Type": "Whiskey",
-    "Desc_Heb": "כשמו כן הוא, לידה מחדש של הסינגל מאלט השלישי בסדרת הרנסאנס. מהדורה מוגבלת של 9,000 בקבוקים בלבד.",
-    "Desc_Eng": "As its name suggests, a rebirth of the third single malt in the Renaissance series. Limited edition of only 9,000 bottles.",
-    "CPrice": 0,
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": "1800",
     "bestOf": true
   },
   {
@@ -882,9 +847,9 @@
     "Name_Heb": "שפריץ",
     "Name_Eng": "spritz",
     "Type": "Cocktail",
-    "Desc_Heb": "אפרול/הוגו שפריץ",
-    "Desc_Eng": "Apperol/Hugo spritz",
-    "CPrice": "43",
+    "Desc_Heb": "סלקט/הוגו שפריץ",
+    "Desc_Eng": "Select/Hugo spritz",
+    "CPrice": "49",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
@@ -895,17 +860,17 @@
   {
     "IdAlc": 63,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMoulin?alt=media&token=6700052c-755d-4d55-a41b-fdee5b93c63d",
-    "Name_Heb": "מולין- צ'ייסר בלבד",
-    "Name_Eng": "Moulin- chase only",
+    "Name_Heb": "מולין",
+    "Name_Eng": "Moulin",
     "Type": "Vodka",
     "Desc_Heb": "וודקה מולין מיוצרת בעבודת יד בעיר אנגולם שבמחוז שארנט בדרום צרפת. באזור קיימת מסורת בת שבעה דורות של ייצור משקאות אלכוהוליים, מקום שבו המסורת והחדשנות הולכים יד ביד.",
     "Desc_Eng": "Moulin vodka is produced by hand in the city of Angoulême in the Charente region of southern France. The region has a seven-generation tradition of producing alcoholic beverages, a place where tradition and innovation go hand in hand.",
-    "CPrice": "0",
+    "CPrice": "45",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32",
-    "bottlePrice": "",
+    "chaserPrice": "21",
+    "bottlePrice": "450",
     "bestOf": false
   },
   {
@@ -921,55 +886,7 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0,
-    "bestOf": false
-  },
-  {
-    "IdAlc": 85,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPalm%20What%3F?alt=media&token=fcb22f5b-085b-4ec9-b79d-928b13670508",
-    "Name_Heb": "פלאם וורט",
-    "Name_Eng": "Flam Vert",
-    "Type": "Cocktail",
-    "Desc_Heb": "וודקה קמומיל, קווי צהוב, קולי בזיליקום ורדים, פינו שרי וביטר טרגון ",
-    "Desc_Eng": "Chamomile Vodka, Yellow Lines, Rose Basil Coulee, Pinot Sherry and Tarragon Bitters",
-    "CPrice": "49",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
     "bottlePrice": "0",
-    "bestOf": false
-  },
-  {
-    "IdAlc": 108,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMackmyra?alt=media&token=b41a35e5-ac6a-4e4c-8a8a-36cbd89b610f",
-    "Name_Heb": "מקימרה וויסקי",
-    "Name_Eng": "Mackmyra",
-    "Type": "Whiskey",
-    "Desc_Heb": "וויסקי סינגל מאלט מאוזן היטב בין ניחוחות פירותיים לבין התבלינים העדינים שמגיעים מעישון ערער.",
-    "Desc_Eng": "A single malt whiskey well balanced between fruity aromas and the subtle spices that come from juniper smoking.",
-    "CPrice": 0,
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": "700",
-    "bestOf": true
-  },
-  {
-    "IdAlc": 120,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FAberfeldi%2012?alt=media&token=9e8b7638-05f0-4df1-9300-90977401d4be",
-    "Name_Heb": "אברפלדי 12",
-    "Name_Eng": "Aberfeldy 12",
-    "Type": "Whiskey",
-    "Desc_Heb": "תווים נדירים של דבש – המפתח למתיקות והחתימה לסדרת המאלטים של אברפלדי.",
-    "Desc_Eng": "characters Rare honey - the key to sweetness and the signature to the malt series of Aberfeldy.",
-    "CPrice": "68",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": 0,
     "bestOf": false
   },
   {
@@ -980,12 +897,29 @@
     "Type": "Tequila",
     "Desc_Heb": "טקילה ייחודית המיוצרת בעבודת יד מ-100% אגבה כחולה מזן Tequilana Weber המגיעה משני אזורים שונים בחאליסקו הנמצאים במחוז Los Valles",
     "Desc_Eng": "A unique hand-made tequila from 100% blue agave of the Tequilana Weber variety that comes from two different areas of Jalisco located in the Los Valles district",
-    "CPrice": "259",
+    "CPrice": "180",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bestOf": true
+    "bottlePrice": "1300",
+    "bestOf": false
+  },
+  {
+    "IdAlc": 147,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FHoegaarden?alt=media&token=d313b3cd-4832-454f-aa60-b73a4f1fb8ea",
+    "Name_Heb": "הוגרדן",
+    "Name_Eng": "Hoegaarden",
+    "Type": "Beer",
+    "Desc_Heb": "בירה הוגרדן היא בירת חיטה מעוננת בסגנון בלגי, מתובלת בגרגירי כוסברה ובקליפות של תפוז מריר מסוג קרסאו. השמרים הנותרים בבירה גורמים לתסיסה משנית המתרחשת בבקבוק ומעניקה לבירה את המראה המעונן שלה ואת צבעה הבהיר בגווני קש בהיר.",
+    "Desc_Eng": "Hoogarden beer is a Belgian-style cloudy wheat beer, seasoned with coriander seeds and the peels of a bitter orange of the Carceau type.",
+    "CPrice": "32",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
   },
   {
     "IdAlc": 105,
@@ -1030,38 +964,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bottlePrice": 0,
-    "bestOf": true
-  },
-  {
-    "IdAlc": 71,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMargarita%20aperitif?alt=media&token=1f192dff-a4e3-4d33-9869-cd9fdd6f1518",
-    "Name_Heb": "אפרטיבו מרגריטה",
-    "Name_Eng": "aperitivo Margarita",
-    "Type": "Cocktail",
-    "Desc_Heb": "טקילה לואיזה ולימון פרסי, מזקל, ליקר אפרטיבו, ליקר אשכולית אדומה וביטר סלרי",
-    "Desc_Eng": "Luisa tequila and Persian lemon, mezcal, aperitivo liqueur, red grapefruit liqueur and celery bitters",
-    "CPrice": "59",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
     "bottlePrice": "0",
-    "bestOf": false
-  },
-  {
-    "IdAlc": 77,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FNew%20Middle%20East?alt=media&token=78a4ff36-39fc-4a3a-9c78-b17828a15249",
-    "Name_Heb": "מזרח תיכון חדש ",
-    "Name_Eng": "New Middle East",
-    "Type": "Cocktail",
-    "Desc_Heb": "אוזו בניחוח פלפל אנגלי, מרטיני לבן , קורדיאל זעתר וצ'ילי, חליטת תה ירוק תלתלי פפריקה וקוויאר מנגו",
-    "Desc_Eng": "Allspice-flavored ouzo, white martini, zaatar and chili cordial, curly green tea infusion Paprika and mango caviar",
-    "CPrice": "49",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
+    "bestOf": true
   },
   {
     "IdAlc": 132,
@@ -1080,18 +984,35 @@
     "bestOf": false
   },
   {
+    "IdAlc": 142,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FWhite%20Lenin?alt=media&token=c2295b82-3749-40ab-b59a-be13fd3c4a3c",
+    "Name_Heb": "וויט לנין",
+    "Name_Eng": "White Lenin",
+    "Type": "Cocktail",
+    "Desc_Heb": "וודקה, ליקר סמבוק, מיץ לימון ומי טוניק",
+    "Desc_Eng": "Vodka, elderberry liqueur, lemon juice and tonic water",
+    "CPrice": "56",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": 0,
+    "bestOf": false
+  },
+  {
     "IdAlc": 103,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FArak%20Zahlawi?alt=media&token=ef568a35-3446-4b37-b49a-d3ec0e777d56",
-    "Name_Heb": "ערק זחלאווי",
-    "Name_Eng": "Arak Zahlawi",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FArak%20julenar?alt=media&token=2865527c-6a01-481b-a106-890fcb55b960",
+    "Name_Heb": "ערק ג'ולנר",
+    "Name_Eng": "Arak julenar",
     "Type": "Anis",
-    "Desc_Heb": "זהו ערק המזוקק 3 פעמים, ומיושן בכלי חרס. חלק מאד בחך, ארומה עדינה של אניס איכותי וסיומת מתקתקה ומרעננת.",
-    "Desc_Eng": "Very smooth on the palate, a delicate aroma of quality anise and a sweet and refreshing finish.",
-    "CPrice": "45",
+    "Desc_Heb": "מתכון מקורי של ערק עוד מימי בבילון, המתכון בן 600 שנים",
+    "Desc_Eng": "An original recipe of a deserter from the days of Babylon, the recipe is 600 years old",
+    "CPrice": "32",
     "inStock": true,
     "onMenu": "Y",
     "chaser": "Yes",
-    "chaserPrice": "32",
+    "chaserPrice": "17",
+    "bottlePrice": "0",
     "bestOf": false
   },
   {
@@ -1139,38 +1060,6 @@
     "bestOf": true
   },
   {
-    "IdAlc": 133,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBoogie%20Passion?alt=media&token=6f226f5a-ea85-482b-ae2a-b0075d38b76a",
-    "Name_Heb": "בוגי פאשן",
-    "Name_Eng": "Boogie Passion",
-    "Type": "Cocktail",
-    "Desc_Heb": "ג'ין, ליקר פלרנום, ליקר פסיפלורה, רוזטה וליים טרי",
-    "Desc_Eng": "Gin, Fleurnum Liqueur, Passionflower Liqueur, Rosetta and Fresh Lime",
-    "CPrice": "49",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": "-3",
-    "bestOf": false
-  },
-  {
-    "IdAlc": 118,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FWhite%20Rabbit%20Black?alt=media&token=d5439be2-ceb7-403e-82cf-545c51a59a08",
-    "Name_Heb": "וויט ראביט שחור ",
-    "Name_Eng": "White Rabbit Black",
-    "Type": "Beer",
-    "Desc_Heb": "בירה עכורה, רכה, קרמית, ומלאת גוף. עשירה בארומות  וטעמים טרופיים של מלון, מנגו גויאבה, ומכילה שיבולת שועל וחיטה.",
-    "Desc_Eng": "A cloudy, soft, creamy, and full-bodied beer. Rich in aromas and tropical flavors of melon, mango guava, and contains oats and wheat.",
-    "CPrice": "38",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": 0,
-    "bestOf": false
-  },
-  {
     "IdAlc": 99,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FHenri%20Meunier%20XO%20Caraff?alt=media&token=d35fded3-07af-4167-b51c-c709b89ac783",
     "Name_Heb": "הנרי מונייה XO קאראף",
@@ -1183,7 +1072,8 @@
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
-    "bestOf": true
+    "bottlePrice": "0",
+    "bestOf": false
   },
   {
     "IdAlc": 95,
@@ -1200,20 +1090,6 @@
     "chaserPrice": "27",
     "bottlePrice": "0",
     "bestOf": false
-  },
-  {
-    "IdAlc": 55,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMezcal%20Verde?alt=media&token=f80635cc-7c5b-4299-83b7-fd163b0efbe7",
-    "Name_Heb": "מזקל ורדה",
-    "Name_Eng": "Mezcal Verde",
-    "Type": "Tequila",
-    "Desc_Heb": "מיוצרת מזן האגבה אספדין ומבושלת במגוון סוגי עץ הנותנים לה טעם מעושן ופירותי לאחר זיקוק כפול במיכלי נחושת והתיישנות קצרה בחביות עץ.",
-    "Desc_Eng": "Produced from the Aspadin agave variety and cooked in a variety of wood types that give it a smoky and fruity taste after double distillation in copper tanks and a short aging in wooden barrels.",
-    "CPrice": "56",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0"
   },
   {
     "IdAlc": 110,

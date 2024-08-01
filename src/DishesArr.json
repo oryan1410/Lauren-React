@@ -26,19 +26,6 @@
     "onMenu": "Y"
   },
   {
-    "IdDish": 31,
-    "Name_Heb": "בלוברי קייק",
-    "Name_Eng": "Blueberry Cake",
-    "Type": "Dessert",
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBlueberry%20Cake?alt=media&token=130d7ecf-4b7d-498d-a2df-93c0465db25d",
-    "Desc_Heb": "שכבות של עוגת אוכמניות , קרם גבינה \"ונילי\" , קרם אוכמניות עדין וקולי אוכמניות בציפוי שוקולד לבן  ",
-    "Desc_Eng": "Layers of blueberry cake, \"vanilla\" cream cheese, delicate blueberry cream and blueberry cookies covered in white chocolate",
-    "CPrice": "54",
-    "IngType": "Vegetarian",
-    "inStock": true,
-    "onMenu": "Y"
-  },
-  {
     "IdDish": 18,
     "Name_Heb": "קרפצ'יו פילה עגל",
     "Name_Eng": "Veal fillet carpaccio",
@@ -61,6 +48,19 @@
     "Desc_Eng": "Waffle chips from the \"Blue Lips\" potato variety seasoned with a mild oriental spice mixture",
     "CPrice": "39",
     "IngType": "Vegetarian",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdDish": 42,
+    "Name_Heb": "קראק פאי פיסטוק",
+    "Name_Eng": "Pistachio Cracker Pie",
+    "Type": "Dessert",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPistachio%20Cracker%20Pie?alt=media&token=9d4b72c4-71dd-4d4f-977d-6c81ef6196d4",
+    "Desc_Heb": "קראק פאי בליווי קציפת פיסטוק ופיסטוקים סיציליאניים",
+    "Desc_Eng": "Crack pie served with pistachio whipped cream and Sicilian pistachios",
+    "CPrice": "54",
+    "IngType": "",
     "inStock": true,
     "onMenu": "Y"
   },
@@ -91,6 +91,32 @@
     "onMenu": "Y"
   },
   {
+    "IdDish": 41,
+    "Name_Heb": "סלט לורן",
+    "Name_Eng": "Lauren Salad",
+    "Type": "Easy Snack",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FLauren%20Salad?alt=media&token=66dce32b-af0d-447b-b189-b3a1e0d62ddd",
+    "Desc_Heb": "לקט של עלים צעירים, עגבניות שרי, בצל סגול, צנונית, פקאן, גבינת פטה וקריספי בטטה ברוטב ויניגרט דבש",
+    "Desc_Eng": "A selection of young leaves, cherry tomatoes, purple onion, radish, Pecan, feta cheese and crispy sweet potato in a honey vinaigrette sauce",
+    "CPrice": "49",
+    "IngType": "Vegetarian",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdDish": 43,
+    "Name_Heb": "פנקוטה ליים ונענע",
+    "Name_Eng": "Lime and Mint Panna cotta",
+    "Type": "Dessert",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2F%D7%A4%D7%A0%D7%A7%D7%95%D7%98%D7%94.JPG?alt=media&token=b61b986e-ca3d-4890-a72c-cd491d961074",
+    "Desc_Heb": "פנקוטה ליים ונענע, רוטב טופי קרמל וטוויל שומשום",
+    "Desc_Eng": "Lime and mint panna cotta, caramel toffee sauce and sesame twill",
+    "CPrice": "52",
+    "IngType": "Vegetarian",
+    "inStock": false,
+    "onMenu": "Y"
+  },
+  {
     "IdDish": 30,
     "Name_Heb": "אדממה",
     "Name_Eng": "Edamame",
@@ -109,9 +135,9 @@
     "Name_Eng": "Mascarpone Kadaif",
     "Type": "Dessert",
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMascarpone%20Kadaif?alt=media&token=51d1226d-8388-4edc-a21c-f0b7cf557fb0",
-    "Desc_Heb": "שכבות של קדאיף קראנצ'י, קרם מסקרפונה מלטף, קולי תפוז סיני ותותים טריים",
-    "Desc_Eng": "Layers of crunchy kadaif, caressing mascarpone cream, Chinese orange coulis and fresh strawberries",
-    "CPrice": "52",
+    "Desc_Heb": "שכבות של קדאיף קראנצ'י, קרם מסקרפונה מלטף, קולי תפוז סיני ואננס טרי",
+    "Desc_Eng": "Layers of crunchy kadaif, caressing mascarpone cream, Chinese orange coulis and fresh pineapple",
+    "CPrice": "54",
     "IngType": "Vegetarian",
     "inStock": true,
     "onMenu": "Y"
@@ -143,19 +169,6 @@
     "onMenu": "Y"
   },
   {
-    "IdDish": 33,
-    "Name_Heb": "בר פיסטוק לימון ",
-    "Name_Eng": "Lemon pistachio bar",
-    "Type": "Dessert",
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FLemon%20pistachio%20bar?alt=media&token=94abcd55-962e-436d-9bdf-2ffbde439162",
-    "Desc_Heb": "שכבות של פייטה פיסטוק קראנצ'י , קרם לימון,  קרם שנטילי ומחית פיסטוק ",
-    "Desc_Eng": "Layers of crunchy pistachio pailette, lemon cream, chantilly cream and pistachio puree",
-    "CPrice": "54",
-    "IngType": "Vegetarian",
-    "inStock": true,
-    "onMenu": "Y"
-  },
-  {
     "IdDish": 13,
     "Name_Heb": "קריספי כרובית ",
     "Name_Eng": "Crispy Cauliflower ",
@@ -182,24 +195,11 @@
     "onMenu": "Y"
   },
   {
-    "IdDish": 22,
-    "Name_Heb": "סלט שורשים וגבינה כחולה ",
-    "Name_Eng": "Root and blue cheese salad ",
-    "Type": "Easy Snack",
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FRoot%20salad%20and%20blue%20cheese?alt=media&token=721b5477-350c-487d-9b19-24cff5fe8a24",
-    "Desc_Heb": "לקט שורשים, חמוציות, אגוזי פקאן וקשיו וגבינת \"דנה בלו\" ברוטב וויניגרט בלסמי דבש עם טוויל פיצוחים",
-    "Desc_Eng": "A collection of roots, cranberries, pecans and cashews and \"Dana Blue\" cheese in a honey balsamic vinaigrette sauce with twill crackers",
-    "CPrice": "49",
-    "IngType": "Vegetarian",
-    "inStock": true,
-    "onMenu": "Y"
-  },
-  {
     "IdDish": 32,
     "Name_Heb": "שוקולד למבוגרים",
     "Name_Eng": "Chocolate for adults",
     "Type": "Dessert",
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FChocolate%20for%20adults?alt=media&token=2d778778-9a69-4c58-baab-6c2cff5919e0",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FChocolate%20for%20adults?alt=media&token=0325c9c6-4c32-4c4f-b7d0-5879e4071af8",
     "Desc_Heb": "רינג שוקולד קטיפתי על מצע דקואז נוגט, גנאש קפה, קקאו מוזהב וטוויל שוקולד מריר ",
     "Desc_Eng": "A velvety chocolate ring on a decoase nougat base, coffee ganache, golden cocoa and dark chocolate twill",
     "CPrice": "52",
@@ -220,6 +220,7 @@
     "inStock": true,
     "onMenu": "Y"
   },
+
   {
     "IdDish": 8,
     "Name_Heb": "קריספי שרימפס",
@@ -256,6 +257,19 @@
     "Desc_Eng": "Thin slices of butcher's cut aged and dried with thyme and Italian-flavored spices accompanied by mustard aioli",
     "CPrice": "52",
     "IngType": "Meat",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdDish": 44,
+    "Name_Heb": "סופר למון הייז",
+    "Name_Eng": "super lemon haze ",
+    "Type": "Dessert",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2Fsuper%20lemon%20haze%20?alt=media&token=6166d61a-4b31-4d1e-9607-2102c31afd71",
+    "Desc_Heb": "קציפת מסקרפונה מלטפת וקרם לימון על בסיס פייטה חמאה",
+    "Desc_Eng": "A caressing mascarpone whipped cream and lemon cream on a butter pieta base",
+    "CPrice": "54",
+    "IngType": "Vegetarian",
     "inStock": true,
     "onMenu": "Y"
   },

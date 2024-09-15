@@ -655,33 +655,6 @@
     "bestOf": false
   },
   {
-    "Id": 104,
-    "Name_Heb": "קברנה סוביניון בזק",
-    "Name_Eng": "cabernet sauvignon Bazak",
-    "Country_Eng": "Israel",
-    "Country_Heb": "ישראל",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "0",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "229",
-    "Grape_Eng": [
-      "Cabernet Sauvignon"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "קברנה סוביניון"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2Fcabernet%20sauvignon%20Bazak?alt=media&token=2fc7a7b9-f534-4354-b50e-3c796803f34f",
-    "WineryName_Heb": "בזק",
-    "WineryName_Eng": "Bazak",
-    "Desc_Heb": "ניחוחות גרגירי יער שחורים ואדמתיות. מכרם גבעת הבשמים כרמי יוסף. התיישן במשך 24 חודשים בחביות עץ אלון",
-    "Desc_Eng": "aromas of earthy blackberries. from the vineyard in Karmei Yosef' called Fragrance Hill. Aged for 24 months in oak barrels",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
     "Id": 111,
     "Name_Heb": "גבעת הבשמים",
     "Name_Eng": "Fragrance Hill",

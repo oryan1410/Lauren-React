@@ -30,7 +30,7 @@ export default function SpecialDialog(props) {
             setDialogOpen(false);
             props.setDisplayDialog('none');
             props.setOpenDialog(false);
-            navigate('/aboutUs');
+            navigate('/cocktails');
             setFirstLoad(false);
 
         }
@@ -65,10 +65,10 @@ export default function SpecialDialog(props) {
             className={`specialDialog ${language === 'heb' && 'dialogContainerHeb'}`}
         >
             <CloseIcon className='closeIcon' style={{position:'absolute', left:0, border:'0.5px solid #000000',borderRadius:'15px', backgroundColor:'#000000', color:'#ffffff'}} onClick={handleClose} />
-                <img style={{width:'100%', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Specials%2FWhatsApp%20Image%202024-06-27%20at%2019.46.42.jpeg?alt=media&token=b92c383c-4226-4281-91bd-e7a48334e0dd' />
-            {/* <DialogActions className='specialActions' style={{marginBottom:'0px'}}>
-                <Button className='specialdialogButton' onClick={() => confirm(true)}>{'למעבר לתפריט'}</Button>
-            </DialogActions> */}
+                <img style={{width:'100%', overflow:'hidden', height:'auto'}} src='https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/Specials%2FWhatsApp%20Image%202024-09-08%20at%2011.12.52.jpeg?alt=media&token=6ce043d8-fe48-4e40-aec2-569e36293c03' />
+            <DialogActions className='specialActions' style={{marginBottom:'0px'}}>
+                <Button className='specialdialogButton' onClick={() => confirm(true)}>{'לצפייה בספיישלים וקוקטיילים'}</Button>
+            </DialogActions>
         </Dialog>
     )
 }

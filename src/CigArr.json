@@ -1,57 +1,79 @@
 [
-    {
-      "IdCigar": "3",
-      "Name_Heb": "מונטה קריסטו לבן",
-      "Name_Eng": "Montecristo White ",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FMonte_Cristo_Cigar.jpg?alt=media&token=73457ec3-d56b-4dc6-8e28-604b980a9b02",
-      "Desc_Heb": "כולל עטיפת קונטיקט אקוודורית מדהימה ותערובת של חומרי המילוי המשובחים ביותר.",
-      "Desc_Eng": "features a gorgeous Ecuadorian Connecticut Shade wrapper, a Nicaraguan binder, and a blend of the finest Dominican and Nicaraguan long-fillers.",
-      "CPrice": "109",
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
-      "IdCigar": "1",
-      "Name_Heb": "רומיאו ויוליה 1875",
-      "Name_Eng": "Romeo Y Julieta 1875",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FRomeo%20Y%20Julieta%201875?alt=media&token=773ebbae-306a-4523-8ebf-327ebde5a9b7",
-      "Desc_Heb": "סיגר קלאסי בעבודה יד אשר נקרא על שם המחזה האהוב מידי שייקספיר",
-      "Desc_Eng": "classic toro-sized handmade cigar packaged in aluminum tubos, named after a Shakespeare literary favorite",
-      "CPrice": 96,
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
-      "IdCigar": "4",
-      "Name_Heb": "Gordo Maduro ",
-      "Name_Eng": "Gordo Maduro ",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FGordo%20Maduro%20?alt=media&token=c7980ccb-5691-4886-9489-08c0602d9b62",
-      "Desc_Heb": "סיגר זה משתלב נהדר עם וויסקי איכותי",
-      "Desc_Eng": "This cigar can be paired with a scotch and we suggest to use a straight cut.",
-      "CPrice": "75",
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
-      "IdCigar": "2",
-      "Name_Heb": "Toro Habano ",
-      "Name_Eng": "Toro Habano ",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FToro%20Habano%20?alt=media&token=5027d19b-d8d9-4128-bc07-f61fa11c2129",
-      "Desc_Heb": "ניתן לשלב את הסיגר הזה עם אספרסו או קפה קר ואנו מציעים להשתמש בחיתוך ישר.",
-      "Desc_Eng": "This cigar can be paired with a espresso or iced coffee and we suggest to use a straight cut.",
-      "CPrice": "59",
-      "inStock": true,
-      "onMenu": "Y"
-    },
-    {
-      "IdCigar": "5",
-      "Name_Heb": "LandLord",
-      "Name_Eng": "The LandLord",
-      "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FLandLord.png?alt=media&token=7e5c16f7-7466-477c-8c94-e086496831a1",
-      "Desc_Heb": "הטעמים של בעל הבית כרוכים יחד כדי לתת לך את התחושה של מה זה להיות בעל הבית",
-      "Desc_Eng": "the flavours of the landlord are bounded together to give you the feeling of what it is like to be a part of the landlord mafia",
-      "CPrice": "64",
-      "inStock": true,
-      "onMenu": "Y"
-    }
-  ]
+  {
+    "IdCigar": "511",
+    "Name_Heb": "Charter Oak Foundation Connecticut",
+    "Name_Eng": "Charter Oak Foundation Connecticut",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2F%D7%A6_%D7%A1%D7%98%D7%A8_%D7%90%D7%95%D7%A7-removebg-preview.png?alt=media&token=17d9801f-8f42-485c-8084-fb3ad490c814",
+    "Desc_Heb": "סיגר מדוייק בעל עטיף קונטיקט אקוודורי בגימור חלק ונעים לשפה. ניחוחות הקפה, וניל, דבש ומאפה שיעלו מהסיגר יחמיאו לקוקטייל מבוסס חלב, לכוס יין לבן חצי יבש או לג'ין טוניק קלאסי",
+    "Desc_Eng": "An accurate cigar with an Ecuadorian Connecticut wrap with a smooth finish and pleasant to the mouth. The aromas of coffee, vanilla, honey and pastry that will rise from the cigar will compliment a milk-based cocktail, a glass of semi-dry white wine or a classic gin and tonic",
+    "CPrice": "70",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdCigar": "51111111",
+    "Name_Heb": "breakfast tacco connecticut Rojas",
+    "Name_Eng": "breakfast tacco connecticut Rojas",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2Fbreakfast%20tacco%20connecticut%20Rojas?alt=media&token=548d6579-79a7-4b10-a9b7-a3ec92301c51",
+    "Desc_Heb": "קטן וממזר – סיגר מיוחד בצורתו בעל עטיף קונטיקט אקוודורי איכותי וחלק. ניחוחות הקפה, אגוזים, וניל, וקינמון עוקצני שיוצאים מהסיגר יהיו השילוב המושלם לכוס יין לבן צונן, אמריקנו או קוקטייל מתקתק ",
+    "Desc_Eng": "Small and bastard - a cigar in a special shape with a High quality and smooth Ecuadorian Connecticut wrap. The aromas of coffee, nuts, vanilla, and spicy cinnamon coming out of the cigar will be the Perfect combination for a chilled glass of white wine, an Americano or a sweet cocktail",
+    "CPrice": "68",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdCigar": "5111111",
+    "Name_Heb": "Panza Original Sancho connecticut",
+    "Name_Eng": "Panza Original Sancho connecticut",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FPanza%20Original%20Sancho%20connecticut?alt=media&token=80228a52-3027-4911-a08e-6c4165f8522a",
+    "Desc_Heb": "העוזר הנצחי – על שמו של עוזרו הניצחי של דון קישוט. גם כאן הסיגר בעל עטיף הקוניטיקט ההונדורסי עם נגיעות דבש, עץ חלב ופלפל לבן האופייני להונדורס. מוחיטו, רום או יין רוזה יהוו המשלימים המדוייקים לסיגר",
+    "Desc_Eng": "The eternal helper - named after Don Quijote's victorious helper. Here too the cigar has the Honduran Connecticut wrapper with touches Honey, milk tree and white pepper typical of Honduras. Mojito, rum or rosé wine will be the exact complements to the cigar",
+    "CPrice": "79",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdCigar": "51",
+    "Name_Heb": "queen Gran Habano Persian",
+    "Name_Eng": "queen Gran Habano Persian",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2F%D7%A4%D7%A8%D7%A1%D7%99%D7%99%D7%9F_%D7%A7%D7%95%D7%95%D7%99%D7%9F-removebg-preview.png?alt=media&token=326d208d-a648-49b8-8cb9-32f2a90e7024",
+    "Desc_Heb": "המלכה הפרסית! – שילוב של שני עטיפים הנותנים משני עולמות טעמים מדהימים. הקונטיקט אקוודורי בהיר לצד קורוחו ניקרגואה ישאיר לנו רשמים מתקתקים, וניליים עגולים לצד ניחוחות עץ סידר מתוק אדמה וקפה. סיגר בגוף מדיום + בעוצמה בינונית אשר ישלים ויחמיא למשקה דומיננטי. זמן עישון – 90 דק",
+    "Desc_Eng": "The Persian Queen! - A combination of two leafs that give amazing flavors from two worlds. The bright Ecuadorian Connecticut next to the Nicaraguan Coroho will leave us with sweet impressions, round vanillas next to the aromas of sweet cedar wood, earth and coffee. A medium-bodied + medium-strength cigar that will complement and compliment a dominant drink. Smoking time - 90 minutes",
+    "CPrice": 78,
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdCigar": "511111",
+    "Name_Heb": "Miami Snow Room 101",
+    "Name_Eng": "Miami Snow Room 101",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FMiami%20Snow%20Room%20101?alt=media&token=5f47321a-491b-4929-be0f-03ccb000f54a",
+    "Desc_Heb": "שלג במיאמי - סיגר גדול בעל עטיף קונטיקט אקוודורי מתוק ונעים עם טוויסט מעניין. ניחוחות הקפה, וניל, פלפל לבן, ומאפה מתוק שיעלו מהסיגר יחמיאו לקוקטייל מבוסס חלב, לכוס יין לבן חצי יבש או למוחיטו הקלאסי",
+    "Desc_Eng": "Snow in Miami - a large cigar with a sweet and pleasant Ecuadorian Connecticut wrapper with an interesting twist. fragrances The coffee, vanilla, white pepper, and sweet pastry that will rise from the cigar will compliment it For a milk-based cocktail, for a glass of semi-dry white wine or for the classic mojito",
+    "CPrice": "82",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdCigar": "51111",
+    "Name_Heb": "geneve B11 cavalier",
+    "Name_Eng": "geneve B11 cavalier",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2Fgeneve%20B11%20cavalier?alt=media&token=0d784030-8061-4567-b906-5a471f1d73e0",
+    "Desc_Heb": "הריבוע המוזהב – סיגר ניקרגואה מושלם. הסיגר מורכב משלושה סוגי עלים ניקרגואנים שיוצרים חווית טעמים עוצמתית החל מניחוחות אספרסו, עץ, שוקולד מריר ותבלין קינמון. הסיגר בגוף בינוני + וחוזק בינוני יחמיא למשקה עוצמתי כוויסקי רום או קוקטייל מתוק. השילוב בין הסיגר למשקה עוצמתי\\מתוק יתנו את ההתאמה המושלמת",
+    "Desc_Eng": "The golden square - a perfect Nicaragua cigar. The cigar is complex From three types of Nicaraguan leaves that create a powerful taste experience ranging from aromas of espresso, wood, Dark chocolate and cinnamon spice. The cigar has a medium + body and medium strength Will compliment a powerful drink like whiskey Rum or sweet cocktail. the combination Between the cigar and a strong/sweet drink will give the perfect fit",
+    "CPrice": "87",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdCigar": "5111",
+    "Name_Heb": "Queens Guard J London",
+    "Name_Eng": "Queens Guard J London",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/CigarsPics%2FQueens%20Guard%20J%20London?alt=media&token=d3431399-cf73-4d8f-9a2b-2de93cadf9c3",
+    "Desc_Heb": "קטן וקלאסי – סיגר קצר בעטיף קונטיקט אקוודורי איכותי וחלק. ניחוחות הקפה קרם, וניל, וקינמון שיוצאים מהסיגר יהיו השילוב המושלם לכוס יין לבן צונן, קפה הפוך או קוקטייל עדין",
+    "Desc_Eng": "Small and classic - a short cigar in a  High quality wrapper and smooth Ecuadorian Connecticut. The aromas of coffee cream, vanilla, and cinnamon Coming out of the cigar will be the combination Perfect for a chilled glass of white wine, coffee Reverse or a subtle cocktail",
+    "CPrice": "58",
+    "inStock": true,
+    "onMenu": "Y"
+  }
+]

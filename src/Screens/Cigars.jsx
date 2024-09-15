@@ -19,12 +19,17 @@ const Cigars = () => {
     useEffect(() => {
         if (!isLoading && cigars.length !== 0) {
             setIsVisible(true);
+            cigars.sort((a, b) => a.CPrice - b.CPrice);
             let beer = cigars.map((cigar) => {
                 return <CigarCard key={cigar.IdCigar} alcohol={cigar} title={cigar.Name_Eng} />
             });
             setDisplayDishes(beer);
         }
     }, [isLoading, cigars]);
+
+    // useEffect(() => {
+    //     console.log(JSON.stringify(cigars, null, 2));
+    // }, [cigars]);
 
     useEffect(() => {
         if (searchQuery === "") {

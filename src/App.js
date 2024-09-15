@@ -245,9 +245,9 @@ function App() {
                     <span className='beveragesLink'>{language==='en'?'Beverages':'שתייה'}</span>
                     </Link></Nav.Item>
                 <Nav.Item>
-                <Nav.Item>
+                {/* <Nav.Item>
                   <Link to="/cigars" className={`nav-link ${location.pathname === '/cigars' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Cigars':'סיגרים'}</Link>
-                </Nav.Item>
+                </Nav.Item> */}
                 <Nav.Item>
                   <Link to="/favorites" className={`nav-link ${location.pathname === '/favorites' ? 'active-link' : 'non-active'}`} onClick={closeNavbar}>{language==='en'?'Favorite Wines':'יינות מועדפים'}</Link>
                 </Nav.Item>
@@ -298,7 +298,7 @@ markLinks={markLinks}
             {/* <Route path="/beers" element={<Beers />} /> */}
             <Route path="/cocktails" element={<Cocktails />} />
             <Route path="/dishes" element={<Dishes />} />
-            <Route path="/cigars" element={<Cigars />} />
+            {/* <Route path="/cigars" element={<Cigars />} /> */}
             <Route path="/aboutUs" element={<AboutUs />} />
             <Route path="/events" element={<Events />} />
             <Route path="/beverages" element={<Beverages />} />

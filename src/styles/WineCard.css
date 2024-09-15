@@ -1,19 +1,35 @@
 /*card2- wine card*/
 .cardTwo {
-  border: var(--main-card-border);
   display: flex;
   flex:1;
   border-radius: 15px;
   flex-direction: row !important;
   justify-content: space-between;
-  margin-top: 1rem;
   min-height: 12.5rem;
   position: relative;
   width: 100%;
   color: var(--main-font-color);
-  background-color: var(--main-background-color);
   font-family: var(--main-font-family);
   text-transform: var(--main-text-transform);
+}
+
+.cigarCardDiv{
+  border: var(--main-card-border);
+  border-radius: 15px;
+  background-color: var(--main-background-color);
+  margin-block: 1rem;
+
+}
+
+.cigarInfoBtn{
+  color: #000;
+  border-radius: 15px;
+  background-color: #967E68 ;
+  border: var(--main-card-border);
+  box-shadow: 0 0 5px 2px #000;
+  font-family: var(--main-font-family);
+  justify-content: center;
+  font-size: 1rem;
 }
 
 .outOfStock {

@@ -74,13 +74,13 @@ export default function Home(props) {
                              <span>שתייה קלה/חמה</span><br/> <span className='engButton'>Beverages</span>
                         </Link>
                         </Grid>
-                        <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
+                        {/* <Grid item xs={5.8} lg={2.8} className='homeGridItem'>
                         <Link alt='go to cigars' to={{
                             pathname: "/cigars",
                         }} state={{bubbleExpanded: true}}>
                              <span>סיגרים</span><br/> <span className='engButton'>Cigars</span>
                         </Link>
-                        </Grid>
+                        </Grid> */}
                 </Grid>
                 </main>
                 <main>

@@ -17,7 +17,7 @@ import CardContent from '@mui/material/CardContent';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-
+import PandaIcon from '../Images/Logo Panda Black.png'
 
 export default function CigarCard(props) {
     const [isImageClicked, setImageClicked] = useState(false);
@@ -51,7 +51,7 @@ export default function CigarCard(props) {
 
     return (
         <div className='cigarCardDiv'>
-        <div className={`cardTwo ${props.cigar.inStock === false && 'outOfStock'}`} tabIndex={0}>
+        <div className={`cigarCard ${props.cigar.inStock === false && 'outOfStock'}`} tabIndex={0}>
             {props.cigar.inStock === false && <div className="out-of-stock-text">{t('OutOfStock')}</div>}
             <div className={`card2Content`}>
                 <div className='card2-titleDiv'>
@@ -90,8 +90,10 @@ export default function CigarCard(props) {
                     </div>
             </div>
             <div className={`card2-imageDiv ${isImageClicked ? 'slide' : ''}`} >
+            <img src={PandaIcon} alt='panda icon' className='pandaIcon' />
                 <div>
-                    <InfoTwoToneIcon alt='infoIcon- press to move image and reveal info' className='infoIcon' />
+                  
+                    {/* <InfoTwoToneIcon alt='infoIcon- press to move image and reveal info' className='infoIcon' /> */}
                     <img src={props.cigar.ImageUrl} alt={`${props.title} bottle image. press to move image and reveal info`} className="card2image" />
                 </div>
             </div>

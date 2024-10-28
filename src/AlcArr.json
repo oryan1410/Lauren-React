@@ -1,21 +1,5 @@
 [
   {
-    "IdAlc": 150,
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FBrain%20jucie?alt=media&token=ef79b806-30ed-4e76-bc09-f40e0f5ef5e6",
-    "Name_Heb": "בריין ג'וס",
-    "Name_Eng": "Brain jucie",
-    "Type": "Cocktail",
-    "Desc_Heb": "וודקה, מיץ חמוציות, סירפ פירות יער, סירופ ענבים ומיץ לימון",
-    "Desc_Eng": "Vodka, cranberry juice, berry syrup, grape syrup and lemon juice",
-    "CPrice": "54",
-    "inStock": true,
-    "onMenu": "Y",
-    "chaser": "No",
-    "chaserPrice": "0",
-    "bottlePrice": "0",
-    "bestOf": false
-  },
-  {
     "IdAlc": 75,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMojito?alt=media&token=04aea39e-6198-4ff8-99ec-875dbd23ec0b",
     "Name_Heb": "מוחיטו הוואנה",
@@ -130,7 +114,7 @@
     "Desc_Heb": "סנגרייה קרה איכותית בעבודת יד המבוססת על יין אדום, מענבי טמפריניו וקברנה, לצד תיבול של קנה סוכר וקינמון",
     "Desc_Eng": "A high-quality handcrafted cold sangria based on red wine, Tempranillo and Cabernet grapes, along with the seasoning of sugar cane and cinnamon",
     "CPrice": "42",
-    "inStock": false,
+    "inStock": true,
     "onMenu": "Y",
     "chaser": "No",
     "chaserPrice": "0",
@@ -266,7 +250,7 @@
     "IdAlc": 137,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FPornstar%20Martini?alt=media&token=41e5f943-2531-4cbd-8474-b9409fa9729f",
     "Name_Heb": "פורנסטאר מרטיני",
-    "Name_Eng": "Pornstar Martini",
+    "Name_Eng": "pornstar Martini",
     "Type": "Cocktail",
     "Desc_Heb": "וודקה, ליקר פסיפלורה, ליקר וניל, ליקר אננס ולימון",
     "Desc_Eng": "Vodka, passion fruit liqueur, vanilla liqueur, pineapple liqueur and lemon",
@@ -656,6 +640,22 @@
     "bestOf": false
   },
   {
+    "IdAlc": 153,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FDalmor%2012?alt=media&token=e63cdc48-4492-4699-b98a-5c86461ed4be",
+    "Name_Heb": "דאלמור 12",
+    "Name_Eng": "Dalmor 12",
+    "Type": "Whiskey",
+    "Desc_Heb": "וויסקי דאלמור 12 מתאפיין בניחוחות של אספרסו משובח, דגנים, לתת,חמאה ותפוזים, בטעמים נפלאים של ריבת פירות עשירה ומתוקה, דובדבנים, תבלינים חורפיים, עוגת פירות ושוקולד חלב.",
+    "Desc_Eng": "Dalmor 12 whiskey is characterized by aromas of fine espresso, grains, malt, butter and oranges, with wonderful flavors of rich and sweet fruit jam, cherries, winter spices, fruit cake and milk chocolate.",
+    "CPrice": "65",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": "0",
+    "bestOf": false
+  },
+  {
     "IdAlc": 74,
     "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FNew%20York%20Twist?alt=media&token=9a18f0ce-d375-44a4-98f8-dcba0023a271",
     "Name_Heb": "ניו יורק טוויסט ",
@@ -935,6 +935,22 @@
     "chaser": "No",
     "chaserPrice": "0",
     "bottlePrice": 0,
+    "bestOf": false
+  },
+  {
+    "IdAlc": 143,
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FDalmor%2012%20Cherry%20cask?alt=media&token=89d2e277-aa14-428e-9316-5e271c51b2f2",
+    "Name_Heb": "דאלמור 12 שרי קאסק",
+    "Name_Eng": "Dalmor 12 Cherry cask",
+    "Type": "Whiskey",
+    "Desc_Heb": "מתאפיין בניחוחות של אספרסו משובח, דגנים, לתת,חמאה ותפוזים",
+    "Desc_Eng": "Characterized by aromas of fine espresso, grains, malt, butter and oranges",
+    "CPrice": "69",
+    "inStock": true,
+    "onMenu": "Y",
+    "chaser": "No",
+    "chaserPrice": "0",
+    "bottlePrice": "0",
     "bestOf": false
   },
   {

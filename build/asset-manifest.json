@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.cf00e939.css",
-    "main.js": "./static/js/main.1e707048.js",
+    "main.css": "./static/css/main.daf14754.css",
+    "main.js": "./static/js/main.12567e45.js",
     "static/js/787.007fb799.chunk.js": "./static/js/787.007fb799.chunk.js",
     "static/media/BackgroungImage_Final.png": "./static/media/BackgroungImage_Final.058dec17bc675228e36e.png",
+    "static/media/Logo Panda Black.png": "./static/media/Logo Panda Black.5728cd2ee4edf296cd21.png",
     "index.html": "./index.html",
     "static/media/getFetch.cjs": "./static/media/getFetch.40f37ddea2378391108f.cjs",
-    "main.cf00e939.css.map": "./static/css/main.cf00e939.css.map",
-    "main.1e707048.js.map": "./static/js/main.1e707048.js.map",
+    "main.daf14754.css.map": "./static/css/main.daf14754.css.map",
+    "main.12567e45.js.map": "./static/js/main.12567e45.js.map",
     "787.007fb799.chunk.js.map": "./static/js/787.007fb799.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cf00e939.css",
-    "static/js/main.1e707048.js"
+    "static/css/main.daf14754.css",
+    "static/js/main.12567e45.js"
   ]
 }

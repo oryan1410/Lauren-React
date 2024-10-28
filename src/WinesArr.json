@@ -114,6 +114,33 @@
     "bestOf": false
   },
   {
+    "Id": 103,
+    "Name_Heb": "פינו בלאן ריבוביל",
+    "Name_Eng": "Pinot Blanc",
+    "Country_Eng": "France",
+    "Country_Heb": "צרפת",
+    "Type_Ro_Re_Wh_Bu_": "Wh",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "55",
+    "BottlePrice": "205",
+    "Grape_Eng": [
+      "Pinot Blanc"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "פינו בלאן"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPinot%20Blanc?alt=media&token=df662829-aab7-4467-96e5-92c662070704",
+    "WineryName_Heb": "ריבוביל",
+    "WineryName_Eng": "Cave De Rubeauville",
+    "Desc_Heb": "הענבים ליין זה מגיעות מכרם שנמצא על מדרונות ונבצר כולו בעבודת יד על קו השבר המפורסם של Ribeauvillé המציע מגוון מדהים של טרוארים. זהו יין קל ופירותי, בעל תחושה קלילה ומרעננת. את הפינו בלאן הזה צריך לשתות צעיר.",
+    "Desc_Eng": "The grapes for this wine come from a vineyard located on slopes and fortified entirely by hand on the famous fault line of Ribeauvillé that offers an amazing variety of terroirs. This is a light and fruity wine, with a light and refreshing feel. This Pinot Blanc should be drunk young.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 44,
     "Name_Heb": "שאבלי שבליזיין",
     "Name_Eng": "Chablis La Chablisienne",
@@ -170,6 +197,37 @@
     "bestOf": false
   },
   {
+    "Id": 132,
+    "Name_Heb": "קברנה פרנק רזרב",
+    "Name_Eng": "Cabernet Franc Reserve",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "N",
+    "CupPrice": "0",
+    "BottlePrice": "229",
+    "Grape_Eng": [
+      "Cabernet Sauvignon",
+      "Cabernet Franc",
+      "Petite Sirah"
+    ],
+    "Blend_Y_N_": "Y",
+    "Grape_Heb": [
+      "קברנה סוביניון",
+      "קברנה פרנק",
+      "פטיט סירה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FCabernet%20Franc%20Reserve?alt=media&token=22d0cfee-ef30-4bcc-ada5-9024e4b5b262",
+    "WineryName_Heb": "בן חיים",
+    "WineryName_Eng": "Ben Haim",
+    "Desc_Heb": "ענבים מכרמי היקב בהר מירון, גליל עליון  85% קברנה פרנק 10% קברנה סוביניון והיתרה פטיט סירה  שנבצרו בבציר ידני וסלקטיבי.  התיישן 24 חודשים בחביות עץ אלון משובחות.  יין מרשים ואלגנטי עם פרי אדום בשל.",
+    "Desc_Eng": "Grapes from the vineyards of Mount Miron, Upper Galilee  85% Cabernet Franc 10% Cabernet Sauvignon and the balance Petit Syrah  which were harvested in a manual and selective harvest.  Aged 24 months in fine oak barrels.  Impressive and elegant wine with ripe red fruit.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 115,
     "Name_Heb": "מינוטי M רוזה",
     "Name_Eng": "Minuty M Ros'e",
@@ -195,6 +253,35 @@
     "WineryName_Eng": "Minuty",
     "Desc_Heb": "ענבי גרנאש, סירה וסנסו הגדלים באדמות העשירות ובאופן גידול טבע. הענבים נבצרים בבשלותם, מופרדים מן האשכולות, מרוסקים ונשארים להשריה ביחד עם הקליפות בינינו 3-4 שעות לפני שלב השיטה.",
     "Desc_Eng": "Grenache, Syrah and Senso grapes grown in the rich lands and naturally grown. The grapes are harvested when they are ripe, separated from the bunches, crushed and left to soak together with the skins between us 3-4 hours before the method step.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 134,
+    "Name_Heb": "קוט דה רון אדום",
+    "Name_Eng": "Cotes-Du-Rhone",
+    "Country_Eng": "France",
+    "Country_Heb": "צרפת",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "52",
+    "BottlePrice": "180",
+    "Grape_Eng": [
+      "Syrah",
+      "Grenache"
+    ],
+    "Blend_Y_N_": "Y",
+    "Grape_Heb": [
+      "סירה",
+      "גרנאש"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FCotes-Du-Rhone?alt=media&token=52dc3cdf-08be-493e-80c4-42c71f6be4ce",
+    "WineryName_Heb": "טראדיו לורן",
+    "WineryName_Eng": "MAISON TARDIEU LAURENT",
+    "Desc_Heb": "בלנד שלענבי גרנאש וסירה מדרום עמק הרון שהתיישנו לתקופה של 10 חודשים במיכלי בטון לשמירה על רעננות הפרי, בעל ניחוחות דובדבנים אדומים חריפים וטעמי פטל עסיסיים, בעל גוף בינוני ועם 14% אלכוהול.",
+    "Desc_Eng": "A blend of Grenache and Syrah grapes from the south of the Rhone Valley aged for a period of 10 months in concrete tanks to preserve the freshness of the fruit, with aromas of spicy red cherries and juicy raspberry flavors, with a medium body and with 14% alcohol.",
     "inStock": true,
     "bestOf": false
   },
@@ -336,6 +423,35 @@
     "bestOf": false
   },
   {
+    "Id": 128,
+    "Name_Heb": "רוזה בן חיים",
+    "Name_Eng": "Rose BenHaim",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Ro",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "50",
+    "BottlePrice": "165",
+    "Grape_Eng": [
+      "Petit Verdot",
+      "Sauvignon Blanc"
+    ],
+    "Blend_Y_N_": "Y",
+    "Grape_Heb": [
+      "סוביניון בלאן",
+      "פטיט ורדו"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FRose%20BenHaim?alt=media&token=14f60ee9-2c61-4065-bb7d-78fcb854dbbd",
+    "WineryName_Heb": "בן חיים",
+    "WineryName_Eng": "Ben Haim",
+    "Desc_Heb": "עשוי מענבי פטי ורדו וסוביניון בלאן. שילוב של שני זנים, אחד - אדום, חזק מאוד והשני - לבן, עדין מאוד. המפגש בין השניים יצר יין קליל ומרענן בעל צבע ורוד, עדין ואלגנטי.",
+    "Desc_Eng": "Made from Petit Verdot and Sauvignon Blanc grapes. A combination of two varieties, one - red, very strong And the other - white, very delicate. The meeting between the two created a light and refreshing wine with a pink color, delicate and elegant.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 126,
     "Name_Heb": "זימא משחור ללבן",
     "Name_Eng": "Zyme Black to White",
@@ -392,35 +508,6 @@
     "WineryName_Eng": "Terrazas de los Andes",
     "Desc_Heb": "צבעו סגול יפהפה ובעל ריחות פרחוניים של סיגליות, פירות יער שחורים ורמזים לשוקולד וטבק ובפה.",
     "Desc_Eng": "It is a beautiful purple color and has floral aromas of violets, black berries and hints of chocolate and tobacco in the mouth.",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
-    "Id": 48,
-    "Name_Heb": "לה גרדין קוט דה רון",
-    "Name_Eng": "Le Gardin Cote de Rhône",
-    "Country_Eng": "France",
-    "Country_Heb": "צרפת",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "35",
-    "Cup_Y_N_": "Y",
-    "CupPrice": "49",
-    "BottlePrice": "165",
-    "Grape_Eng": [
-      "Syrah",
-      "Grenache"
-    ],
-    "Blend_Y_N_": "Y",
-    "Grape_Heb": [
-      "גרנאש",
-      "סירה"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2Fchateau-de-la-gardine-COTES-DU-RHONE-600x600%20(1).jpg?alt=media&token=27c11f51-9456-4110-a0c8-e42f554ea278",
-    "WineryName_Heb": "לה גרדין",
-    "WineryName_Eng": "Le Gardin",
-    "Desc_Heb": "% ענבי גראנש, 20% ענבי סירה ו 15% ענבי מורוודר ארומות של עור ועשן, וחך אדמתי עם קצת פטריות, פירות אדומים ותבלינים מתקתקים. תחושת פה משיי ורכה מאוד, טאנינים נמוכים וחומציות, סיומת מתמשכת.",
-    "Desc_Eng": "% Grenache grapes, 20% Syrah grapes and 15% Mourvère grapes aromas of leather and smoke, and an earthy palate with some mushrooms, red fruits and sweet spices. Silky and very soft mouthfeel, low tannins and acidity, persistent finish.",
     "inStock": true,
     "bestOf": false
   },
@@ -489,33 +576,6 @@
     "bestOf": false
   },
   {
-    "Id": 116,
-    "Name_Heb": "פינו נואר הורייזן",
-    "Name_Eng": "Pinot Noir Horizon",
-    "Country_Eng": "France",
-    "Country_Heb": "צרפת",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "0",
-    "Cup_Y_N_": "Y",
-    "CupPrice": "59",
-    "BottlePrice": "210",
-    "Grape_Eng": [
-      "Pinot noir"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "פינו נואר"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPinot%20Noir%20Horizon?alt=media&token=0e97779e-8f23-4501-bb75-dde1dc644486",
-    "WineryName_Heb": "אלברט בישו",
-    "WineryName_Eng": "Albert Bichot",
-    "Desc_Heb": "צבע דובדבן אדום ואף עמוס בפירות יער שחורים, דובדבן חמוץ ותותים ובפה טעמי דובדבנים, פלפל ומנטה עטופים במרקם קרמי מלווה בחומציות, רעננות וסיומת ארוכה ונעימה.",
-    "Desc_Eng": "Red cherry color and nose loaded with black berries, sour cherry and strawberries and in the mouth flavors of cherries, pepper and mint wrapped in a creamy texture accompanied by acidity, freshness and a long and pleasant finish.",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
     "Id": 98,
     "Name_Heb": "ג'וזף מלו סנסר",
     "Name_Eng": "Joseph Mellot Sancerre",
@@ -570,34 +630,7 @@
     "WineryName_Eng": "Zenato",
     "Desc_Heb": "בעל צבע אדום עמוק של אבן האודם, עם ניחוח מרוכז, אלגנטי ומתמשך. הטעם הוא הרמוני וקטיפתי, עם מבנה טוב.",
     "Desc_Eng": "Has a deep red color of the ruby ​​stone, with a concentrated, elegant and persistent aroma. The taste is harmonious and velvety, with a good structure.",
-    "inStock": true,
-    "bestOf": false
-  },
-  {
-    "Id": 108,
-    "Name_Heb": "אשכולות שלמים גראג' דה פפה",
-    "Name_Eng": "Whole clusters Garage De Papa",
-    "Country_Eng": "Israel",
-    "Country_Heb": "ישראל",
-    "Type_Ro_Re_Wh_Bu_": "Re",
-    "Dry_Y_N_": "Y",
-    "Price": "0",
-    "Cup_Y_N_": "N",
-    "CupPrice": "0",
-    "BottlePrice": "300",
-    "Grape_Eng": [
-      "Petite Sirah"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "פטיט סירה"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FWhole%20clusters%20Garage%20De%20Papa?alt=media&token=8b7634c9-8468-4c75-aa56-d38ffa41ec70",
-    "WineryName_Heb": "לוינסון",
-    "WineryName_Eng": "LEWINSOhN",
-    "Desc_Heb": "100% מענבי הפטיט סירה תססו עם שזרותיהם, כלומר תסיסה ב\"אשכולות שלמים\". לאחר מכן הענבים עברו סחיטה עדינה ב-Basket press היין המשיך להתיישנות בשתי חביות צרפתיות במשך 12 חודשים.",
-    "Desc_Eng": "100% of the Petit Sirah grapes were fermented with their vines, meaning fermentation in \"whole clusters\". The grapes were then gently pressed in a basket press and the wine continued to age in two French barrels for 12 months.",
-    "inStock": true,
+    "inStock": false,
     "bestOf": false
   },
   {
@@ -651,6 +684,37 @@
     "WineryName_Eng": "PAOLOLEO",
     "Desc_Heb": "צבע בורדו כהה עם נימות סגלגלות וארומות בולטות של דובדבני מורילו ופירות יער שחורים, זהו יין בעל גוף מלא וסיומת טעמי פירות בשלים ארוכה ונעימה.",
     "Desc_Eng": "Dark burgundy in color with oval notes and prominent aromas of Murillo cherries and black berries, this is a full-bodied wine with a long and pleasant finish of ripe fruit flavors.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
+    "Id": 130,
+    "Name_Heb": "קברנה סוביניון טרדישן",
+    "Name_Eng": "Cabernet Sauvignon Tradition",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "N",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "50",
+    "BottlePrice": "189",
+    "Grape_Eng": [
+      "Cabernet Sauvignon",
+      "Merlot",
+      "Petite Sirah"
+    ],
+    "Blend_Y_N_": "Y",
+    "Grape_Heb": [
+      "קברנה סוביניון",
+      "מרלו",
+      "פטיט סירה"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FCabernet%20Sauvignon%20Tradition?alt=media&token=c7184cca-d066-4f1f-a9e8-b833f0eef5f7",
+    "WineryName_Heb": "בן חיים",
+    "WineryName_Eng": "Ben Haim",
+    "Desc_Heb": "ענבים מכרמי היקב בהר מירון, גליל עליון.  מורכב מ90% ענבי קברנה סוביניון, 5% ענבי מרלו ו5% ענבי פטיט סירה.  התיישן 20 חודשים בחביות עץ אלון מובחרות.  יין אלגנטי, המפגין עצמה של קברנה קלאסי.",
+    "Desc_Eng": "Grapes from the vineyards of Mount Miron, Upper Galilee.  Consists of 90% Cabernet Sauvignon grapes, 5% Merlot grapes and 5% Petit Sirah grapes.  Aged 20 months in selected oak barrels.  An elegant wine, demonstrating the strength of a classic Cabernet.",
     "inStock": true,
     "bestOf": false
   },
@@ -763,33 +827,6 @@
     "bestOf": false
   },
   {
-    "Id": 118,
-    "Name_Heb": "שרדונה",
-    "Name_Eng": "Chardoney",
-    "Country_Eng": "Italy",
-    "Country_Heb": "איטליה",
-    "Type_Ro_Re_Wh_Bu_": "Wh",
-    "Dry_Y_N_": "Y",
-    "Price": "0",
-    "Cup_Y_N_": "N",
-    "CupPrice": "49",
-    "BottlePrice": "165",
-    "Grape_Eng": [
-      "Chardonnay"
-    ],
-    "Blend_Y_N_": "N",
-    "Grape_Heb": [
-      "שרדונה"
-    ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FChardoney?alt=media&token=d1a2ae72-41ce-4a8c-8309-8b42b784e936",
-    "WineryName_Heb": "קוויט",
-    "WineryName_Eng": "Cavit",
-    "Desc_Heb": "שרדונה מצפון איטליה, מורכב, אלגנטי וייחודי. היין שומר על הכיוון הכללי של שרדונה אך האזור והעשייה מסגירים שמדובר במשהו שונה ומיוחד מהשאר.",
-    "Desc_Eng": "Chardonnay from northern Italy, complex, elegant and unique. The wine maintains the general direction of Chardonnay, but the region and the production reveal that it is something different and special from the rest.",
-    "inStock": false,
-    "bestOf": false
-  },
-  {
     "Id": 11,
     "Name_Heb": "ג'ק הרוסי",
     "Name_Eng": "Russian Jack",
@@ -817,33 +854,31 @@
     "bestOf": false
   },
   {
-    "Id": 22,
-    "Name_Heb": "קוט דה רון",
-    "Name_Eng": "Cotes-Du-Rhone",
-    "Country_Eng": "France",
-    "Country_Heb": "צרפת",
-    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Id": 129,
+    "Name_Heb": "שרדונה בן חיים",
+    "Name_Eng": "Chardonnay BenHaim",
+    "Country_Eng": "Israel",
+    "Country_Heb": "ישראל",
+    "Type_Ro_Re_Wh_Bu_": "Wh",
     "Dry_Y_N_": "Y",
-    "Price": "42.47",
+    "Price": "0",
     "Cup_Y_N_": "Y",
-    "CupPrice": "49",
+    "CupPrice": "50",
     "BottlePrice": "165",
     "Grape_Eng": [
-      "Syrah",
-      "Grenache",
-      "Mourvedre"
+      "Chardonnay",
+      "Sauvignon Blanc"
     ],
-    "Blend_Y_N_": "N",
+    "Blend_Y_N_": "Y",
     "Grape_Heb": [
-      "גרנאש",
-      "סירה",
-      "מורבדרה"
+      "שרדונה",
+      "סוביניון בלאן"
     ],
-    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FCotes-Du-Rhone?alt=media&token=fe572996-596f-49f1-85c6-2f1ed104da20",
-    "WineryName_Heb": "דלאס",
-    "WineryName_Eng": "Delas",
-    "Desc_Heb": "בלנד של ענבי סירה וגראנש המתיישנים לתקופה של 8 חודשים במיכלי נירוסטה לשמירה על רעננות הפרי.",
-    "Desc_Eng": "A blend of Syrah and Grenache grapes that are aged for a period of 8 months in stainless steel tanks to maintain the freshness of the fruit.",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FChardonnay%20BenHaim?alt=media&token=c4bb2804-43d9-4aca-aac6-edca45dce212",
+    "WineryName_Heb": "בן חיים",
+    "WineryName_Eng": "Ben Haim",
+    "Desc_Heb": "ענבים מכרמי היקב בהר מירון, גליל עליון.  יין לבן יבש המורכב מ-85% שרדונה שהתיישן 12 חודשים בחביות 500 ליטר חדשות ו-15% סובניון בלאן ללא חבית.  שילוב של שני הבצירים 2021 -2022, האחד עוצמתי והשני מינרלי וחמאתי, יצרו יחד- יין זהבהב ואלגנטי.",
+    "Desc_Eng": "Grapes from the vineyards of Mount Miron, Upper Galilee.  A dry white wine consisting of 85% Chardonnay aged 12 months in new 500 liter barrels and 15% unbarrel Sauvignon Blanc.  A combination of the two vintages 2021-2022, one powerful and the other mineral and buttery, created together - a golden and elegant wine.",
     "inStock": true,
     "bestOf": false
   },
@@ -1101,6 +1136,33 @@
     "bestOf": false
   },
   {
+    "Id": 133,
+    "Name_Heb": "פינו נואר גפנים בוגרות",
+    "Name_Eng": "Pinot Noir mature vines",
+    "Country_Eng": "France",
+    "Country_Heb": "צרפת",
+    "Type_Ro_Re_Wh_Bu_": "Re",
+    "Dry_Y_N_": "Y",
+    "Price": "0",
+    "Cup_Y_N_": "Y",
+    "CupPrice": "59",
+    "BottlePrice": "210",
+    "Grape_Eng": [
+      "Pinot noir"
+    ],
+    "Blend_Y_N_": "N",
+    "Grape_Heb": [
+      "פינו נואר"
+    ],
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/WinePics%2FPinot%20Noir%20mature%20vines?alt=media&token=344377b3-1571-4e8a-9446-3f06bd5d97a7",
+    "WineryName_Heb": "ריבוביל",
+    "WineryName_Eng": "Cave De Rubeauville",
+    "Desc_Heb": "פינו נואר זה התיישן בחבית עץ אלון, יש לו צבע אדום עמוק. הוא נותן ניחוח של פירות יער אדומים וניחוחות וניל מורכבים. נהדר עם תבשילים הודות לטאנינים הרכים והאיזון הטוב. יין לשמירה 3 עד 7 שנים. הטאנינים שלו יתרככו לאחר כמה שנים של יישון.",
+    "Desc_Eng": "This Pinot Noir has been aged in an oak barrel, it has a deep red color. It gives an aroma of red berries and complex vanilla aromas. Great with stews thanks to the soft tannins and the good balance. Wine to keep for 3 to 7 years. Its tannins will soften after a few years of aging.",
+    "inStock": true,
+    "bestOf": false
+  },
+  {
     "Id": 76,
     "Name_Heb": "אליס",
     "Name_Eng": "Alice",
@@ -1136,7 +1198,7 @@
     "Type_Ro_Re_Wh_Bu_": "Re",
     "Dry_Y_N_": "Y",
     "Price": "0",
-    "Cup_Y_N_": "Y",
+    "Cup_Y_N_": "N",
     "CupPrice": "48",
     "BottlePrice": "175",
     "Grape_Eng": [

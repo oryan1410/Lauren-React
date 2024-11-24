@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "./static/css/main.daf14754.css",
-    "main.js": "./static/js/main.12567e45.js",
+    "main.js": "./static/js/main.e82d2a5c.js",
     "static/js/787.007fb799.chunk.js": "./static/js/787.007fb799.chunk.js",
     "static/media/BackgroungImage_Final.png": "./static/media/BackgroungImage_Final.058dec17bc675228e36e.png",
     "static/media/Logo Panda Black.png": "./static/media/Logo Panda Black.5728cd2ee4edf296cd21.png",
     "index.html": "./index.html",
     "static/media/getFetch.cjs": "./static/media/getFetch.40f37ddea2378391108f.cjs",
     "main.daf14754.css.map": "./static/css/main.daf14754.css.map",
-    "main.12567e45.js.map": "./static/js/main.12567e45.js.map",
+    "main.e82d2a5c.js.map": "./static/js/main.e82d2a5c.js.map",
     "787.007fb799.chunk.js.map": "./static/js/787.007fb799.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.daf14754.css",
-    "static/js/main.12567e45.js"
+    "static/js/main.e82d2a5c.js"
   ]
 }

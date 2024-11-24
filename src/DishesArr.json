@@ -363,5 +363,31 @@
     "IngType": "Meat",
     "inStock": true,
     "onMenu": "Y"
+  },
+  {
+    "IdDish": 45,
+    "Name_Heb": "חלום נמס",
+    "Name_Eng": "Melted Dream",
+    "Type": "Dessert",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FMelted%20Dream?alt=media&token=e99b0fa1-4d38-4f6c-a33f-e53d33af1cac",
+    "Desc_Heb": "סופלה שוקולד חם ומנחם, מוגש על מצע קראמבל צלד כדור גלידת וניל",
+    "Desc_Eng": "A warm and comforting chocolate soufflé, served on a bed of Crumble with a side of vanilla ice cream ",
+    "CPrice": "52",
+    "IngType": "Vegetarian",
+    "inStock": true,
+    "onMenu": "Y"
+  },
+  {
+    "IdDish": 46,
+    "Name_Heb": "נשיקת קינמון",
+    "Name_Eng": "Cinnamon kiss",
+    "Type": "Dessert",
+    "ImageUrl": "https://firebasestorage.googleapis.com/v0/b/wines--react-test.appspot.com/o/DishPics%2FCinnamon%20kiss?alt=media&token=173320c4-1781-4fba-8ff5-e7157aff3ee1",
+    "Desc_Heb": "פאי תפוחים חם, בלווי גלידת וניל ומקל קינמון",
+    "Desc_Eng": "Warm apple pie, accompanied by vanilla ice cream and a cinnamon stick",
+    "CPrice": "54",
+    "IngType": "Vegetarian",
+    "inStock": true,
+    "onMenu": "Y"
   }
 ]
